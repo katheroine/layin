@@ -1,5 +1,25 @@
 {
+  "name": "katheroine/layin",
+    "description": "General purpose web page layout.",
+    "version": "1.0.0",
+    "type": "layout",
+    "keywords": [
+        "katheroine",
+        "layin",
+        "layout"
+    ],
+    "license": "MIT",
+    "authors" : [
+        {
+            "name": "Katarzyna Krasińska",
+            "email": "katheroine@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "require": {
         "twig/twig": "^3.0"
-    }
+    },
+    "scripts": {
+        "generate-demo": "cd public && php index.php > index.demo.html"
+	}
 }
