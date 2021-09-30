@@ -1,0 +1,41 @@
+:root
+{
+  /* layout */
+  --horizontal-hem: 20px;
+  --vertical-hem: 5%;
+  --width: 90%; /* 100 - 2*5 */
+
+  --cover-area-height: 90px;
+
+  /* font */
+  font-size: 12px;
+}
+
+body
+{
+  background-size: 200%;
+}
+
+#logo
+{
+  width: 35%;
+}
+
+#site_name
+{
+  width: 63%; /* 100% - 35% - 2*1% */
+  padding: 20px 1%;
+  font-size: 9vw;
+}
+
+#site_description
+{
+  font-size: 3vw;
+}
+
+#logo img
+{
+  top: 16px;
+  width: 80%;
+  max-width: 150px;
+}

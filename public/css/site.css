@@ -1,0 +1,72 @@
+:root
+{
+  /* layout */
+  --max-width: 1400px;
+
+  /* font */
+  --font-family: liberation-sans-regular, 'Verdana', sans-serif;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+body
+{
+  background-image: url('../img/layin-cover.jpeg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: top;
+}
+
+.scaffold
+{
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+header
+{
+  background-color: transparent;
+}
+
+#banner
+{
+  margin-bottom: var(--cover-area-height);
+  background-color: var(--banner-background-color);
+  color: var(--banner-text-color);
+}
+
+#signboard
+{
+  display: flex;
+}
+
+#logo
+{
+  /* Determines the height of the whole banner/header: */
+  max-height: 100px;
+  text-align: center;
+}
+
+#site_name
+{
+  text-align: left;
+}
+
+#logo img
+{
+  position: relative;
+}
+
+main
+{
+  height: 400px;
+  padding: 15%;
+  background-color: var(--main-background-color);
+  font-size: 2vw;
+}

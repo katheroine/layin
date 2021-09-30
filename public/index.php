@@ -1,8 +1,14 @@
 <?php
-require_once '../vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
-$loader = new \Twig\Loader\FilesystemLoader('templates');
-$twig = new \Twig\Environment($loader, ['debug' => true]);
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
 
-$template = $twig->load('index.thtml');
-echo $template->render([]);
+$loader = new FilesystemLoader(__DIR__ . '/templates');
+$twig = new Environment($loader, ['debug' => true]);
+
+$template = $twig->load('index.twig.html');
+echo $template->render([
+  'base_dir' => '.',
+  'debug' => false,
+]);
