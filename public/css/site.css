@@ -48,8 +48,12 @@ header
 
 #logo
 {
-  /* Determines the height of the whole banner/header: */
-  max-height: 100px;
+  /*
+  When #logo max-height is 0,
+  the property that determines the height of the whole banner/header
+  is #site-name font-size and vertical paddings/margins.
+  */
+  max-height: 0;
   text-align: center;
 }
 
@@ -65,8 +69,14 @@ header
 
 main
 {
-  height: 400px;
-  padding: 15%;
+  overflow: auto;
   background-color: var(--main-background-color);
-  font-size: 2vw;
+  color: var(--dark-blue);
+  font-size: 200%;
+}
+
+main article
+{
+  height: 400px;
+  padding: 8vw var(--vertical-hem);
 }

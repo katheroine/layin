@@ -1,3 +1,9 @@
+body
+{
+  background-color: violet;
+  background-image: none !important;
+}
+
 #banner
 {
   background-color: green;

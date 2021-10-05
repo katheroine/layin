@@ -1,11 +1,10 @@
 :root
 {
   /* layout */
-  --horizontal-hem: 30px;
   --vertical-hem: 5%;
   --width: 90%; /* 100 - 2*5 */
 
-  --cover-area-height: 220px;
+  --cover-area-height: 168px; /* 2*42 + 84 */
 
   /* font */
   font-size: 18px;
@@ -18,24 +17,23 @@ body
 
 #logo
 {
-  width: 30%;
+  width: 32%;
 }
 
 #site-name
 {
-  width: 68%; /* 100% - 30% - 2*1% */
-  padding: 32px 1%;
-  font-size: 96px;
+  width: 68%; /* 100% - 32% */
+  padding: 42px 0;
+  font-size: 84px;
 }
 
 #site-description
 {
-  font-size: 32px;
+  font-size: 26px;
 }
 
 #logo img
 {
-  top: 30px;
-  width: 70%;
-  max-width: 280px;
+  top: 42px;
+  height: 252px; /* 2*(42 + 84) */
 }

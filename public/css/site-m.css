@@ -1,11 +1,10 @@
 :root
 {
   /* layout */
-  --horizontal-hem: 24px;
-  --vertical-hem: 8%;
-  --width: 84%; /* 100 - 2*8 */
+  --vertical-hem: 5%;
+  --width: 90%; /* 100 - 2*5 */
 
-  --cover-area-height: 140px;
+  --cover-area-height: 16vw; /* 2*4 + 8 */
 
   /* font */
   font-size: 14px;
@@ -13,7 +12,7 @@
 
 body
 {
-  background-size: 130%;
+  background-size: 115%;
 }
 
 #logo
@@ -23,8 +22,8 @@ body
 
 #site-name
 {
-  width: 64%; /* 100% - 34% - 2*1% */
-  padding: 20px 1%;
+  width: 66%; /* 100% - 34% */
+  padding: 4vw 0;
   font-size: 8vw;
 }
 
@@ -35,7 +34,6 @@ body
 
 #logo img
 {
-  top: 20px;
-  width: 75%;
-  max-width: 210px;
+  top: 4vw;
+  height: 24vw; /* 2*(4 + 8) */
 }
