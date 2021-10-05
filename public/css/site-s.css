@@ -21,14 +21,14 @@ body
   width: 35%;
 }
 
-#site_name
+#site-name
 {
   width: 63%; /* 100% - 35% - 2*1% */
   padding: 20px 1%;
   font-size: 9vw;
 }
 
-#site_description
+#site-description
 {
   font-size: 3vw;
 }
