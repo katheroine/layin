@@ -4,6 +4,11 @@ body
   background-image: none !important;
 }
 
+.scaffold
+{
+  background-color: orange;
+}
+
 #banner
 {
   background-color: green;
@@ -27,4 +32,24 @@ body
 #site-description
 {
   background-color: magenta;
+}
+
+#main
+{
+  background-color: aqua !important;
+}
+
+#main > div
+{
+  background-color: ivory;
+}
+
+#main div.scaffold
+{
+  background-color: grey;
+}
+
+#main article
+{
+  background-color: cyan;
 }

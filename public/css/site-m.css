@@ -1,9 +1,6 @@
 :root
 {
   /* layout */
-  --vertical-hem: 5%;
-  --width: 90%; /* 100 - 2*5 */
-
   --cover-area-height: 16vw; /* 2*4 + 8 */
 
   /* font */
@@ -15,14 +12,9 @@ body
   background-size: 115%;
 }
 
-#logo
-{
-  width: 34%;
-}
-
 #site-name
 {
-  width: 66%; /* 100% - 34% */
+  margin-left: 4vw;
   padding: 4vw 0;
   font-size: 8vw;
 }

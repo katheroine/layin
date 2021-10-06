@@ -2,6 +2,8 @@
 {
   /* layout */
   --max-width: 1400px;
+  --vertical-hem: 5vw;
+  --width: 90vw; /* 100 - 2*5 */
 
   /* font */
   --font-family: liberation-sans-regular, 'Verdana', sans-serif;
@@ -27,6 +29,8 @@ body
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
 }
 
 header
@@ -54,7 +58,7 @@ header
   is #site-name font-size and vertical paddings/margins.
   */
   max-height: 0;
-  text-align: center;
+  text-align: left;
 }
 
 #site-name
@@ -77,6 +81,5 @@ main
 
 main article
 {
-  height: 400px;
-  padding: 8vw var(--vertical-hem);
+  padding: 10vw 0;
 }

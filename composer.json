@@ -21,5 +21,6 @@
     },
     "scripts": {
         "generate-demo": "cd public && php index.php > index.demo.html"
+        "generate-github-page": "php index.php > index.html"
 	}
 }
