@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="utf-8">
+    <meta name="language" content="english">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layin - general purpose web page layout">
+    <meta name="keywords" content="layin,layout,www,web page">
+    <meta name="author" content="katheroine <katheroine@gmail.com>">
+    <link type="image/x-icon" rel="shortcut icon" href="{{base_dir}}/img/layin-favicon.ico">
+    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/colors.css">
+    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/fonts.css">
+    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/colors-site-default.css">
+    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/site.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{base_dir}}/css/site-s.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{base_dir}}/css/site-m.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{base_dir}}/css/site-l.css">
+    {% if debug %}
+    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/debug.css">
+    {% endif %}
+    <title>Layin</title>
+  </head>
+  <body>
+    <header>
+    {% include 'header.twig.html' %}
+    </header>
+    <main>
+    {% include 'main.twig.html' %}
+    </main>
+  </body>
+</html>

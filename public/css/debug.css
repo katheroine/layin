@@ -1,0 +1,55 @@
+body
+{
+  background-color: violet;
+  background-image: none !important;
+}
+
+.scaffold
+{
+  background-color: orange;
+}
+
+#banner
+{
+  background-color: green;
+}
+
+#signboard
+{
+  background-color: lime;
+}
+
+#logo
+{
+  background-color: navy;
+}
+
+#site-name
+{
+  background-color: purple;
+}
+
+#site-description
+{
+  background-color: magenta;
+}
+
+#main
+{
+  background-color: aqua !important;
+}
+
+#main > div
+{
+  background-color: ivory;
+}
+
+#main div.scaffold
+{
+  background-color: grey;
+}
+
+#main article
+{
+  background-color: cyan;
+}

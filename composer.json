@@ -20,6 +20,7 @@
         "twig/twig": "^3.0"
     },
     "scripts": {
-        "generate-demo": "cd public && php index.php > index.demo.html"
+        "generate-demo": "cd public && php index.php > index.demo.html",
+        "generate-githubpages": "php public/index.githubpages.php > index.html"
 	}
 }

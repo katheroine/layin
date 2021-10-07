@@ -1,0 +1,31 @@
+:root
+{
+  /* layout */
+  --cover-area-height: 16vw; /* 2*4 + 8 */
+
+  /* font */
+  font-size: 14px;
+}
+
+body
+{
+  background-size: 115%;
+}
+
+#site-name
+{
+  margin-left: 4vw;
+  padding: 4vw 0;
+  font-size: 8vw;
+}
+
+#site-description
+{
+  font-size: 2.5vw;
+}
+
+#logo img
+{
+  top: 4vw;
+  height: 24vw; /* 2*(4 + 8) */
+}

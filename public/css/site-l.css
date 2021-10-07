@@ -1,0 +1,31 @@
+:root
+{
+  /* layout */
+  --cover-area-height: 168px; /* 2*42 + 84 */
+
+  /* font */
+  font-size: 18px;
+}
+
+body
+{
+  background-size: 100%;
+}
+
+#site-name
+{
+  margin-left: 42px;
+  padding: 42px 0;
+  font-size: 84px;
+}
+
+#site-description
+{
+  font-size: 26px;
+}
+
+#logo img
+{
+  top: 42px;
+  height: 252px; /* 2*(42 + 84) */
+}
