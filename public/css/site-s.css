@@ -2,6 +2,7 @@
 {
   /* layout */
   --cover-area-height: 19vw; /* 2*5 + 9 */
+  --detached-offset: 30px;
 
   /* font */
   font-size: 12px;
@@ -28,4 +29,9 @@ body
 {
   top: 5vw;
   height: 28vw; /* 2*(5 + 9) */
+}
+
+.menu-button
+{
+  /* padding: 7px; */
 }

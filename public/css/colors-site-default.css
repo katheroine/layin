@@ -2,5 +2,7 @@
 {
   --banner-background-color: var(--dark-blue);
   --banner-text-color: var(--white);
+  --navigation-background-color: var(--dark-violet);
+  --navigation-text-color: var(--white);
   --main-background-color: var(--white);
 }

@@ -2,6 +2,7 @@
 {
   /* layout */
   --cover-area-height: 168px; /* 2*42 + 84 */
+  --detached-offset: 35px;
 
   /* font */
   font-size: 18px;

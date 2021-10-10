@@ -71,12 +71,108 @@ header
   position: relative;
 }
 
+/* .scaffold
+{
+  border: 1px solid yellow;
+} */
+
+nav
+{
+  color: var(--navigation-text-color);
+}
+
+#controls
+{
+  position: relative;
+  background-color: var(--navigation-background-color);
+  opacity: 90%;
+}
+
+#controls.detached
+{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#dial
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.menu-button
+{
+  padding: 7px;
+  text-decoration: none;
+  /* background-color: brown; */
+  color: var(--navigation-text-color);
+}
+
+#dial a.menu-button:before
+{
+  display: inline-block;
+  vertical-align: middle;
+  background-repeat: no-repeat;
+  content: "";
+  width: 24px;
+  height: 24px;
+  background-size: 24px;
+}
+
+#dial a.accessibility-info:before
+{
+  background-image: url('../img/icons/wheelchair.svg');
+}
+
+#dial a.increase-font:before
+{
+  background-image: url('../img/icons/a_plus.svg');
+}
+
+#dial a.decrease-font:before
+{
+  background-image: url('../img/icons/a_minus.svg');
+}
+
+#dial a.toggle-contrast:before
+{
+  background-image: url('../img/icons/contrast.svg');
+}
+
+#dial a.reset-accessibility:before
+{
+  background-image: url('../img/icons/reset.svg');
+}
+
+#dial a.go-back:before
+{
+  background-image: url('../img/icons/arrow_left.svg');
+}
+
+#dial a.go-up:before
+{
+  background-image: url('../img/icons/arrow_up.svg');
+}
+
+#dial a#menu-trigger:before
+{
+  background-image: url('../img/icons/hamburger.svg');
+}
+
 main
 {
   overflow: auto;
+  padding-top: 0;
   background-color: var(--main-background-color);
   color: var(--dark-blue);
   font-size: 200%;
+}
+
+main.detached
+{
+  padding-top: var(--detached-offset);
 }
 
 main article
