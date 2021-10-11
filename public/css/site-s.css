@@ -6,6 +6,11 @@
 
   /* font */
   font-size: 12px;
+
+  /* details */
+  --menu-button-padding: 6px;
+  --menu-button-font-size: 22px;
+  --menu-button-icon-size: 24px;
 }
 
 body
@@ -17,21 +22,16 @@ body
 {
   margin-left: 5vw;
   padding: 5vw 0;
-  font-size: 9vw;
+  font-size: 8vw;
 }
 
 #site-description
 {
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 
 #logo img
 {
   top: 5vw;
   height: 28vw; /* 2*(5 + 9) */
-}
-
-.menu-button
-{
-  /* padding: 7px; */
 }

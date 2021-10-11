@@ -1,8 +1,10 @@
 :root
 {
+  --body-background-color: var(--dark-blue);
   --banner-background-color: var(--dark-blue);
   --banner-text-color: var(--white);
   --navigation-background-color: var(--dark-violet);
   --navigation-text-color: var(--white);
+  --navigation-backlight-color: var(--light-violet);
   --main-background-color: var(--white);
 }

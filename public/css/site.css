@@ -22,6 +22,7 @@ body
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: top;
+  background-color: var(--body-background-color);
 }
 
 .scaffold
@@ -71,11 +72,6 @@ header
   position: relative;
 }
 
-/* .scaffold
-{
-  border: 1px solid yellow;
-} */
-
 nav
 {
   color: var(--navigation-text-color);
@@ -100,25 +96,37 @@ nav
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
+  align-items: stretch;
 }
 
 .menu-button
 {
-  padding: 7px;
-  text-decoration: none;
-  /* background-color: brown; */
+  display: inline-block;
+  /*
+  Setting height is important
+  to not allow text
+  to enlarge button height.
+  */
+  height: var(--menu-button-icon-size);
+  padding: var(--menu-button-padding);
   color: var(--navigation-text-color);
+  font-size: var(--menu-button-font-size);
+  text-decoration: none;
 }
 
-#dial a.menu-button:before
+#dial a.menu-button.super:before
 {
   display: inline-block;
-  vertical-align: middle;
+  width: var(--menu-button-icon-size);
+  height: var(--menu-button-icon-size);
+  background-size: var(--menu-button-icon-size);
   background-repeat: no-repeat;
   content: "";
-  width: 24px;
-  height: 24px;
-  background-size: 24px;
+}
+
+#dial a.menu-button:hover
+{
+  background-color: var(--navigation-backlight-color);
 }
 
 #dial a.accessibility-info:before
