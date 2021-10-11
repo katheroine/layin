@@ -114,7 +114,7 @@ nav
   text-decoration: none;
 }
 
-#dial a.menu-button.super:before
+#dial a.menu-button.icon:before
 {
   display: inline-block;
   width: var(--menu-button-icon-size);

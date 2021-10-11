@@ -18,16 +18,16 @@
     {% if debug %}
     <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/debug.css">
     {% endif %}
-    <script src="{{base_dir}}/js/navigation.js"></script>
+    <script src="{{base_dir}}/js/dashboard.js"></script>
     <title>Layin</title>
   </head>
   <body onscroll="handleNavigation();" onresize="handleNavigation();">
     <header>
     {% include 'header.twig.html' %}
     </header>
-    <nav>
-    {% include 'navigation.twig.html' %}
-    </nav>
+    <div id="dashboard">
+    {% include 'dashboard.twig.html' %}
+    </div>
     <main>
     {% include 'main.twig.html' %}
     </main>
