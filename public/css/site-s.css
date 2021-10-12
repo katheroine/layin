@@ -33,5 +33,5 @@ body
 #logo img
 {
   top: 5vw;
-  height: 28vw; /* 2*(5 + 9) */
+  height: 26vw; /* 2*(5 + 8) */
 }
