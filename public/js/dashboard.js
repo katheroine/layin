@@ -24,48 +24,6 @@ function handleDashboard() {
   }
 }
 
-function handleHistory() {
-  reloadHistoryButtons();
-}
-
-function saveHistory() {
-  let currentUrl = window.location.href;
-  localStorage.setItem('history-next', currentUrl);
-}
-
-function reloadHistoryButtons() {
-  let controls = document.getElementById("controls");
-  let goBack = controls.getElementsByClassName("go-back")[0];
-  let goForward = controls.getElementsByClassName("go-forward")[0];
-
-  if (localStorage.getItem('history-previous')) {
-    goBack.classList.add("active");
-  } else {
-    goBack.classList.remove("active");
-  }
-  if (localStorage.getItem('history-next')) {
-    goForward.classList.add("active");
-  } else {
-    goForward.classList.remove("active");
-  }
-}
-
-function goBack() {
-  let currentUrl = window.location.href;
-  localStorage.removeItem('history-previous');
-  localStorage.setItem('history-next', currentUrl);
-  window.history.back();
-  resetHistoryButtons();
-}
-
-function goForward() {
-  let currentUrl = window.location.href;
-  localStorage.removeItem('history-next');
-  localStorage.setItem('history-previous', currentUrl);
-  window.history.forward();
-  resetHistoryButtons();
-}
-
 function getDefinedBannerMarginBottom() {
   let screenSize = getScreenSize();
   let bannerMarginBottom;
