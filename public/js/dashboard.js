@@ -4,37 +4,71 @@ const screenSizes = {
   l: 1024,
 };
 
-function handleNavigation() {
-  var banner = document.getElementById("banner");
-  var controls = document.getElementById("controls");
-  // var den = document.getElementById("den");
-  // var menu = document.getElementById("menu");
-  var main = document.getElementsByTagName("main")[0];
+function handleDashboard() {
+  let banner = document.getElementById("banner");
+  let controls = document.getElementById("controls");
+  let main = document.getElementsByTagName("main")[0];
 
-  var bannerPosition = banner.getBoundingClientRect();
-  var bannerMarginBottom = getDefinedBannerMarginBottom();
+  let bannerPosition = banner.getBoundingClientRect();
+  let bannerMarginBottom = getDefinedBannerMarginBottom();
 
   let offset = bannerPosition.bottom + bannerMarginBottom;
-  console.log(offset);
-  var navigationShouldBeFixed = offset < 0;
+  let navigationShouldBeFixed = offset < 0;
 
   if (navigationShouldBeFixed) {
     controls.classList.add("detached");
-    // den.classList.add("detached");
-    // menu.classList.add("detached");
     main.classList.add("detached");
   } else {
     controls.classList.remove("detached");
-    // den.classList.remove("detached");
-    // menu.classList.remove("detached");
     main.classList.remove("detached");
   }
 }
 
-function getDefinedBannerMarginBottom() {
-  var screenSize = getScreenSize();
+function handleHistory() {
+  reloadHistoryButtons();
+}
 
-  var bannerMarginBottom;
+function saveHistory() {
+  let currentUrl = window.location.href;
+  localStorage.setItem('history-next', currentUrl);
+}
+
+function reloadHistoryButtons() {
+  let controls = document.getElementById("controls");
+  let goBack = controls.getElementsByClassName("go-back")[0];
+  let goForward = controls.getElementsByClassName("go-forward")[0];
+
+  if (localStorage.getItem('history-previous')) {
+    goBack.classList.add("active");
+  } else {
+    goBack.classList.remove("active");
+  }
+  if (localStorage.getItem('history-next')) {
+    goForward.classList.add("active");
+  } else {
+    goForward.classList.remove("active");
+  }
+}
+
+function goBack() {
+  let currentUrl = window.location.href;
+  localStorage.removeItem('history-previous');
+  localStorage.setItem('history-next', currentUrl);
+  window.history.back();
+  resetHistoryButtons();
+}
+
+function goForward() {
+  let currentUrl = window.location.href;
+  localStorage.removeItem('history-next');
+  localStorage.setItem('history-previous', currentUrl);
+  window.history.forward();
+  resetHistoryButtons();
+}
+
+function getDefinedBannerMarginBottom() {
+  let screenSize = getScreenSize();
+  let bannerMarginBottom;
 
   switch(screenSize) {
     case screenSizes.s:
@@ -52,7 +86,7 @@ function getDefinedBannerMarginBottom() {
 }
 
 function getScreenSize() {
-  var size = screenSizes.s;
+  let size = screenSizes.s;
 
   if (window.innerWidth >= screenSizes.l) {
     size = screenSizes.l;

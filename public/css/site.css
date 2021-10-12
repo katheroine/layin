@@ -124,6 +124,24 @@ nav
   content: "";
 }
 
+#dial a.go-back,
+#dial a.go-forward,
+#dial a.go-up
+{
+  display: none;
+}
+
+#dial a.go-back.active,
+#dial a.go-forward.active
+{
+  display: inline-block !important;
+}
+
+.detached #dial a.go-up
+{
+  display: inline-block;
+}
+
 #dial a.menu-button:hover
 {
   background-color: var(--navigation-backlight-color);
@@ -157,6 +175,11 @@ nav
 #dial a.go-back:before
 {
   background-image: url('../img/icons/arrow_left.svg');
+}
+
+#dial a.go-forward:before
+{
+  background-image: url('../img/icons/arrow_right.svg');
 }
 
 #dial a.go-up:before
