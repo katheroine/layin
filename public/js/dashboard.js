@@ -30,10 +30,10 @@ function getDefinedBannerMarginBottom() {
 
   switch(screenSize) {
     case screenSizes.s:
-      bannerMarginBottom = 19 * window.innerWidth / 100;
+      bannerMarginBottom = 18 * window.innerWidth / 100;
       break;
     case screenSizes.m:
-      bannerMarginBottom = 16 * window.innerWidth / 100;
+      bannerMarginBottom = 15 * window.innerWidth / 100;
       break;
     case screenSizes.l:
       bannerMarginBottom = 168;

@@ -17,6 +17,7 @@
 
 body
 {
+  background-size: var(--body-background-size);
   background-image: url('../img/layin-cover.jpeg');
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -64,12 +65,22 @@ header
 
 #site-name
 {
+  margin-left: var(--banner-site-name-padding);
+  padding: var(--banner-site-name-padding) 0;
+  font-size: var(--site-name-font-size);
   text-align: left;
+}
+
+#site-description
+{
+  font-size: var(--site-description-font-size);
 }
 
 #logo img
 {
   position: relative;
+  top: var(--banner-site-name-padding);
+  height: var(--logo-height);
 }
 
 nav

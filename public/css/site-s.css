@@ -1,7 +1,15 @@
 :root
 {
   /* layout */
-  --cover-area-height: 19vw; /* 2*5 + 9 */
+  --cover-area-height: 18vw; /* 2*5 + 8 */
+
+  --body-background-size: 130%;
+  --logo-height: 26vw; /* 2*(5 + 8) */
+  --banner-site-name-padding: 5vw;
+
+  --site-name-font-size: 8vw;
+  --site-description-font-size: 2.5vw;
+
   --detached-offset: 36px;
 
   /* font */
@@ -11,27 +19,4 @@
   --menu-button-padding: 6px;
   --menu-button-font-size: 22px;
   --menu-button-icon-size: 24px;
-}
-
-body
-{
-  background-size: 130%;
-}
-
-#site-name
-{
-  margin-left: 5vw;
-  padding: 5vw 0;
-  font-size: 8vw;
-}
-
-#site-description
-{
-  font-size: 2.5vw;
-}
-
-#logo img
-{
-  top: 5vw;
-  height: 26vw; /* 2*(5 + 8) */
 }
