@@ -1,31 +1,26 @@
 :root
 {
   /* layout */
-  --cover-area-height: 168px; /* 2*42 + 84 */
+  --banner-height: 168px; /* 2*42 + 84 */
+
+  --body-background-size: 100%;
+  --logo-height: 252px; /* 2*(42 + 84) */
+  --banner-site-name-padding: 42px;
+
+  --site-name-font-size: 80px;
+  --site-description-font-size: 26px;
+
+  --detached-offset: 48px;
 
   /* font */
-  font-size: 18px;
+  font-size: 16px;
+
+  /* details */
+  --menu-button-padding: 10px;
+  --menu-button-font-size: 140%;
 }
 
-body
+#dial a#menu-trigger
 {
-  background-size: 100%;
-}
-
-#site-name
-{
-  margin-left: 42px;
-  padding: 42px 0;
-  font-size: 84px;
-}
-
-#site-description
-{
-  font-size: 26px;
-}
-
-#logo img
-{
-  top: 42px;
-  height: 252px; /* 2*(42 + 84) */
+  display: none;
 }

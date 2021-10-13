@@ -1,31 +1,22 @@
 :root
 {
   /* layout */
-  --cover-area-height: 16vw; /* 2*4 + 8 */
+  --banner-height: 15vw; /* 2*4 + 7 */
+
+  --body-background-size: 115%;
+  --logo-height: 22vw; /* 2*(4 + 7) */
+  --banner-site-name-padding: 4vw;
+
+  --site-name-font-size: 6vw;
+  --site-description-font-size: 2vw;
+
+  --detached-offset: 42px;
 
   /* font */
   font-size: 14px;
-}
 
-body
-{
-  background-size: 115%;
-}
-
-#site-name
-{
-  margin-left: 4vw;
-  padding: 4vw 0;
-  font-size: 8vw;
-}
-
-#site-description
-{
-  font-size: 2.5vw;
-}
-
-#logo img
-{
-  top: 4vw;
-  height: 24vw; /* 2*(4 + 8) */
+  /* details */
+  --menu-button-padding: 8px;
+  --menu-button-font-size: 24px;
+  --menu-button-icon-size: 26px;
 }

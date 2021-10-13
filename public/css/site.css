@@ -4,6 +4,7 @@
   --max-width: 1400px;
   --vertical-hem: 5vw;
   --width: 90vw; /* 100 - 2*5 */
+  --cover-area-height: var(--banner-height);
 
   /* font */
   --font-family: liberation-sans-regular, 'Verdana', sans-serif;
@@ -17,11 +18,13 @@
 
 body
 {
+  background-size: var(--body-background-size);
   background-image: url('../img/layin-cover.jpeg');
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: top;
+  background-color: var(--body-background-color);
 }
 
 .scaffold
@@ -40,6 +43,12 @@ header
 
 #banner
 {
+  /*
+  Setting height is important
+  to not allow text
+  to enlarge banner height.
+  */
+  height: var(--banner-height);
   margin-bottom: var(--cover-area-height);
   background-color: var(--banner-background-color);
   color: var(--banner-text-color);
@@ -63,20 +72,139 @@ header
 
 #site-name
 {
+  margin-left: var(--banner-site-name-padding);
+  padding: var(--banner-site-name-padding) 0;
+  font-size: var(--site-name-font-size);
   text-align: left;
+}
+
+#site-description
+{
+  font-size: var(--site-description-font-size);
 }
 
 #logo img
 {
   position: relative;
+  top: var(--banner-site-name-padding);
+  height: var(--logo-height);
+}
+
+#dashboard
+{
+  color: var(--controls-text-color);
+}
+
+#controls
+{
+  position: relative;
+  background-color: var(--controls-background-color);
+  opacity: 90%;
+}
+
+#controls.detached
+{
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+#dial
+{
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.menu-button
+{
+  display: flex;
+  align-items: center;
+  /*
+  Setting height is important
+  to not allow text
+  to enlarge button height.
+  */
+  height: var(--menu-button-icon-size);
+  padding: var(--menu-button-padding);
+  color: var(--navigation-text-color);
+  font-size: var(--menu-button-font-size);
+  text-decoration: none;
+}
+
+#dial a.menu-button.icon:before
+{
+  display: inline-block;
+  width: var(--menu-button-icon-size);
+  height: var(--menu-button-icon-size);
+  background-size: var(--menu-button-icon-size);
+  background-repeat: no-repeat;
+  content: "";
+}
+
+#dial a.go-up
+{
+  display: none;
+}
+
+.detached #dial a.go-up
+{
+  display: inline-block;
+}
+
+#dial a.menu-button:hover
+{
+  background-color: var(--controls-backlight-color);
+}
+
+#dial a.accessibility-info:before
+{
+  background-image: url('../img/icons/wheelchair.svg');
+}
+
+#dial a.increase-font:before
+{
+  background-image: url('../img/icons/a_plus.svg');
+}
+
+#dial a.decrease-font:before
+{
+  background-image: url('../img/icons/a_minus.svg');
+}
+
+#dial a.toggle-contrast:before
+{
+  background-image: url('../img/icons/contrast.svg');
+}
+
+#dial a.reset-accessibility:before
+{
+  background-image: url('../img/icons/reset.svg');
+}
+
+#dial a.go-up:before
+{
+  background-image: url('../img/icons/arrow_up.svg');
+}
+
+#dial a#menu-trigger:before
+{
+  background-image: url('../img/icons/hamburger.svg');
 }
 
 main
 {
   overflow: auto;
+  padding-top: 0;
   background-color: var(--main-background-color);
-  color: var(--dark-blue);
+  color: var(--main-text-color);
   font-size: 200%;
+}
+
+main.detached
+{
+  padding-top: var(--detached-offset);
 }
 
 main article

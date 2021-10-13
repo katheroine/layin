@@ -1,6 +1,11 @@
 :root
 {
+  --body-background-color: var(--dark-blue);
   --banner-background-color: var(--dark-blue);
   --banner-text-color: var(--white);
+  --controls-background-color: var(--dark-violet);
+  --controls-text-color: var(--white);
+  --controls-backlight-color: var(--light-violet);
   --main-background-color: var(--white);
+  --main-text-color: var(--dark-blue);
 }
