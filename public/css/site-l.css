@@ -1,13 +1,13 @@
 :root
 {
   /* layout */
-  --cover-area-height: 168px; /* 2*42 + 84 */
+  --banner-height: 168px; /* 2*42 + 84 */
 
   --body-background-size: 100%;
   --logo-height: 252px; /* 2*(42 + 84) */
   --banner-site-name-padding: 42px;
 
-  --site-name-font-size: 84px;
+  --site-name-font-size: 80px;
   --site-description-font-size: 26px;
 
   --detached-offset: 48px;

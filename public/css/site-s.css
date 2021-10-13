@@ -1,14 +1,14 @@
 :root
 {
   /* layout */
-  --cover-area-height: 18vw; /* 2*5 + 8 */
+  --banner-height: 18vw; /* 2*5 + 8 */
 
   --body-background-size: 130%;
   --logo-height: 26vw; /* 2*(5 + 8) */
   --banner-site-name-padding: 5vw;
 
-  --site-name-font-size: 8vw;
-  --site-description-font-size: 2.5vw;
+  --site-name-font-size: 7vw;
+  --site-description-font-size: 3vw;
 
   --detached-offset: 36px;
 
