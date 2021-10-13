@@ -1,0 +1,12 @@
+:root
+{
+  /* contrast */
+  --contrast-body-background-color: black;
+  --contrast-banner-background-color: black;
+  --contrast-banner-text-color: white;
+  --contrast-controls-background-color: var(--middle-violet);
+  --contrast-controls-text-color: white;
+  --contrast-controls-backlight-color: navy;
+  --contrast-main-background-color: black;
+  --contrast-main-text-color: white;
+}

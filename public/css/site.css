@@ -83,15 +83,15 @@ header
   height: var(--logo-height);
 }
 
-nav
+#dashboard
 {
-  color: var(--navigation-text-color);
+  color: var(--controls-text-color);
 }
 
 #controls
 {
   position: relative;
-  background-color: var(--navigation-background-color);
+  background-color: var(--controls-background-color);
   opacity: 90%;
 }
 
@@ -105,14 +105,15 @@ nav
 #dial
 {
   display: flex;
+  align-items: stretch;
   flex-wrap: wrap;
   justify-content: flex-end;
-  align-items: stretch;
 }
 
 .menu-button
 {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   /*
   Setting height is important
   to not allow text
@@ -135,17 +136,9 @@ nav
   content: "";
 }
 
-#dial a.go-back,
-#dial a.go-forward,
 #dial a.go-up
 {
   display: none;
-}
-
-#dial a.go-back.active,
-#dial a.go-forward.active
-{
-  display: inline-block !important;
 }
 
 .detached #dial a.go-up
@@ -155,7 +148,7 @@ nav
 
 #dial a.menu-button:hover
 {
-  background-color: var(--navigation-backlight-color);
+  background-color: var(--controls-backlight-color);
 }
 
 #dial a.accessibility-info:before
@@ -183,16 +176,6 @@ nav
   background-image: url('../img/icons/reset.svg');
 }
 
-#dial a.go-back:before
-{
-  background-image: url('../img/icons/arrow_left.svg');
-}
-
-#dial a.go-forward:before
-{
-  background-image: url('../img/icons/arrow_right.svg');
-}
-
 #dial a.go-up:before
 {
   background-image: url('../img/icons/arrow_up.svg');
@@ -208,7 +191,7 @@ main
   overflow: auto;
   padding-top: 0;
   background-color: var(--main-background-color);
-  color: var(--dark-blue);
+  color: var(--main-text-color);
   font-size: 200%;
 }
 

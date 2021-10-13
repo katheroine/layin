@@ -17,8 +17,7 @@
 
   /* details */
   --menu-button-padding: 10px;
-  --menu-button-font-size: 26px;
-  --menu-button-icon-size: 28px;
+  --menu-button-font-size: 140%;
 }
 
 #dial a#menu-trigger

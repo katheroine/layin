@@ -28,12 +28,16 @@ function getDefinedBannerMarginBottom() {
   let screenSize = getScreenSize();
   let bannerMarginBottom;
 
+  function vwToPx(size) {
+    return size * window.innerWidth / 100;
+  }
+
   switch(screenSize) {
     case screenSizes.s:
-      bannerMarginBottom = 18 * window.innerWidth / 100;
+      bannerMarginBottom = vwToPx(18);
       break;
     case screenSizes.m:
-      bannerMarginBottom = 15 * window.innerWidth / 100;
+      bannerMarginBottom = vwToPx(15);
       break;
     case screenSizes.l:
       bannerMarginBottom = 168;
