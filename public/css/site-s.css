@@ -5,18 +5,59 @@
 
   --body-background-size: 130%;
   --logo-height: 26vw; /* 2*(5 + 8) */
-  --banner-site-name-padding: 5vw;
+  --site-name-padding: 5vw;
 
   --site-name-font-size: 7vw;
   --site-description-font-size: 3vw;
 
-  --detached-offset: 36px;
+  --detached-offset: 40px;
 
   /* font */
   font-size: 12px;
 
   /* details */
-  --menu-button-padding: 6px;
-  --menu-button-font-size: 22px;
+  --menu-button-minor-padding: 8px;
+  --menu-button-major-padding: var(--vertical-hem);
+  --menu-button-font-size: 150%;
   --menu-button-icon-size: 24px;
+}
+
+#signboard,
+#dial,
+#liner
+{
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
+}
+
+#navigation
+{
+  position: relative;
+  z-index: 1;
+}
+
+#drawer
+{
+  position: relative;
+}
+
+nav
+{
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  overflow-y: auto;
+}
+
+.detached nav
+{
+  position: fixed;
+  top: var(--detached-offset);
+  bottom: 0;
+}
+
+#drawer .menu-button
+{
+  border-bottom: 1px solid var(--navigation-button-separator-color);
+  background-color: var(--navigation-background-color);
 }

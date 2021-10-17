@@ -7,21 +7,21 @@
     <meta name="description" content="Layin - general purpose web page layout">
     <meta name="keywords" content="layin,layout,www,web page">
     <meta name="author" content="katheroine <katheroine@gmail.com>">
-    <link type="image/x-icon" rel="shortcut icon" href="{{base_dir}}/img/layin-favicon.ico">
-    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/colors.css">
-    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/fonts.css">
-    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/colors-site-default.css">
-    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/colors-site-accessibility.css">
-    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/site.css">
-    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/site-accessibility.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{base_dir}}/css/site-s.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{base_dir}}/css/site-m.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{base_dir}}/css/site-l.css">
+    <link type="image/x-icon" rel="shortcut icon" href="{{assets_dir}}/img/layin-favicon.ico">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/fonts.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors-site-default.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors-site-accessibility.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/site.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/site-accessibility.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{assets_dir}}/css/site-s.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{assets_dir}}/css/site-m.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{assets_dir}}/css/site-l.css">
     {% if debug %}
-    <link type="text/css" rel="stylesheet" href="{{base_dir}}/css/debug.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/debug.css">
     {% endif %}
-    <script src="{{base_dir}}/js/dashboard.js"></script>
-    <script src="{{base_dir}}/js/accessibility.js"></script>
+    <script src="{{assets_dir}}/js/dashboard.js"></script>
+    <script src="{{assets_dir}}/js/accessibility.js"></script>
     <title>Layin</title>
   </head>
   <body onload="restoreAccessibility();" onscroll="handleDashboard();" onresize="handleDashboard();">
@@ -31,8 +31,8 @@
     <div id="dashboard">
     {% include 'dashboard.twig.html' %}
     </div>
-    <main>
-    {% include 'main.twig.html' %}
-    </main>
+    <div id="board">
+    {% include 'board.twig.html' %}
+    </div>
   </body>
 </html>

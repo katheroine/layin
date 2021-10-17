@@ -7,20 +7,23 @@ const screenSizes = {
 function handleDashboard() {
   let banner = document.getElementById("banner");
   let controls = document.getElementById("controls");
-  let main = document.getElementsByTagName("main")[0];
+  let board = document.getElementById("board");
+  var nav = document.getElementById("navigation");
 
   let bannerPosition = banner.getBoundingClientRect();
   let bannerMarginBottom = getDefinedBannerMarginBottom();
 
   let offset = bannerPosition.bottom + bannerMarginBottom;
-  let navigationShouldBeFixed = offset < 0;
+  let dashboardShouldBeFixed = offset < 0;
 
-  if (navigationShouldBeFixed) {
+  if (dashboardShouldBeFixed) {
     controls.classList.add("detached");
-    main.classList.add("detached");
+    board.classList.add("detached");
+    nav.classList.add("detached");
   } else {
     controls.classList.remove("detached");
-    main.classList.remove("detached");
+    board.classList.remove("detached");
+    nav.classList.remove("detached");
   }
 }
 

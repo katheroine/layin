@@ -2,8 +2,8 @@
 {
   /* layout */
   --max-width: 1400px;
-  --vertical-hem: 5vw;
-  --width: 90vw; /* 100 - 2*5 */
+  --vertical-hem: 5%;
+  --width: 90%; /* 100 - 2*5 */
   --cover-area-height: var(--banner-height);
 
   /* font */
@@ -32,8 +32,6 @@ body
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--vertical-hem);
-  padding-right: var(--vertical-hem);
 }
 
 header
@@ -72,8 +70,8 @@ header
 
 #site-name
 {
-  margin-left: var(--banner-site-name-padding);
-  padding: var(--banner-site-name-padding) 0;
+  margin-left: var(--site-name-padding);
+  padding: var(--site-name-padding) 0;
   font-size: var(--site-name-font-size);
   text-align: left;
 }
@@ -86,7 +84,7 @@ header
 #logo img
 {
   position: relative;
-  top: var(--banner-site-name-padding);
+  top: var(--site-name-padding);
   height: var(--logo-height);
 }
 
@@ -97,9 +95,9 @@ header
 
 #controls
 {
-  position: relative;
+  position: static;
   background-color: var(--controls-background-color);
-  opacity: 90%;
+  opacity: 70%;
 }
 
 #controls.detached
@@ -117,6 +115,11 @@ header
   justify-content: flex-end;
 }
 
+.submenu
+{
+  display: none;
+}
+
 .menu-button
 {
   display: flex;
@@ -127,20 +130,30 @@ header
   to enlarge button height.
   */
   height: var(--menu-button-icon-size);
-  padding: var(--menu-button-padding);
-  color: var(--navigation-text-color);
+  padding: var(--menu-button-minor-padding);
+  color: var(--controls-text-color);
   font-size: var(--menu-button-font-size);
   text-decoration: none;
 }
 
-#dial a.menu-button.icon:before
+.menu-button.icon:before
 {
-  display: inline-block;
   width: var(--menu-button-icon-size);
   height: var(--menu-button-icon-size);
   background-size: var(--menu-button-icon-size);
   background-repeat: no-repeat;
   content: "";
+}
+
+.menu-button.icon .value
+{
+  margin-left: var(--menu-button-minor-padding);
+}
+
+#drawer .menu-button
+{
+  padding-left: var(--menu-button-major-padding);
+  padding-right: var(--menu-button-major-padding);
 }
 
 #dial a.go-up
@@ -150,7 +163,7 @@ header
 
 .detached #dial a.go-up
 {
-  display: inline-block;
+  display: flex;
 }
 
 #dial a.menu-button:hover
@@ -158,9 +171,9 @@ header
   background-color: var(--controls-backlight-color);
 }
 
-#dial a.accessibility-info:before
+#drawer a.menu-button:hover
 {
-  background-image: url('../img/icons/wheelchair.svg');
+  background-color: var(--navigation-backlight-color);
 }
 
 #dial a.increase-font:before
@@ -193,16 +206,31 @@ header
   background-image: url('../img/icons/hamburger.svg');
 }
 
-main
+#navigation a.home:before
+{
+  background-image: url('../img/icons/house.svg');
+}
+
+#navigation a.accessibility-info:before
+{
+  background-image: url('../img/icons/wheelchair.svg');
+}
+
+#navigation a.favourites:before
+{
+  background-image: url('../img/icons/star.svg');
+}
+
+#board
 {
   overflow: auto;
   padding-top: 0;
-  background-color: var(--main-background-color);
-  color: var(--main-text-color);
+  background-color: var(--board-background-color);
+  color: var(--board-text-color);
   font-size: 200%;
 }
 
-main.detached
+#board.detached
 {
   padding-top: var(--detached-offset);
 }

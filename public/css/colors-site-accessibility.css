@@ -7,6 +7,6 @@
   --contrast-controls-background-color: var(--middle-violet);
   --contrast-controls-text-color: white;
   --contrast-controls-backlight-color: navy;
-  --contrast-main-background-color: black;
-  --contrast-main-text-color: white;
+  --contrast-board-background-color: black;
+  --contrast-board-text-color: white;
 }

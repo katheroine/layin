@@ -28,10 +28,10 @@ body.contrast
   color: var(--contrast-controls-text-color);
 }
 
-.contrast main
+.contrast #board
 {
-  background-color: var(--contrast-main-background-color);
-  color: var(--contrast-main-text-color);
+  background-color: var(--contrast-board-background-color);
+  color: var(--contrast-board-text-color);
 }
 
 .contrast #dial a.menu-button:hover

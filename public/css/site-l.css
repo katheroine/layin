@@ -5,22 +5,67 @@
 
   --body-background-size: 100%;
   --logo-height: 252px; /* 2*(42 + 84) */
-  --banner-site-name-padding: 42px;
+  --site-name-padding: 42px;
 
   --site-name-font-size: 80px;
   --site-description-font-size: 26px;
 
-  --detached-offset: 48px;
+  --detached-offset: 46px;
 
   /* font */
   font-size: 16px;
 
   /* details */
-  --menu-button-padding: 10px;
+  --menu-button-minor-padding: 10px;
+  --menu-button-major-padding: 15px;
   --menu-button-font-size: 140%;
 }
 
+#drawer
+{
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
+}
+
 #dial a#menu-trigger
+{
+  display: none;
+}
+
+#navigation
+{
+  position: relative;
+  background-color: var(--navigation-background-color);
+}
+
+#navigation.detached
+{
+  position: fixed;
+  top: var(--detached-offset);
+  width: 100%;
+}
+
+nav
+{
+  position: static;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.detached nav
+{
+  position: static;
+  width: 100%;
+}
+
+#drawer .menu-button
+{
+  border-bottom: 0;
+}
+
+.detached .menu-button .value
 {
   display: none;
 }
