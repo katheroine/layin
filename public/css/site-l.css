@@ -32,13 +32,13 @@
   display: none;
 }
 
-#navigation
+#guideboard
 {
   position: relative;
-  background-color: var(--navigation-background-color);
+  background-color: var(--guideboard-background-color);
 }
 
-#navigation.detached
+#guideboard.detached
 {
   position: fixed;
   top: var(--detached-offset);

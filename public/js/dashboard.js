@@ -8,7 +8,7 @@ function handleDashboard() {
   let banner = document.getElementById("banner");
   let controls = document.getElementById("controls");
   let board = document.getElementById("board");
-  var nav = document.getElementById("navigation");
+  var guideboard = document.getElementById("guideboard");
 
   let bannerPosition = banner.getBoundingClientRect();
   let bannerMarginBottom = getDefinedBannerMarginBottom();
@@ -19,11 +19,11 @@ function handleDashboard() {
   if (dashboardShouldBeFixed) {
     controls.classList.add("detached");
     board.classList.add("detached");
-    nav.classList.add("detached");
+    guideboard.classList.add("detached");
   } else {
     controls.classList.remove("detached");
     board.classList.remove("detached");
-    nav.classList.remove("detached");
+    guideboard.classList.remove("detached");
   }
 }
 

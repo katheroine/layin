@@ -173,7 +173,7 @@ header
 
 #drawer a.menu-button:hover
 {
-  background-color: var(--navigation-backlight-color);
+  background-color: var(--guideboard-backlight-color);
 }
 
 #dial a.increase-font:before
@@ -206,17 +206,17 @@ header
   background-image: url('../img/icons/hamburger.svg');
 }
 
-#navigation a.home:before
+#guideboard a.home:before
 {
   background-image: url('../img/icons/house.svg');
 }
 
-#navigation a.accessibility-info:before
+#guideboard a.accessibility-info:before
 {
   background-image: url('../img/icons/wheelchair.svg');
 }
 
-#navigation a.favourites:before
+#guideboard a.favourites:before
 {
   background-image: url('../img/icons/star.svg');
 }

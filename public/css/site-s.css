@@ -30,7 +30,7 @@
   padding-right: var(--vertical-hem);
 }
 
-#navigation
+#guideboard
 {
   position: relative;
   z-index: 1;
@@ -58,6 +58,6 @@ nav
 
 #drawer .menu-button
 {
-  border-bottom: 1px solid var(--navigation-button-separator-color);
-  background-color: var(--navigation-background-color);
+  border-bottom: 1px solid var(--guideboard-button-separator-color);
+  background-color: var(--guideboard-background-color);
 }
