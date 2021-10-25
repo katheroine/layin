@@ -3,133 +3,142 @@
     <!-- <a class="menu-button" href="">
       <span class="value">Hello</span>
     </a> -->
-    <!-- <a class="accessibility-info menu-button icon"></a> -->
-    <a class="increase-font menu-button icon" onclick="increaseFontSize();"></a>
-    <a class="decrease-font menu-button icon" onclick="decreaseFontSize();"></a>
-    <a class="toggle-contrast menu-button icon" onclick="toggleContrast();"></a>
-    <a class="reset-accessibility menu-button icon" onclick="reset();"></a>
-    <a class="go-up menu-button icon" href="#top"></a>
-    <a id="menu-trigger" class="menu-button icon"></a>
+    <!-- <a class="accessibility-info-link" class="menu-button icon"></a> -->
+    <a id="increase-font-trigger" class="menu-button icon" onclick="increaseFontSize();"></a>
+    <a id="decrease-font-trigger" class="menu-button icon" onclick="decreaseFontSize();"></a>
+    <a id="toggle-contrast-trigger" class="menu-button icon" onclick="toggleContrast();"></a>
+    <a id="reset-accessibility-trigger" class="menu-button icon" onclick="reset();"></a>
+    <a id="go-up-link" class="menu-button icon" href="#top"></a>
+    <a id="guideboard-trigger" class="menu-button icon" onclick="toggleGuideboard();"></a>
   </div>
 </div>
 <div id="guideboard" class="menu">
   <div id="drawer" class="scaffold">
     <nav>
       <div class="navigation-item">
-        <a class="home menu-button icon" href="{{base_url}}/index.{{code_file_extension}}">
+        <a id="home-link" class="menu-button icon" href="{{base_url}}/index.{{code_file_extension}}">
           <div class="value">Home</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="accessibility-info menu-button icon" href="{{base_url}}/accessibility_info.{{code_file_extension}}">
+        <a id="accessibility-info-link" class="menu-button icon" href="{{base_url}}/accessibility_info.{{code_file_extension}}">
           <div class="value">Accessibility info</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
+        <a id="favourites-submenu" class="menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
           <div class="value">Favourites</div>
-          <div class="submenu">
-          </div>
+        </a>
+        <div class="submenu">
+          <a class="menu-button" href="">
+            <div class="value">Submenu item 1</div>
+          </a>
+          <a class="menu-button" href="">
+            <div class="value">Submenu item 2</div>
+          </a>
+          <a class="menu-button" href="">
+            <div class="value">Submenu item 3</div>
+          </a>
+        </div>
+      </div>
+      <div class="navigation-item">
+        <a class="menu-button" href="">
+          <div class="value">Menu item 1</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 1</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 2</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 2</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 3</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 3</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 4</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 4</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 5</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 5</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 6</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 6</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 7</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 7</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 8</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 8</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 9</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 9</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 10</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 10</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 11</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 11</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 12</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 12</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 13</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 13</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 14</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 14</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 15</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 15</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 16</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 16</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 17</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 17</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 18</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 18</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 19</div>
         </a>
       </div>
       <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 19</div>
-        </a>
-      </div>
-      <div class="navigation-item">
-        <a class="favourites menu-button icon" href="{{base_url}}/favourites.{{code_file_extension}}">
-          <div class="value">Favourites 20</div>
+        <a class="menu-button" href="">
+          <div class="value">Menu item 20</div>
         </a>
       </div>
     </nav>

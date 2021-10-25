@@ -150,73 +150,73 @@ header
   margin-left: var(--menu-button-minor-padding);
 }
 
-#drawer .menu-button
+#guideboard .menu-button
 {
   padding-left: var(--menu-button-major-padding);
   padding-right: var(--menu-button-major-padding);
 }
 
-#dial a.go-up
-{
-  display: none;
-}
-
-.detached #dial a.go-up
-{
-  display: flex;
-}
-
-#dial a.menu-button:hover
+#controls .menu-button:hover
 {
   background-color: var(--controls-backlight-color);
 }
 
-#drawer a.menu-button:hover
+#guideboard .menu-button:hover
 {
   background-color: var(--guideboard-backlight-color);
 }
 
-#dial a.increase-font:before
+#controls .menu-button.go-up
+{
+  display: none;
+}
+
+#controls.detached .menu-button.go-up
+{
+  display: flex;
+}
+
+#controls .menu-button#increase-font-trigger:before
 {
   background-image: url('../img/icons/a_plus.svg');
 }
 
-#dial a.decrease-font:before
+#controls .menu-button#decrease-font-trigger:before
 {
   background-image: url('../img/icons/a_minus.svg');
 }
 
-#dial a.toggle-contrast:before
+#controls .menu-button#toggle-contrast-trigger:before
 {
   background-image: url('../img/icons/contrast.svg');
 }
 
-#dial a.reset-accessibility:before
+#controls .menu-button#reset-accessibility-trigger:before
 {
   background-image: url('../img/icons/reset.svg');
 }
 
-#dial a.go-up:before
+#controls .menu-button#go-up-link:before
 {
   background-image: url('../img/icons/arrow_up.svg');
 }
 
-#dial a#menu-trigger:before
+#controls .menu-button#guideboard-trigger:before
 {
   background-image: url('../img/icons/hamburger.svg');
 }
 
-#guideboard a.home:before
+#guideboard .menu-button#home-link:before
 {
   background-image: url('../img/icons/house.svg');
 }
 
-#guideboard a.accessibility-info:before
+#guideboard .menu-button#accessibility-info-link:before
 {
   background-image: url('../img/icons/wheelchair.svg');
 }
 
-#guideboard a.favourites:before
+#guideboard .menu-button#favourites-submenu:before
 {
   background-image: url('../img/icons/star.svg');
 }
@@ -232,7 +232,7 @@ header
 
 #board.detached
 {
-  padding-top: var(--detached-offset);
+  /* padding-top: var(--detached-offset); */
 }
 
 main article

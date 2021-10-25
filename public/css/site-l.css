@@ -27,13 +27,14 @@
   padding-right: var(--vertical-hem);
 }
 
-#dial a#menu-trigger
+#controls .menu-button#guideboard-trigger
 {
   display: none;
 }
 
 #guideboard
 {
+  display: block;
   position: relative;
   background-color: var(--guideboard-background-color);
 }
@@ -60,12 +61,12 @@ nav
   width: 100%;
 }
 
-#drawer .menu-button
+#guideboard .menu-button
 {
   border-bottom: 0;
 }
 
-.detached .menu-button .value
+.detached .menu-button.icon .value
 {
   display: none;
 }

@@ -8,7 +8,7 @@ function handleDashboard() {
   let banner = document.getElementById("banner");
   let controls = document.getElementById("controls");
   let board = document.getElementById("board");
-  var guideboard = document.getElementById("guideboard");
+  let guideboard = document.getElementById("guideboard");
 
   let bannerPosition = banner.getBoundingClientRect();
   let bannerMarginBottom = getDefinedBannerMarginBottom();
@@ -27,12 +27,25 @@ function handleDashboard() {
   }
 }
 
+function toggleGuideboard() {
+  var controls = document.getElementById("controls");
+  let guideboard = document.getElementById("guideboard");
+
+  var guideboardDisplay = window.getComputedStyle(guideboard).display;
+
+  if (guideboardDisplay != "block") {
+    guideboard.classList.add("active");
+  } else {
+    guideboard.classList.remove("active");
+  }
+}
+
 function getDefinedBannerMarginBottom() {
   let screenSize = getScreenSize();
   let bannerMarginBottom;
 
   function vwToPx(size) {
-    return size * window.innerWidth / 100;
+    return (size * window.innerWidth / 100);
   }
 
   switch(screenSize) {
