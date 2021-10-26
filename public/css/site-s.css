@@ -16,8 +16,8 @@
   font-size: 12px;
 
   /* details */
-  --menu-button-minor-padding: 8px;
-  --menu-button-major-padding: var(--vertical-hem);
+  --menu-button-minor-hem: 8px;
+  --menu-button-major-hem: var(--vertical-hem);
   --menu-button-font-size: 150%;
   --menu-button-icon-size: 24px;
 }

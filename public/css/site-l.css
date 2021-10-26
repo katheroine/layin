@@ -16,9 +16,10 @@
   font-size: 16px;
 
   /* details */
-  --menu-button-minor-padding: 10px;
-  --menu-button-major-padding: 15px;
+  --menu-button-minor-hem: 10px;
+  --menu-button-major-hem: 0;
   --menu-button-font-size: 140%;
+  --menu-button-icon-size: 26px;
 }
 
 #drawer

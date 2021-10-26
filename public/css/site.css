@@ -110,7 +110,6 @@ header
 #dial
 {
   display: flex;
-  align-items: stretch;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
@@ -123,37 +122,84 @@ header
 .menu-button
 {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   /*
   Setting height is important
   to not allow text
   to enlarge button height.
   */
   height: var(--menu-button-icon-size);
-  padding: var(--menu-button-minor-padding);
+  padding-top: var(--menu-button-minor-hem);
+  padding-bottom: var(--menu-button-minor-hem);
   color: var(--controls-text-color);
   font-size: var(--menu-button-font-size);
   text-decoration: none;
+}
+
+#guideboard .menu-button
+{
+  padding-left: var(--menu-button-major-hem);
+  padding-right: var(--menu-button-major-hem);
 }
 
 .menu-button.icon:before
 {
   width: var(--menu-button-icon-size);
   height: var(--menu-button-icon-size);
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: var(--menu-button-minor-hem);
   background-size: var(--menu-button-icon-size);
   background-repeat: no-repeat;
   content: "";
 }
 
-.menu-button.icon .value
+.menu-button.sup:after
 {
-  margin-left: var(--menu-button-minor-padding);
+  width: var(--menu-button-icon-size);
+  height: var(--menu-button-icon-size);
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: var(--menu-button-minor-hem);
+  background-size: var(--menu-button-icon-size);
+  background-repeat: no-repeat;
+  content: '';
+  text-align: right;
+  justify-content: flex-end;
 }
 
-#guideboard .menu-button
+#guideboard .menu-button.sup:after
 {
-  padding-left: var(--menu-button-major-padding);
-  padding-right: var(--menu-button-major-padding);
+  background-image: url('../img/icons/triangle_down.svg');
+}
+
+.menu-button.icon .value
+{
+  display: flex;
+  flex-grow: 1;
+  align-self: stretch;
+}
+
+.menu-button .value
+{
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: var(--menu-button-minor-hem);
+}
+
+.menu-button.icon .value
+{
+  margin-left: 0;
+  margin-right: var(--menu-button-minor-hem);
+}
+
+.menu-button.sup .value
+{
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: 0;
+}
+
+.menu-button.icon.sup .value
+{
+  margin-left: 0;
+  margin-right: 0;
 }
 
 #controls .menu-button:hover
@@ -166,12 +212,12 @@ header
   background-color: var(--guideboard-backlight-color);
 }
 
-#controls .menu-button.go-up
+#controls .menu-button#go-up-link
 {
   display: none;
 }
 
-#controls.detached .menu-button.go-up
+#controls.detached .menu-button#go-up-link
 {
   display: flex;
 }
