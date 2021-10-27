@@ -40,6 +40,36 @@ function toggleGuideboard() {
   }
 }
 
+function toggleSubmenu(supermenuItem) {
+  var submenu = supermenuItem.nextElementSibling;
+
+  var submenuDisplay = window.getComputedStyle(submenu).display;
+
+  if (submenuDisplay != "block") {
+    foldAllSubmenus();
+
+    supermenuItem.classList.add("active");
+    submenu.classList.add("active");
+  } else {
+    supermenuItem.classList.remove("active");
+    submenu.classList.remove("active");
+  }
+}
+
+function foldAllSubmenus() {
+  var menu = document.getElementById("guideboard");
+  var menuItems = menu.getElementsByClassName("menu-button");
+  var submenus = menu.getElementsByClassName("submenu");
+
+  Array.from(menuItems).forEach(function(menuItem) {
+    menuItem.classList.remove("active");
+  });
+
+  Array.from(submenus).forEach(function(submenu) {
+    submenu.classList.remove("active");
+  });
+}
+
 function getDefinedBannerMarginBottom() {
   let screenSize = getScreenSize();
   let bannerMarginBottom;

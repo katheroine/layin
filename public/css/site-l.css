@@ -62,12 +62,23 @@ nav
   width: 100%;
 }
 
+#guideboard .submenu
+{
+  position: absolute;
+  width: 300px;
+}
+
 #guideboard .menu-button
 {
   border-bottom: 0;
 }
 
-.detached .menu-button.icon .value
+#guideboard .menu-button.active
+{
+  background-color: var(--guideboard-submenu-background-color);
+}
+
+#guideboard.detached .menu-button.icon .value
 {
   display: none;
 }

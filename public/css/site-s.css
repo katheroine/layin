@@ -53,6 +53,7 @@ nav
   z-index: 2;
   width: 100%;
   overflow-y: auto;
+  background-color: var(--guideboard-background-color);
 }
 
 .detached nav
@@ -64,6 +65,12 @@ nav
 
 #guideboard .menu-button
 {
-  border-bottom: 1px solid var(--guideboard-button-separator-color);
-  background-color: var(--guideboard-background-color);
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--guideboard-button-separator-color);
+}
+
+#guideboard .submenu .menu-button
+{
+  border-bottom-color: var(--guideboard-submenu-button-separator-color);
 }
