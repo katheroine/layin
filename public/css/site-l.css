@@ -10,7 +10,7 @@
   --site-name-font-size: 80px;
   --site-description-font-size: 26px;
 
-  --detached-offset: 46px;
+  --detached-offset: 46px; /* 2*46 */
 
   /* font */
   font-size: 16px;
@@ -81,4 +81,9 @@ nav
 #guideboard.detached .menu-button.icon .value
 {
   display: none;
+}
+
+#board.detached #liner
+{
+  margin-top: 92px; /* 2*46 */
 }

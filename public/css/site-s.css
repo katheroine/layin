@@ -32,14 +32,7 @@
 
 #guideboard
 {
-  display: none;
   position: relative;
-  z-index: 1;
-}
-
-#guideboard.active
-{
-  display: block;
 }
 
 #drawer
@@ -49,8 +42,9 @@
 
 nav
 {
+  display: none;
   position: absolute;
-  z-index: 2;
+  /* z-index: 2; */
   width: 100%;
   overflow-y: auto;
   background-color: var(--guideboard-background-color);
@@ -60,7 +54,11 @@ nav
 {
   position: fixed;
   top: var(--detached-offset);
-  bottom: 0;
+}
+
+nav.active
+{
+  display: block;
 }
 
 #guideboard .menu-button
@@ -73,4 +71,9 @@ nav
 #guideboard .submenu .menu-button
 {
   border-bottom-color: var(--guideboard-submenu-button-separator-color);
+}
+
+#board.detached #liner
+{
+  margin-top: var(--detached-offset);
 }
