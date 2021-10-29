@@ -158,9 +158,7 @@ function getScreenHeight() {
 
 function getHeaderAreaHeight() {
   let header = document.getElementsByTagName("header")[0];
-  let banner = document.getElementById("banner");
   let headerStyle = window.getComputedStyle(header);
-  let bannerStyle = window.getComputedStyle(banner);
 
   let headerHeight = parseInt(
     headerStyle.height
@@ -168,11 +166,8 @@ function getHeaderAreaHeight() {
   let headerBorderBottomSize = parseInt(
     headerStyle.borderBottom
   );
-  let bannerMarginBottom = parseInt(
-    bannerStyle.marginBottom
-  );
 
-  return (headerHeight + headerBorderBottomSize + bannerMarginBottom);
+  return (headerHeight + headerBorderBottomSize);
 }
 
 function getScrollingOffset() {
