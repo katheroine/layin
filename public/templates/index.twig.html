@@ -25,13 +25,13 @@
     <title>Layin</title>
   </head>
   <body onload="restoreAccessibility();" onscroll="handleDashboard();" onresize="handleDashboard();">
-    <header>
+    <header onclick="foldNavigation();">
     {% include 'header.twig.html' %}
     </header>
     <div id="dashboard">
     {% include 'dashboard.twig.html' %}
     </div>
-    <div id="board">
+    <div id="board" onclick="foldNavigation();">
     {% include 'board.twig.html' %}
     </div>
   </body>

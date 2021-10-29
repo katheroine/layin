@@ -47,7 +47,14 @@
   width: 100%;
 }
 
-nav
+nav,
+/*
+This is necessary to prevent
+stucking nav styles in lower screen sizes versions
+when navigation is active (visible)
+and screen is resizing.
+*/
+nav.active
 {
   position: static;
   display: flex;

@@ -34,23 +34,30 @@ function handleDashboard() {
 }
 
 function toggleNavigation() {
-  let controls = document.getElementById("controls");
   let navigation = document.getElementsByTagName("nav")[0];
-
   let navigationDisplay = window.getComputedStyle(navigation).display;
 
   if (navigationDisplay != "block") {
     navigation.classList.add("active");
   } else {
+    foldAllSubmenus();
     navigation.classList.remove("active");
   }
 
   handleNavigationScrollability();
 }
 
+function foldNavigation() {
+  if (screenIsWide()) {
+    foldAllSubmenus();
+  } else {
+    hideNavigation();
+  }
+}
+
 function toggleSubmenu(supermenuItem) {
-  var submenu = supermenuItem.nextElementSibling;
-  var submenuDisplay = window.getComputedStyle(submenu).display;
+  let submenu = supermenuItem.nextElementSibling;
+  let submenuDisplay = window.getComputedStyle(submenu).display;
 
   if (submenuDisplay != "block") {
     foldAllSubmenus();
@@ -77,6 +84,14 @@ function foldAllSubmenus() {
   Array.from(submenus).forEach(function(submenu) {
     submenu.classList.remove("active");
   });
+}
+
+function hideNavigation() {
+  foldAllSubmenus();
+
+  let navigation = document.getElementsByTagName("nav")[0];
+
+  navigation.classList.remove("active");
 }
 
 function handleNavigationScrollability()
@@ -173,4 +188,12 @@ function getControlsHeight() {
   return parseInt(
     controlsStyle.height
   );
+}
+
+function screenIsWide() {
+  if (window.innerWidth >= screenSizes.l) {
+    return true;
+  }
+
+  return false;
 }
