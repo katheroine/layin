@@ -142,20 +142,22 @@ function getScreenHeight() {
 }
 
 function getHeaderAreaHeight() {
-  var header = document.getElementsByTagName("header")[0];
-  var headerStyle = window.getComputedStyle(header);
+  let header = document.getElementsByTagName("header")[0];
+  let banner = document.getElementById("banner");
+  let headerStyle = window.getComputedStyle(header);
+  let bannerStyle = window.getComputedStyle(banner);
 
-  var headerHeight = parseInt(
+  let headerHeight = parseInt(
     headerStyle.height
   );
-  var headerBorderBottomSize = parseInt(
+  let headerBorderBottomSize = parseInt(
     headerStyle.borderBottom
   );
-  var headerMarginBottom = parseInt(
-    headerStyle.marginBottom
+  let bannerMarginBottom = parseInt(
+    bannerStyle.marginBottom
   );
 
-  return (headerHeight + headerBorderBottomSize + headerMarginBottom);
+  return (headerHeight + headerBorderBottomSize + bannerMarginBottom);
 }
 
 function getScrollingOffset() {

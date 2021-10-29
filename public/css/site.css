@@ -21,7 +21,6 @@ body
   background-size: var(--body-background-size);
   background-image: url('../img/layin-cover.jpeg');
   background-attachment: fixed;
-  background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: top;
   background-color: var(--body-background-color);
@@ -36,7 +35,11 @@ body
 
 header
 {
-  margin-bottom: var(--cover-area-height);
+  /*
+  Prevents from collapsing
+  of #banner and #board margins.
+  */
+  overflow: hidden;
   background-color: transparent;
 }
 
@@ -48,7 +51,13 @@ header
   to enlarge banner height.
   */
   height: var(--banner-height);
-
+  /*
+  Margin bottom must be placed here
+  to allow prevent of collapsing
+  with #board top margin
+  added on #dashboard detachment.
+  */
+  margin-bottom: var(--cover-area-height);
   background-color: var(--banner-background-color);
   color: var(--banner-text-color);
 }
@@ -283,14 +292,9 @@ header
 
 #board
 {
-  overflow: auto;
+  background-color: var(--board-background-color);
   color: var(--board-text-color);
   font-size: 200%;
-}
-
-#liner
-{
-  background-color: var(--board-background-color);
 }
 
 main article

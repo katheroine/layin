@@ -83,7 +83,7 @@ nav
   display: none;
 }
 
-#board.detached #liner
+#board.detached
 {
   margin-top: 92px; /* 2*46 */
 }
