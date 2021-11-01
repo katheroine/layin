@@ -31,13 +31,15 @@ function handleDashboard() {
       detachable.classList.remove("detached");
     });
   }
+
+  handleNavigationScrollability();
 }
 
 function toggleNavigation() {
   let navigation = document.getElementsByTagName("nav")[0];
   let navigationDisplay = window.getComputedStyle(navigation).display;
 
-  if (navigationDisplay != "block") {
+  if ((navigationDisplay != "block") && (navigationDisplay != "flex")) {
     navigation.classList.add("active");
   } else {
     foldAllSubmenus();
@@ -97,22 +99,26 @@ function hideNavigation() {
 function handleNavigationScrollability()
 {
   var nav = document.getElementsByTagName("nav")[0];
-  var menuPosition = window.getComputedStyle(nav).position;
-  var screenHeight = getScreenHeight();
 
-  var controlsScreenVerticalShift;
-  var menuMaxHeight;
+  if (!screenIsWide()) {
+    var menuPosition = window.getComputedStyle(nav).position;
+    var screenHeight = getScreenHeight();
+    var controlsScreenVerticalShift;
 
-  if (menuPosition == "fixed") {
-    controlsScreenVerticalShift = getControlsHeight();
+    if (menuPosition == "fixed") {
+      controlsScreenVerticalShift = getControlsHeight();
+    } else {
+      controlsScreenVerticalShift = getControlsHeight()
+        + getHeaderAreaHeight()
+        - getScrollingOffset();
+    }
+
+    var menuMaxHeight = screenHeight - controlsScreenVerticalShift;
+
+    nav.style.maxHeight = menuMaxHeight + "px";
   } else {
-    controlsScreenVerticalShift = getControlsHeight()
-      + getHeaderAreaHeight();
-      - getScrollingOffset();
+    nav.style.maxHeight = "none";
   }
-
-  menuMaxHeight = screenHeight - controlsScreenVerticalShift;
-  nav.style.maxHeight = menuMaxHeight + "px";
 }
 
 function getDefinedBannerMarginBottom() {
