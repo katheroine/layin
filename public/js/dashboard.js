@@ -1,9 +1,3 @@
-const screenSizes = {
-  s: 0,
-  m: 640,
-  l: 1024,
-};
-
 function handleDashboard() {
   let banner = document.getElementById("banner");
   let controls = document.getElementById("controls");
@@ -13,13 +7,13 @@ function handleDashboard() {
   let bannerPosition = banner.getBoundingClientRect();
   let bannerMarginBottom = getDefinedBannerMarginBottom();
 
-  let offset = bannerPosition.bottom + bannerMarginBottom;
-  let dashboardShouldBeFixed = offset < 0;
+  let bannerAreaOffset = bannerPosition.bottom + bannerMarginBottom;
+  let dashboardShouldBeFixed = bannerAreaOffset < 0;
 
   let detachables = [
     controls,
-    board,
-    guideboard
+    guideboard,
+    board
   ];
 
   if (dashboardShouldBeFixed) {
@@ -33,6 +27,43 @@ function handleDashboard() {
   }
 
   handleNavigationScrollability();
+
+  function getDefinedBannerMarginBottom() {
+    let screenSize = getScreenSize();
+    let bannerMarginBottom;
+
+    let vwToPx = function (size) {
+      return (size * window.innerWidth / 100);
+    }
+
+    switch(screenSize) {
+      case screenSizes.s:
+        bannerMarginBottom = vwToPx(18);
+        break;
+      case screenSizes.m:
+        bannerMarginBottom = vwToPx(15);
+        break;
+      case screenSizes.l:
+        bannerMarginBottom = 168;
+        break;
+    }
+
+    return bannerMarginBottom;
+
+    function getScreenSize() {
+      let size;
+
+      if (window.innerWidth >= screenSizes.l) {
+        size = screenSizes.l;
+      } else if (window.innerWidth >= screenSizes.m) {
+        size = screenSizes.m;
+      } else {
+        size = screenSizes.s
+      }
+
+      return size;
+    }
+  }
 }
 
 function toggleNavigation() {
@@ -55,6 +86,14 @@ function foldNavigation() {
   } else {
     hideNavigation();
   }
+
+  function hideNavigation() {
+    foldAllSubmenus();
+
+    let navigation = document.getElementsByTagName("nav")[0];
+
+    navigation.classList.remove("active");
+  }
 }
 
 function toggleSubmenu(supermenuItem) {
@@ -75,120 +114,77 @@ function toggleSubmenu(supermenuItem) {
 }
 
 function foldAllSubmenus() {
-  var menu = document.getElementById("guideboard");
-  var menuItems = menu.getElementsByClassName("menu-button");
-  var submenus = menu.getElementsByClassName("submenu");
+  let guideboard = document.getElementById("guideboard");
+  let menuItems = guideboard.getElementsByClassName("menu-button");
+  let submenus = guideboard.getElementsByClassName("submenu");
 
-  Array.from(menuItems).forEach(function(menuItem) {
-    menuItem.classList.remove("active");
+  [menuItems, submenus].forEach(function (elements) {
+    Array.from(elements).forEach(function(element) {
+      element.classList.remove("active");
+    });
   });
-
-  Array.from(submenus).forEach(function(submenu) {
-    submenu.classList.remove("active");
-  });
-}
-
-function hideNavigation() {
-  foldAllSubmenus();
-
-  let navigation = document.getElementsByTagName("nav")[0];
-
-  navigation.classList.remove("active");
 }
 
 function handleNavigationScrollability()
 {
-  var nav = document.getElementsByTagName("nav")[0];
+  let nav = document.getElementsByTagName("nav")[0];
 
-  if (!screenIsWide()) {
-    var menuPosition = window.getComputedStyle(nav).position;
-    var screenHeight = getScreenHeight();
-    var controlsScreenVerticalShift;
-
-    if (menuPosition == "fixed") {
-      controlsScreenVerticalShift = getControlsHeight();
-    } else {
-      controlsScreenVerticalShift = getControlsHeight()
-        + getHeaderAreaHeight()
-        - getScrollingOffset();
-    }
-
-    var menuMaxHeight = screenHeight - controlsScreenVerticalShift;
-
-    nav.style.maxHeight = menuMaxHeight + "px";
-  } else {
+  if (screenIsWide()) {
     nav.style.maxHeight = "none";
-  }
-}
 
-function getDefinedBannerMarginBottom() {
-  let screenSize = getScreenSize();
-  let bannerMarginBottom;
-
-  function vwToPx(size) {
-    return (size * window.innerWidth / 100);
+    return;
   }
 
-  switch(screenSize) {
-    case screenSizes.s:
-      bannerMarginBottom = vwToPx(18);
-      break;
-    case screenSizes.m:
-      bannerMarginBottom = vwToPx(15);
-      break;
-    case screenSizes.l:
-      bannerMarginBottom = 168;
-      break;
+  let menuPosition = window.getComputedStyle(nav).position;
+  let screenHeight = getScreenHeight();
+  let controlsScreenVerticalShift;
+
+  if (menuPosition == "fixed") {
+    controlsScreenVerticalShift = getControlsHeight();
+  } else {
+    controlsScreenVerticalShift = getControlsHeight()
+      + getHeaderAreaHeight()
+      - getScrollingOffset();
   }
 
-  return bannerMarginBottom;
-}
+  let menuMaxHeight = screenHeight - controlsScreenVerticalShift;
 
-function getScreenSize() {
-  let size = screenSizes.s;
+  nav.style.maxHeight = menuMaxHeight + "px";
 
-  if (window.innerWidth >= screenSizes.l) {
-    size = screenSizes.l;
-  } else if (window.innerWidth >= screenSizes.m) {
-    size = screenSizes.m;
+  function getScreenHeight() {
+    return (window.innerHeight
+      || document.documentElement.clientHeight
+      || document.body.clientHeight);
   }
 
-  return size;
-}
+  function getControlsHeight() {
+    let controls = document.getElementById("controls");
+    let controlsStyle = window.getComputedStyle(controls);
 
-function getScreenHeight() {
-  return (window.innerHeight
-    || document.documentElement.clientHeight
-    || document.body.clientHeight);
-}
+    return parseInt(
+      controlsStyle.height
+    );
+  }
 
-function getHeaderAreaHeight() {
-  let header = document.getElementsByTagName("header")[0];
-  let headerStyle = window.getComputedStyle(header);
+  function getHeaderAreaHeight() {
+    let header = document.getElementsByTagName("header")[0];
+    let headerStyle = window.getComputedStyle(header);
 
-  let headerHeight = parseInt(
-    headerStyle.height
-  );
-  let headerBorderBottomSize = parseInt(
-    headerStyle.borderBottom
-  );
+    let headerHeight = parseInt(
+      headerStyle.height
+    );
+    let headerBorderBottomSize = parseInt(
+      headerStyle.borderBottom
+    );
 
-  return (headerHeight + headerBorderBottomSize);
-}
+    return (headerHeight + headerBorderBottomSize);
+  }
 
-function getScrollingOffset() {
-  var offset = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
+  function getScrollingOffset() {
+    let offset = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
 
-  return (offset ? offset : 0);
-}
-
-function getControlsHeight() {
-  var controls = document.getElementById("controls");
-  var controlsStyle = window.getComputedStyle(controls);
-
-  return parseInt(
-    controlsStyle.height
-  );
+    return (offset ? offset : 0);
+  }
 }
 
 function screenIsWide() {
@@ -198,3 +194,9 @@ function screenIsWide() {
 
   return false;
 }
+
+const screenSizes = {
+  s: 0,
+  m: 640,
+  l: 1024,
+};
