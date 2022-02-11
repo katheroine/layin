@@ -6,6 +6,14 @@
   --controls-background-color: var(--dark-violet);
   --controls-text-color: var(--white);
   --controls-backlight-color: var(--light-violet);
-  --main-background-color: var(--white);
-  --main-text-color: var(--dark-blue);
+  --guideboard-background-color: var(--dark-violet);
+  --guideboard-text-color: var(--white);
+  --guideboard-backlight-color: var(--middle-violet);
+  --guideboard-button-separator-color: var(--middle-violet);
+  --guideboard-submenu-background-color: var(--light-violet);
+  --guideboard-submenu-text-color: var(--white);
+  --guideboard-submenu-backlight-color: var(--middle-violet);
+  --guideboard-submenu-button-separator-color: var(--middle-violet);
+  --board-background-color: var(--white);
+  --board-text-color: var(--dark-blue);
 }

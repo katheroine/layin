@@ -5,22 +5,92 @@
 
   --body-background-size: 100%;
   --logo-height: 252px; /* 2*(42 + 84) */
-  --banner-site-name-padding: 42px;
+  --site-name-padding: 42px;
 
   --site-name-font-size: 80px;
   --site-description-font-size: 26px;
 
-  --detached-offset: 48px;
+  --detached-offset: 46px; /* 2*46 */
 
   /* font */
   font-size: 16px;
 
   /* details */
-  --menu-button-padding: 10px;
+  --menu-button-minor-hem: 10px;
+  --menu-button-major-hem: 0;
   --menu-button-font-size: 140%;
+  --menu-button-icon-size: 26px;
 }
 
-#dial a#menu-trigger
+#drawer
+{
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
+}
+
+#controls .menu-button#guideboard-trigger
 {
   display: none;
+}
+
+#guideboard
+{
+  display: block;
+  position: relative;
+  background-color: var(--guideboard-background-color);
+}
+
+#guideboard.detached
+{
+  position: fixed;
+  top: var(--detached-offset);
+  width: 100%;
+}
+
+nav,
+/*
+This is necessary to prevent
+stucking nav styles in lower screen sizes versions
+when navigation is active (visible)
+and screen is resizing.
+*/
+nav.active
+{
+  position: static;
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.detached nav
+{
+  position: static;
+  width: 100%;
+}
+
+#guideboard .submenu
+{
+  position: absolute;
+  width: 300px;
+}
+
+#guideboard .menu-button
+{
+  border-bottom: 0;
+}
+
+#guideboard .menu-button.active
+{
+  background-color: var(--guideboard-submenu-background-color);
+}
+
+#guideboard.detached .menu-button.icon .value
+{
+  display: none;
+}
+
+#board.detached
+{
+  margin-top: 92px; /* 2*46 */
 }

@@ -5,18 +5,74 @@
 
   --body-background-size: 130%;
   --logo-height: 26vw; /* 2*(5 + 8) */
-  --banner-site-name-padding: 5vw;
+  --site-name-padding: 5vw;
 
   --site-name-font-size: 7vw;
   --site-description-font-size: 3vw;
 
-  --detached-offset: 36px;
+  --detached-offset: 40px;
 
   /* font */
   font-size: 12px;
 
   /* details */
-  --menu-button-padding: 6px;
-  --menu-button-font-size: 22px;
+  --menu-button-minor-hem: 8px;
+  --menu-button-major-hem: var(--vertical-hem);
+  --menu-button-font-size: 150%;
   --menu-button-icon-size: 24px;
+}
+
+#signboard,
+#dial,
+#liner
+{
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
+}
+
+#guideboard
+{
+  position: relative;
+}
+
+#drawer
+{
+  position: relative;
+}
+
+nav
+{
+  display: none;
+  position: absolute;
+  width: 100%;
+  overflow-y: auto;
+  background-color: var(--guideboard-background-color);
+}
+
+.detached nav
+{
+  position: fixed;
+  top: var(--detached-offset);
+}
+
+nav.active
+{
+  display: block;
+}
+
+#guideboard .menu-button
+{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--guideboard-button-separator-color);
+}
+
+#guideboard .submenu .menu-button
+{
+  border-bottom-color: var(--guideboard-submenu-button-separator-color);
+}
+
+#board.detached
+{
+  margin-top: var(--detached-offset);
 }

@@ -2,8 +2,8 @@
 {
   /* layout */
   --max-width: 1400px;
-  --vertical-hem: 5vw;
-  --width: 90vw; /* 100 - 2*5 */
+  --vertical-hem: 5%;
+  --width: 90%; /* 100 - 2*5 */
   --cover-area-height: var(--banner-height);
 
   /* font */
@@ -21,7 +21,6 @@ body
   background-size: var(--body-background-size);
   background-image: url('../img/layin-cover.jpeg');
   background-attachment: fixed;
-  background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: top;
   background-color: var(--body-background-color);
@@ -32,12 +31,15 @@ body
   max-width: var(--max-width);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--vertical-hem);
-  padding-right: var(--vertical-hem);
 }
 
 header
 {
+  /*
+  Prevents from collapsing
+  of #banner and #board margins.
+  */
+  overflow: hidden;
   background-color: transparent;
 }
 
@@ -49,6 +51,12 @@ header
   to enlarge banner height.
   */
   height: var(--banner-height);
+  /*
+  Margin bottom must be placed here
+  to allow prevent of collapsing
+  with #board top margin
+  added on #dashboard detachment.
+  */
   margin-bottom: var(--cover-area-height);
   background-color: var(--banner-background-color);
   color: var(--banner-text-color);
@@ -72,8 +80,8 @@ header
 
 #site-name
 {
-  margin-left: var(--banner-site-name-padding);
-  padding: var(--banner-site-name-padding) 0;
+  margin-left: var(--site-name-padding);
+  padding: var(--site-name-padding) 0;
   font-size: var(--site-name-font-size);
   text-align: left;
 }
@@ -86,20 +94,15 @@ header
 #logo img
 {
   position: relative;
-  top: var(--banner-site-name-padding);
+  top: var(--site-name-padding);
   height: var(--logo-height);
-}
-
-#dashboard
-{
-  color: var(--controls-text-color);
 }
 
 #controls
 {
-  position: relative;
+  position: static;
   background-color: var(--controls-background-color);
-  opacity: 90%;
+  opacity: 70%;
 }
 
 #controls.detached
@@ -112,99 +115,187 @@ header
 #dial
 {
   display: flex;
-  align-items: stretch;
   flex-wrap: wrap;
   justify-content: flex-end;
+}
+
+#guideboard .submenu
+{
+  display: none;
+  background-color: var(--guideboard-submenu-background-color);
+  color: var(--quideboard-submenu-text-color);
+}
+
+#guideboard .submenu.active
+{
+  display: block;
 }
 
 .menu-button
 {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  align-items: center; /* for text center */
   /*
   Setting height is important
   to not allow text
   to enlarge button height.
   */
   height: var(--menu-button-icon-size);
-  padding: var(--menu-button-padding);
-  color: var(--navigation-text-color);
+  padding-top: var(--menu-button-minor-hem);
+  padding-bottom: var(--menu-button-minor-hem);
   font-size: var(--menu-button-font-size);
   text-decoration: none;
 }
 
-#dial a.menu-button.icon:before
+#controls .menu-button
 {
-  display: inline-block;
+  color: var(--controls-text-color);
+}
+
+#guideboard .menu-button
+{
+  padding-left: var(--menu-button-major-hem);
+  padding-right: var(--menu-button-major-hem);
+  color: var(--guideboard-text-color);
+}
+
+#guideboard .submenu .menu-button
+{
+  color: var(--guideboard-submenu-text-color);
+}
+
+.menu-button.icon:before,
+.menu-button.sup:after
+{
   width: var(--menu-button-icon-size);
   height: var(--menu-button-icon-size);
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: var(--menu-button-minor-hem);
   background-size: var(--menu-button-icon-size);
   background-repeat: no-repeat;
   content: "";
 }
 
-#dial a.go-up
+.menu-button.icon .value
 {
-  display: none;
+  flex-grow: 1;
 }
 
-.detached #dial a.go-up
+.menu-button .value
 {
-  display: inline-block;
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: var(--menu-button-minor-hem);
 }
 
-#dial a.menu-button:hover
+.menu-button.icon .value
+{
+  margin-left: 0;
+  margin-right: var(--menu-button-minor-hem);
+}
+
+.menu-button.sup .value
+{
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: 0;
+}
+
+.menu-button.icon.sup .value
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#controls .menu-button:hover
 {
   background-color: var(--controls-backlight-color);
 }
 
-#dial a.accessibility-info:before
+#guideboard .menu-button:hover
 {
-  background-image: url('../img/icons/wheelchair.svg');
+  background-color: var(--guideboard-backlight-color);
 }
 
-#dial a.increase-font:before
+#guideboard .submenu .menu-button:hover
+{
+  background-color: var(--guideboard-submenu-backlight-color);
+}
+
+#controls .menu-button#go-up-link
+{
+  display: none;
+}
+
+#controls.detached .menu-button#go-up-link
+{
+  display: flex;
+}
+
+#controls .menu-button#increase-font-trigger:before
 {
   background-image: url('../img/icons/a_plus.svg');
 }
 
-#dial a.decrease-font:before
+#controls .menu-button#decrease-font-trigger:before
 {
   background-image: url('../img/icons/a_minus.svg');
 }
 
-#dial a.toggle-contrast:before
+#controls .menu-button#toggle-contrast-trigger:before
 {
   background-image: url('../img/icons/contrast.svg');
 }
 
-#dial a.reset-accessibility:before
+#controls .menu-button#reset-accessibility-trigger:before
 {
   background-image: url('../img/icons/reset.svg');
 }
 
-#dial a.go-up:before
+#controls .menu-button#go-up-link:before
 {
   background-image: url('../img/icons/arrow_up.svg');
 }
 
-#dial a#menu-trigger:before
+#controls .menu-button#guideboard-trigger:before
 {
   background-image: url('../img/icons/hamburger.svg');
 }
 
-main
+#guideboard .menu-button#home-link:before
 {
-  overflow: auto;
-  padding-top: 0;
-  background-color: var(--main-background-color);
-  color: var(--main-text-color);
-  font-size: 200%;
+  background-image: url('../img/icons/house.svg');
 }
 
-main.detached
+#guideboard .menu-button#accessibility-info-link:before
 {
-  padding-top: var(--detached-offset);
+  background-image: url('../img/icons/wheelchair.svg');
+}
+
+#guideboard .menu-button#about-submenu:before
+{
+  background-image: url('../img/icons/i.svg');
+}
+
+#guideboard .menu-button#favourites-submenu:before
+{
+  background-image: url('../img/icons/star.svg');
+}
+
+#guideboard .menu-button.sup:after
+{
+  background-image: url('../img/icons/triangle_down.svg');
+}
+
+#guideboard .menu-button.sup.active:after
+{
+  background-image: url('../img/icons/triangle_up.svg');
+}
+
+#board
+{
+  background-color: var(--board-background-color);
+  color: var(--board-text-color);
+  font-size: 200%;
 }
 
 main article

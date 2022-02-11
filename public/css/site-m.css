@@ -5,18 +5,35 @@
 
   --body-background-size: 115%;
   --logo-height: 22vw; /* 2*(4 + 7) */
-  --banner-site-name-padding: 4vw;
+  --site-name-padding: 4vw;
 
   --site-name-font-size: 6vw;
   --site-description-font-size: 2vw;
 
-  --detached-offset: 42px;
+  --detached-offset: 46px;
 
   /* font */
   font-size: 14px;
 
   /* details */
-  --menu-button-padding: 8px;
-  --menu-button-font-size: 24px;
+  --menu-button-minor-hem: 10px;
+  --menu-button-major-hem: 0;
+  --menu-button-font-size: 140%;
   --menu-button-icon-size: 26px;
+}
+
+#drawer
+{
+  width: var(--width);
+  padding: 0 var(--vertical-hem);
+}
+
+nav
+{
+  width: var(--width);
+}
+
+.detached nav
+{
+  width: var(--width);
 }
