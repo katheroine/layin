@@ -71,6 +71,8 @@ function toggleNavigation() {
   let navigationDisplay = window.getComputedStyle(navigation).display;
 
   if ((navigationDisplay != "block") && (navigationDisplay != "flex")) {
+    handleScrollingControlsUp();
+
     navigation.classList.add("active");
   } else {
     foldAllSubmenus();
@@ -78,6 +80,46 @@ function toggleNavigation() {
   }
 
   handleNavigationScrollability();
+
+  function handleScrollingControlsUp() {
+    let screenHeight = getScreenHeight();
+    let controls = document.getElementById("controls");
+    let controlsPosition = window.getComputedStyle(controls).position;
+
+    if (controlsPosition != "fixed") {
+      let threshold = screenHeight / 2;
+      let controlsScreenVerticalShift = getControlsHeight()
+        + getHeaderAreaHeight()
+        - getScrollingOffset();
+
+      if (controlsScreenVerticalShift > threshold) {
+        window.scroll(0, screenHeight);
+      }
+    }
+
+    function getScreenHeight() {
+      return (window.innerHeight
+        || document.documentElement.clientHeight
+        || document.body.clientHeight);
+    }
+
+    function getHeaderAreaHeight() {
+      let header = document.getElementsByTagName("header")[0];
+      let headerStyle = window.getComputedStyle(header);
+
+      let headerHeight = parseInt(headerStyle.height);
+      let headerBorderBottomSize = parseInt(headerStyle.borderBottom);
+      let headerMarginBottom = parseInt(headerStyle.marginBottom);
+
+      return (headerHeight + headerBorderBottomSize + headerMarginBottom);
+    }
+
+    function getScrollingOffset() {
+      var offset = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
+
+      return (offset ? offset : 0);
+    }
+  }
 }
 
 function foldNavigation() {
@@ -157,25 +199,12 @@ function handleNavigationScrollability()
       || document.body.clientHeight);
   }
 
-  function getControlsHeight() {
-    let controls = document.getElementById("controls");
-    let controlsStyle = window.getComputedStyle(controls);
-
-    return parseInt(
-      controlsStyle.height
-    );
-  }
-
   function getHeaderAreaHeight() {
     let header = document.getElementsByTagName("header")[0];
     let headerStyle = window.getComputedStyle(header);
 
-    let headerHeight = parseInt(
-      headerStyle.height
-    );
-    let headerBorderBottomSize = parseInt(
-      headerStyle.borderBottom
-    );
+    let headerHeight = parseInt(headerStyle.height);
+    let headerBorderBottomSize = parseInt(headerStyle.borderBottom);
 
     return (headerHeight + headerBorderBottomSize);
   }
@@ -185,6 +214,13 @@ function handleNavigationScrollability()
 
     return (offset ? offset : 0);
   }
+}
+
+function getControlsHeight() {
+  let controls = document.getElementById("controls");
+  let controlsStyle = window.getComputedStyle(controls);
+
+  return parseInt(controlsStyle.height);
 }
 
 function screenIsWide() {
