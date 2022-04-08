@@ -10,7 +10,9 @@
   --site-name-font-size: 80px;
   --site-description-font-size: 26px;
 
-  --detached-offset: 46px; /* 2*46 */
+  --detached-offset: 46px;
+
+  --info-vertical-hem: 50px;
 
   /* font */
   font-size: 16px;
@@ -18,8 +20,9 @@
   /* details */
   --menu-button-minor-hem: 10px;
   --menu-button-major-hem: 0;
-  --menu-button-font-size: 140%;
+  --menu-button-font-size: 120%;
   --menu-button-icon-size: 26px;
+  --contact-info-item-major-hem: 8px;
 }
 
 #drawer
@@ -75,9 +78,15 @@ nav.active
   width: 300px;
 }
 
-#guideboard .menu-button
+#guideboard .menu-button,
+#info .menu-button
 {
   border-bottom: 0;
+}
+
+#controls .menu-button:hover
+{
+  background-color: var(--controls-backlight-color);
 }
 
 #guideboard .menu-button.active
@@ -85,7 +94,7 @@ nav.active
   background-color: var(--guideboard-submenu-background-color);
 }
 
-#guideboard.detached .menu-button.icon .value
+#guideboard.detached .menu-button.icon .content
 {
   display: none;
 }
@@ -93,4 +102,14 @@ nav.active
 #board.detached
 {
   margin-top: 92px; /* 2*46 */
+}
+
+#contact-info
+{
+  max-width: 500px;
+}
+
+#info .menu-button:hover
+{
+  background-color: var(--info-backlight-color);
 }

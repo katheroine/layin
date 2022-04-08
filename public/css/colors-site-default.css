@@ -16,4 +16,8 @@
   --guideboard-submenu-button-separator-color: var(--middle-violet);
   --board-background-color: var(--white);
   --board-text-color: var(--dark-blue);
+  --info-background-color: var(--dark-blue);
+  --info-text-color: var(--white);
+  --info-backlight-color: var(--middle-blue);
+  --info-button-separator-color: var(--light-blue);
 }

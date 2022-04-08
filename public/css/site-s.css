@@ -12,6 +12,8 @@
 
   --detached-offset: 40px;
 
+  --info-vertical-hem: 0px;
+
   /* font */
   font-size: 12px;
 
@@ -20,6 +22,8 @@
   --menu-button-major-hem: var(--vertical-hem);
   --menu-button-font-size: 150%;
   --menu-button-icon-size: 24px;
+  --contact-info-item-major-hem: 6px;
+  --contact-info-item-font-size: 110%;
 }
 
 #signboard,
@@ -60,11 +64,21 @@ nav.active
   display: block;
 }
 
-#guideboard .menu-button
+#guideboard .menu-button,
+#info .menu-button
 {
   border-bottom-width: 1px;
   border-bottom-style: solid;
+}
+
+#guideboard .menu-button
+{
   border-bottom-color: var(--guideboard-button-separator-color);
+}
+
+#info .menu-button
+{
+  border-bottom-color: var(--info-button-separator-color);
 }
 
 #guideboard .submenu .menu-button
