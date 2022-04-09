@@ -347,3 +347,12 @@ main article
 {
   background-image: url('../img/icons/fax.svg');
 }
+
+#copyright
+{
+  padding: 7px var(--vertical-hem);
+  background-color: var(--copyright-background-color);
+  color: var(--copyright-font-color);
+  font-size: 90%;
+  text-align: center;
+}
