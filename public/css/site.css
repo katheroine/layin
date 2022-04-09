@@ -72,7 +72,7 @@ header
   /*
   When #logo max-height is 0,
   the property that determines the height of the whole banner/header
-  is #site-name font-size and vertical paddings/margins.
+  is #site-name font-size and horizontal paddings/margins.
   */
   max-height: 0;
   text-align: left;
@@ -80,8 +80,8 @@ header
 
 #site-name
 {
-  margin-left: var(--site-name-padding);
-  padding: var(--site-name-padding) 0;
+  margin-left: var(--site-name-hem);
+  padding: var(--site-name-hem) 0;
   font-size: var(--site-name-font-size);
   text-align: left;
 }
@@ -94,7 +94,7 @@ header
 #logo img
 {
   position: relative;
-  top: var(--site-name-padding);
+  top: var(--site-name-hem);
   height: var(--logo-height);
 }
 
@@ -119,14 +119,14 @@ header
   justify-content: flex-end;
 }
 
-#guideboard .submenu
+nav .submenu
 {
   display: none;
   background-color: var(--guideboard-submenu-background-color);
   color: var(--quideboard-submenu-text-color);
 }
 
-#guideboard .submenu.active
+nav .submenu.active
 {
   display: block;
 }
@@ -150,26 +150,31 @@ header
   text-decoration: none;
 }
 
-#controls .menu-button
+#dial .menu-button
 {
   color: var(--controls-text-color);
 }
 
-#guideboard .menu-button,
-#info .menu-button
+nav .menu-button,
+#contact-info .menu-button
 {
   padding-left: var(--menu-button-major-hem);
   padding-right: var(--menu-button-major-hem);
 }
 
-#guideboard .menu-button
+nav .menu-button
 {
   color: var(--guideboard-text-color);
 }
 
-#guideboard .submenu .menu-button
+nav .submenu .menu-button
 {
   color: var(--guideboard-submenu-text-color);
+}
+
+nav .submenu .menu-button:hover
+{
+  background-color: var(--guideboard-submenu-backlight-color);
 }
 
 .menu-button.icon:before,
@@ -219,82 +224,77 @@ header
   font-weight: bold;
 }
 
-#guideboard .submenu .menu-button:hover
-{
-  background-color: var(--guideboard-submenu-backlight-color);
-}
-
-#controls .menu-button#go-up-link
+#dial .menu-button#go-up-link
 {
   display: none;
 }
 
-#controls.detached .menu-button#go-up-link
+.detached #dial .menu-button#go-up-link
 {
   display: flex;
 }
 
-#controls .menu-button#increase-font-trigger:before
+#dial .menu-button#increase-font-trigger:before
 {
   background-image: url('../img/icons/a_plus.svg');
 }
 
-#controls .menu-button#decrease-font-trigger:before
+#dial .menu-button#decrease-font-trigger:before
 {
   background-image: url('../img/icons/a_minus.svg');
 }
 
-#controls .menu-button#toggle-contrast-trigger:before
+#dial .menu-button#toggle-contrast-trigger:before
 {
   background-image: url('../img/icons/contrast.svg');
 }
 
-#controls .menu-button#reset-accessibility-trigger:before
+#dial .menu-button#reset-accessibility-trigger:before
 {
   background-image: url('../img/icons/reset.svg');
 }
 
-#controls .menu-button#go-up-link:before
+#dial .menu-button#go-up-link:before
 {
   background-image: url('../img/icons/arrow_up.svg');
 }
 
-#controls .menu-button#guideboard-trigger:before
+#dial .menu-button#guideboard-trigger:before
 {
   background-image: url('../img/icons/hamburger.svg');
 }
 
-#guideboard .menu-button#home-link:before
+#drawer .menu-button#home-link:before
 {
   background-image: url('../img/icons/house.svg');
 }
 
-#guideboard .menu-button#accessibility-info-link:before
+#drawer .menu-button#accessibility-info-link:before
 {
   background-image: url('../img/icons/wheelchair.svg');
 }
 
-#guideboard .menu-button#about-submenu:before
+#drawer .menu-button#about-submenu:before
 {
   background-image: url('../img/icons/i.svg');
 }
 
-#guideboard .menu-button#favourites-submenu:before
+#drawer .menu-button#favourites-submenu:before
 {
   background-image: url('../img/icons/star.svg');
 }
 
-#guideboard .menu-button#contact-link:before
+#drawer .menu-button#contact-link:before
 {
   background-image: url('../img/icons/envelope.svg');
 }
 
-#guideboard .menu-button.sup:after
+#drawer .menu-button.sup:after
 {
   background-image: url('../img/icons/triangle_down.svg');
 }
 
-#guideboard .menu-button.sup.active:after
+#drawer .menu-button.sup.active:after
 {
   background-image: url('../img/icons/triangle_up.svg');
 }
@@ -313,8 +313,8 @@ main article
 
 #info
 {
-  padding-top: var(--info-vertical-hem);
-  padding-bottom: var(--info-vertical-hem);
+  padding-top: var(--info-horizontal-hem);
+  padding-bottom: var(--info-horizontal-hem);
   background-color: var(--info-background-color);
   color: var(--info-text-color);
 }

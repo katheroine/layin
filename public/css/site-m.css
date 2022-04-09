@@ -5,14 +5,14 @@
 
   --body-background-size: 115%;
   --logo-height: 22vw; /* 2*(4 + 7) */
-  --site-name-padding: 4vw;
+  --site-name-hem: 4vw;
 
   --site-name-font-size: 6vw;
   --site-description-font-size: 2vw;
 
   --detached-offset: 46px;
 
-  --info-vertical-hem: 30px;
+  --info-horizontal-hem: 30px;
 
   /* font */
   font-size: 14px;
