@@ -94,9 +94,22 @@ nav .menu-button.active
   background-color: var(--guideboard-submenu-background-color);
 }
 
-.detached nav .menu-button.icon .content
+.detached nav .menu-button.icon .content,
+.detached nav .menu-button.sup:after
 {
   display: none;
+}
+
+.detached nav .menu-button.sup
+{
+  background-size: 46px;
+  background-image: url('../img/icons/little_triangle_down.svg');
+  background-repeat: no-repeat;
+}
+
+.detached nav .menu-button.sup.active
+{
+  background-image: url('../img/icons/little_triangle_up.svg');
 }
 
 #board.detached

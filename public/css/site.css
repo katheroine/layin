@@ -148,6 +148,8 @@ nav .submenu.active
   font-size: var(--menu-button-font-size);
   font-style: normal;
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 #dial .menu-button
