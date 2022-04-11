@@ -5,12 +5,14 @@
 
   --body-background-size: 100%;
   --logo-height: 252px; /* 2*(42 + 84) */
-  --site-name-padding: 42px;
+  --site-name-hem: 42px;
 
   --site-name-font-size: 80px;
   --site-description-font-size: 26px;
 
-  --detached-offset: 46px; /* 2*46 */
+  --detached-offset: 46px;
+
+  --info-horizontal-hem: 50px;
 
   /* font */
   font-size: 16px;
@@ -18,8 +20,9 @@
   /* details */
   --menu-button-minor-hem: 10px;
   --menu-button-major-hem: 0;
-  --menu-button-font-size: 140%;
+  --menu-button-font-size: 120%;
   --menu-button-icon-size: 26px;
+  --contact-info-item-major-hem: 8px;
 }
 
 #drawer
@@ -28,7 +31,12 @@
   padding-right: var(--vertical-hem);
 }
 
-#controls .menu-button#guideboard-trigger
+#dial .menu-button:hover
+{
+  background-color: var(--controls-backlight-color);
+}
+
+#dial .menu-button#guideboard-trigger
 {
   display: none;
 }
@@ -69,23 +77,24 @@ nav.active
   width: 100%;
 }
 
-#guideboard .submenu
+nav .submenu
 {
   position: absolute;
   width: 300px;
 }
 
-#guideboard .menu-button
+nav .menu-button,
+#contact-info .menu-button
 {
   border-bottom: 0;
 }
 
-#guideboard .menu-button.active
+nav .menu-button.active
 {
   background-color: var(--guideboard-submenu-background-color);
 }
 
-#guideboard.detached .menu-button.icon .value
+.detached nav .menu-button.icon .content
 {
   display: none;
 }
@@ -93,4 +102,14 @@ nav.active
 #board.detached
 {
   margin-top: 92px; /* 2*46 */
+}
+
+#contact-info
+{
+  max-width: 500px;
+}
+
+#contact-info .menu-button:hover
+{
+  background-color: var(--info-backlight-color);
 }

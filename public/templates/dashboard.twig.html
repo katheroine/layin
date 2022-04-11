@@ -1,7 +1,7 @@
 <div id="controls" class="menu">
   <div id="dial" class="scaffold">
     <!-- <a class="menu-button" href="">
-      <span class="value">Hello</span>
+      <span class="content">Hello</span>
     </a> -->
     <!-- <a class="accessibility-info-link" class="menu-button icon"></a> -->
     <a id="increase-font-trigger" class="menu-button icon" onclick="increaseFontSize();"></a>
@@ -17,145 +17,150 @@
     <nav>
       <div class="navigation-item">
         <a id="home-link" class="menu-button icon" href="{{base_url}}/index.{{code_file_extension}}">
-          <div class="value">Home</div>
+          <div class="content">Home</div>
         </a>
       </div>
       <div class="navigation-item">
         <a id="accessibility-info-link" class="menu-button icon" href="{{base_url}}/accessibility_info.{{code_file_extension}}">
-          <div class="value">Accessibility info</div>
+          <div class="content">Accessibility info</div>
         </a>
       </div>
       <div class="navigation-item">
         <a id="about-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
-          <div class="value">About</div>
+          <div class="content">About</div>
         </a>
         <div class="submenu">
           <a class="menu-button sub" href="https://github.com/katheroine/layin">
-            <div class="value">Layin repository</div>
+            <div class="content">Layin repository</div>
           </a>
           <a class="menu-button sub" href="https://about.me/katheroine">
-            <div class="value">Layin author</div>
+            <div class="content">Layin author</div>
           </a>
         </div>
       </div>
       <div class="navigation-item">
         <a id="favourites-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
-          <div class="value">Favourites</div>
+          <div class="content">Favourites</div>
         </a>
         <div class="submenu">
           <a class="menu-button sub" href="https://linuxmint.com">
-            <div class="value">Linux Mint</div>
+            <div class="content">Linux Mint</div>
           </a>
           <a class="menu-button sub" href="https://atom.io">
-            <div class="value">Atom</div>
+            <div class="content">Atom</div>
           </a>
           <a class="menu-button sub" href="https://git-scm.com">
-            <div class="value">Git</div>
+            <div class="content">Git</div>
           </a>
           <a class="menu-button sub" href="https://github.com/">
-            <div class="value">GitHub</div>
+            <div class="content">GitHub</div>
           </a>
         </div>
+      </div>
+      <div class="navigation-item">
+        <a id="contact-link" class="menu-button icon" href="#contact-info">
+          <div class="content">Contact</div>
+        </a>
       </div>
       <!--
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 1</div>
+          <div class="content">Menu item 1</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 2</div>
+          <div class="content">Menu item 2</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 3</div>
+          <div class="content">Menu item 3</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 4</div>
+          <div class="content">Menu item 4</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 5</div>
+          <div class="content">Menu item 5</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 6</div>
+          <div class="content">Menu item 6</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 7</div>
+          <div class="content">Menu item 7</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 8</div>
+          <div class="content">Menu item 8</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 9</div>
+          <div class="content">Menu item 9</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 10</div>
+          <div class="content">Menu item 10</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 11</div>
+          <div class="content">Menu item 11</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 12</div>
+          <div class="content">Menu item 12</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 13</div>
+          <div class="content">Menu item 13</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 14</div>
+          <div class="content">Menu item 14</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 15</div>
+          <div class="content">Menu item 15</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 16</div>
+          <div class="content">Menu item 16</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 17</div>
+          <div class="content">Menu item 17</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 18</div>
+          <div class="content">Menu item 18</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 19</div>
+          <div class="content">Menu item 19</div>
         </a>
       </div>
       <div class="navigation-item">
         <a class="menu-button" href="">
-          <div class="value">Menu item 20</div>
+          <div class="content">Menu item 20</div>
         </a>
       </div>
       -->

@@ -72,7 +72,7 @@ header
   /*
   When #logo max-height is 0,
   the property that determines the height of the whole banner/header
-  is #site-name font-size and vertical paddings/margins.
+  is #site-name font-size and horizontal paddings/margins.
   */
   max-height: 0;
   text-align: left;
@@ -80,8 +80,8 @@ header
 
 #site-name
 {
-  margin-left: var(--site-name-padding);
-  padding: var(--site-name-padding) 0;
+  margin-left: var(--site-name-hem);
+  padding: var(--site-name-hem) 0;
   font-size: var(--site-name-font-size);
   text-align: left;
 }
@@ -94,7 +94,7 @@ header
 #logo img
 {
   position: relative;
-  top: var(--site-name-padding);
+  top: var(--site-name-hem);
   height: var(--logo-height);
 }
 
@@ -119,14 +119,14 @@ header
   justify-content: flex-end;
 }
 
-#guideboard .submenu
+nav .submenu
 {
   display: none;
   background-color: var(--guideboard-submenu-background-color);
   color: var(--quideboard-submenu-text-color);
 }
 
-#guideboard .submenu.active
+nav .submenu.active
 {
   display: block;
 }
@@ -134,40 +134,53 @@ header
 .menu-button
 {
   display: flex;
+  flex-wrap: nowrap; /* unnecessary, default */
   justify-content: space-between;
-  align-items: center; /* for text center */
+  align-items: center; /* vertically */
   /*
   Setting height is important
   to not allow text
   to enlarge button height.
   */
-  height: var(--menu-button-icon-size);
+  /* height: var(--menu-button-icon-size); */
   padding-top: var(--menu-button-minor-hem);
   padding-bottom: var(--menu-button-minor-hem);
   font-size: var(--menu-button-font-size);
+  font-style: normal;
   text-decoration: none;
 }
 
-#controls .menu-button
+#dial .menu-button
 {
   color: var(--controls-text-color);
 }
 
-#guideboard .menu-button
+nav .menu-button,
+#contact-info .menu-button
 {
   padding-left: var(--menu-button-major-hem);
   padding-right: var(--menu-button-major-hem);
+}
+
+nav .menu-button
+{
   color: var(--guideboard-text-color);
 }
 
-#guideboard .submenu .menu-button
+nav .submenu .menu-button
 {
   color: var(--guideboard-submenu-text-color);
+}
+
+nav .submenu .menu-button:hover
+{
+  background-color: var(--guideboard-submenu-backlight-color);
 }
 
 .menu-button.icon:before,
 .menu-button.sup:after
 {
+  flex-shrink: 0;
   width: var(--menu-button-icon-size);
   height: var(--menu-button-icon-size);
   margin-left: var(--menu-button-minor-hem);
@@ -177,116 +190,111 @@ header
   content: "";
 }
 
-.menu-button.icon .value
+.menu-button.icon .content
 {
   flex-grow: 1;
 }
 
+.menu-button .content
+{
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: var(--menu-button-minor-hem);
+}
+
+.menu-button.icon .content
+{
+  margin-left: 0;
+  margin-right: var(--menu-button-minor-hem);
+}
+
+.menu-button.sup .content
+{
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: 0;
+}
+
+.menu-button.icon.sup .content
+{
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .menu-button .value
 {
-  margin-left: var(--menu-button-minor-hem);
-  margin-right: var(--menu-button-minor-hem);
+  font-weight: bold;
 }
 
-.menu-button.icon .value
-{
-  margin-left: 0;
-  margin-right: var(--menu-button-minor-hem);
-}
-
-.menu-button.sup .value
-{
-  margin-left: var(--menu-button-minor-hem);
-  margin-right: 0;
-}
-
-.menu-button.icon.sup .value
-{
-  margin-left: 0;
-  margin-right: 0;
-}
-
-#controls .menu-button:hover
-{
-  background-color: var(--controls-backlight-color);
-}
-
-#guideboard .menu-button:hover
-{
-  background-color: var(--guideboard-backlight-color);
-}
-
-#guideboard .submenu .menu-button:hover
-{
-  background-color: var(--guideboard-submenu-backlight-color);
-}
-
-#controls .menu-button#go-up-link
+#dial .menu-button#go-up-link
 {
   display: none;
 }
 
-#controls.detached .menu-button#go-up-link
+.detached #dial .menu-button#go-up-link
 {
   display: flex;
 }
 
-#controls .menu-button#increase-font-trigger:before
+#dial .menu-button#increase-font-trigger:before
 {
   background-image: url('../img/icons/a_plus.svg');
 }
 
-#controls .menu-button#decrease-font-trigger:before
+#dial .menu-button#decrease-font-trigger:before
 {
   background-image: url('../img/icons/a_minus.svg');
 }
 
-#controls .menu-button#toggle-contrast-trigger:before
+#dial .menu-button#toggle-contrast-trigger:before
 {
   background-image: url('../img/icons/contrast.svg');
 }
 
-#controls .menu-button#reset-accessibility-trigger:before
+#dial .menu-button#reset-accessibility-trigger:before
 {
   background-image: url('../img/icons/reset.svg');
 }
 
-#controls .menu-button#go-up-link:before
+#dial .menu-button#go-up-link:before
 {
   background-image: url('../img/icons/arrow_up.svg');
 }
 
-#controls .menu-button#guideboard-trigger:before
+#dial .menu-button#guideboard-trigger:before
 {
   background-image: url('../img/icons/hamburger.svg');
 }
 
-#guideboard .menu-button#home-link:before
+#drawer .menu-button#home-link:before
 {
   background-image: url('../img/icons/house.svg');
 }
 
-#guideboard .menu-button#accessibility-info-link:before
+#drawer .menu-button#accessibility-info-link:before
 {
   background-image: url('../img/icons/wheelchair.svg');
 }
 
-#guideboard .menu-button#about-submenu:before
+#drawer .menu-button#about-submenu:before
 {
   background-image: url('../img/icons/i.svg');
 }
 
-#guideboard .menu-button#favourites-submenu:before
+#drawer .menu-button#favourites-submenu:before
 {
   background-image: url('../img/icons/star.svg');
 }
 
-#guideboard .menu-button.sup:after
+#drawer .menu-button#contact-link:before
+{
+  background-image: url('../img/icons/envelope.svg');
+}
+
+#drawer .menu-button.sup:after
 {
   background-image: url('../img/icons/triangle_down.svg');
 }
 
-#guideboard .menu-button.sup.active:after
+#drawer .menu-button.sup.active:after
 {
   background-image: url('../img/icons/triangle_up.svg');
 }
@@ -301,4 +309,49 @@ header
 main article
 {
   padding: 10vw 0;
+}
+
+#info
+{
+  padding-top: var(--info-horizontal-hem);
+  padding-bottom: var(--info-horizontal-hem);
+  background-color: var(--info-background-color);
+  color: var(--info-text-color);
+}
+
+#contact-info .menu-button
+{
+  padding-top: var(--contact-info-item-major-hem);
+  padding-bottom: var(--contact-info-item-major-hem);
+  font-size: var(--contact-info-item-font-size);
+  color: var(--info-text-color);
+}
+
+#contact-info .menu-button#address-link:before
+{
+  background-image: url('../img/icons/map.svg');
+}
+
+#contact-info .menu-button#email-action:before
+{
+  background-image: url('../img/icons/monkey_envelope.svg');
+}
+
+#contact-info .menu-button#phone-action:before
+{
+  background-image: url('../img/icons/phone.svg');
+}
+
+#contact-info .menu-button#fax-action:before
+{
+  background-image: url('../img/icons/fax.svg');
+}
+
+#copyright
+{
+  padding: 7px var(--vertical-hem);
+  background-color: var(--copyright-background-color);
+  color: var(--copyright-font-color);
+  font-size: 90%;
+  text-align: center;
 }

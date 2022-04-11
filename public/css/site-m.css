@@ -5,12 +5,14 @@
 
   --body-background-size: 115%;
   --logo-height: 22vw; /* 2*(4 + 7) */
-  --site-name-padding: 4vw;
+  --site-name-hem: 4vw;
 
   --site-name-font-size: 6vw;
   --site-description-font-size: 2vw;
 
   --detached-offset: 46px;
+
+  --info-horizontal-hem: 30px;
 
   /* font */
   font-size: 14px;
@@ -18,8 +20,9 @@
   /* details */
   --menu-button-minor-hem: 10px;
   --menu-button-major-hem: 0;
-  --menu-button-font-size: 140%;
+  --menu-button-font-size: 120%;
   --menu-button-icon-size: 26px;
+  --contact-info-item-major-hem: 8px;
 }
 
 #drawer
@@ -36,4 +39,10 @@ nav
 .detached nav
 {
   width: var(--width);
+}
+
+#info
+{
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
 }
