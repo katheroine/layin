@@ -325,7 +325,6 @@ main article
   padding-bottom: var(--contact-info-item-major-hem);
   font-size: var(--contact-info-item-font-size);
   color: var(--info-text-color);
-  overflow: auto;
 }
 
 #contact-info .menu-button#address-link:before
