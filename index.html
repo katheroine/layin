@@ -50,45 +50,50 @@
           <nav>
             <div class="navigation-item">
               <a id="home-link" class="menu-button icon" href="/index.php">
-                <div class="value">Home</div>
+                <div class="content">Home</div>
               </a>
             </div>
             <div class="navigation-item">
               <a id="accessibility-info-link" class="menu-button icon" href="/accessibility_info.php">
-                <div class="value">Accessibility info</div>
+                <div class="content">Accessibility info</div>
               </a>
             </div>
             <div class="navigation-item">
               <a id="about-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
-                <div class="value">About</div>
+                <div class="content">About</div>
               </a>
               <div class="submenu">
                 <a class="menu-button sub" href="https://github.com/katheroine/layin">
-                  <div class="value">Layin repository</div>
+                  <div class="content">Layin repository</div>
                 </a>
                 <a class="menu-button sub" href="https://about.me/katheroine">
-                  <div class="value">Layin author</div>
+                  <div class="content">Layin author</div>
                 </a>
               </div>
             </div>
             <div class="navigation-item">
               <a id="favourites-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
-                <div class="value">Favourites</div>
+                <div class="content">Favourites</div>
               </a>
               <div class="submenu">
                 <a class="menu-button sub" href="https://linuxmint.com">
-                  <div class="value">Linux Mint operating system</div>
+                  <div class="content">Linux Mint</div>
                 </a>
                 <a class="menu-button sub" href="https://atom.io">
-                  <div class="value">Atom editor</div>
+                  <div class="content">Atom</div>
                 </a>
                 <a class="menu-button sub" href="https://git-scm.com">
-                  <div class="value">Git control version system</div>
+                  <div class="content">Git</div>
                 </a>
                 <a class="menu-button sub" href="https://github.com/">
-                  <div class="value">GitHub hosting</div>
+                  <div class="content">GitHub</div>
                 </a>
               </div>
+            </div>
+            <div class="navigation-item">
+              <a id="contact-link" class="menu-button icon" href="#contact-info">
+                <div class="content">Contact</div>
+              </a>
             </div>
           </nav>
         </div>
@@ -153,5 +158,26 @@
         </main>
       </div>
     </div>
+    <footer onclick="foldNavigation();">
+      <div id="info" class="scaffold">
+        <address id="contact-info">
+          <a class="menu-button icon" id="address-link" href="https://goo.gl/maps/T84vfoTp8Rdbh6V28">
+            <div class="content">address: <span class="value">al. Wojciecha Korfantego 35, <span style="white-space: nowrap;">40-005</span> Katowice</span></div>
+          </a>
+          <a class="menu-button icon" id="email-action" href="mailto:layin@gmail.com">
+            <div class="content">e-mail: <span class="value">layin@gmail.com</span></div>
+          </a>
+          <a class="menu-button icon" id="phone-action" href="tel:+4832000000">
+            <div class="content">tel.: <span class="value">(32) 000 00 00</span></div>
+          </a>
+          <a class="menu-button icon" id="fax-action" href="fax:+48320000000">
+            <div class="content">fax.: <span class="value">(32) 000 00 00</span></div>
+          </a>
+        </address>
+      </div>
+      <div id="copyright">
+        ©&nbsp;2022 Copyright Layin
+      </div>
+    </footer>
   </body>
 </html>
