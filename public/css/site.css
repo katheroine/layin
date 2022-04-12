@@ -148,6 +148,8 @@ nav .submenu.active
   font-size: var(--menu-button-font-size);
   font-style: normal;
   text-decoration: none;
+  cursor: pointer;
+  user-select: none;
 }
 
 #dial .menu-button
@@ -311,11 +313,15 @@ main article
   padding: 10vw 0;
 }
 
+footer
+{
+  background-color: var(--info-background-color);
+}
+
 #info
 {
   padding-top: var(--info-horizontal-hem);
   padding-bottom: var(--info-horizontal-hem);
-  background-color: var(--info-background-color);
   color: var(--info-text-color);
 }
 
