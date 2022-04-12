@@ -48,13 +48,6 @@
   background-color: var(--guideboard-background-color);
 }
 
-#guideboard.detached
-{
-  position: fixed;
-  top: var(--detached-offset);
-  width: 100%;
-}
-
 nav,
 /*
 This is necessary to prevent
@@ -66,15 +59,18 @@ nav.active
 {
   position: static;
   display: flex;
-  width: 100%;
+  width: auto;
   flex-wrap: wrap;
   justify-content: flex-start;
 }
 
 .detached nav
 {
-  position: static;
-  width: 100%;
+  position: fixed;
+  top: 0;
+  width: auto;
+  max-width: 678px;
+  overflow: visible;
 }
 
 nav .submenu
@@ -87,6 +83,11 @@ nav .menu-button,
 #contact-info .menu-button
 {
   border-bottom: 0;
+}
+
+nav .menu-button:hover
+{
+  background-color: var(--guideboard-backlight-color);
 }
 
 nav .menu-button.active
@@ -114,7 +115,8 @@ nav .menu-button.active
 
 #board.detached
 {
-  margin-top: 92px; /* 2*46 */
+  margin-top: var(--detached-offset); /* for smoothly scrolling */
+  padding-top: var(--detached-offset); /* for replacing moved up navigation */
 }
 
 #contact-info
