@@ -276,6 +276,11 @@ nav .submenu .menu-button:hover
   background-image: url('../img/icons/wheelchair.svg');
 }
 
+#drawer .menu-button#layouts-submenu:before
+{
+  background-image: url('../img/icons/plan.svg');
+}
+
 #drawer .menu-button#about-submenu:before
 {
   background-image: url('../img/icons/i.svg');
