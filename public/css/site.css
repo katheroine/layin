@@ -308,9 +308,9 @@ nav .submenu .menu-button:hover
   font-size: 200%;
 }
 
-main article
+main
 {
-  padding: 10vw 0;
+  padding: var(--main-horizontal-hem) 0;
 }
 
 footer
