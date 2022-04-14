@@ -7,7 +7,7 @@ use Twig\Environment;
 $loader = new FilesystemLoader(__DIR__ . '/../../templates');
 $twig = new Environment($loader, ['debug' => true]);
 
-$template = $twig->load('layouts/content/one_column.twig.html');
+$template = $twig->load('layouts/board/one_column.twig.html');
 echo $template->render([
   'base_url' => '../..',
   'assets_dir' => '../..',
