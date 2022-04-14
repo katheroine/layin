@@ -9,7 +9,8 @@ $twig = new Environment($loader, ['debug' => true]);
 
 $template = $twig->load('index.twig.html');
 echo $template->render([
+  'base_url' => '.',
   'assets_dir' => './public',
-  'code_file_extension' => 'php',
+  'code_file_extension' => 'html',
   'debug' => false,
 ]);
