@@ -115,25 +115,31 @@ nav .menu-button.active
   background-image: url('../img/icons/little_triangle_up.svg');
 }
 
-#board
-{
-  padding-left: var(--vertical-hem);
-  padding-right: var(--vertical-hem);
-}
-
 #board.detached
 {
   margin-top: var(--detached-offset); /* for smoothly scrolling */
   padding-top: var(--detached-offset); /* for replacing moved up navigation */
 }
 
+#liner
+{
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
+}
+
 #liner.two-columns
 {
-  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: var(--vertical-hem);
 }
 
 main,
-#promo
+#liner.two-columns main,
+#liner.three-columns main,
+#liner.two-columns #promo,
+#liner.three-columns #promo,
+#liner.three-columns #demo
 {
   padding-left: 0;
   padding-right: 0;
@@ -141,18 +147,37 @@ main,
 
 #liner.two-columns main
 {
-  width: auto;
-  margin-right: var(--vertical-hem);
+  order: 1;
+  width: 70%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
-#promo
+#liner.three-columns main
 {
-  width: 25%;
-  flex-shrink: 0;
-  border-top: 0;
-  background-color: var(--bord-background-color);
+  order: 2;
+  width: 50%;
 }
 
+#liner.two-columns #promo
+{
+  order: 2;
+  width: 25%;
+}
+
+#liner.three-columns #promo
+{
+  order: 3;
+  width: 20%;
+}
+
+#liner.three-columns #demo
+{
+  order: 1;
+  width: 20%;
+}
+
+#demo img,
 #promo img
 {
   margin-left: auto;

@@ -31,6 +31,7 @@
 #signboard,
 #dial,
 main,
+#demo,
 #promo
 {
   padding-left: var(--vertical-hem);
@@ -89,6 +90,30 @@ nav .submenu .menu-button
   margin-top: var(--detached-offset);
 }
 
+#liner
+{
+  flex-direction: column;
+  row-gap: var(--board-horizontal-hem);
+  padding-top: var(--board-horizontal-hem);
+  padding-bottom: var(--board-horizontal-hem);
+}
+
+#liner.three-columns main
+{
+  order: 1;
+}
+
+#liner.three-columns #demo
+{
+  order: 2;
+}
+
+#liner.three-columns #promo
+{
+  order: 3;
+}
+
+#demo img,
 #promo img
 {
   margin-left: auto;
