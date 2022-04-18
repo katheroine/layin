@@ -12,7 +12,7 @@
 
   --detached-offset: 46px;
 
-  --main-horizontal-hem: 90px;
+  --board-horizontal-hem: 90px;
 
   --info-horizontal-hem: 50px;
 
@@ -115,10 +115,47 @@ nav .menu-button.active
   background-image: url('../img/icons/little_triangle_up.svg');
 }
 
+#board
+{
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
+}
+
 #board.detached
 {
   margin-top: var(--detached-offset); /* for smoothly scrolling */
   padding-top: var(--detached-offset); /* for replacing moved up navigation */
+}
+
+#liner.two-columns
+{
+  display: flex;
+}
+
+main,
+#promo
+{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#liner.two-columns main
+{
+  width: auto;
+  margin-right: var(--vertical-hem);
+}
+
+#promo
+{
+  width: 25%;
+  flex-shrink: 0;
+  border-top: 0;
+  background-color: var(--bord-background-color);
+}
+
+#promo img
+{
+  margin-left: auto;
 }
 
 #contact-info

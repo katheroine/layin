@@ -12,7 +12,7 @@
 
   --detached-offset: 46px;
 
-  --main-horizontal-hem: 70px;
+  --board-horizontal-hem: 70px;
 
   --info-horizontal-hem: 30px;
 
@@ -41,6 +41,11 @@ nav
 .detached nav
 {
   width: var(--width);
+}
+
+#promo img
+{
+  margin-left: 0;
 }
 
 #info

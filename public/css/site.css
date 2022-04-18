@@ -308,14 +308,27 @@ nav .submenu .menu-button:hover
 
 #board
 {
+  /*
+  For making child-elements margins
+  filled with its background color.
+  */
+  overflow: auto;
   background-color: var(--board-background-color);
   color: var(--board-text-color);
   font-size: 200%;
 }
 
-main
+main,
+#promo
 {
-  padding: var(--main-horizontal-hem) 0;
+  margin: var(--board-horizontal-hem) 0;
+}
+
+#promo img
+{
+  display: block;
+  width: 100%;
+  max-width: 400px;
 }
 
 footer

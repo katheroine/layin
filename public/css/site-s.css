@@ -12,7 +12,7 @@
 
   --detached-offset: 40px;
 
-  --main-horizontal-hem: 50px;
+  --board-horizontal-hem: 50px;
 
   --info-horizontal-hem: 0px;
 
@@ -30,7 +30,8 @@
 
 #signboard,
 #dial,
-#liner
+main,
+#promo
 {
   padding-left: var(--vertical-hem);
   padding-right: var(--vertical-hem);
@@ -86,6 +87,12 @@ nav .submenu .menu-button
 #board.detached
 {
   margin-top: var(--detached-offset);
+}
+
+#promo img
+{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #contact-info .menu-button
