@@ -177,12 +177,6 @@ main,
   width: 20%;
 }
 
-#demo img,
-#promo img
-{
-  margin-left: auto;
-}
-
 #contact-info
 {
   max-width: 500px;

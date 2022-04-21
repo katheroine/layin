@@ -113,13 +113,6 @@ nav .submenu .menu-button
   order: 3;
 }
 
-#demo img,
-#promo img
-{
-  margin-left: auto;
-  margin-right: auto;
-}
-
 #contact-info .menu-button
 {
   border-bottom-color: var(--info-button-separator-color);

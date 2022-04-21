@@ -71,11 +71,6 @@ nav
   order: 3;
 }
 
-#promo img
-{
-  margin-left: 0;
-}
-
 #info
 {
   padding-left: var(--vertical-hem);
