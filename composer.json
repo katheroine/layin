@@ -20,7 +20,6 @@
         "twig/twig": "^3.0"
     },
     "scripts": {
-        "generate-demo": "cd public && php index.php > index.demo.html",
-        "generate-githubpages": "php public/index.githubpages.php > index.html"
+        "generate-demo": "php public/demo/generators/index.demo.php > public/demo/index.html && php public/demo/generators/layouts_board_one_column.demo.php > public/demo/layouts/board/one_column.html && php public/demo/generators/layouts_board_two_columns.demo.php > public/demo/layouts/board/two_columns.html && php public/demo/generators/layouts_board_three_columns.demo.php > public/demo/layouts/board/three_columns.html"
 	}
 }

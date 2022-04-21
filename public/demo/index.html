@@ -7,18 +7,19 @@
     <meta name="description" content="Layin - general purpose web page layout">
     <meta name="keywords" content="layin,layout,www,web page">
     <meta name="author" content="katheroine <katheroine@gmail.com>">
-    <link type="image/x-icon" rel="shortcut icon" href="./public/img/layin-favicon.ico">
-    <link type="text/css" rel="stylesheet" href="./public/css/colors.css">
-    <link type="text/css" rel="stylesheet" href="./public/css/fonts.css">
-    <link type="text/css" rel="stylesheet" href="./public/css/colors-site-default.css">
-    <link type="text/css" rel="stylesheet" href="./public/css/colors-site-accessibility.css">
-    <link type="text/css" rel="stylesheet" href="./public/css/site.css">
-    <link type="text/css" rel="stylesheet" href="./public/css/site-accessibility.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="./public/css/site-s.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="./public/css/site-m.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="./public/css/site-l.css">
-    <script src="./public/js/dashboard.js"></script>
-    <script src="./public/js/accessibility.js"></script>
+    <link type="image/x-icon" rel="shortcut icon" href="../img/layin-favicon.ico">
+    <link type="text/css" rel="stylesheet" href="../css/colors.css">
+    <link type="text/css" rel="stylesheet" href="../css/fonts.css">
+    <link type="text/css" rel="stylesheet" href="../css/colors-site-default.css">
+    <link type="text/css" rel="stylesheet" href="../css/colors-site-accessibility.css">
+    <link type="text/css" rel="stylesheet" href="../css/site.css">
+    <link type="text/css" rel="stylesheet" href="../css/site-accessibility.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="../css/site-s.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="../css/site-m.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="../css/site-l.css">
+    <link type="text/css" rel="stylesheet" href="../css/content.css">
+    <script src="../js/dashboard.js"></script>
+    <script src="../js/accessibility.js"></script>
     <title>Layin</title>
   </head>
   <body onload="restoreAccessibility();" onscroll="handleDashboard();" onresize="handleDashboard();">
@@ -26,7 +27,7 @@
       <div id="banner">
         <div id="signboard" class="scaffold">
           <div id="logo">
-            <a><img src="./public/img/layin-logo.png" alt="Layin logo"></a>
+            <a><img src="../img/layin-logo.png" alt="Layin logo"></a>
           </div>
           <div id="site-name">
             Layin <span id="site-description">General purpose layout</span>
@@ -49,14 +50,30 @@
         <div id="drawer" class="scaffold">
           <nav>
             <div class="navigation-item">
-              <a id="home-link" class="menu-button icon" href="index.html">
+              <a id="home-link" class="menu-button icon" href="./index.html">
                 <div class="content">Home</div>
               </a>
             </div>
             <div class="navigation-item">
-              <a id="accessibility-info-link" class="menu-button icon" href="">
+              <a id="accessibility-info-link" class="menu-button icon" href="./accessibility_info.html">
                 <div class="content">Accessibility info</div>
               </a>
+            </div>
+            <div class="navigation-item">
+              <a id="layouts-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
+                <div class="content">Layouts</div>
+              </a>
+              <div class="submenu">
+                <a class="menu-button sub" href="./layouts/board/one_column.html">
+                  <div class="content">One column</div>
+                </a>
+                <a class="menu-button sub" href="./layouts/board/two_columns.html">
+                  <div class="content">Two columns</div>
+                </a>
+                <a class="menu-button sub" href="./layouts/board/three_columns.html">
+                  <div class="content">Three columns</div>
+                </a>
+              </div>
             </div>
             <div class="navigation-item">
               <a id="about-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
@@ -103,10 +120,11 @@
       <div id="liner" class="scaffold">
         <main>
           <article>
-            <p>
+            <h1>
               Work in progress...
-            </p>
-            <section id="lorem-ipsum" style="padding: 60px 0; font-size: 70%;">
+            </h1>
+            <br>
+            <section id="lorem-ipsum">
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis eros gravida, tincidunt arcu eget, convallis erat.
                 Suspendisse at rutrum tellus. Donec at lorem dignissim, euismod tellus vel, pellentesque leo. Integer sit amet commodo nibh, vehicula congue eros.
