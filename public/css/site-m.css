@@ -12,6 +12,8 @@
 
   --detached-offset: 46px;
 
+  --board-horizontal-hem: 70px;
+
   --info-horizontal-hem: 30px;
 
   /* font */
@@ -39,6 +41,34 @@ nav
 .detached nav
 {
   width: var(--width);
+}
+
+#liner.three-columns
+{
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: var(--vertical-hem);
+}
+
+#liner.three-columns main
+{
+  order: 1;
+  width: 65%;
+  padding-left: var(--vertical-hem);
+  padding-right: 0;
+}
+
+#liner.three-columns #demo
+{
+  order: 2;
+  width: 20%;
+  padding-left: 0;
+  padding-right: var(--vertical-hem);
+}
+
+#liner.three-columns #promo
+{
+  order: 3;
 }
 
 #info

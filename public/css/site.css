@@ -276,6 +276,11 @@ nav .submenu .menu-button:hover
   background-image: url('../img/icons/wheelchair.svg');
 }
 
+#drawer .menu-button#layouts-submenu:before
+{
+  background-image: url('../img/icons/plan.svg');
+}
+
 #drawer .menu-button#about-submenu:before
 {
   background-image: url('../img/icons/i.svg');
@@ -308,9 +313,17 @@ nav .submenu .menu-button:hover
   font-size: 200%;
 }
 
-main article
+#liner
 {
-  padding: 10vw 0;
+  display: flex;
+}
+
+#demo img,
+#promo img
+{
+  display: block;
+  width: 100%;
+  max-width: 400px;
 }
 
 footer

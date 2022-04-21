@@ -12,6 +12,8 @@
 
   --detached-offset: 40px;
 
+  --board-horizontal-hem: 50px;
+
   --info-horizontal-hem: 0px;
 
   /* font */
@@ -28,7 +30,9 @@
 
 #signboard,
 #dial,
-#liner
+main,
+#demo,
+#promo
 {
   padding-left: var(--vertical-hem);
   padding-right: var(--vertical-hem);
@@ -84,6 +88,29 @@ nav .submenu .menu-button
 #board.detached
 {
   margin-top: var(--detached-offset);
+}
+
+#liner
+{
+  flex-direction: column;
+  row-gap: var(--board-horizontal-hem);
+  padding-top: var(--board-horizontal-hem);
+  padding-bottom: var(--board-horizontal-hem);
+}
+
+#liner.three-columns main
+{
+  order: 1;
+}
+
+#liner.three-columns #demo
+{
+  order: 2;
+}
+
+#liner.three-columns #promo
+{
+  order: 3;
 }
 
 #contact-info .menu-button

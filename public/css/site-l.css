@@ -12,6 +12,8 @@
 
   --detached-offset: 46px;
 
+  --board-horizontal-hem: 90px;
+
   --info-horizontal-hem: 50px;
 
   /* font */
@@ -117,6 +119,62 @@ nav .menu-button.active
 {
   margin-top: var(--detached-offset); /* for smoothly scrolling */
   padding-top: var(--detached-offset); /* for replacing moved up navigation */
+}
+
+#liner
+{
+  padding-left: var(--vertical-hem);
+  padding-right: var(--vertical-hem);
+}
+
+#liner.two-columns
+{
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: var(--vertical-hem);
+}
+
+main,
+#liner.two-columns main,
+#liner.three-columns main,
+#liner.two-columns #promo,
+#liner.three-columns #promo,
+#liner.three-columns #demo
+{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#liner.two-columns main
+{
+  order: 1;
+  width: 70%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#liner.three-columns main
+{
+  order: 2;
+  width: 50%;
+}
+
+#liner.two-columns #promo
+{
+  order: 2;
+  width: 25%;
+}
+
+#liner.three-columns #promo
+{
+  order: 3;
+  width: 20%;
+}
+
+#liner.three-columns #demo
+{
+  order: 1;
+  width: 20%;
 }
 
 #contact-info
