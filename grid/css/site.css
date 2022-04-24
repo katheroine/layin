@@ -1,0 +1,77 @@
+:root
+{
+  /* layout */
+  --max-width: 1400px;
+  --vertical-hem: 5%;
+  --cover-area-height: var(--banner-height);
+
+  /* font */
+  --font-family: liberation-sans-regular, 'Verdana', sans-serif;
+}
+
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+body
+{
+  display: grid;
+  grid-template-rows:
+    [header-begin] var(--header-height) [header-end
+    cover-begin] var(--cover-height) [cover-end
+    dashboard-begin] max-content [dashboard-end
+    board-begin] max-content [board-end
+    footer-begin] max-content [footer-end];
+  background-size: var(--body-background-size);
+  background-image: url('../img/layin-cover.jpeg');
+  background-attachment: fixed;
+  background-position-x: center;
+  background-position-y: top;
+  background-color: var(--body-background-color);
+}
+
+.frame
+{
+  display: grid;
+  grid-template-columns: [scaffold-begin] minmax(5%, auto)
+    [liner-begin] minmax(200px, var(--max-width)) [liner-end] 
+    minmax(5%, auto) [scaffold-end];
+}
+
+.tier
+{
+  grid-column-start: liner-begin;
+  grid-column-end: liner-end;
+}
+
+header
+{
+  grid-row-start: header-begin;
+  grid-row-end: header-end;
+}
+
+#banner
+{
+  background-color: var(--banner-background-color);
+  color: var(--banner-text-color);
+}
+
+#dashboard
+{
+  grid-row-start: dashboard-begin;
+  grid-row-end: dashboard-end;
+}
+
+#board
+{
+  grid-row-start: board-begin;
+  grid-row-end: board-end;
+}
+
+footer
+{
+  grid-row-start: footer-begin;
+  grid-row-end: footer-end;
+}

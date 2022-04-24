@@ -1,0 +1,8 @@
+:root
+{
+  /* layout */
+  --header-height: 18vw;
+  --cover-height: 18vw; /* 2*5 + 8 */
+
+  --body-background-size: 130%;
+}
