@@ -36,7 +36,7 @@ body
 {
   display: grid;
   grid-template-columns: [scaffold-begin] minmax(5%, auto)
-    [liner-begin] minmax(200px, var(--max-width)) [liner-end] 
+    [liner-begin] minmax(200px, var(--max-width)) [liner-end]
     minmax(5%, auto) [scaffold-end];
 }
 
@@ -50,12 +50,39 @@ header
 {
   grid-row-start: header-begin;
   grid-row-end: header-end;
+  background-color: var(--banner-background-color);
 }
 
 #banner
 {
-  background-color: var(--banner-background-color);
+  display: grid;
+  grid-template-rows: var(--site-name-hem) [logo-begin] var(--logo-size) [logo-end];
+  grid-template-columns: var(--logo-size) var(--site-name-hem) [site-name-begin] max-content [site-name-end];
   color: var(--banner-text-color);
+}
+
+#logo
+{
+  grid-row-start: logo-begin;
+  grid-row-end: logo-end;
+}
+
+#logo img
+{
+  height: var(--logo-size);
+}
+
+#site-name
+{
+  grid-row-start: logo-begin;
+  grid-column-start: site-name-begin;
+  grid-column-end: site-name-end;
+  font-size: var(--site-name-font-size);
+}
+
+#site-description
+{
+  font-size: var(--site-description-font-size);
 }
 
 #dashboard

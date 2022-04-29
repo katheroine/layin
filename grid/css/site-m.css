@@ -3,6 +3,9 @@
   /* layout */
   --header-height: 15vw;
   --cover-height: 15vw; /* 2*4 + 7 */
-
+  --logo-size: 22vw; /* 2*(4 + 7) */
+  --site-name-hem: 4vw;
+  --site-name-font-size: 6vw;
+  --site-description-font-size: 2vw;
   --body-background-size: 115%;
 }

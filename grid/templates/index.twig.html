@@ -8,10 +8,10 @@
     <meta name="keywords" content="layin,layout,www,web page">
     <meta name="author" content="katheroine <katheroine@gmail.com>">
     <link type="image/x-icon" rel="shortcut icon" href="{{assets_dir}}/img/layin-favicon.ico">
-    <!-- <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors.css">
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/fonts.css">
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors-site-default.css">
-    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors-site-accessibility.css"> -->
+    <!-- <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors-site-accessibility.css"> -->
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/site.css">
     <!-- <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/site-accessibility.css"> -->
     <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{assets_dir}}/css/site-s.css">
@@ -27,9 +27,7 @@
   </head>
   <body onload="restoreAccessibility();" onscroll="handleDashboard();" onresize="handleDashboard();">
     <header class="frame" onclick="foldNavigation();">
-      <div id="banner" class="tier">
-        BANNER
-      </div>
+    {% include 'header.partial.twig.html' %}
     </header>
     <div id="dashboard" class="frame">
       <!-- DASHBOARD -->
