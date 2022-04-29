@@ -24,6 +24,12 @@ body
     dashboard-begin] max-content [dashboard-end
     board-begin] max-content [board-end
     footer-begin] max-content [footer-end];
+  grid-template-areas:
+    "header"
+    "cover"
+    "dashboard"
+    "board"
+    "footer";
   background-size: var(--body-background-size);
   background-image: url('../img/layin-cover.jpeg');
   background-attachment: fixed;
@@ -36,7 +42,7 @@ body
 {
   display: grid;
   grid-template-columns: [scaffold-begin] minmax(5%, auto)
-    [liner-begin] minmax(200px, var(--max-width)) [liner-end]
+    [liner-begin] minmax(min-content, var(--max-width)) [liner-end]
     minmax(5%, auto) [scaffold-end];
 }
 
@@ -48,8 +54,7 @@ body
 
 header
 {
-  grid-row-start: header-begin;
-  grid-row-end: header-end;
+  grid-area: header;
   background-color: var(--banner-background-color);
 }
 
@@ -87,18 +92,15 @@ header
 
 #dashboard
 {
-  grid-row-start: dashboard-begin;
-  grid-row-end: dashboard-end;
+  grid-area: dashboard
 }
 
 #board
 {
-  grid-row-start: board-begin;
-  grid-row-end: board-end;
+  grid-area: board;
 }
 
 footer
 {
-  grid-row-start: footer-begin;
-  grid-row-end: footer-end;
+  grid-area: footer;
 }
