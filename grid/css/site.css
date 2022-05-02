@@ -20,7 +20,6 @@ body
   display: grid;
   grid-template-rows:
     [header-begin] var(--header-height) [header-end
-    cover-begin] var(--cover-height) [cover-end
     dashboard-begin] max-content [dashboard-end
     board-begin] max-content [board-end
     footer-begin] max-content [footer-end];
@@ -55,10 +54,19 @@ body
 header
 {
   grid-area: header;
-  background-color: var(--banner-background-color);
+  display: grid;
+  grid-template-rows:
+    [banner-begin] var(--banner-height) [banner-end];
 }
 
 #banner
+{
+  grid-row-start: banner-begin;
+  grid-row-end: banner-end;
+  background-color: var(--banner-background-color);
+}
+
+#signboard
 {
   display: grid;
   grid-template-rows: var(--site-name-hem) [logo-begin] var(--logo-size) [logo-end];
@@ -92,7 +100,88 @@ header
 
 #dashboard
 {
-  grid-area: dashboard
+  grid-area: dashboard;
+  position: sticky;
+  top: 0;
+}
+
+#controls
+{
+  background-color: var(--controls-background-color);
+  opacity: 70%;
+}
+
+#dial
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.menu-button
+{
+  display: flex;
+  /* justify-content: space-between; */
+  /* align-items: center; */
+  padding-top: var(--menu-button-minor-hem);
+  padding-bottom: var(--menu-button-minor-hem);
+  /* font-size: var(--menu-button-font-size); */
+  /* font-style: normal; */
+  /* text-decoration: none; */
+  /* cursor: pointer; */
+  user-select: none;
+}
+
+.menu-button.icon:before
+{
+  /* flex-shrink: 0; */
+  width: var(--menu-button-icon-size);
+  height: var(--menu-button-icon-size);
+  margin-left: var(--menu-button-minor-hem);
+  margin-right: var(--menu-button-minor-hem);
+  background-size: var(--menu-button-icon-size);
+  background-repeat: no-repeat;
+  content: "";
+}
+
+#dial .menu-button#go-up-link
+{
+  display: none;
+}
+
+.detached #dial .menu-button#go-up-link
+{
+  display: flex;
+}
+
+#dial .menu-button#increase-font-trigger:before
+{
+  background-image: url('../img/icons/a_plus.svg');
+}
+
+#dial .menu-button#decrease-font-trigger:before
+{
+  background-image: url('../img/icons/a_minus.svg');
+}
+
+#dial .menu-button#toggle-contrast-trigger:before
+{
+  background-image: url('../img/icons/contrast.svg');
+}
+
+#dial .menu-button#reset-accessibility-trigger:before
+{
+  background-image: url('../img/icons/reset.svg');
+}
+
+#dial .menu-button#go-up-link:before
+{
+  background-image: url('../img/icons/arrow_up.svg');
+}
+
+#dial .menu-button#guideboard-trigger:before
+{
+  background-image: url('../img/icons/hamburger.svg');
 }
 
 #board

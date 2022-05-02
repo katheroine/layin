@@ -1,11 +1,16 @@
 :root
 {
   /* layout */
-  --header-height: 18vw;
-  --cover-height: 18vw; /* 2*5 + 8 */
+  --header-height: 36vw;
+  --banner-height: 18vw; /* 2*5 + 8 */
   --logo-size: 26vw; /* 2*(5 + 8) */
   --site-name-hem: 5vw;
   --site-name-font-size: 7vw;
   --site-description-font-size: 3vw;
   --body-background-size: 130%;
+
+  --menu-button-minor-hem: 8px;
+  --menu-button-major-hem: var(--vertical-hem);
+  --menu-button-font-size: 150%;
+  --menu-button-icon-size: 24px;
 }
