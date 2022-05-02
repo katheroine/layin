@@ -1,0 +1,34 @@
+/* contrast */
+
+body.contrast
+{
+  background-color: var(--contrast-body-background-color);
+  background-image: none;
+}
+
+.contrast #banner
+{
+  background-color: var(--contrast-banner-background-color);
+  color: var(--contrast-banner-text-color);
+}
+
+.contrast #dashboard
+{
+  color: var(--contrast-controls-text-color);
+}
+
+.contrast #controls
+{
+  background-color: var(--contrast-controls-background-color);
+  opacity: 100%;
+}
+
+.contrast #dial .menu-button
+{
+  color: var(--contrast-controls-text-color);
+}
+
+.contrast #dial .menu-button:hover
+{
+  background-color: var(--contrast-controls-backlight-color);
+}

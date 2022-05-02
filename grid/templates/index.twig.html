@@ -11,9 +11,9 @@
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors.css">
     <!-- <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/fonts.css"> -->
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors-site-default.css">
-    <!-- <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors-site-accessibility.css"> -->
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/colors-site-accessibility.css">
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/site.css">
-    <!-- <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/site-accessibility.css"> -->
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/site-accessibility.css">
     <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{assets_dir}}/css/site-s.css">
     <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{assets_dir}}/css/site-m.css">
     <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{assets_dir}}/css/site-l.css">
@@ -22,11 +22,11 @@
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/css/debug.css">
     {% endif %}
     <script src="{{assets_dir}}/js/dashboard.js"></script>
-    <!-- <script src="{{assets_dir}}/js/accessibility.js"></script> -->
+    <script src="{{assets_dir}}/js/accessibility.js"></script>
     <title>Layin</title>
   </head>
   <!-- <body onload="restoreAccessibility();" onscroll="handleDashboard();" onresize="handleDashboard();"> -->
-  <body onload="handleDashboard();">
+  <body onload="restoreAccessibility();" onload="handleDashboard();">
     <!-- <header class="frame" onclick="foldNavigation();"> -->
     <header>
     {% include 'header.partial.twig.html' %}
