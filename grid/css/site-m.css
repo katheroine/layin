@@ -9,6 +9,8 @@
   --site-description-font-size: 2vw;
   --body-background-size: 115%;
 
+  --detached-offset: 46px;
+
   /* font */
   font-size: 14px;
 
@@ -28,4 +30,11 @@ nav
 {
   grid-column-start: shaft-begin;
   grid-column-end: shaft-end;
+}
+
+.detached nav
+{
+  width: var(--width);
+  left: var(--vertical-hem);
+  right: var(--vertical-hem);
 }

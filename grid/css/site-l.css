@@ -24,9 +24,19 @@
   background-color: var(--guideboard-background-color);
 }
 
-nav
+nav,
+nav.active
 {
+  display: flex;
+  position: relative;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.detached nav
+{
+  position: static;
+  top: 0;
 }
 
 nav .submenu

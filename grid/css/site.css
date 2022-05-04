@@ -3,6 +3,7 @@
   /* layout */
   --max-width: 1400px;
   --vertical-hem: 5%;
+  --width: 90%; /* 100 - 2*5 */
   --cover-area-height: var(--banner-height);
 
   /* font */
@@ -120,7 +121,6 @@ header
 
 nav
 {
-  display: flex;
   background-color: var(--guideboard-background-color);
 }
 
@@ -293,6 +293,8 @@ nav .menu-button.sup.active:after
 #board
 {
   grid-area: board;
+  padding-top: var(--site-name-hem);
+  padding-bottom: var(--site-name-hem);
 }
 
 footer

@@ -11,12 +11,27 @@ function handleDashboard() {
 
   function markDetached(elements) {
     let header = elements[0];
+    let dashboard = document.getElementById("dashboard");
 
     if (header.intersectionRatio == 0) {
       dashboard.classList.add("detached");
     } else {
       dashboard.classList.remove("detached");
     }
+  }
+}
+
+function toggleNavigation() {
+  let navigation = document.getElementsByTagName("nav")[0];
+  let navigationDisplay = window.getComputedStyle(navigation).display;
+
+  if ((navigationDisplay != "block") && (navigationDisplay != "flex")) {
+    // handleScrollingControlsUp();
+
+    navigation.classList.add("active");
+  } else {
+    foldAllSubmenus();
+    navigation.classList.remove("active");
   }
 }
 
@@ -33,8 +48,6 @@ function toggleSubmenu(supermenuItem) {
     supermenuItem.classList.remove("active");
     submenu.classList.remove("active");
   }
-
-  // handleNavigationScrollability();
 }
 
 function foldAllSubmenus() {

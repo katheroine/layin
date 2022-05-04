@@ -44,6 +44,11 @@ header
   /* background-color: #261791 !important; */
 }
 
+#dashboard.detached
+{
+  /* background-color: darkorange !important; */
+}
+
 #controls
 {
   /* background-color: #a499db !important; */

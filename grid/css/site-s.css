@@ -9,6 +9,8 @@
   --site-description-font-size: 3vw;
   --body-background-size: 130%;
 
+  --detached-offset: 40px;
+
   /* font */
   font-size: 12px;
 
@@ -21,14 +23,30 @@
 
 #guideboard
 {
+  position: relative;
   background-color: var(--guideboard-background-color);
 }
 
 nav
 {
+  display: none;
   grid-column-start: scaffold-begin;
   grid-column-end: scaffold-end;
   flex-direction: column;
+}
+
+nav.active
+{
+  display: flex;
+}
+
+.detached nav
+{
+  position: fixed;
+  top: var(--detached-offset);
+  width: 100%;
+  max-height: calc(100vh - var(--detached-offset));
+  overflow: auto;
 }
 
 nav .menu-button
