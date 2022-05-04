@@ -9,10 +9,30 @@
   --site-description-font-size: 26px;
   --body-background-size: 100%;
 
+  /* font */
+  font-size: 16px;
+
+  /* details */
   --menu-button-minor-hem: 10px;
   --menu-button-major-hem: 0;
   --menu-button-font-size: 120%;
   --menu-button-icon-size: 26px;
+}
+
+#guideboard
+{
+  background-color: var(--guideboard-background-color);
+}
+
+nav
+{
+  flex-direction: row;
+}
+
+nav .submenu
+{
+  position: absolute;
+  width: 300px;
 }
 
 #dial .menu-button:hover
@@ -23,4 +43,24 @@
 #dial .menu-button#guideboard-trigger
 {
   display: none;
+}
+
+nav .menu-button
+{
+  border-bottom: 0;
+}
+
+nav .menu-button:hover
+{
+  background-color: var(--guideboard-backlight-color);
+}
+
+nav .menu-button.active
+{
+  background-color: var(--guideboard-submenu-background-color);
+}
+
+nav .submenu .menu-button:hover
+{
+  background-color: var(--guideboard-submenu-backlight-color);
 }

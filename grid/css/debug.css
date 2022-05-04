@@ -51,17 +51,23 @@ header
 
 #guideboard
 {
-  background-color: #999adb !important;
+  /* background-color: #999adb !important; */
+}
+
+nav
+{
+  /* background-color: blue !important; */
 }
 
 #board
 {
-  background-color: #133886 !important;
+  /* background-color: #133886 !important; */
+  background-color: white;
 }
 
 #liner
 {
-  background-color: #aabce1 !important;
+  /* background-color: #aabce1 !important; */
 }
 
 #main

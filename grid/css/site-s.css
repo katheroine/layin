@@ -9,8 +9,40 @@
   --site-description-font-size: 3vw;
   --body-background-size: 130%;
 
+  /* font */
+  font-size: 12px;
+
+  /* details */
   --menu-button-minor-hem: 8px;
   --menu-button-major-hem: var(--vertical-hem);
   --menu-button-font-size: 150%;
   --menu-button-icon-size: 24px;
+}
+
+#guideboard
+{
+  background-color: var(--guideboard-background-color);
+}
+
+nav
+{
+  grid-column-start: scaffold-begin;
+  grid-column-end: scaffold-end;
+  flex-direction: column;
+}
+
+nav .menu-button
+{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+nav .menu-button
+{
+  border-bottom-color: var(--guideboard-button-separator-color);
+}
+
+nav .submenu .menu-button
+{
+  border-bottom-color: var(--guideboard-submenu-button-separator-color);
 }

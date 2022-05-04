@@ -19,3 +19,32 @@ function handleDashboard() {
     }
   }
 }
+
+function toggleSubmenu(supermenuItem) {
+  let submenu = supermenuItem.nextElementSibling;
+  let submenuDisplay = window.getComputedStyle(submenu).display;
+
+  if (submenuDisplay != "block") {
+    foldAllSubmenus();
+
+    supermenuItem.classList.add("active");
+    submenu.classList.add("active");
+  } else {
+    supermenuItem.classList.remove("active");
+    submenu.classList.remove("active");
+  }
+
+  // handleNavigationScrollability();
+}
+
+function foldAllSubmenus() {
+  let guideboard = document.getElementById("guideboard");
+  let menuItems = guideboard.getElementsByClassName("menu-button");
+  let submenus = guideboard.getElementsByClassName("submenu");
+
+  [menuItems, submenus].forEach(function (elements) {
+    Array.from(elements).forEach(function(element) {
+      element.classList.remove("active");
+    });
+  });
+}

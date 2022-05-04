@@ -9,8 +9,23 @@
   --site-description-font-size: 2vw;
   --body-background-size: 115%;
 
+  /* font */
+  font-size: 14px;
+
+  /* details */
   --menu-button-minor-hem: 10px;
   --menu-button-major-hem: 0;
   --menu-button-font-size: 120%;
   --menu-button-icon-size: 26px;
+}
+
+#guideboard
+{
+  background-color: var(--board-background-color);
+}
+
+nav
+{
+  grid-column-start: shaft-begin;
+  grid-column-end: shaft-end;
 }
