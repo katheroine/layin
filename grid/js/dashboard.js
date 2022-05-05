@@ -1,22 +1,22 @@
 function handleDashboard() {
-  let header = document.querySelector("header");
+  let header = document.getElementById("header");
 
-  let options = {
-    threshold: 0.0
-  };
+  let detachmentObserver = new IntersectionObserver(handleDetachment);
 
-  let observer = new IntersectionObserver(markDetached, options);
+  detachmentObserver.observe(header);
 
-  observer.observe(header);
-
-  function markDetached(elements) {
+  function handleDetachment(elements) {
     let header = elements[0];
     let dashboard = document.getElementById("dashboard");
+    let board = document.getElementById("board");
 
-    if (header.intersectionRatio == 0) {
+    if (header.intersectionRatio == 0 && (! dashboard.classList.contains("detached"))) {
+      let dashboardHeight = dashboard.getBoundingClientRect().height;
       dashboard.classList.add("detached");
-    } else {
+      board.style.paddingTop = dashboardHeight + "px";
+    } else if ((header.intersectionRatio < 1) && dashboard.classList.contains("detached")) {
       dashboard.classList.remove("detached");
+      board.style.paddingTop = "42px";
     }
   }
 }
@@ -26,8 +26,6 @@ function toggleNavigation() {
   let navigationDisplay = window.getComputedStyle(navigation).display;
 
   if ((navigationDisplay != "block") && (navigationDisplay != "flex")) {
-    // handleScrollingControlsUp();
-
     navigation.classList.add("active");
   } else {
     foldAllSubmenus();

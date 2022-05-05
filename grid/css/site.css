@@ -8,12 +8,26 @@
 
   /* font */
   --font-family: liberation-sans-regular, 'Verdana', sans-serif;
+
+  /* details */
+  --controls-opacity: 70%;
 }
 
 *
 {
   margin: 0;
   padding: 0;
+  /*
+  Allows to solve the sticky and resized dashboard
+  bouncing problem that occurs during the scrolling
+  and prevents from the dashboard gets stuck as detached.
+  */
+  /* overflow-anchor: none;
+  -webkit-overflow-anchor: none;
+  overscroll-behavior: none;
+  -webkit-overscroll-behavior: none;
+  overflow-scrolling: none;
+  -webkit-overflow-scrolling: none; */
 }
 
 body
@@ -38,7 +52,10 @@ body
   background-color: var(--body-background-color);
 }
 
-.frame
+/* Frames */
+#banner,
+#board,
+footer
 {
   display: grid;
   grid-template-columns: [scaffold-begin] minmax(5%, auto)
@@ -46,7 +63,11 @@ body
     minmax(5%, auto) [scaffold-end];
 }
 
-.tier
+/* Tiers */
+#signboard,
+#liner,
+#contact-info,
+#copyright
 {
   grid-column-start: shaft-begin;
   grid-column-end: shaft-end;
@@ -109,7 +130,7 @@ header
 #controls
 {
   background-color: var(--controls-background-color);
-  opacity: 70%;
+  opacity: var(--controls-opacity);
 }
 
 #dial
