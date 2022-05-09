@@ -25,7 +25,6 @@
     <script src="{{assets_dir}}/js/accessibility.js"></script>
     <title>Layin</title>
   </head>
-  <!-- <body onload="restoreAccessibility();" onscroll="handleDashboard();" onresize="handleDashboard();"> -->
   <body onload="restoreAccessibility(); handleDashboard();">
     <header onclick="foldNavigation();">
     {% include 'header.partial.twig.html' %}
@@ -185,15 +184,8 @@
         </main>
       </div>
     </div>
-    <!-- <footer class="frame" onclick="foldNavigation();"> -->
     <footer onclick="foldNavigation();">
-      <!-- FOOTER -->
-      <div id="contact-info">
-        CONTACT-INFO
-      </div>
-      <div id="copyright">
-        COPYRIGHT
-      </div>
+    {% include 'footer.partial.twig.html' %}
     </footer>
   </body>
 </html>

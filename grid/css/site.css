@@ -11,6 +11,8 @@
 
   /* details */
   --controls-opacity: 70%;
+
+  --contact-info-slot-width: 500px;
 }
 
 *
@@ -52,9 +54,10 @@ body
   background-color: var(--body-background-color);
 }
 
-/* Frames */
 #banner,
 #board,
+#controls,
+#guideboard,
 footer
 {
   display: grid;
@@ -63,11 +66,8 @@ footer
     minmax(5%, auto) [scaffold-end];
 }
 
-/* Tiers */
 #signboard,
-#liner,
-#contact-info,
-#copyright
+#liner
 {
   grid-column-start: shaft-begin;
   grid-column-end: shaft-end;
@@ -145,6 +145,38 @@ nav
   background-color: var(--guideboard-background-color);
 }
 
+footer
+{
+  grid-area: footer;
+  grid-template-rows: var(--info-horizontal-hem)
+    [info-begin] max-content [info-end]
+    var(--info-horizontal-hem)
+    [copyright-begin] max-content [copyright-end];
+  background-color: var(--info-background-color);
+}
+
+#info
+{
+  grid-row-start: info-begin;
+  grid-row-end: info-end;
+  display: grid;
+  grid-template-columns: [contact-info-begin] var(--contact-info-slot-width) [contact-info-slot-end]
+    auto [contact-info-end];
+}
+
+#copyright
+{
+  grid-row-start: copyright-begin;
+  grid-row-end: copyright-end;
+  grid-column-start: scaffold-begin;
+  grid-column-end: scaffold-end;
+  padding: 7px 0;
+  background-color: var(--copyright-background-color);
+  color: var(--copyright-font-color);
+  font-size: 90%;
+  text-align: center;
+}
+
 nav .submenu
 {
   display: none;
@@ -172,7 +204,8 @@ nav .submenu.active
   user-select: none;
 }
 
-nav .menu-button
+nav .menu-button,
+#contact-info .menu-button
 {
   color: var(--guideboard-text-color);
   padding-left: var(--menu-button-major-hem);
@@ -311,14 +344,37 @@ nav .menu-button.sup.active:after
   background-image: url('../img/icons/triangle_up.svg');
 }
 
+#contact-info .menu-button
+{
+  padding-top: var(--contact-info-item-major-hem);
+  padding-bottom: var(--contact-info-item-major-hem);
+  font-size: var(--contact-info-item-font-size);
+  color: var(--info-text-color);
+}
+
+#contact-info .menu-button#address-link:before
+{
+  background-image: url('../img/icons/map.svg');
+}
+
+#contact-info .menu-button#email-action:before
+{
+  background-image: url('../img/icons/monkey_envelope.svg');
+}
+
+#contact-info .menu-button#phone-action:before
+{
+  background-image: url('../img/icons/phone.svg');
+}
+
+#contact-info .menu-button#fax-action:before
+{
+  background-image: url('../img/icons/fax.svg');
+}
+
 #board
 {
   grid-area: board;
   padding-top: var(--site-name-hem);
   padding-bottom: var(--site-name-hem);
-}
-
-footer
-{
-  grid-area: footer;
 }

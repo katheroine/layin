@@ -16,7 +16,7 @@ function handleDashboard() {
       board.style.paddingTop = dashboardHeight + "px";
     } else if ((header.intersectionRatio < 1) && dashboard.classList.contains("detached")) {
       dashboard.classList.remove("detached");
-      board.style.paddingTop = "42px";
+      board.style.paddingTop = "var(--controls-height)";
     }
   }
 }

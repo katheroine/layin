@@ -11,6 +11,8 @@
 
   --controls-height: 46px;
 
+  --info-horizontal-hem: 50px;
+
   /* font */
   font-size: 16px;
 
@@ -21,6 +23,7 @@
   --menu-button-major-hem: 0;
   --menu-button-font-size: 120%;
   --menu-button-icon-size: 26px;
+  --contact-info-item-major-hem: 8px;
 }
 
 #guideboard
@@ -69,6 +72,11 @@ nav.active
   overflow: visible;
 }
 
+#contact-info
+{
+  grid-column-end: contact-info-slot-end;
+}
+
 nav .submenu
 {
   position: absolute;
@@ -103,7 +111,8 @@ nav .submenu
   background-image: url('../img/icons/little_triangle_up.svg');
 }
 
-nav .menu-button
+nav .menu-button,
+#contact-info .menu-button
 {
   border-bottom: 0;
 }
@@ -121,4 +130,9 @@ nav .menu-button.active
 nav .submenu .menu-button:hover
 {
   background-color: var(--guideboard-submenu-backlight-color);
+}
+
+#contact-info .menu-button:hover
+{
+  background-color: var(--info-backlight-color);
 }
