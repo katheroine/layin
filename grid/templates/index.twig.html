@@ -26,16 +26,14 @@
     <title>Layin</title>
   </head>
   <!-- <body onload="restoreAccessibility();" onscroll="handleDashboard();" onresize="handleDashboard();"> -->
-  <body onload="restoreAccessibility(); handleDashboard();" id="body">
-    <!-- <header class="frame" onclick="foldNavigation();"> -->
-    <header id="header">
+  <body onload="restoreAccessibility(); handleDashboard();">
+    <header onclick="foldNavigation();">
     {% include 'header.partial.twig.html' %}
     </header>
     <div id="dashboard">
     {% include 'dashboard.partial.twig.html' %}
     </div>
-    <!-- <div id="board" class="frame" onclick="foldNavigation();"> -->
-    <div id="board">
+    <div id="board" onclick="foldNavigation();">
       <div id="liner">
         <main>
           <article>
@@ -188,7 +186,7 @@
       </div>
     </div>
     <!-- <footer class="frame" onclick="foldNavigation();"> -->
-    <footer>
+    <footer onclick="foldNavigation();">
       <!-- FOOTER -->
       <div id="contact-info">
         CONTACT-INFO

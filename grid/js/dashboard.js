@@ -1,5 +1,5 @@
 function handleDashboard() {
-  let header = document.getElementById("header");
+  let header = document.getElementsByTagName("header")[0];
 
   let detachmentObserver = new IntersectionObserver(handleDetachment);
 
@@ -29,6 +29,22 @@ function toggleNavigation() {
     navigation.classList.add("active");
   } else {
     foldAllSubmenus();
+    navigation.classList.remove("active");
+  }
+}
+
+function foldNavigation() {
+  if (window.innerWidth >= 1024) {
+    foldAllSubmenus();
+  } else {
+    hideNavigation();
+  }
+
+  function hideNavigation() {
+    foldAllSubmenus();
+
+    let navigation = document.getElementsByTagName("nav")[0];
+
     navigation.classList.remove("active");
   }
 }
