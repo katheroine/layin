@@ -1,8 +1,8 @@
 /* contrast */
 
-body.contrast
+.contrast header
 {
-  background-color: var(--contrast-body-background-color);
+  background-color: var(--contrast-header-background-color);
   background-image: none;
 }
 
@@ -17,10 +17,39 @@ body.contrast
   color: var(--contrast-controls-text-color);
 }
 
-.contrast #controls
+.contrast #controls,
+.contrast .detached #controls
 {
   background-color: var(--contrast-controls-background-color);
   opacity: 100%;
+}
+
+.contrast #guideboard,
+.contrast nav
+{
+  background-color: var(--contrast-guideboard-background-color);
+}
+
+.contrast footer
+{
+  background-color: var(--contrast-footer-background-color);
+}
+
+.contrast #copyright
+{
+  background-color: var(--contrast-copyright-background-color);
+  font-weight: bold;
+}
+
+.contrast #board
+{
+  background-color: var(--contrast-board-background-color);
+  color: var(--contrast-board-text-color);
+}
+
+.contrast nav .submenu
+{
+  background-color: var(--contrast-guideboard-submenu-background-color);
 }
 
 .contrast #dial .menu-button
@@ -28,7 +57,41 @@ body.contrast
   color: var(--contrast-controls-text-color);
 }
 
-.contrast #dial .menu-button:hover
+.contrast nav .menu-button
 {
-  background-color: var(--contrast-controls-backlight-color);
+  color: var(--contrast-guideboard-text-color);
+}
+
+.contrast nav .menu-button,
+.contrast nav .submenu .menu-button
+{
+  border-color: var(--contrast-guideboard-button-separator-color);
+}
+
+.contrast #contact-info .menu-button
+{
+  border-color: var(--contrast-footer-button-separator-color);
+}
+
+@media only screen and (min-width: 1024px) {
+  .contrast #dial .menu-button:hover
+  {
+    background-color: var(--contrast-controls-backlight-color);
+  }
+
+  .contrast nav .menu-button:hover,
+  .contrast nav .submenu .menu-button:hover
+  {
+    background-color: var(--contrast-guideboard-backlight-color);
+  }
+
+  .contrast nav .menu-button.active
+  {
+    background-color: var(--contrast-guideboard-submenu-background-color);
+  }
+
+  .contrast #contact-info .menu-button:hover
+  {
+    background-color: var(--contrast-footer-backlight-color);
+  }
 }
