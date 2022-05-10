@@ -75,3 +75,10 @@ function foldAllSubmenus() {
     });
   });
 }
+
+function undetachDashboard() {
+  let dashboard = document.getElementById("dashboard");
+
+  dashboard.classList.remove("detached");
+  board.style.paddingTop = "var(--controls-height)";
+}
