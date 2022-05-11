@@ -39,7 +39,7 @@ nav,
 
 .detached nav
 {
-  width: var(--width);
+  width: calc(100% - var(--vertical-hem) * 2);
   left: var(--vertical-hem);
   right: var(--vertical-hem);
 }
