@@ -177,6 +177,38 @@ footer
   text-align: center;
 }
 
+#board
+{
+  grid-area: board;
+  /* It cannot be set by the grid
+  because is overwritten by JS
+  during the dashboard detachment handling. */
+  padding-top: var(--controls-height);
+  padding-bottom: var(--controls-height);
+  background-color: var(--board-background-color);
+  color: var(--board-text-color);
+  font-size: 200%;
+}
+
+#liner
+{
+  display: grid;
+  grid-template-rows: [b primary-begin] auto [primary-end
+    secondary-begin] auto [secondary-end
+    tertiary-begin] auto [tertiary-end e];
+  grid-template-columns: [b L3lb L2lb L1b M3lb M3b M2b M1b S3b S2b S1b] 20% [L3le]
+    5% [L3mb] 45% [M3le L2le] 5% [L3me L2rb M3rb] 5% [L3rb]
+    20% [L3re L2re L1e M3re M3e M2e M1e S3e S2e S1e e];
+}
+
+main
+{
+  grid-row-start: b;
+  grid-row-end: e;
+  grid-column-start: b;
+  grid-column-end: e;
+}
+
 nav .submenu
 {
   display: none;
@@ -370,11 +402,4 @@ nav .menu-button.sup.active:after
 #contact-info .menu-button#fax-action:before
 {
   background-image: url('../img/icons/fax.svg');
-}
-
-#board
-{
-  grid-area: board;
-  padding-top: var(--site-name-hem);
-  padding-bottom: var(--site-name-hem);
 }

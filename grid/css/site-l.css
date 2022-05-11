@@ -136,3 +136,48 @@ nav .submenu .menu-button:hover
 {
   background-color: var(--info-backlight-color);
 }
+
+#liner.two-columns main,
+#liner.two-columns #promo
+{
+  grid-row-start: primary-begin;
+  grid-row-end: primary-end;
+}
+
+#liner.two-columns main
+{
+  grid-column-start: L2lb;
+  grid-column-end: L2le;
+}
+
+#liner.two-columns #promo
+{
+  grid-column-start: L2rb;
+  grid-column-end: L2re;
+}
+
+#liner.three-columns #demo,
+#liner.three-columns main,
+#liner.three-columns #promo
+{
+  grid-row-start: primary-begin;
+  grid-row-end: primary-end;
+}
+
+#liner.three-columns #demo
+{
+  grid-column-start: L3lb;
+  grid-column-end: L3le;
+}
+
+#liner.three-columns main
+{
+  grid-column-start: L3mb;
+  grid-column-end: L3me;
+}
+
+#liner.three-columns #promo
+{
+  grid-column-start: L3rb;
+  grid-column-end: L3re;
+}

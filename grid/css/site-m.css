@@ -42,3 +42,30 @@ nav,
   left: var(--vertical-hem);
   right: var(--vertical-hem);
 }
+
+#liner.three-columns main,
+#liner.three-columns #promo
+{
+  grid-row-start: primary-begin;
+  grid-row-end: primary-end;
+}
+
+#liner.three-columns main
+{
+  grid-column-start: M3lb;
+  grid-column-end: M3le;
+}
+
+#liner.three-columns #promo
+{
+  grid-column-start: M3rb;
+  grid-column-end: M3re;
+}
+
+#liner.three-columns #demo
+{
+  grid-row-start: secondary-begin;
+  grid-row-end: secondary-end;
+  grid-column-start: M3b;
+  grid-column-end: M3e;
+}
