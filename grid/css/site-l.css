@@ -1,7 +1,7 @@
 :root
 {
   /* layout */
-  --vertical-hem: 46px;
+  --horizontal-hem: 46px;
   --header-height: 336px;
   --banner-height: 168px; /* 2*42 + 84 */
   --logo-size: 252px; /* 2*(42 + 84) */
