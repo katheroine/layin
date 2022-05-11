@@ -54,6 +54,7 @@
   #demo img,
   #promo img
   {
+    display: block;
     max-width: 300px;
     max-height: 400px;
     margin-left: auto;
@@ -73,20 +74,23 @@
     font-size: 16px;
   }
 
+  #promo img,
+  #demo img
+  {
+    display: block;
+    margin: 0;
+  }
+
   #promo img
   {
-    max-width: 100%;
-    max-height: auto;
+    max-width: 225px;
+    max-height: 400px;
   }
 
   #demo img
   {
-    max-width: 200px;
-  }
-
-  #promo img
-  {
-    margin-left: 0;
+    width: 100%;
+    max-width: 225px;
   }
 }
 
@@ -105,8 +109,8 @@
   #promo img,
   #demo img
   {
-    margin-left: auto;
+    display: block;
     max-width: 100%;
-    max-height: auto;
+    max-height: 800px;
   }
 }

@@ -61,9 +61,9 @@ body
 footer
 {
   display: grid;
-  grid-template-columns: [scaffold-begin] minmax(5%, auto)
+  grid-template-columns: [scaffold-begin] minmax(var(--vertical-hem), auto)
     [shaft-begin] minmax(min-content, var(--max-width)) [shaft-end]
-    minmax(5%, auto) [scaffold-end];
+    minmax(var(--vertical-hem), auto) [scaffold-end];
 }
 
 #signboard,
@@ -183,8 +183,8 @@ footer
   /* It cannot be set by the grid
   because is overwritten by JS
   during the dashboard detachment handling. */
-  padding-top: var(--controls-height);
-  padding-bottom: var(--controls-height);
+  padding-top: var(--vertical-hem);
+  padding-bottom: var(--vertical-hem);
   background-color: var(--board-background-color);
   color: var(--board-text-color);
   font-size: 200%;
@@ -193,13 +193,22 @@ footer
 #liner
 {
   display: grid;
-  grid-template-rows: [b primary-begin] auto [primary-end
-    secondary-begin] auto [secondary-end
-    tertiary-begin] auto [tertiary-end e];
+  grid-template-rows: [b primary-begin] auto [primary-end]
+    var(--vertical-hem)
+    [secondary-begin] auto [secondary-end]
+    var(--vertical-hem)
+    [tertiary-begin] auto [tertiary-end e];
   grid-template-columns: [b L3lb L2lb L1b M3lb M3b M2b M1b S3b S2b S1b] 20% [L3le]
     5% [L3mb] 45% [M3le L2le] 5% [L3me L2rb M3rb] 5% [L3rb]
     20% [L3re L2re L1e M3re M3e M2e M1e S3e S2e S1e e];
 }
+
+/* main,
+#promo,
+#demo
+{
+  overflow: none;
+} */
 
 main
 {

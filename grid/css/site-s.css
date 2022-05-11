@@ -1,6 +1,7 @@
 :root
 {
   /* layout */
+  --vertical-hem: 40px;
   --header-height: 36vw;
   --banner-height: 18vw; /* 2*5 + 8 */
   --logo-size: 26vw; /* 2*(5 + 8) */
@@ -75,7 +76,7 @@ nav.active
 #liner.one-column main
 {
   grid-row-start: primary-begin;
-  grid-row-end: primary-end;
+  grid-row-end: tertiary-end;
   grid-column-start: S1b;
   grid-column-end: S1e;
 }
@@ -96,7 +97,7 @@ nav.active
 #liner.two-columns #promo
 {
   grid-row-start: secondary-begin;
-  grid-row-end: secondary-end;
+  grid-row-end: tertiary-end;
 }
 
 #liner.three-columns main,

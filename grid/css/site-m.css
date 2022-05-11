@@ -1,6 +1,7 @@
 :root
 {
   /* layout */
+  --vertical-hem: 46px;
   --header-height: 30vw;
   --banner-height: 15vw; /* 2*4 + 7 */
   --logo-size: 22vw; /* 2*(4 + 7) */
@@ -44,7 +45,7 @@ nav,
 }
 
 #liner.three-columns main,
-#liner.three-columns #promo
+#liner.three-columns #demo
 {
   grid-row-start: primary-begin;
   grid-row-end: primary-end;
@@ -56,13 +57,13 @@ nav,
   grid-column-end: M3le;
 }
 
-#liner.three-columns #promo
+#liner.three-columns #demo
 {
   grid-column-start: M3rb;
   grid-column-end: M3re;
 }
 
-#liner.three-columns #demo
+#liner.three-columns #promo
 {
   grid-row-start: secondary-begin;
   grid-row-end: secondary-end;

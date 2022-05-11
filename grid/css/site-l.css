@@ -1,6 +1,7 @@
 :root
 {
   /* layout */
+  --vertical-hem: 46px;
   --header-height: 336px;
   --banner-height: 168px; /* 2*42 + 84 */
   --logo-size: 252px; /* 2*(42 + 84) */
@@ -141,7 +142,7 @@ nav .submenu .menu-button:hover
 #liner.two-columns #promo
 {
   grid-row-start: primary-begin;
-  grid-row-end: primary-end;
+  grid-row-end: tertiary-end;
 }
 
 #liner.two-columns main
@@ -161,7 +162,7 @@ nav .submenu .menu-button:hover
 #liner.three-columns #promo
 {
   grid-row-start: primary-begin;
-  grid-row-end: primary-end;
+  grid-row-end: tertiary-end;
 }
 
 #liner.three-columns #demo
