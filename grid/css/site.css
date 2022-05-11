@@ -160,7 +160,7 @@ footer
   grid-row-start: info-begin;
   grid-row-end: info-end;
   display: grid;
-  grid-template-columns: [contact-info-begin] var(--contact-info-slot-width) [contact-info-slot-end]
+  grid-template-columns: [contact-info-begin] minmax(min-content, var(--contact-info-slot-width)) [contact-info-slot-end]
     auto [contact-info-end];
 }
 
