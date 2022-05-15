@@ -6,7 +6,7 @@
 @media only screen and (min-width: 0px) {
   .demo-layouts
   {
-    font-size: 16px;
+    font-size: 65%;
   }
 
   .demo-layouts p,
@@ -69,7 +69,7 @@
 @media only screen and (min-width: 640px) {
   .demo-layouts main
   {
-    font-size: 18px;
+    font-size: 100%;
   }
 
   .demo-layouts #promo,
@@ -91,7 +91,7 @@
 @media only screen and (min-width: 1024px) {
   .demo-layouts main
   {
-    font-size: 20px;
+    font-size: 95%;
   }
 
   .demo-layouts #promo,
