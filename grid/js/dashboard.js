@@ -26,6 +26,7 @@ function toggleNavigation() {
   let navigationDisplay = window.getComputedStyle(navigation).display;
 
   if ((navigationDisplay != "block") && (navigationDisplay != "flex")) {
+    handleScrollingUpForGuideboardVisibility();
     navigation.classList.add("active");
   } else {
     foldAllSubmenus();
@@ -81,4 +82,50 @@ function undetachDashboard() {
 
   dashboard.classList.remove("detached");
   board.style.paddingTop = "var(--controls-height)";
+}
+
+function handleScrollingUpForGuideboardVisibility() {
+  let screenHeight = getScreenHeight();
+  let dashboard = document.getElementById("dashboard");
+
+  if (! dashboard.classList.contains("detached")) {
+    let threshold = screenHeight / 2;
+    let controlsScreenVerticalShift = getControlsHeight()
+      + getHeaderAreaHeight()
+      - getScrollingOffset();
+
+    if (controlsScreenVerticalShift > threshold) {
+      window.scroll(0, screenHeight);
+    }
+  }
+
+  function getScreenHeight() {
+    return (window.innerHeight
+      || document.documentElement.clientHeight
+      || document.body.clientHeight);
+  }
+
+  function getControlsHeight() {
+    let controls = document.getElementById("controls");
+    let controlsStyle = window.getComputedStyle(controls);
+
+    return parseInt(controlsStyle.height);
+  }
+
+  function getHeaderAreaHeight() {
+    let header = document.getElementsByTagName("header")[0];
+    let headerStyle = window.getComputedStyle(header);
+
+    let headerHeight = parseInt(headerStyle.height);
+    let headerBorderBottomSize = parseInt(headerStyle.borderBottom);
+    let headerMarginBottom = parseInt(headerStyle.marginBottom);
+
+    return (headerHeight + headerBorderBottomSize + headerMarginBottom);
+  }
+
+  function getScrollingOffset() {
+    var offset = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
+
+    return (offset ? offset : 0);
+  }
 }
