@@ -63,6 +63,7 @@
 }
 
 .contrast nav .menu-button,
+.contrast nav .navigation-item:first-child .menu-button,
 .contrast nav .submenu .menu-button
 {
   border-color: var(--contrast-guideboard-button-separator-color);

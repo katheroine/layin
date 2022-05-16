@@ -3,8 +3,8 @@
   /* layout */
   --horizontal-hem: 40px;
   --header-height: 36vw;
-  --banner-height: 18vw; /* 2*5 + 8 */
-  --logo-size: 26vw; /* 2*(5 + 8) */
+  --banner-height: 18vw;
+  --logo-size: 26vw;
   --site-name-hem: 5vw;
   --site-name-font-size: 7vw;
   --site-description-font-size: 3vw;
@@ -132,6 +132,13 @@ nav .menu-button,
 {
   border-bottom-width: 1px;
   border-bottom-style: solid;
+}
+
+nav .navigation-item:first-child .menu-button
+{
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--guideboard-button-separator-color);
 }
 
 nav .menu-button

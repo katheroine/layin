@@ -3,8 +3,8 @@
   /* layout */
   --horizontal-hem: 46px;
   --header-height: 336px;
-  --banner-height: 168px; /* 2*42 + 84 */
-  --logo-size: 252px; /* 2*(42 + 84) */
+  --banner-height: 168px;
+  --logo-size: 252px;
   --site-name-hem: 42px;
   --site-name-font-size: 80px;
   --site-description-font-size: 26px;
@@ -118,6 +118,11 @@ nav .menu-button,
 #contact-info .menu-button
 {
   border-bottom: 0;
+}
+
+nav .navigation-item:first-child .menu-button
+{
+  border-top: 0;
 }
 
 nav .menu-button:hover

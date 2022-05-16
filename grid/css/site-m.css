@@ -2,9 +2,9 @@
 {
   /* layout */
   --horizontal-hem: 46px;
-  --header-height: 30vw;
-  --banner-height: 15vw; /* 2*4 + 7 */
-  --logo-size: 22vw; /* 2*(4 + 7) */
+  --header-height: 32vw;
+  --banner-height: 16vw;
+  --logo-size: 22vw;
   --site-name-hem: 4vw;
   --site-name-font-size: 6vw;
   --site-description-font-size: 2vw;
