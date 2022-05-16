@@ -19,17 +19,6 @@
 {
   margin: 0;
   padding: 0;
-  /*
-  Allows to solve the sticky and resized dashboard
-  bouncing problem that occurs during the scrolling
-  and prevents from the dashboard gets stuck as detached.
-  */
-  /* overflow-anchor: none;
-  -webkit-overflow-anchor: none;
-  overscroll-behavior: none;
-  -webkit-overscroll-behavior: none;
-  overflow-scrolling: none;
-  -webkit-overflow-scrolling: none; */
 }
 
 body
@@ -173,7 +162,7 @@ footer
   padding: 7px 0;
   background-color: var(--copyright-background-color);
   color: var(--copyright-font-color);
-  font-size: 90%;
+  font-size: var(--copyright-font-size);
   text-align: center;
 }
 
@@ -187,7 +176,6 @@ footer
   padding-bottom: var(--horizontal-hem);
   background-color: var(--board-background-color);
   color: var(--board-text-color);
-  font-size: 200%;
 }
 
 #liner
@@ -202,13 +190,6 @@ footer
     5% [L3mb] 45% [M3le L2le] 5% [L3me L2rb M3rb] 5% [L3rb]
     20% [L3re L2re L1e M3re M3e M2e M1e S3e S2e S1e e];
 }
-
-/* main,
-#promo,
-#demo
-{
-  overflow: none;
-} */
 
 main
 {

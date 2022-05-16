@@ -15,16 +15,18 @@
   --info-horizontal-hem: 50px;
 
   /* font */
-  font-size: 16px;
+  font-size: 20px;
 
   /* details */
   --detached-controls-opacity: 85%;
 
   --menu-button-minor-hem: 10px;
   --menu-button-major-hem: 0;
-  --menu-button-font-size: 120%;
+  --menu-button-font-size: 100%;
   --menu-button-icon-size: 26px;
   --contact-info-item-major-hem: 8px;
+  --contact-info-item-font-size: 80%;
+  --copyright-font-size: 75%;
 }
 
 #guideboard

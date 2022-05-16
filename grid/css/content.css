@@ -4,11 +4,6 @@
 }
 
 @media only screen and (min-width: 0px) {
-  .demo-layouts
-  {
-    font-size: 65%;
-  }
-
   .demo-layouts p,
   .demo-layouts h1,
   .demo-layouts h2,
@@ -75,7 +70,7 @@
   .demo-layouts #promo,
   .demo-layouts #demo
   {
-    font-size: 16px;
+    font-size: 90%;
   }
 
   .demo-layouts.two-columns #promo img,
@@ -97,7 +92,7 @@
   .demo-layouts #promo,
   .demo-layouts #demo
   {
-    font-size: 18px;
+    font-size: 90%;
   }
 
   .demo-layouts.two-columns #promo img,
