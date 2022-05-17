@@ -1,36 +1,89 @@
 :root
 {
   /* layout */
-  --banner-height: 168px; /* 2*42 + 84 */
-
-  --body-background-size: 100%;
-  --logo-height: 252px; /* 2*(42 + 84) */
+  --horizontal-hem: 46px;
+  --header-height: 336px;
+  --banner-height: 168px;
+  --logo-size: 252px;
   --site-name-hem: 42px;
-
   --site-name-font-size: 80px;
   --site-description-font-size: 26px;
+  --body-background-size: 100%;
 
-  --detached-offset: 46px;
-
-  --board-horizontal-hem: 90px;
+  --controls-height: 46px;
 
   --info-horizontal-hem: 50px;
 
   /* font */
-  font-size: 16px;
+  font-size: 20px;
 
   /* details */
+  --detached-controls-opacity: 85%;
+
   --menu-button-minor-hem: 10px;
   --menu-button-major-hem: 0;
-  --menu-button-font-size: 120%;
+  --menu-button-font-size: 100%;
   --menu-button-icon-size: 26px;
   --contact-info-item-major-hem: 8px;
+  --contact-info-item-font-size: 80%;
+  --copyright-font-size: 75%;
 }
 
-#drawer
+#guideboard
 {
-  padding-left: var(--vertical-hem);
-  padding-right: var(--vertical-hem);
+  background-color: var(--guideboard-background-color);
+}
+
+.detached #controls
+{
+  opacity: var(--detached-controls-opacity);
+}
+
+.detached #guideboard
+{
+  position: relative;
+}
+
+nav,
+/*
+This is necessary to prevent
+stucking nav styles in lower screen sizes versions
+when navigation is active (visible)
+and screen is resizing.
+*/
+nav.active
+{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.detached #dial,
+.detached nav
+{
+  background-color: transparent;
+}
+
+.detached nav
+{
+  position: absolute;
+  top: calc(var(--controls-height) * (-1));
+  left: 0;
+  width: max-content;
+  max-width: 678px;
+  overflow: visible;
+}
+
+#contact-info
+{
+  grid-column-end: contact-info-slot-end;
+}
+
+nav .submenu
+{
+  position: absolute;
+  width: 300px;
 }
 
 #dial .menu-button:hover
@@ -43,48 +96,33 @@
   display: none;
 }
 
-#guideboard
+.detached nav .menu-button.icon .content,
+.detached nav .menu-button.sup:after
 {
-  display: block;
-  position: relative;
-  background-color: var(--guideboard-background-color);
+  display: none;
 }
 
-nav,
-/*
-This is necessary to prevent
-stucking nav styles in lower screen sizes versions
-when navigation is active (visible)
-and screen is resizing.
-*/
-nav.active
+.detached nav .menu-button.sup
 {
-  position: static;
-  display: flex;
-  width: auto;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  background-size: var(--controls-height);
+  background-image: url('../img/icons/little_triangle_down.svg');
+  background-repeat: no-repeat;
 }
 
-.detached nav
+.detached nav .menu-button.sup.active
 {
-  position: fixed;
-  top: 0;
-  width: auto;
-  max-width: 678px;
-  overflow: visible;
-}
-
-nav .submenu
-{
-  position: absolute;
-  width: 300px;
+  background-image: url('../img/icons/little_triangle_up.svg');
 }
 
 nav .menu-button,
 #contact-info .menu-button
 {
   border-bottom: 0;
+}
+
+nav .navigation-item:first-child .menu-button
+{
+  border-top: 0;
 }
 
 nav .menu-button:hover
@@ -97,92 +135,57 @@ nav .menu-button.active
   background-color: var(--guideboard-submenu-background-color);
 }
 
-.detached nav .menu-button.icon .content,
-.detached nav .menu-button.sup:after
+nav .submenu .menu-button:hover
 {
-  display: none;
-}
-
-.detached nav .menu-button.sup
-{
-  background-size: 46px;
-  background-image: url('../img/icons/little_triangle_down.svg');
-  background-repeat: no-repeat;
-}
-
-.detached nav .menu-button.sup.active
-{
-  background-image: url('../img/icons/little_triangle_up.svg');
-}
-
-#board.detached
-{
-  margin-top: var(--detached-offset); /* for smoothly scrolling */
-  padding-top: var(--detached-offset); /* for replacing moved up navigation */
-}
-
-#liner
-{
-  padding-left: var(--vertical-hem);
-  padding-right: var(--vertical-hem);
-}
-
-#liner.two-columns
-{
-  flex-wrap: wrap;
-  flex-direction: row;
-  column-gap: var(--vertical-hem);
-}
-
-main,
-#liner.two-columns main,
-#liner.three-columns main,
-#liner.two-columns #promo,
-#liner.three-columns #promo,
-#liner.three-columns #demo
-{
-  padding-left: 0;
-  padding-right: 0;
-}
-
-#liner.two-columns main
-{
-  order: 1;
-  width: 70%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
-#liner.three-columns main
-{
-  order: 2;
-  width: 50%;
-}
-
-#liner.two-columns #promo
-{
-  order: 2;
-  width: 25%;
-}
-
-#liner.three-columns #promo
-{
-  order: 3;
-  width: 20%;
-}
-
-#liner.three-columns #demo
-{
-  order: 1;
-  width: 20%;
-}
-
-#contact-info
-{
-  max-width: 500px;
+  background-color: var(--guideboard-submenu-backlight-color);
 }
 
 #contact-info .menu-button:hover
 {
   background-color: var(--info-backlight-color);
+}
+
+#liner.two-columns main,
+#liner.two-columns #promo
+{
+  grid-row-start: primary-begin;
+  grid-row-end: tertiary-end;
+}
+
+#liner.two-columns main
+{
+  grid-column-start: L2lb;
+  grid-column-end: L2le;
+}
+
+#liner.two-columns #promo
+{
+  grid-column-start: L2rb;
+  grid-column-end: L2re;
+}
+
+#liner.three-columns #demo,
+#liner.three-columns main,
+#liner.three-columns #promo
+{
+  grid-row-start: primary-begin;
+  grid-row-end: tertiary-end;
+}
+
+#liner.three-columns #demo
+{
+  grid-column-start: L3lb;
+  grid-column-end: L3le;
+}
+
+#liner.three-columns main
+{
+  grid-column-start: L3mb;
+  grid-column-end: L3me;
+}
+
+#liner.three-columns #promo
+{
+  grid-column-start: L3rb;
+  grid-column-end: L3re;
 }

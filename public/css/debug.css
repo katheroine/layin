@@ -41,27 +41,37 @@ header
 
 #dashboard
 {
-  background-color: #261791 !important;
+  /* background-color: #261791 !important; */
+}
+
+#dashboard.detached
+{
+  /* background-color: darkorange !important; */
 }
 
 #controls
 {
-  background-color: #a499db !important;
+  /* background-color: #a499db !important; */
 }
 
 #guideboard
 {
-  background-color: #999adb !important;
+  /* background-color: #999adb !important; */
+}
+
+nav
+{
+  /* background-color: blue !important; */
 }
 
 #board
 {
-  background-color: #133886 !important;
+  /* background-color: #133886 !important; */
 }
 
 #liner
 {
-  background-color: #aabce1 !important;
+  /* background-color: #aabce1 !important; */
 }
 
 #main
@@ -86,15 +96,15 @@ header
 
 footer
 {
-  background-color: #0a6344 !important;
+  /* background-color: #0a6344 !important; */
 }
 
 #contact-info
 {
-  background-color: #95c3b6 !important;
+  /* background-color: #95c3b6 !important; */
 }
 
 #copyright
 {
-  background-color: #95c3a5 !important;
+  /* background-color: #95c3a5 !important; */
 }
