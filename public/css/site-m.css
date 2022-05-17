@@ -1,78 +1,74 @@
 :root
 {
   /* layout */
-  --banner-height: 15vw; /* 2*4 + 7 */
-
-  --body-background-size: 115%;
-  --logo-height: 22vw; /* 2*(4 + 7) */
+  --horizontal-hem: 46px;
+  --header-height: 32vw;
+  --banner-height: 16vw;
+  --logo-size: 22vw;
   --site-name-hem: 4vw;
-
   --site-name-font-size: 6vw;
   --site-description-font-size: 2vw;
+  --body-background-size: 115%;
 
-  --detached-offset: 46px;
-
-  --board-horizontal-hem: 70px;
+  --controls-height: 46px;
 
   --info-horizontal-hem: 30px;
 
   /* font */
-  font-size: 14px;
+  font-size: 18px;
 
   /* details */
   --menu-button-minor-hem: 10px;
   --menu-button-major-hem: 0;
-  --menu-button-font-size: 120%;
+  --menu-button-font-size: 105%;
   --menu-button-icon-size: 26px;
-  --contact-info-item-major-hem: 8px;
+  --contact-info-item-major-hem: 6px;
+  --contact-info-item-font-size: 90%;
+  --copyright-font-size: 80%;
 }
 
-#drawer
+#guideboard
 {
-  width: var(--width);
-  padding: 0 var(--vertical-hem);
+  background-color: var(--board-background-color);
 }
 
-nav
+nav,
+#info
 {
-  width: var(--width);
+  grid-column-start: shaft-begin;
+  grid-column-end: shaft-end;
 }
 
 .detached nav
 {
-  width: var(--width);
+  width: calc(100% - var(--vertical-hem) * 2);
+  left: var(--vertical-hem);
+  right: var(--vertical-hem);
 }
 
-#liner.three-columns
+#liner.three-columns main,
+#liner.three-columns #demo
 {
-  flex-wrap: wrap;
-  flex-direction: row;
-  column-gap: var(--vertical-hem);
+  grid-row-start: primary-begin;
+  grid-row-end: primary-end;
 }
 
 #liner.three-columns main
 {
-  order: 1;
-  width: 65%;
-  padding-left: var(--vertical-hem);
-  padding-right: 0;
+  grid-column-start: M3lb;
+  grid-column-end: M3le;
 }
 
 #liner.three-columns #demo
 {
-  order: 2;
-  width: 20%;
-  padding-left: 0;
-  padding-right: var(--vertical-hem);
+  grid-column-start: M3rb;
+  grid-column-end: M3re;
 }
 
 #liner.three-columns #promo
 {
-  order: 3;
-}
-
-#info
-{
-  padding-left: var(--vertical-hem);
-  padding-right: var(--vertical-hem);
+  grid-row-start: secondary-begin;
+  grid-row-end: secondary-end;
+  grid-column-start: M3b;
+  grid-column-end: M3e;
 }

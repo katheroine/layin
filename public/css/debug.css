@@ -1,65 +1,110 @@
 body
 {
-  background-color: violet;
-  background-image: none !important;
+  /* background-color: grey; */
+  /* background-image: none !important; */
 }
 
 .scaffold
 {
-  background-color: orange;
+  /* background-color: orange; */
+}
+
+header
+{
+  /* background-color: #7b1692 !important; */
 }
 
 #banner
 {
-  background-color: green;
+  /* background-color: #cf99db !important; */
 }
 
 #signboard
 {
-  background-color: lime;
+  /* background-color: lime; */
 }
 
 #logo
 {
-  background-color: navy;
+  /* background-color: navy; */
 }
 
 #site-name
 {
-  background-color: purple;
+  /* background-color: purple; */
 }
 
 #site-description
 {
-  background-color: magenta;
+  /* background-color: magenta; */
+}
+
+#dashboard
+{
+  /* background-color: #261791 !important; */
+}
+
+#dashboard.detached
+{
+  /* background-color: darkorange !important; */
+}
+
+#controls
+{
+  /* background-color: #a499db !important; */
+}
+
+#guideboard
+{
+  /* background-color: #999adb !important; */
+}
+
+nav
+{
+  /* background-color: blue !important; */
 }
 
 #board
 {
-  background-color: red;
+  /* background-color: #133886 !important; */
 }
 
 #liner
 {
-  background-color: pink;
+  /* background-color: #aabce1 !important; */
 }
 
 #main
 {
-  background-color: aqua !important;
+  /* background-color: aqua !important; */
 }
 
 #main > div
 {
-  background-color: ivory;
+  /* background-color: ivory; */
 }
 
 #main div.scaffold
 {
-  background-color: grey;
+  /* background-color: grey; */
 }
 
 #main article
 {
-  background-color: cyan;
+  /* background-color: cyan; */
+}
+
+footer
+{
+  /* background-color: #0a6344 !important; */
+}
+
+#contact-info
+{
+  /* background-color: #95c3b6 !important; */
+}
+
+#copyright
+{
+  /* background-color: #95c3a5 !important; */
 }

@@ -13,5 +13,5 @@ echo $template->render([
   'subpages_url' => '.',
   'assets_dir' => '.',
   'code_file_extension' => 'php',
-  'debug' => false,
+  'debug' => true,
 ]);

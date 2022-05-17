@@ -1,60 +1,60 @@
-@media only screen and (min-width: 0px) {
-  #board
-  {
-    font-size: 16px;
-  }
+.demo-layouts img
+{
+  max-width: 100%;
+}
 
-  p,
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  img
+@media only screen and (min-width: 0px) {
+  .demo-layouts p,
+  .demo-layouts h1,
+  .demo-layouts h2,
+  .demo-layouts h3,
+  .demo-layouts h4,
+  .demo-layouts h5,
+  .demo-layouts h6,
+  .demo-layouts img
   {
     margin-bottom: 10px;
   }
 
-  p
+  .demo-layouts p
   {
     font-size: 100%
   }
 
-  h1
+  .demo-layouts h1
   {
     font-size: 190%;
   }
 
-  h2
+  .demo-layouts h2
   {
     font-size: 160%;
   }
 
-  h3
+  .demo-layouts h3
   {
     font-size: 140%
   }
 
-  h4
+  .demo-layouts h4
   {
     font-size: 120%;
   }
 
-  h5
+  .demo-layouts h5
   {
     font-size: 110%
   }
 
-  h6
+  .demo-layouts h6
   {
     font-size: 100%;
   }
 
-  #demo img,
-  #promo img
+  .demo-layouts img
   {
-    max-width: 300px;
+    display: block;
+    width: 300px;
     max-height: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -62,47 +62,42 @@
 }
 
 @media only screen and (min-width: 640px) {
-  main
+  .demo-layouts main
   {
-    font-size: 18px;
+    font-size: 100%;
   }
 
-  #promo,
-  #demo
+  .demo-layouts #promo,
+  .demo-layouts #demo
   {
-    font-size: 16px;
+    font-size: 90%;
   }
 
-  #promo img,
-  #demo img
+  .demo-layouts.two-columns #promo img,
+  .demo-layouts.three-columns #promo img
   {
-    max-width: 200px;
+    width: 200px;
     max-height: 400px;
-  }
-
-  #promo img
-  {
     margin-left: 0;
+    margin-right: 0;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  main
+  .demo-layouts main
   {
-    font-size: 20px;
+    font-size: 95%;
   }
 
-  #promo,
-  #demo
+  .demo-layouts #promo,
+  .demo-layouts #demo
   {
-    font-size: 18px;
+    font-size: 90%;
   }
 
-  #promo img,
-  #demo img
+  .demo-layouts.two-columns #promo img,
+  .demo-layouts.three-columns #promo img
   {
-    margin-left: auto;
-    max-width: 400px;
-    max-height: 800px;
+    width: 100%;
   }
 }

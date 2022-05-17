@@ -22,13 +22,11 @@
     <script src="../../../js/accessibility.js"></script>
     <title>Layin</title>
   </head>
-  <body onload="restoreAccessibility();" onscroll="handleDashboard();" onresize="handleDashboard();">
+  <body onload="restoreAccessibility(); handleDashboard();">
     <header onclick="foldNavigation();">
       <div id="banner">
-        <div id="signboard" class="scaffold">
-          <div id="logo">
-            <a><img src="../../../img/layin-logo.png" alt="Layin logo"></a>
-          </div>
+        <div id="signboard">
+          <a id="logo"><img src="../../../img/layin-logo.png" alt="Layin logo"></a>
           <div id="site-name">
             Layin <span id="site-description">General purpose layout</span>
           </div>
@@ -36,88 +34,86 @@
       </div>
     </header>
     <div id="dashboard">
-      <div id="controls" class="menu">
-        <div id="dial" class="scaffold">
+      <div id="controls">
+        <div id="dial">
           <a id="increase-font-trigger" class="menu-button icon" onclick="increaseFontSize();"></a>
           <a id="decrease-font-trigger" class="menu-button icon" onclick="decreaseFontSize();"></a>
           <a id="toggle-contrast-trigger" class="menu-button icon" onclick="toggleContrast();"></a>
           <a id="reset-accessibility-trigger" class="menu-button icon" onclick="reset();"></a>
-          <a id="go-up-link" class="menu-button icon" href="#top"></a>
+          <a id="go-up-link" class="menu-button icon" href="#top" onclick="undetachDashboard(); foldNavigation();"></a>
           <a id="guideboard-trigger" class="menu-button icon" onclick="toggleNavigation();"></a>
         </div>
       </div>
-      <div id="guideboard" class="menu">
-        <div id="drawer" class="scaffold">
-          <nav>
-            <div class="navigation-item">
-              <a id="home-link" class="menu-button icon" href="../../../../index.html">
-                <div class="content">Home</div>
+      <div id="guideboard">
+        <nav>
+          <div class="navigation-item">
+            <a id="home-link" class="menu-button icon" href="../../../../index.html">
+              <div class="content">Home</div>
+            </a>
+          </div>
+          <div class="navigation-item">
+            <a id="accessibility-info-link" class="menu-button icon" href="../../../../accessibility_info.html">
+              <div class="content">Accessibility info</div>
+            </a>
+          </div>
+          <div class="navigation-item">
+            <a id="layouts-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
+              <div class="content">Layouts</div>
+            </a>
+            <div class="submenu">
+              <a class="menu-button sub" href="../../../demo/layouts/board/one_column.html">
+                <div class="content">One column</div>
+              </a>
+              <a class="menu-button sub" href="../../../demo/layouts/board/two_columns.html">
+                <div class="content">Two columns</div>
+              </a>
+              <a class="menu-button sub" href="../../../demo/layouts/board/three_columns.html">
+                <div class="content">Three columns</div>
               </a>
             </div>
-            <div class="navigation-item">
-              <a id="accessibility-info-link" class="menu-button icon" href="../../../../accessibility_info.html">
-                <div class="content">Accessibility info</div>
+          </div>
+          <div class="navigation-item">
+            <a id="about-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
+              <div class="content">About</div>
+            </a>
+            <div class="submenu">
+              <a class="menu-button sub" href="https://github.com/katheroine/layin">
+                <div class="content">Layin repository</div>
+              </a>
+              <a class="menu-button sub" href="https://about.me/katheroine">
+                <div class="content">Layin author</div>
               </a>
             </div>
-            <div class="navigation-item">
-              <a id="layouts-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
-                <div class="content">Layouts</div>
+          </div>
+          <div class="navigation-item">
+            <a id="favourites-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
+              <div class="content">Favourites</div>
+            </a>
+            <div class="submenu">
+              <a class="menu-button sub" href="https://linuxmint.com">
+                <div class="content">Linux Mint</div>
               </a>
-              <div class="submenu">
-                <a class="menu-button sub" href="../../../demo/layouts/board/one_column.html">
-                  <div class="content">One column</div>
-                </a>
-                <a class="menu-button sub" href="../../../demo/layouts/board/two_columns.html">
-                  <div class="content">Two columns</div>
-                </a>
-                <a class="menu-button sub" href="../../../demo/layouts/board/three_columns.html">
-                  <div class="content">Three columns</div>
-                </a>
-              </div>
-            </div>
-            <div class="navigation-item">
-              <a id="about-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
-                <div class="content">About</div>
+              <a class="menu-button sub" href="https://atom.io">
+                <div class="content">Atom</div>
               </a>
-              <div class="submenu">
-                <a class="menu-button sub" href="https://github.com/katheroine/layin">
-                  <div class="content">Layin repository</div>
-                </a>
-                <a class="menu-button sub" href="https://about.me/katheroine">
-                  <div class="content">Layin author</div>
-                </a>
-              </div>
-            </div>
-            <div class="navigation-item">
-              <a id="favourites-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
-                <div class="content">Favourites</div>
+              <a class="menu-button sub" href="https://git-scm.com">
+                <div class="content">Git</div>
               </a>
-              <div class="submenu">
-                <a class="menu-button sub" href="https://linuxmint.com">
-                  <div class="content">Linux Mint</div>
-                </a>
-                <a class="menu-button sub" href="https://atom.io">
-                  <div class="content">Atom</div>
-                </a>
-                <a class="menu-button sub" href="https://git-scm.com">
-                  <div class="content">Git</div>
-                </a>
-                <a class="menu-button sub" href="https://github.com/">
-                  <div class="content">GitHub</div>
-                </a>
-              </div>
-            </div>
-            <div class="navigation-item">
-              <a id="contact-link" class="menu-button icon" href="#contact-info" onclick="foldNavigation();">
-                <div class="content">Contact</div>
+              <a class="menu-button sub" href="https://github.com/">
+                <div class="content">GitHub</div>
               </a>
             </div>
-          </nav>
-        </div>
+          </div>
+          <div class="navigation-item">
+            <a id="contact-link" class="menu-button icon" href="#contact-info" onclick="foldNavigation();">
+              <div class="content">Contact</div>
+            </a>
+          </div>
+        </nav>
       </div>
     </div>
     <div id="board" onclick="foldNavigation();">
-      <div id="liner" class="scaffold three-columns">
+      <div id="liner" class="demo-layouts three-columns">
         <main>
           <article>
             <h1>Lorem ipsum</h1>
@@ -216,7 +212,7 @@
       </div>
     </div>
     <footer onclick="foldNavigation();">
-      <div id="info" class="scaffold">
+      <div id="info">
         <address id="contact-info">
           <a class="menu-button icon" id="address-link" href="https://goo.gl/maps/T84vfoTp8Rdbh6V28">
             <div class="content">address: <span class="value">al. Wojciecha Korfantego 35, <span style="white-space: nowrap;">40-005</span> Katowice</span></div>
