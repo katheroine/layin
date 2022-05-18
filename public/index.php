@@ -11,7 +11,7 @@ $template = $twig->load('index.twig.html');
 echo $template->render([
   'base_url' => '.',
   'subpages_url' => '.',
-  'assets_dir' => '.',
+  'assets_dir' => './assets',
   'code_file_extension' => 'php',
   'debug' => true,
 ]);

@@ -11,7 +11,7 @@ $template = $twig->load('layouts/board/one_column.twig.html');
 echo $template->render([
   'base_url' => '../../..',
   'subpages_url' => '../..',
-  'assets_dir' => '../../../public',
+  'assets_dir' => '../../../public/assets',
   'code_file_extension' => 'html',
   'debug' => false,
 ]);
