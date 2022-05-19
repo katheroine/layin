@@ -1,0 +1,1 @@
+../../../src/assets/scripts/dashboard.basic.js

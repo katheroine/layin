@@ -36,7 +36,7 @@ body
     "board"
     "footer";
   background-size: var(--body-background-size);
-  background-image: url('../img/layin-cover.jpeg');
+  background-image: url('../images/cover.jpeg');
   background-attachment: fixed;
   background-position-x: center;
   background-position-y: top;
@@ -298,72 +298,72 @@ nav .submenu .menu-button
 
 #dial .menu-button#increase-font-trigger:before
 {
-  background-image: url('../img/icons/a_plus.svg');
+  background-image: url('../images/icons.basic/a_plus.svg');
 }
 
 #dial .menu-button#decrease-font-trigger:before
 {
-  background-image: url('../img/icons/a_minus.svg');
+  background-image: url('../images/icons.basic/a_minus.svg');
 }
 
 #dial .menu-button#toggle-contrast-trigger:before
 {
-  background-image: url('../img/icons/contrast.svg');
+  background-image: url('../images/icons.basic/contrast.svg');
 }
 
 #dial .menu-button#reset-accessibility-trigger:before
 {
-  background-image: url('../img/icons/reset.svg');
+  background-image: url('../images/icons.basic/reset.svg');
 }
 
 #dial .menu-button#go-up-link:before
 {
-  background-image: url('../img/icons/arrow_up.svg');
+  background-image: url('../images/icons.basic/arrow_up.svg');
 }
 
 #dial .menu-button#guideboard-trigger:before
 {
-  background-image: url('../img/icons/hamburger.svg');
+  background-image: url('../images/icons.basic/hamburger.svg');
 }
 
 nav .menu-button#home-link:before
 {
-  background-image: url('../img/icons/house.svg');
+  background-image: url('../images/icons.basic/house.svg');
 }
 
 nav .menu-button#accessibility-info-link:before
 {
-  background-image: url('../img/icons/wheelchair.svg');
+  background-image: url('../images/icons.basic/wheelchair.svg');
 }
 
 nav .menu-button#layouts-submenu:before
 {
-  background-image: url('../img/icons/plan.svg');
+  background-image: url('../images/icons.basic/plan.svg');
 }
 
 nav .menu-button#about-submenu:before
 {
-  background-image: url('../img/icons/i.svg');
+  background-image: url('../images/icons.basic/i.svg');
 }
 
 nav .menu-button#favourites-submenu:before
 {
-  background-image: url('../img/icons/star.svg');
+  background-image: url('../images/icons.basic/star.svg');
 }
 
 nav .menu-button#contact-link:before
 {
-  background-image: url('../img/icons/envelope.svg');
+  background-image: url('../images/icons.basic/envelope.svg');
 }
 
 nav .menu-button.sup:after
 {
-  background-image: url('../img/icons/triangle_down.svg');
+  background-image: url('../images/icons.basic/triangle_down.svg');
 }
 
 nav .menu-button.sup.active:after
 {
-  background-image: url('../img/icons/triangle_up.svg');
+  background-image: url('../images/icons.basic/triangle_up.svg');
 }
 
 #contact-info .menu-button
@@ -376,20 +376,20 @@ nav .menu-button.sup.active:after
 
 #contact-info .menu-button#address-link:before
 {
-  background-image: url('../img/icons/map.svg');
+  background-image: url('../images/icons.basic/map.svg');
 }
 
 #contact-info .menu-button#email-action:before
 {
-  background-image: url('../img/icons/monkey_envelope.svg');
+  background-image: url('../images/icons.basic/monkey_envelope.svg');
 }
 
 #contact-info .menu-button#phone-action:before
 {
-  background-image: url('../img/icons/phone.svg');
+  background-image: url('../images/icons.basic/phone.svg');
 }
 
 #contact-info .menu-button#fax-action:before
 {
-  background-image: url('../img/icons/fax.svg');
+  background-image: url('../images/icons.basic/fax.svg');
 }

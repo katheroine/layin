@@ -1,12 +1,7 @@
 body
 {
-  /* background-color: grey; */
+  /* background-color: grey !important; */
   /* background-image: none !important; */
-}
-
-.scaffold
-{
-  /* background-color: orange; */
 }
 
 header
@@ -21,22 +16,22 @@ header
 
 #signboard
 {
-  /* background-color: lime; */
+  /* background-color: lime !important; */
 }
 
 #logo
 {
-  /* background-color: navy; */
+  /* background-color: navy !important; */
 }
 
 #site-name
 {
-  /* background-color: purple; */
+  /* background-color: purple !important; */
 }
 
 #site-description
 {
-  /* background-color: magenta; */
+  /* background-color: magenta !important; */
 }
 
 #dashboard
@@ -81,17 +76,17 @@ nav
 
 #main > div
 {
-  /* background-color: ivory; */
+  /* background-color: ivory !important; */
 }
 
 #main div.scaffold
 {
-  /* background-color: grey; */
+  /* background-color: grey !important; */
 }
 
 #main article
 {
-  /* background-color: cyan; */
+  /* background-color: cyan !important; */
 }
 
 footer
