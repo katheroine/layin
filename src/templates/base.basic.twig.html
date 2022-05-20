@@ -27,17 +27,17 @@
   </head>
   <body onload="restoreAccessibility(); handleDashboard();">
     <header onclick="foldNavigation();">
-    {% include 'header.partial.twig.html' %}
+    {% include 'header.basic.partial.twig.html' %}
     </header>
     <div id="dashboard">
-    {% include 'dashboard.partial.twig.html' %}
+    {% include 'dashboard.basic.partial.twig.html' %}
     </div>
     <div id="board" onclick="foldNavigation();">
     {% block board %}
     {% endblock %}
     </div>
     <footer onclick="foldNavigation();">
-    {% include 'footer.partial.twig.html' %}
+    {% include 'footer.basic.partial.twig.html' %}
     </footer>
   </body>
 </html>
