@@ -35,4 +35,4 @@
       url: https://github.com/
 - css_id: contact-link
   title: Contact
-  url_part: '#contact-info'
+  url_id: contact-info

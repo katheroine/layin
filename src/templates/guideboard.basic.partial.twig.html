@@ -4,15 +4,26 @@
     <a id="{{link.css_id}}" class="menu-button icon {{link.submenu ? 'sup'}}"
     {% if link.submenu %}
     onclick="toggleSubmenu(this);"
-    {% else %}
-    href=" {{link.url_part ? base_url~'/'~link.url_part : link.url}}"
+    {% elseif link.url_id %}
+    href="#{{link.url_id}}"
+    {% elseif link.url_part %}
+    href="{{subpages_url~'/'~link.url_part}}"
+    {% elseif link.url %}
+    href="{{link.url}}"
     {% endif %}>
       <div class="content">{{link.title}}</div>
     </a>
     {% if link.submenu %}
     <div class="submenu">
       {% for sublink in link.submenu %}
-      <a class="menu-button sub" href=" {{sublink.url_part ? subpages_url~'/'~sublink.url_part : sublink.url}}">
+      <a class="menu-button sub"
+      {% if sublink.url_id %}
+      href="#{{sublink.url_id}}"
+      {% elseif sublink.url_part %}
+      href="{{subpages_url~'/'~sublink.url_part}}"
+      {% elseif sublink.url %}
+      href="{{sublink.url}}"
+      {% endif %}>
         <div class="content">{{sublink.title}}</div>
       </a>
       {% endfor %}

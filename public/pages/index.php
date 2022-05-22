@@ -21,10 +21,15 @@ $navigation_links_config_content_prepared = str_replace(
 );
 $navigation_links = Yaml::parse($navigation_links_config_content_prepared);
 
+$contact_info_links_config_file_path = '../../config/contact_info_links.yaml';
+$contact_info_links_config_content = file_get_contents($contact_info_links_config_file_path);
+$contact_info_links = Yaml::parse($contact_info_links_config_content);
+
 $template = $twig->load('index.default.twig.html');
 echo $template->render([
   'subpages_url' => './pages',
   'assets_dir' => '../assets',
   'navigation_links' => $navigation_links,
+  'contact_info_links' => $contact_info_links,
   'debug' => true,
 ]);

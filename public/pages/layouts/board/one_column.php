@@ -8,10 +8,12 @@ use Symfony\Component\Yaml\Yaml;
 $loader = new FilesystemLoader(__DIR__ . '/../../../templates');
 $twig = new Environment($loader, ['debug' => true]);
 
+$base_url = '../../..';
+
 $navigation_links_config_file_path = '../../../../config/navigation_links.yaml';
 $navigation_links_config_content = file_get_contents($navigation_links_config_file_path);
 $navigation_links_config_replacements = [
-  '[[base_url]]' => '../../..',
+  '[[base_url]]' => $base_url,
   '[[code_file_extension]]' => 'php',
 ];
 $navigation_links_config_content_prepared = str_replace(
@@ -21,10 +23,16 @@ $navigation_links_config_content_prepared = str_replace(
 );
 $navigation_links = Yaml::parse($navigation_links_config_content_prepared);
 
+$contact_info_links_config_file_path = '../../../../config/contact_info_links.yaml';
+$contact_info_links_config_content = file_get_contents($contact_info_links_config_file_path);
+$contact_info_links = Yaml::parse($contact_info_links_config_content);
+
 $template = $twig->load('layouts/board/one_column.twig.html');
 echo $template->render([
+  'base_url' => $base_url,
   'subpages_url' => '../..',
   'assets_dir' => '../../../assets',
   'navigation_links' => $navigation_links,
+  'contact_info_links' => $contact_info_links,
   'debug' => false,
 ]);
