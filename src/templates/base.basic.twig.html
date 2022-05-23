@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en-GB">
   <head>
-    <meta charset="utf-8">
-    <meta name="language" content="english">
+    <meta charset="">
+    <meta name="language" content="{{ language }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Layin - general purpose web page layout">
-    <meta name="keywords" content="layin,layout,www,web page">
-    <meta name="author" content="katheroine <katheroine@gmail.com>">
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <meta name="author" content="{{ author.name }} <{{ author.email }}>">
     <link type="image/x-icon" rel="shortcut icon" href="{{assets_dir}}/images/favicon.ico">
     {% block stylesheets %}
     {% block stylesheets_basic %}
@@ -34,7 +34,7 @@
     <script src="{{assets_dir}}/scripts/dashboard.basic.js"></script>
     <script src="{{assets_dir}}/scripts/accessibility.basic.js"></script>
     {% endblock scripts %}
-    <title>Layin</title>
+    <title>{{ title }}</title>
   </head>
   <body onload="restoreAccessibility(); handleDashboard();">
     <header onclick="foldNavigation();">
