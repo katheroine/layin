@@ -8,37 +8,53 @@
     <meta name="keywords" content="layin,layout,www,web page">
     <meta name="author" content="katheroine <katheroine@gmail.com>">
     <link type="image/x-icon" rel="shortcut icon" href="{{assets_dir}}/images/favicon.ico">
-    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.default.css">
-    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/fonts.default.css">
-    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.default.css">
-    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.default.css">
+    {% block stylesheets %}
+    {% block stylesheets_basic %}
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/site.basic.css">
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/site-accessibility.basic.css">
     <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{assets_dir}}/stylesheets/site-s.basic.css">
     <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{assets_dir}}/stylesheets/site-m.basic.css">
     <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{assets_dir}}/stylesheets/site-l.basic.css">
-    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/link-icons.default.css">
-    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/content.default.css">
     {% if debug %}
     <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/debug.basic.css">
     {% endif %}
+    {% endblock stylesheets_basic %}
+    {% block stylesheets_default %}
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.default.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/fonts.default.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.default.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.default.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/link-icons.default.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/content.default.css">
+    {% endblock stylesheets_default %}
+    {% block stylesheets_custom %}
+    {% endblock stylesheets_custom %}
+    {% endblock stylesheets %}
+    {% block scripts %}
     <script src="{{assets_dir}}/scripts/dashboard.basic.js"></script>
     <script src="{{assets_dir}}/scripts/accessibility.basic.js"></script>
+    {% endblock scripts %}
     <title>Layin</title>
   </head>
   <body onload="restoreAccessibility(); handleDashboard();">
     <header onclick="foldNavigation();">
+    {% block header %}
     {% include 'header.basic.partial.twig.html' %}
+    {% endblock %}
     </header>
     <div id="dashboard">
+    {% block dashboard %}
     {% include 'dashboard.basic.partial.twig.html' %}
+    {% endblock %}
     </div>
     <div id="board" onclick="foldNavigation();">
     {% block board %}
     {% endblock %}
     </div>
     <footer onclick="foldNavigation();">
+    {% block footer %}
     {% include 'footer.basic.partial.twig.html' %}
+    {% endblock %}
     </footer>
   </body>
 </html>
