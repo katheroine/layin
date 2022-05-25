@@ -20,6 +20,15 @@
         "twig/twig": "^3.0",
         "symfony/yaml": "^6.0"
     },
+    "autoload": {
+        "psr-4": {
+            "Layin\\": [
+            	"src/",
+            	"src/loaders",
+              "src/renderers"
+            ]
+        }
+    },
     "scripts": {
         "generate-demo": "php demo/generators/index.demo.php > index.html && php demo/generators/layouts_board_one_column.demo.php > demo/layouts/board/one_column.html && php demo/generators/layouts_board_two_columns.demo.php > demo/layouts/board/two_columns.html && php demo/generators/layouts_board_three_columns.demo.php > demo/layouts/board/three_columns.html"
 	}
