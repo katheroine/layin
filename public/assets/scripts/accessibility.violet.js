@@ -1,1 +1,0 @@
-../../../src/assets/scripts/accessibility.violet.js

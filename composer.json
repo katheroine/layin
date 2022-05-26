@@ -26,8 +26,8 @@
               "src/",
               "src/loaders/",
               "src/renderers/",
-              "preconfigurations/",
-              "preconfigurations/page_renderers/"
+              "site/preconfigurations/",
+              "site/preconfigurations/page_renderers/"
             ]
         }
     },

@@ -13,14 +13,14 @@ namespace Layin;
 
 use Layin\AbstractPreconfiguredPageRenderer;
 
-class IndexPreconfiguredPageRenderer extends AbstractPreconfiguredPageRenderer {
+class LayoutsBoardPreconfiguredPageRenderer extends AbstractPreconfiguredPageRenderer {
   protected function providePreconfiguration(): array {
     return [
-      'base_url' => '..',
-      'subpages_relative_url' => 'pages',
-      'config_dir_relative_path' => '../../config',
-      'assets_dir_relative_path' => '../assets',
-      'templates_dir_absolute_path' => __DIR__ . '/../../public/templates',
+      'base_url' => '../../..',
+      'subpages_relative_url' => '../../../pages',
+      'config_dir_relative_path' => '../../../../config',
+      'assets_dir_relative_path' => '../../../assets',
+      'templates_dir_absolute_path' => __DIR__ . '/../../templates',
       'code_file_extension' => 'php',
       'is_debug_mode' => false,
     ];
