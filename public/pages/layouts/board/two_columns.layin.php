@@ -1,17 +1,7 @@
 <?php
 require_once __DIR__ . '/../../../../vendor/autoload.php';
 
-use Layin\VioletPageRenderer;
+use Layin\LayoutsBoardPreconfiguredPageRenderer;
 
-$pageRenderer = new VioletPageRenderer();
-$pageRenderer
-  ->setBaseRelativeUrl('../../..')
-  ->setSubpagesRelativeUrl('../../../pages')
-  ->setConfigDirRelativePath('../../../../config')
-  ->setAssetsDirRelativePath('../../../assets')
-  ->setTemplatesDirAbsolutePath(__DIR__ . '/../../../templates')
-  ->setCodeFileExtension('php')
-  ->setIsDebugMode(false)
-  ->setTemplateName('layouts/board/two_columns.layin.twig.html');
-
-$pageRenderer->render();
+$pageRenderer = new LayoutsBoardPreconfiguredPageRenderer();
+$pageRenderer->renderPreconfiguredPage('layouts/board/two_columns.layin.twig.html');

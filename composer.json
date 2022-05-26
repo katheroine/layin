@@ -23,9 +23,11 @@
     "autoload": {
         "psr-4": {
             "Layin\\": [
-            	"src/",
-            	"src/loaders",
-              "src/renderers"
+              "src/",
+              "src/loaders/",
+              "src/renderers/",
+              "preconfigurations/",
+              "preconfigurations/page_renderers/"
             ]
         }
     },
