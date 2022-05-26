@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="">
+    <meta name="language" content="{{ language }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <meta name="author" content="{{ author.name }} <{{ author.email }}>">
+    <link type="image/x-icon" rel="shortcut icon" href="{{assets_dir}}/images/favicon.ico">
+    {% block stylesheets %}
+    {% block stylesheets_basic %}
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/site.violet.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/site-accessibility.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{assets_dir}}/stylesheets/site-s.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{assets_dir}}/stylesheets/site-m.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{assets_dir}}/stylesheets/site-l.violet.css">
+    {% if debug %}
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/debug.violet.css">
+    {% endif %}
+    {% endblock stylesheets_basic %}
+    {% block stylesheets_default %}
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/fonts.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/link-icons.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/content.layin.css">
+    {% endblock stylesheets_default %}
+    {% block stylesheets_custom %}
+    {% endblock stylesheets_custom %}
+    {% endblock stylesheets %}
+    {% block scripts %}
+    <script src="{{assets_dir}}/scripts/dashboard.violet.js"></script>
+    <script src="{{assets_dir}}/scripts/accessibility.violet.js"></script>
+    {% endblock scripts %}
+    <title>{{ title }}</title>
+  </head>
+  <body onload="restoreAccessibility(); handleDashboard();">
+    <header onclick="foldNavigation();">
+    {% block header %}
+    {% include 'header.violet.partial.twig.html' %}
+    {% endblock %}
+    </header>
+    <div id="dashboard">
+    {% block dashboard %}
+    {% include 'dashboard.violet.partial.twig.html' %}
+    {% endblock %}
+    </div>
+    <div id="board" onclick="foldNavigation();">
+    {% block board %}
+    {% endblock %}
+    </div>
+    <footer onclick="foldNavigation();">
+    {% block footer %}
+    {% include 'footer.violet.partial.twig.html' %}
+    {% endblock %}
+    </footer>
+  </body>
+</html>

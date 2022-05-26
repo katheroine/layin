@@ -8,11 +8,11 @@
   title: Layouts
   submenu:
     - title: One column
-      url_part: layouts/board/one_column.[[code_file_extension]]
+      url_part: layouts/board/one_column.layin.[[code_file_extension]]
     - title: Two columns
-      url_part: layouts/board/two_columns.[[code_file_extension]]
+      url_part: layouts/board/two_columns.layin.[[code_file_extension]]
     - title: Three columns
-      url_part: layouts/board/three_columns.[[code_file_extension]]
+      url_part: layouts/board/three_columns.layin.[[code_file_extension]]
 - css_id: about-submenu
   title: About
   submenu:

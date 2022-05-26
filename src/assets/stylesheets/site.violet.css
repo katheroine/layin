@@ -298,12 +298,12 @@ nav .submenu .menu-button
 
 nav .menu-button.sup:after
 {
-  background-image: url('../images/icons.basic/triangle_down.svg');
+  background-image: url('../images/icons.violet/triangle_down.svg');
 }
 
 nav .menu-button.sup.active:after
 {
-  background-image: url('../images/icons.basic/triangle_up.svg');
+  background-image: url('../images/icons.violet/triangle_up.svg');
 }
 
 #contact-info .menu-button

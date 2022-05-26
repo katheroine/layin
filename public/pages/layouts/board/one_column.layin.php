@@ -1,9 +1,9 @@
 <?php
 require_once __DIR__ . '/../../../../vendor/autoload.php';
 
-use Layin\PageRenderer;
+use Layin\VioletPageRenderer;
 
-$pageRenderer = new PageRenderer();
+$pageRenderer = new VioletPageRenderer();
 $pageRenderer
   ->setBaseRelativeUrl('../../..')
   ->setSubpagesRelativeUrl('../../../pages')
@@ -12,6 +12,6 @@ $pageRenderer
   ->setTemplatesDirAbsolutePath(__DIR__ . '/../../../templates')
   ->setCodeFileExtension('php')
   ->setIsDebugMode(false)
-  ->setTemplateName('layouts/board/one_column.twig.html');
+  ->setTemplateName('layouts/board/one_column.layin.twig.html');
 
 $pageRenderer->render();

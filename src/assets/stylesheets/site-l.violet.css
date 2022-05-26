@@ -105,13 +105,13 @@ nav .submenu
 .detached nav .menu-button.sup
 {
   background-size: var(--controls-height);
-  background-image: url('../images/icons.basic/backgrounds/little_triangle_down.svg');
+  background-image: url('../images/icons.violet/backgrounds/little_triangle_down.svg');
   background-repeat: no-repeat;
 }
 
 .detached nav .menu-button.sup.active
 {
-  background-image: url('../images/icons.basic/backgrounds/little_triangle_up.svg');
+  background-image: url('../images/icons.violet/backgrounds/little_triangle_up.svg');
 }
 
 nav .menu-button,
