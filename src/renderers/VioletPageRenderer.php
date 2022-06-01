@@ -14,8 +14,8 @@ namespace Layin;
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use Symfony\Component\Yaml\Yaml;
-use Layin\ConfigLoader;
-use Layin\PreconfiguredSeriesLoader;
+use Layin\Loader\ConfigLoader;
+use Layin\Loader\PreconfiguredSeriesLoader;
 use Layin\PageRenderer;
 
 /**
@@ -69,7 +69,8 @@ class VioletPageRenderer extends PageRenderer
   private function provideSiteConfig(): array {
     $siteConfigRelativePath = $this->configDirRelativePath . '/site_config.yaml';
 
-    $siteConfig = ConfigLoader::load($siteConfigRelativePath);
+    $configLoader = new ConfigLoader($siteConfigRelativePath);
+    $siteConfig = $configLoader->load();
 
     return $siteConfig;
   }
