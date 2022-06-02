@@ -15,7 +15,7 @@ use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use Symfony\Component\Yaml\Yaml;
 use Layin\Loader\ConfigLoader;
-use Layin\Loader\PreconfiguredSeriesLoader;
+use Layin\Loader\ConfiguredSeriesLoader;
 use Layin\PageRenderer;
 
 /**
@@ -78,7 +78,7 @@ class VioletPageRenderer extends PageRenderer
   private function provideNavigationLinks(): array {
     $navigationLinksRelativePath = $this->configDirRelativePath . '/navigation_links.yaml';
 
-    $navigationLinksLoader = new PreconfiguredSeriesLoader($navigationLinksRelativePath);
+    $navigationLinksLoader = new ConfiguredSeriesLoader($navigationLinksRelativePath);
     $navigationLinksLoader->setReplacements([
       'base_url' => $this->baseRelativeUrl,
       'code_file_extension' => $this->codeFileExtension,
@@ -91,7 +91,7 @@ class VioletPageRenderer extends PageRenderer
   private function provideContactInfoLinks(): array {
     $contactInfoLinksRelativePath = $this->configDirRelativePath . '/contact_info_links.yaml';
 
-    $contactInfoLinksLoader = new PreconfiguredSeriesLoader($contactInfoLinksRelativePath);
+    $contactInfoLinksLoader = new ConfiguredSeriesLoader($contactInfoLinksRelativePath);
     $contactInfoLinks = $contactInfoLinksLoader->load();
 
     return $contactInfoLinks;
