@@ -34,6 +34,9 @@
             ],
             "Layin\\Loader\\": [
               "src/loaders/"
+            ],
+            "Layin\\Renderer\\": [
+              "src/renderers/"
             ]
         }
     },
@@ -41,7 +44,8 @@
         "psr-4": {
             "Layin\\": [
             	"tests/",
-            	"tests/unit_tests/loaders/"
+            	"tests/unit_tests/loaders/",
+              "tests/unit_tests/renderers/"
             ]
         }
     },

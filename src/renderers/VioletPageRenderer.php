@@ -16,7 +16,7 @@ use Twig\Environment;
 use Symfony\Component\Yaml\Yaml;
 use Layin\Loader\ConfigLoader;
 use Layin\Loader\ConfiguredSeriesLoader;
-use Layin\PageRenderer;
+use Layin\Renderer\AbstractPageRenderer;
 
 /**
  * PageRenderer
@@ -27,7 +27,7 @@ use Layin\PageRenderer;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/ExOrg/php-data-coder
  */
-class VioletPageRenderer extends PageRenderer
+class VioletPageRenderer extends AbstractPageRenderer
 {
   private string $baseRelativeUrl;
   private string $subpagesRelativeUrl;
