@@ -27,9 +27,9 @@ abstract class AbstractPreconfiguredPageRenderer {
 
     $pageRenderer = new VioletPageRenderer();
     $pageRenderer
+      ->setConfigDirPath($preconfiguration['config_dir_path'])
       ->setBaseRelativeUrl($preconfiguration['base_url'])
       ->setSubpagesRelativeUrl($preconfiguration['subpages_relative_url'])
-      ->setConfigDirRelativePath($preconfiguration['config_dir_relative_path'])
       ->setAssetsDirRelativePath($preconfiguration['assets_dir_relative_path'])
       ->setTemplatesDirAbsolutePath($preconfiguration['templates_dir_absolute_path'])
       ->setCodeFileExtension($preconfiguration['code_file_extension'])

@@ -16,9 +16,9 @@ use Layin\AbstractPreconfiguredPageRenderer;
 class IndexPreconfiguredPageRenderer extends AbstractPreconfiguredPageRenderer {
   protected function providePreconfiguration(): array {
     return [
+      'config_dir_path' => '../../config',
       'base_url' => '../..',
       'subpages_relative_url' => 'pages',
-      'config_dir_relative_path' => '../../config',
       'assets_dir_relative_path' => '../assets',
       'templates_dir_absolute_path' => __DIR__ . '/../../templates',
       'code_file_extension' => 'php',

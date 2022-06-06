@@ -31,10 +31,19 @@ class VioletPageRenderer extends AbstractPageRenderer
 {
   private string $baseRelativeUrl;
   private string $subpagesRelativeUrl;
-  private string $configDirRelativePath;
+  private string $configDirPath;
   private string $assetsDirRelativePath;
   private string $codeFileExtension;
   private bool $isDebugMode;
+
+  /**
+   * Config directory path can be absolute or relative.
+   */
+  public function setConfigDirPath(string $configDirPath): self
+  {
+    $this->configDirPath = $configDirPath;
+    return $this;
+  }
 
   public function setBaseRelativeUrl(string $baseRelativeUrl): self
   {
@@ -45,12 +54,6 @@ class VioletPageRenderer extends AbstractPageRenderer
   public function setSubpagesRelativeUrl(string $subpagesRelativeUrl): self
   {
     $this->subpagesRelativeUrl = $subpagesRelativeUrl;
-    return $this;
-  }
-
-  public function setConfigDirRelativePath(string $configDirRelativePath): self
-  {
-    $this->configDirRelativePath = $configDirRelativePath;
     return $this;
   }
 
@@ -74,7 +77,7 @@ class VioletPageRenderer extends AbstractPageRenderer
 
   private function provideSiteConfig(): array
   {
-    $siteConfigRelativePath = $this->configDirRelativePath . '/site_config.yaml';
+    $siteConfigRelativePath = $this->configDirPath . '/site_config.yaml';
 
     $configLoader = new ConfigLoader($siteConfigRelativePath);
     $siteConfig = $configLoader->load();
@@ -84,7 +87,7 @@ class VioletPageRenderer extends AbstractPageRenderer
 
   private function provideNavigationLinks(): array
   {
-    $navigationLinksRelativePath = $this->configDirRelativePath . '/navigation_links.yaml';
+    $navigationLinksRelativePath = $this->configDirPath . '/navigation_links.yaml';
 
     $navigationLinksLoader = new ConfiguredSeriesLoader($navigationLinksRelativePath);
     $navigationLinksLoader->setReplacements([
@@ -98,7 +101,7 @@ class VioletPageRenderer extends AbstractPageRenderer
 
   private function provideContactInfoLinks(): array
   {
-    $contactInfoLinksRelativePath = $this->configDirRelativePath . '/contact_info_links.yaml';
+    $contactInfoLinksRelativePath = $this->configDirPath . '/contact_info_links.yaml';
 
     $contactInfoLinksLoader = new ConfiguredSeriesLoader($contactInfoLinksRelativePath);
     $contactInfoLinks = $contactInfoLinksLoader->load();

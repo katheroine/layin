@@ -83,7 +83,7 @@ class VioletPageRendererTest extends TestCase
         $pageRenderer
             ->setBaseRelativeUrl('.')
             ->setSubpagesRelativeUrl('./subpages')
-            ->setConfigDirRelativePath(__DIR__ . '/../../testing_environment/configs')
+            ->setConfigDirPath(__DIR__ . '/../../testing_environment/configs')
             ->setAssetsDirRelativePath('./assets')
             ->setCodeFileExtension('php')
             ->setIsDebugMode(true)
@@ -103,9 +103,9 @@ class VioletPageRendererTest extends TestCase
     protected function accessorsProvider(): array
     {
         return [
+            ['setConfigDirPath', 'string', 'configDirPath'],
             ['setBaseRelativeUrl', 'string', 'baseRelativeUrl'],
             ['setSubpagesRelativeUrl', 'string', 'subpagesRelativeUrl'],
-            ['setConfigDirRelativePath', 'string', 'configDirRelativePath'],
             ['setAssetsDirRelativePath', 'string', 'assetsDirRelativePath'],
             ['setCodeFileExtension', 'string', 'codeFileExtension'],
             ['setIsDebugMode', 'bool', 'isDebugMode'],
