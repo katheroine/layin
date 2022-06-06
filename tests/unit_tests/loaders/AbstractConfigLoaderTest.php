@@ -14,8 +14,7 @@ namespace Layin\Loader;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Config loader tests.
- * Unit tests for FileFile class.
+ * Config loaders tests base.
  *
  * @package Loader
  * @author Katarzyna Krasińska <katheroine@gmail.com>

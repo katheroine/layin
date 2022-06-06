@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin;
+namespace Layin\Renderer;
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
@@ -19,9 +19,9 @@ use Layin\Loader\ConfiguredSeriesLoader;
 use Layin\Renderer\AbstractPageRenderer;
 
 /**
- * PageRenderer
+ * Page renderer for the Violet theme.
  *
- * @package Loader
+ * @package Renderer
  * @author Katarzyna Krasińska <katheroine@gmail.com>
  * @copyright Copyright (c) 2022 Katarzyna Krasińska
  * @license http://opensource.org/licenses/MIT MIT License
@@ -36,37 +36,44 @@ class VioletPageRenderer extends AbstractPageRenderer
   private string $codeFileExtension;
   private bool $isDebugMode;
 
-  public function setBaseRelativeUrl(string $baseRelativeUrl): self {
+  public function setBaseRelativeUrl(string $baseRelativeUrl): self
+  {
     $this->baseRelativeUrl = $baseRelativeUrl;
     return $this;
   }
 
-  public function setSubpagesRelativeUrl(string $subpagesRelativeUrl): self {
+  public function setSubpagesRelativeUrl(string $subpagesRelativeUrl): self
+  {
     $this->subpagesRelativeUrl = $subpagesRelativeUrl;
     return $this;
   }
 
-  public function setConfigDirRelativePath(string $configDirRelativePath): self {
+  public function setConfigDirRelativePath(string $configDirRelativePath): self
+  {
     $this->configDirRelativePath = $configDirRelativePath;
     return $this;
   }
 
-  public function setAssetsDirRelativePath(string $assetsDirRelativePath): self {
+  public function setAssetsDirRelativePath(string $assetsDirRelativePath): self
+  {
     $this->assetsDirRelativePath = $assetsDirRelativePath;
     return $this;
   }
 
-  public function setCodeFileExtension(string $codeFileExtension): self {
+  public function setCodeFileExtension(string $codeFileExtension): self
+  {
     $this->codeFileExtension = $codeFileExtension;
     return $this;
   }
 
-  public function setIsDebugMode(bool $isDebugMode): self {
+  public function setIsDebugMode(bool $isDebugMode): self
+  {
     $this->isDebugMode = $isDebugMode;
     return $this;
   }
 
-  private function provideSiteConfig(): array {
+  private function provideSiteConfig(): array
+  {
     $siteConfigRelativePath = $this->configDirRelativePath . '/site_config.yaml';
 
     $configLoader = new ConfigLoader($siteConfigRelativePath);
@@ -75,7 +82,8 @@ class VioletPageRenderer extends AbstractPageRenderer
     return $siteConfig;
   }
 
-  private function provideNavigationLinks(): array {
+  private function provideNavigationLinks(): array
+  {
     $navigationLinksRelativePath = $this->configDirRelativePath . '/navigation_links.yaml';
 
     $navigationLinksLoader = new ConfiguredSeriesLoader($navigationLinksRelativePath);
@@ -88,7 +96,8 @@ class VioletPageRenderer extends AbstractPageRenderer
     return $navigationLinks;
   }
 
-  private function provideContactInfoLinks(): array {
+  private function provideContactInfoLinks(): array
+  {
     $contactInfoLinksRelativePath = $this->configDirRelativePath . '/contact_info_links.yaml';
 
     $contactInfoLinksLoader = new ConfiguredSeriesLoader($contactInfoLinksRelativePath);
@@ -97,7 +106,8 @@ class VioletPageRenderer extends AbstractPageRenderer
     return $contactInfoLinks;
   }
 
-  protected function provideTemplateParams(): array {
+  protected function provideTemplateParams(): array
+  {
     $templateParams = array_merge(
       $this->provideSiteConfig(),
       [

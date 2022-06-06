@@ -11,7 +11,7 @@
 
 namespace Layin;
 
-use Layin\VioletPageRenderer;
+use Layin\Renderer\VioletPageRenderer;
 
 abstract class AbstractPreconfiguredPageRenderer {
   public function renderPreconfiguredPage(string $template_name): void {

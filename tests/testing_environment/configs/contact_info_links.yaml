@@ -1,0 +1,16 @@
+- css_id: address-link
+  title: address
+  value: al. Wojciecha Korfantego 35, 40-005 Katowice
+  url: https://goo.gl/maps/T84vfoTp8Rdbh6V28
+- css_id: email-action
+  title: e-mail
+  value: layin@gmail.com
+  url: mailto:layin@gmail.com
+- css_id: phone-action
+  title: tel.
+  value: (32) 000 00 00
+  url: tel:+4832000000
+- css_id: fax-action
+  title: fax.
+  value: (32) 000 00 00
+  url: fax:+48320000000

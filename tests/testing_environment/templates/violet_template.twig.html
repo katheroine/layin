@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="">
+    <meta name="language" content="{{ language }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ description }}">
+    <meta name="keywords" content="{{ keywords }}">
+    <meta name="author" content="{{ author.name }} <{{ author.email }}>">
+    <link type="image/x-icon" rel="shortcut icon" href="{{assets_dir}}/images/favicon.ico">
+    {% block stylesheets %}
+    {% block stylesheets_basic %}
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/site.violet.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/site-accessibility.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{assets_dir}}/stylesheets/site-s.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{assets_dir}}/stylesheets/site-m.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{assets_dir}}/stylesheets/site-l.violet.css">
+    {% if debug %}
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/debug.violet.css">
+    {% endif %}
+    {% endblock stylesheets_basic %}
+    {% block stylesheets_default %}
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/fonts.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/link-icons.layin.css">
+    <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/content.layin.css">
+    {% endblock stylesheets_default %}
+    {% block stylesheets_custom %}
+    {% endblock stylesheets_custom %}
+    {% endblock stylesheets %}
+    {% block scripts %}
+    <script src="{{assets_dir}}/scripts/dashboard.violet.js"></script>
+    <script src="{{assets_dir}}/scripts/accessibility.violet.js"></script>
+    {% endblock scripts %}
+    <title>{{ title }}</title>
+  </head>
+  <body onload="restoreAccessibility(); handleDashboard();">
+    <header onclick="foldNavigation();">
+    {% block header %}
+      <div id="banner">
+        <div id="signboard">
+          <a id="logo"><img src="{{assets_dir}}/images/logo.png" alt="Layin logo"></a>
+          <div id="site-name">
+            Layin <span id="site-description">General purpose layout</span>
+          </div>
+        </div>
+      </div>
+    {% endblock %}
+    </header>
+    <div id="dashboard">
+    {% block dashboard %}
+      <div id="controls">
+        <div id="dial">
+          <a id="increase-font-trigger" class="menu-button icon" onclick="increaseFontSize();"></a>
+          <a id="decrease-font-trigger" class="menu-button icon" onclick="decreaseFontSize();"></a>
+          <a id="toggle-contrast-trigger" class="menu-button icon" onclick="toggleContrast();"></a>
+          <a id="reset-accessibility-trigger" class="menu-button icon" onclick="reset();"></a>
+          <a id="go-up-link" class="menu-button icon" href="#top" onclick="undetachDashboard(); foldNavigation();"></a>
+          <a id="guideboard-trigger" class="menu-button icon" onclick="toggleNavigation();"></a>
+        </div>
+      </div>
+      <div id="guideboard">
+        <nav>
+          {% for link in navigation_links %}
+          <div class="navigation-item">
+            <a id="{{link.css_id}}" class="menu-button icon {{link.submenu ? 'sup'}}"
+            {% if link.submenu %}
+            onclick="toggleSubmenu(this);"
+            {% elseif link.url_id %}
+            href="#{{link.url_id}}"
+            {% elseif link.url_part %}
+            href="{{subpages_url~'/'~link.url_part}}"
+            {% elseif link.url %}
+            href="{{link.url}}"
+            {% endif %}>
+              <div class="content">{{link.title}}</div>
+            </a>
+            {% if link.submenu %}
+            <div class="submenu">
+              {% for sublink in link.submenu %}
+              <a class="menu-button sub"
+              {% if sublink.url_id %}
+              href="#{{sublink.url_id}}"
+              {% elseif sublink.url_part %}
+              href="{{subpages_url~'/'~sublink.url_part}}"
+              {% elseif sublink.url %}
+              href="{{sublink.url}}"
+              {% endif %}>
+                <div class="content">{{sublink.title}}</div>
+              </a>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </nav>
+      </div>
+    {% endblock %}
+    </div>
+    <div id="board" onclick="foldNavigation();">
+    {% block board %}
+      <h1>Hi, there!</h1>
+    {% endblock %}
+    </div>
+    <footer onclick="foldNavigation();">
+    {% block footer %}
+      <div id="info">
+        <address id="contact-info">
+          {% for link in contact_info_links %}
+          <a class="menu-button icon" id="{{link.css_id}}"
+          {% if link.url_id %}
+          href="#{{link.url_id}}"
+          {% elseif link.url_part %}
+          href="{{subpages_url~'/'~link.url_part}}"
+          {% elseif link.url %}
+          href="{{link.url}}"
+          {% endif %}>
+            <div class="content">{{link.title}}: <span class="value">{{link.value}}</span></div>
+          </a>
+          {% endfor %}
+        </address>
+      </div>
+      <div id="copyright">
+        ©&nbsp;{{ copyright_range }} Copyright {{ site_name }}
+      </div>
+    {% endblock %}
+    </footer>
+  </body>
+</html>
