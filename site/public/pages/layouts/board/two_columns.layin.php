@@ -4,4 +4,4 @@ require_once __DIR__ . '/../../../../../vendor/autoload.php';
 use Layin\LayoutsBoardPreconfiguredPageRenderer;
 
 $pageRenderer = new LayoutsBoardPreconfiguredPageRenderer();
-$pageRenderer->renderPreconfiguredPage('layouts/board/two_columns.layin.twig.html');
+$pageRenderer->renderPreconfiguredPage('two_columns.layin.twig.html');

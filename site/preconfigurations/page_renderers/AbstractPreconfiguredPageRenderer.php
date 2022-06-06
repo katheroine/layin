@@ -32,6 +32,7 @@ abstract class AbstractPreconfiguredPageRenderer {
       ->setSubpagesRelativeUrl($preconfiguration['subpages_relative_url'])
       ->setAssetsDirRelativePath($preconfiguration['assets_dir_relative_path'])
       ->setTemplatesDirAbsolutePath($preconfiguration['templates_dir_absolute_path'])
+      ->setTemplateLocalPath($preconfiguration['template_local_path'])
       ->setCodeFileExtension($preconfiguration['code_file_extension'])
       ->setIsDebugMode($preconfiguration['is_debug_mode']);
 

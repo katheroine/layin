@@ -21,6 +21,7 @@ class IndexPreconfiguredPageRenderer extends AbstractPreconfiguredPageRenderer {
       'subpages_relative_url' => 'pages',
       'assets_dir_relative_path' => '../assets',
       'templates_dir_absolute_path' => __DIR__ . '/../../templates',
+      'template_local_path' => '',
       'code_file_extension' => 'php',
       'is_debug_mode' => false,
     ];
