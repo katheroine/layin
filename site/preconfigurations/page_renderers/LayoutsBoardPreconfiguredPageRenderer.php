@@ -9,19 +9,19 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin;
+namespace Layin\Preconfiguration;
 
-use Layin\AbstractPreconfiguredPageRenderer;
+use Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer;
 
-class LayoutsBoardPreconfiguredPageRenderer extends AbstractPreconfiguredPageRenderer {
+class LayoutsBoardPreconfiguredPageRenderer extends AbstractVioletPreconfiguredPageRenderer {
   protected function providePreconfiguration(): array {
     return [
+      'templates_dir_absolute_path' => __DIR__ . '/../../templates',
+      'template_local_path' => 'layouts/board/',
       'config_dir_path' => '../../../../config',
       'base_url' => '../../..',
       'subpages_relative_url' => '../../../pages',
       'assets_dir_relative_path' => '../../../assets',
-      'templates_dir_absolute_path' => __DIR__ . '/../../templates',
-      'template_local_path' => 'layouts/board/',
       'code_file_extension' => 'php',
       'is_debug_mode' => false,
     ];

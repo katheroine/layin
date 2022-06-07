@@ -42,36 +42,42 @@ class VioletPageRenderer extends AbstractPageRenderer
   public function setConfigDirPath(string $configDirPath): self
   {
     $this->configDirPath = $configDirPath;
+
     return $this;
   }
 
   public function setBaseRelativeUrl(string $baseRelativeUrl): self
   {
     $this->baseRelativeUrl = $baseRelativeUrl;
+
     return $this;
   }
 
   public function setSubpagesRelativeUrl(string $subpagesRelativeUrl): self
   {
     $this->subpagesRelativeUrl = $subpagesRelativeUrl;
+
     return $this;
   }
 
   public function setAssetsDirRelativePath(string $assetsDirRelativePath): self
   {
     $this->assetsDirRelativePath = $assetsDirRelativePath;
+
     return $this;
   }
 
   public function setCodeFileExtension(string $codeFileExtension): self
   {
     $this->codeFileExtension = $codeFileExtension;
+
     return $this;
   }
 
   public function setIsDebugMode(bool $isDebugMode): self
   {
     $this->isDebugMode = $isDebugMode;
+
     return $this;
   }
 

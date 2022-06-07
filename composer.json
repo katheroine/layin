@@ -27,25 +27,36 @@
     "autoload": {
         "psr-4": {
             "Layin\\": [
-              "src/",
-              "src/renderers/",
-              "site/preconfigurations/",
-              "site/preconfigurations/page_renderers/"
+              "src/"
             ],
             "Layin\\Loader\\": [
               "src/loaders/"
             ],
             "Layin\\Renderer\\": [
               "src/renderers/"
+            ],
+            "Layin\\Preconfiguration\\": [
+              "src/preconfigurations/",
+              "src/preconfigurations/page_renderers/",
+              "site/preconfigurations/",
+              "site/preconfigurations/page_renderers/"
             ]
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Layin\\": [
-            	"tests/",
-            	"tests/unit_tests/loaders/",
+              "tests/"
+            ],
+            "Layin\\Loader\\": [
+              "tests/unit_tests/loaders/"
+            ],
+            "Layin\\Renderer\\": [
               "tests/unit_tests/renderers/"
+            ],
+            "Layin\\Preconfiguration\\": [
+              "tests/unit_tests/preconfigurations/",
+              "tests/unit_tests/preconfigurations/page_renderers/"
             ]
         }
     },
