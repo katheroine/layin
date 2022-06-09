@@ -27,36 +27,42 @@
     "autoload": {
         "psr-4": {
             "Layin\\": [
-              "src/"
+                "src/"
             ],
             "Layin\\Loader\\": [
-              "src/loaders/"
+                "src/loaders/"
             ],
             "Layin\\Renderer\\": [
-              "src/renderers/"
+                "src/renderers/"
             ],
             "Layin\\Preconfiguration\\": [
-              "src/preconfigurations/",
-              "src/preconfigurations/page_renderers/",
-              "site/preconfigurations/",
-              "site/preconfigurations/page_renderers/"
+                "src/preconfigurations/",
+                "src/preconfigurations/page_renderers/",
+                "site/preconfigurations/",
+                "site/preconfigurations/page_renderers/"
+            ],
+            "Layin\\Console\\": [
+                "src/console/"
             ]
         }
     },
     "autoload-dev": {
         "psr-4": {
             "Layin\\": [
-              "tests/"
+                "tests/"
             ],
             "Layin\\Loader\\": [
-              "tests/unit_tests/loaders/"
+                "tests/unit_tests/loaders/"
             ],
             "Layin\\Renderer\\": [
-              "tests/unit_tests/renderers/"
+                "tests/unit_tests/renderers/"
             ],
             "Layin\\Preconfiguration\\": [
-              "tests/unit_tests/preconfigurations/",
-              "tests/unit_tests/preconfigurations/page_renderers/"
+                "tests/unit_tests/preconfigurations/",
+                "tests/unit_tests/preconfigurations/page_renderers/"
+            ],
+            "Layin\\Console\\": [
+                "tests/unit_tests/console/"
             ]
         }
     },
