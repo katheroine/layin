@@ -27,7 +27,7 @@ use Layin\PreconfiguredSeriesLoader;
  * @author Katarzyna Krasińska <katheroine@gmail.com>
  * @copyright Copyright (c) 2022 Katarzyna Krasińska
  * @license http://opensource.org/licenses/MIT MIT License
- * @link https://github.com/ExOrg/php-data-coder
+ * @link https://github.com/katheroine/layin
  */
 abstract class AbstractPageRenderer
 {
