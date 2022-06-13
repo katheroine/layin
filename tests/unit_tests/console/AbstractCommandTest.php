@@ -37,6 +37,14 @@ class ConcreteCommandCausingExecProducesErrorString extends AbstractCommand
     }
 }
 
+class ConctreteCommandListingDirContent extends AbstractCommand
+{
+    protected function provideCommand(array $params): string
+    {
+        return 'ls';
+    }
+}
+
 /**
  * System command tests.
  *
@@ -48,6 +56,8 @@ class ConcreteCommandCausingExecProducesErrorString extends AbstractCommand
  */
 class AbstractCommandTest extends TestCase
 {
+    private const EXEC_LOCATION = 'tests/testing_environment/command_exec_location/';
+
     public function testAbstractCommandClassExists()
     {
         $this->assertTrue(
@@ -66,9 +76,9 @@ class AbstractCommandTest extends TestCase
     }
 
     /**
-     * @dataProvider accessorsProvider
+     * @dataProvider gettersProvider
      */
-    public function testAccessorFunctionsExist(string $accessorName)
+    public function testGettersFunctionsExist(string $accessorName)
     {
         $this->assertTrue(
             method_exists(
@@ -79,9 +89,9 @@ class AbstractCommandTest extends TestCase
     }
 
     /**
-     * @dataProvider accessorsProvider
+     * @dataProvider gettersProvider
      */
-    public function testAccessorsReturnNothingBeforeExecute(string $accessorName)
+    public function testGettersReturnNothingBeforeExecute(string $accessorName)
     {
         $command = new ConcreteCommandCausingExecProducesString;
 
@@ -113,9 +123,9 @@ class AbstractCommandTest extends TestCase
     }
 
     /**
-     * @dataProvider accessorsProvider
+     * @dataProvider gettersProvider
      */
-    public function testAccessorsReturnProperTypesAfterExecute(string $accessorName, string $accessorReturnedType)
+    public function testGettersReturnProperTypesAfterExecute(string $accessorName, string $accessorReturnedType)
     {
         $command = new ConcreteCommandCausingExecProducesString;
 
@@ -131,6 +141,7 @@ class AbstractCommandTest extends TestCase
         $command = new ConcreteCommandCausingExecProducesString;
 
         $expectedResult = $date->format('d m Y');
+
         $command->execute();
         $actualResult = $command->getResult();
 
@@ -163,7 +174,32 @@ class AbstractCommandTest extends TestCase
         $this->assertEquals("sh: 1: kdklccbleihqfigvefcbf: not found\n", $command->getMessage());
     }
 
-    private function accessorsProvider(): array
+    public function testSetExecLocationFunctionExists()
+    {
+        $this->assertTrue(
+            method_exists(
+                '\Layin\Console\AbstractCommand',
+                'setExecLocation'
+            )
+        );
+    }
+
+    public function testSetLocation()
+    {
+        $command = new ConctreteCommandListingDirContent;
+
+        $expectedMessage = "testing_file_1.txt\ntesting_file_2.txt\ntesting_file_3.txt\n";
+
+        $command->setExecLocation(self::EXEC_LOCATION);
+        $command->execute();
+        $result = $this->getResult();
+
+        $this->assertEquals('', $result);
+        $this->assertEquals(0, $command->getCode());
+        $this->assertEquals($expectedMessage, $command->getMessage());
+    }
+
+    private function gettersProvider(): array
     {
         return [
             ['getResult', 'string'],

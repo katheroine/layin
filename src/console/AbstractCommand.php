@@ -24,6 +24,8 @@ abstract class AbstractCommand
 {
     protected const COMMANDS_DIR_PATH = __DIR__ . "/commands/";
 
+    protected string|null $execLocation = '';
+
     private string|null $result = null;
     private int|null $code = null;
     private string|null $message = null;
@@ -34,15 +36,18 @@ abstract class AbstractCommand
      */
     abstract protected function provideCommand(array $params): string;
 
-    /**
-     * @throws \RuntimeException When command encounters problem or system command fails
-     */
+    public function setExecLocation(string $execLocation): self
+    {
+        $this->execLocation = $execLocation;
+
+        return $this;
+    }
+
     public function execute(array $params = []): void
     {
-        $command = $this->provideCommand($params);
+        $command = $this->prepareCommand($params);
 
         ob_start();
-        $command = $command . " 2>&1";
         $this->result = system($command, $this->code);
         $this->message = ob_get_contents();
         ob_end_clean();
@@ -61,5 +66,17 @@ abstract class AbstractCommand
     public function getMessage(): string|null
     {
         return $this->message;
+    }
+
+    private function prepareCommand(array $params): string
+    {
+        $command = '';
+        if (!empty($this->execLocation)) {
+            $command = "cd $this->execLocation; "; 
+        }
+        $command .= $this->provideCommand($params);
+        $command .= " 2>&1";
+
+        return $command;
     }
 }
