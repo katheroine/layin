@@ -42,7 +42,8 @@
                 "site/preconfigurations/page_renderers/"
             ],
             "Layin\\Console\\": [
-                "src/console/"
+                "src/console/",
+                "src/console/commands/"
             ]
         }
     },
@@ -62,7 +63,8 @@
                 "tests/unit_tests/preconfigurations/page_renderers/"
             ],
             "Layin\\Console\\": [
-                "tests/unit_tests/console/"
+                "tests/unit_tests/console/",
+                "tests/unit_tests/console/commands/"
             ]
         }
     },
