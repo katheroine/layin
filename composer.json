@@ -64,7 +64,8 @@
             ],
             "Layin\\Console\\": [
                 "tests/unit_tests/console/",
-                "tests/unit_tests/console/commands/"
+                "tests/unit_tests/console/commands/",
+                "tests/testing_environment/commands/"
             ]
         }
     },
