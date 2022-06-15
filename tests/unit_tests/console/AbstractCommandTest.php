@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 /*
  * This file is part of the Layin package.
@@ -15,7 +16,7 @@ use PHPUnit\Framework\TestCase;
 
 class ConcreteCommandCausingExecProducesString extends AbstractCommand
 {
-    protected function provideCommand(array $params): string
+    protected function provideCommand(string $params): string
     {
         return 'date +"%d %m %Y";';
     }
@@ -23,7 +24,7 @@ class ConcreteCommandCausingExecProducesString extends AbstractCommand
 
 class ConcreteCommandCausingExecProducesEmptyString extends AbstractCommand
 {
-    protected function provideCommand(array $params): string
+    protected function provideCommand(string $params): string
     {
         return 'echo "" > /dev/null';
     }
@@ -31,7 +32,7 @@ class ConcreteCommandCausingExecProducesEmptyString extends AbstractCommand
 
 class ConcreteCommandCausingExecProducesErrorString extends AbstractCommand
 {
-    protected function provideCommand(array $params): string
+    protected function provideCommand(string $params): string
     {
         return 'kdklccbleihqfigvefcbf';
     }
@@ -39,7 +40,7 @@ class ConcreteCommandCausingExecProducesErrorString extends AbstractCommand
 
 class ConctreteCommandListingDirContent extends AbstractCommand
 {
-    protected function provideCommand(array $params): string
+    protected function provideCommand(string $params): string
     {
         return 'ls';
     }
@@ -122,17 +123,30 @@ class AbstractCommandTest extends TestCase
         $this->assertNull($result);
     }
 
+    public function testExecuteWhenParamsAreNotString()
+    {
+        $params = 1024;
+        $command = new ConcreteCommandCausingExecProducesString;
+
+        $expectedErrorMessagePattern =
+            '/AbstractCommand\:\:execute\(\)\: Argument \#1 \(\$params\) must be of type string, int given/';
+        $this->expectError(\TypeError::class);
+        $this->expectErrorMessageMatches($expectedErrorMessagePattern);
+
+        $command->execute($params);
+    }
+
     /**
      * @dataProvider gettersProvider
      */
-    public function testGettersReturnProperTypesAfterExecute(string $accessorName, string $accessorReturnedType)
+    public function testGettersReturnProperTypesAfterExecute(string $getterName, string $getterReturnedType)
     {
         $command = new ConcreteCommandCausingExecProducesString;
 
         $command->execute();
-        $result = $command->$accessorName();
+        $result = $command->$getterName();
 
-        $this->assertEquals($accessorReturnedType, gettype($result));
+        $this->assertEquals($getterReturnedType, gettype($result));
     }
 
     public function testExecuteWhenExecProducesString()

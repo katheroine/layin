@@ -54,7 +54,7 @@ class ThemeLoadCommandTest extends TestCase
         $command->setExecLocation(self::EXEC_LOCATION);
 
         $command->assetsPath = self::ASSETS_PATH;
-        $command->execute(['name' => 'orchid']);
+        $command->execute('orchid');
         $result = $this->getResult();
 
         $this->assertEquals('', $result);

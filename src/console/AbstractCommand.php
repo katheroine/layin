@@ -34,7 +34,7 @@ abstract class AbstractCommand
      * Provides content of the system command
      * as it would be written in the console.
      */
-    abstract protected function provideCommand(array $params): string;
+    abstract protected function provideCommand(string $params): string;
 
     public function setExecLocation(string $execLocation): self
     {
@@ -43,7 +43,7 @@ abstract class AbstractCommand
         return $this;
     }
 
-    public function execute(array $params = []): void
+    public function execute(string $params = ''): void
     {
         $command = $this->prepareCommand($params);
 
@@ -68,7 +68,7 @@ abstract class AbstractCommand
         return $this->message;
     }
 
-    private function prepareCommand(array $params): string
+    private function prepareCommand(string $params): string
     {
         $command = '';
         if (!empty($this->execLocation)) {

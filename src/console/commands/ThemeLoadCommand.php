@@ -25,11 +25,13 @@ class ThemeLoadCommand extends AbstractCommand
 {
     public string $assetsPath = '../../../../src/assets/';
 
-    protected function provideCommand(array $params): string
+    protected function provideCommand(string $params): string
     {
+        $name = $params;
+
         return "cd site/public/assets/images;
-            ln -s " . $this->assetsPath . "images/*" . $params['name'] . "* ./;
-            cd ../stylesheets; ln -s " . $this->assetsPath . "stylesheets/*." . $params['name'] . ".* ./
-            cd ../scripts; ln -s " . $this->assetsPath . "scripts/*." . $params['name'] . ".* ./";
+            ln -s " . $this->assetsPath . "images/*" . $name . "* ./;
+            cd ../stylesheets; ln -s " . $this->assetsPath . "stylesheets/*." . $name . ".* ./
+            cd ../scripts; ln -s " . $this->assetsPath . "scripts/*." . $name . ".* ./";
     }
 }

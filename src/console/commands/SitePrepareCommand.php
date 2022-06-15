@@ -23,7 +23,7 @@ namespace Layin\Console;
  */
 class SitePrepareCommand extends AbstractCommand
 {
-    protected function provideCommand(array $params): string
+    protected function provideCommand(string $params): string
     {
         return "mkdir site;
             cd site; mkdir config preconfigurations public;
