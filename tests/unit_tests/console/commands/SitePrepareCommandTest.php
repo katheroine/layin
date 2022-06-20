@@ -54,7 +54,7 @@ class SitePrepareCommandTest extends TestCase
         $execDirectory = scandir(self::EXEC_LOCATION);
         $this->assertEquals(['.', '..', 'site'], $execDirectory);
         $siteDirectory = scandir(self::EXEC_LOCATION . '/site');
-        $this->assertEquals(['.', '..', 'config', 'preconfigurations', 'public'], $siteDirectory);
+        $this->assertEquals(['.', '..', 'config', 'preconfigurations', 'public', 'templates'], $siteDirectory);
         $publicDirectory = scandir(self::EXEC_LOCATION . '/site/public');
         $this->assertEquals(['.', '..', 'assets', 'pages'], $publicDirectory);
         $assetsDirectory = scandir(self::EXEC_LOCATION . '/site/public/assets');

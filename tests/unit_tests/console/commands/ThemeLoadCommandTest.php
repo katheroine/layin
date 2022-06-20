@@ -26,12 +26,13 @@ use Layin\Console\ThemeLoadCommand;
 class ThemeLoadCommandTest extends TestCase
 {
     private const EXEC_LOCATION = 'tests/testing_environment/command_exec_results/';
-    private const ASSETS_PATH = '../../../../../assets/';
+    private const ASSETS_PATH = __DIR__ . '/../../../testing_environment/theme/assets/';
+    private const TEMPLATES_PATH = __DIR__ . '/../../../testing_environment/theme/templates/';
 
     protected function setUp(): void
     {
         shell_exec('cd ' . self::EXEC_LOCATION . '; mkdir site;
-            cd site; mkdir config preconfigurations public;
+            cd site; mkdir config preconfigurations public templates;
             cd public; mkdir assets pages;
             cd assets; mkdir images stylesheets scripts');
     }
@@ -54,6 +55,7 @@ class ThemeLoadCommandTest extends TestCase
         $command->setExecLocation(self::EXEC_LOCATION);
 
         $command->assetsPath = self::ASSETS_PATH;
+        $command->templatesPath = self::TEMPLATES_PATH;
         $command->execute('orchid');
         $result = $this->getResult();
 
@@ -67,5 +69,7 @@ class ThemeLoadCommandTest extends TestCase
         $this->assertEquals(['.', '..', 'content.orchid.css', 'site.orchid.css'], $stylesheetsDirectory);
         $scriptsDirectory = scandir(self::EXEC_LOCATION . 'site/public/assets/scripts');
         $this->assertEquals(['.', '..', 'accessibility.orchid.js', 'dashboard.orchid.js'], $scriptsDirectory);
+        $templatesDirectory = scandir(self::EXEC_LOCATION . 'site/templates');
+        $this->assertEquals(['.', '..', 'index.orchid.twig.html'], $templatesDirectory);
     }
 }

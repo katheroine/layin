@@ -26,8 +26,8 @@ class SitePrepareCommand extends AbstractCommand
     protected function provideCommand(string $params): string
     {
         return "mkdir site;
-            cd site; mkdir config preconfigurations public;
+            cd site; mkdir config preconfigurations public templates;
             cd public; mkdir assets pages;
             cd assets; mkdir images stylesheets scripts";
-    }
+        }
 }

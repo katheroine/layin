@@ -23,7 +23,8 @@ namespace Layin\Console;
  */
 class ThemeLoadCommand extends AbstractCommand
 {
-    public string $assetsPath = '../../../../src/assets/';
+    public string $assetsPath = __DIR__ . '../../assets/';
+    public string $templatesPath = __DIR__ . '../../templates/';
 
     protected function provideCommand(string $params): string
     {
@@ -31,7 +32,8 @@ class ThemeLoadCommand extends AbstractCommand
 
         return "cd site/public/assets/images;
             ln -s " . $this->assetsPath . "images/*" . $name . "* ./;
-            cd ../stylesheets; ln -s " . $this->assetsPath . "stylesheets/*." . $name . ".* ./
-            cd ../scripts; ln -s " . $this->assetsPath . "scripts/*." . $name . ".* ./";
+            cd ../stylesheets; ln -s " . $this->assetsPath . "stylesheets/*." . $name . ".* ./;
+            cd ../scripts; ln -s " . $this->assetsPath . "scripts/*." . $name . ".* ./;
+            cd ../../../templates/; ln -s " . $this->templatesPath . "*." . $name . ".* ./";
     }
 }
