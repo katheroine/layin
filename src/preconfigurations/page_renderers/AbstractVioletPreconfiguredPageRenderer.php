@@ -22,7 +22,7 @@ use Katheroine\Layin\Renderer\VioletPageRenderer;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-abstract class AbstractVioletPreconfiguredPageRenderer 
+abstract class AbstractVioletPreconfiguredPageRenderer
 {
     /**
      * Preconfiguration obligatory keys.
@@ -43,7 +43,7 @@ abstract class AbstractVioletPreconfiguredPageRenderer
      */
     abstract protected function providePreconfiguration(): array;
 
-    public function renderPreconfiguredPage(string $template_name): void 
+    public function renderPreconfiguredPage(string $template_name): void
     {
         $pageRenderer = $this->preconfigurePageRenderer();
 
@@ -55,7 +55,7 @@ abstract class AbstractVioletPreconfiguredPageRenderer
     /**
      * @throws \UnexpectedValueException When preconfiguration contains improper keys.
      */
-    protected function preconfigurePageRenderer(): VioletPageRenderer 
+    protected function preconfigurePageRenderer(): VioletPageRenderer
     {
         $preconfiguration = $this->providePreconfiguration();
 
@@ -68,7 +68,7 @@ abstract class AbstractVioletPreconfiguredPageRenderer
             ->setConfigDirPath($preconfiguration[self::CONFIG_DIR_PATH_KEY])
             ->setBaseRelativeUrl($preconfiguration[self::BASE_URL_KEY])
             ->setSubpagesRelativeUrl($preconfiguration[self::SUBPAGES_URL_KEY])
-            ->setAssetsDirRelativePath($preconfiguration[self::ASSETS_DIR_PATH_KEY])  
+            ->setAssetsDirRelativePath($preconfiguration[self::ASSETS_DIR_PATH_KEY])
             ->setCodeFileExtension($preconfiguration[self::CODE_FILE_EXTENSION_KEY])
             ->setIsDebugMode($preconfiguration[self::IS_DEBUG_MODE_KEY]);
 
@@ -95,7 +95,7 @@ abstract class AbstractVioletPreconfiguredPageRenderer
 
         foreach ($preconfigurationKeys as $key) {
             if (! array_key_exists($key, $preconfiguration)) {
-              throw new \UnexpectedValueException("Preconfiguration lacks '$key' entry.");
+                throw new \UnexpectedValueException("Preconfiguration lacks '$key' entry.");
             }
         }
     }
@@ -109,7 +109,7 @@ abstract class AbstractVioletPreconfiguredPageRenderer
 
         foreach ($preconfiguration as $key => $value) {
             if (! in_array($key, $preconfigurationKeys)) {
-              throw new \UnexpectedValueException("Preconfiguration has unneeded '$key' entry.");
+                throw new \UnexpectedValueException("Preconfiguration has unneeded '$key' entry.");
             }
         }
     }

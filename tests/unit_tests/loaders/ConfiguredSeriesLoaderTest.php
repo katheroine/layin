@@ -41,38 +41,40 @@ class ConfiguredSeriesLoaderTest extends AbstractConfigLoaderTest
 
         $this->assertIsArray($result);
         $this->assertNotEmpty($result);
-        $this->assertEquals([
+        $this->assertEquals(
             [
-                'css_id' => 'home-link',
-                'title' => 'Home',
-                'url_part' => '../..',
+                [
+                    'css_id' => 'home-link',
+                    'title' => 'Home',
+                    'url_part' => '../..',
+                ],
+                [
+                    'css_id' => 'accessibility-info-link',
+                    'title' => 'Accessibility',
+                    'url_part' => 'accessibility_info.php',
+                ],
+                [
+                    'css_id' => 'about-submenu',
+                    'title' => 'About',
+                    'submenu' => [
+                        [
+                            'title' => 'Layin repository',
+                            'url' => 'https://github.com/katheroine/layin',
+                        ],
+                        [
+                            'title' => 'Layin author',
+                            'url' => 'https://about.me/katheroine',
+                        ],
+                    ]
+                ],
+                [
+                    'css_id' => 'contact-link',
+                    'title' => 'Contact',
+                    'url_id' => 'contact-info',
+                ],
             ],
-            [
-                'css_id' => 'accessibility-info-link',
-                'title' => 'Accessibility',
-                'url_part' => 'accessibility_info.php',
-            ],
-            [
-                'css_id' => 'about-submenu',
-                'title' => 'About',
-                'submenu' => [
-                    [
-                        'title' => 'Layin repository',
-                        'url' => 'https://github.com/katheroine/layin',
-                    ],
-                    [
-                        'title' => 'Layin author',
-                        'url' => 'https://about.me/katheroine',
-                    ],
-                ]
-            ],
-            [
-                'css_id' => 'contact-link',
-                'title' => 'Contact',
-                'url_id' => 'contact-info',
-            ],
-        ],
-        $result);
+            $result
+        );
     }
 
     public function testLoadWhenResultIsNotSeries()

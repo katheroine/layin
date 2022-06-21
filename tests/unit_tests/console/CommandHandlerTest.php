@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -44,7 +45,7 @@ class CommandHandlerTest extends TestCase
 
     public function testSetCommandsPathReturnsSelf()
     {
-        $commandHandler = new CommandHandler;
+        $commandHandler = new CommandHandler();
 
         $result = $commandHandler->setCommandsPath(__DIR__ . '/../../testing_environment/commands');
 
@@ -54,7 +55,7 @@ class CommandHandlerTest extends TestCase
     public function testSetCommandsPathWhenCommandsPathIsNotString()
     {
         $commandsPath = 1024;
-        $commandHandler = new CommandHandler;
+        $commandHandler = new CommandHandler();
 
         $expectedErrorMessagePattern =
             '/CommandHandler\:\:setCommandsPath\(\)\: '
@@ -77,7 +78,7 @@ class CommandHandlerTest extends TestCase
 
     public function testHandleCommandPathReturnsNothing()
     {
-        $commandHandler = new CommandHandler;
+        $commandHandler = new CommandHandler();
 
         ob_start();
         $result = $commandHandler->handleCommand(['./bin/invokation_script.php', 'directory:list', 'argument']);
@@ -89,7 +90,7 @@ class CommandHandlerTest extends TestCase
     public function testHandleCommandWhenCommandLineIsNotArray()
     {
         $commandLine = 1024;
-        $commandHandler = new CommandHandler;
+        $commandHandler = new CommandHandler();
 
         $expectedErrorMessagePattern =
             '/CommandHandler\:\:handleCommand\(\)\: '
@@ -106,7 +107,7 @@ class CommandHandlerTest extends TestCase
     public function testHandleCommand(string $commandName, string $commandParams, string $commandClass)
     {
         $fullCommandClass = '\\Katheroine\\Layin\\Console\\' . $commandClass;
-        $expectedCommand = new $fullCommandClass;
+        $expectedCommand = new $fullCommandClass();
         $expectedCommand->setExecLocation('tests/testing_environment/command_exec_location/');
 
         ob_start();
@@ -114,11 +115,11 @@ class CommandHandlerTest extends TestCase
         $expectedOutput = $expectedCommand->getMessage();
         ob_end_clean();
 
-        $commandHandler = new CommandHandler;
+        $commandHandler = new CommandHandler();
         $commandHandler->setCommandsPath(__DIR__ . '/../../testing_environment/commands');
 
         $commandLine = [
-            './bin/invokation_script.php', 
+            './bin/invokation_script.php',
             $commandName,
             $commandParams
         ];

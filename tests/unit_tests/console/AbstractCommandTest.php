@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -94,7 +95,7 @@ class AbstractCommandTest extends TestCase
      */
     public function testGettersReturnNothingBeforeExecute(string $accessorName)
     {
-        $command = new ConcreteCommandCausingExecProducesString;
+        $command = new ConcreteCommandCausingExecProducesString();
 
         $result = $command->$accessorName();
 
@@ -116,7 +117,7 @@ class AbstractCommandTest extends TestCase
      */
     public function testExecuteReturnsNothing(string $concreteCommandClass)
     {
-        $command = new $concreteCommandClass;
+        $command = new $concreteCommandClass();
 
         $result = $command->execute();
 
@@ -126,7 +127,7 @@ class AbstractCommandTest extends TestCase
     public function testExecuteWhenParamsAreNotString()
     {
         $params = 1024;
-        $command = new ConcreteCommandCausingExecProducesString;
+        $command = new ConcreteCommandCausingExecProducesString();
 
         $expectedErrorMessagePattern =
             '/AbstractCommand\:\:execute\(\)\: Argument \#1 \(\$params\) must be of type string, int given/';
@@ -141,7 +142,7 @@ class AbstractCommandTest extends TestCase
      */
     public function testGettersReturnProperTypesAfterExecute(string $getterName, string $getterReturnedType)
     {
-        $command = new ConcreteCommandCausingExecProducesString;
+        $command = new ConcreteCommandCausingExecProducesString();
 
         $command->execute();
         $result = $command->$getterName();
@@ -151,8 +152,8 @@ class AbstractCommandTest extends TestCase
 
     public function testExecuteWhenExecProducesString()
     {
-        $date = new \DateTime;
-        $command = new ConcreteCommandCausingExecProducesString;
+        $date = new \DateTime();
+        $command = new ConcreteCommandCausingExecProducesString();
 
         $expectedResult = $date->format('d m Y');
 
@@ -166,7 +167,7 @@ class AbstractCommandTest extends TestCase
 
     public function testExecuteWhenExecProducesEmptyString()
     {
-        $command = new ConcreteCommandCausingExecProducesEmptyString;
+        $command = new ConcreteCommandCausingExecProducesEmptyString();
 
         $command->execute();
         $result = $this->getResult();
@@ -178,7 +179,7 @@ class AbstractCommandTest extends TestCase
 
     public function testExecuteWhenExecProducesErrorString()
     {
-        $command = new ConcreteCommandCausingExecProducesErrorString;
+        $command = new ConcreteCommandCausingExecProducesErrorString();
 
         $command->execute();
         $result = $this->getResult();
@@ -200,7 +201,7 @@ class AbstractCommandTest extends TestCase
 
     public function testSetLocation()
     {
-        $command = new ConctreteCommandListingDirContent;
+        $command = new ConctreteCommandListingDirContent();
 
         $expectedMessage = "testing_file_1.txt\ntesting_file_2.txt\ntesting_file_3.txt\n";
 

@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -60,7 +61,7 @@ class AbstractPageRendererTest extends TestCase
 
     public function testSetTemplatesDirAbsolutePathReturnsSelf()
     {
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
 
         $result = $pageRenderer->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates');
 
@@ -70,7 +71,7 @@ class AbstractPageRendererTest extends TestCase
     public function testSetTemplatesDirAbsolutePathWhenTemplateDirAbsolutePathIsNotString()
     {
         $templateDirAbsolutePath = 1024;
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
 
         $expectedErrorMessagePattern =
             '/AbstractPageRenderer\:\:setTemplatesDirAbsolutePath\(\)\: '
@@ -93,7 +94,7 @@ class AbstractPageRendererTest extends TestCase
 
     public function testSetTemplateLocalPathReturnsSelf()
     {
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
 
         $result = $pageRenderer->SetTemplateLocalPath('subpages/');
 
@@ -103,7 +104,7 @@ class AbstractPageRendererTest extends TestCase
     public function testSetTemplateLocalPathWhenTemplateLocalPathIsNotString()
     {
         $templateLocalPath = 1024;
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
 
         $expectedErrorMessagePattern =
             '/AbstractPageRenderer\:\:setTemplateLocalPath\(\)\: '
@@ -126,7 +127,7 @@ class AbstractPageRendererTest extends TestCase
 
     public function testSetTemplateNameReturnsSelf()
     {
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
 
         $result = $pageRenderer->SetTemplateName('page.twig.html');
 
@@ -136,7 +137,7 @@ class AbstractPageRendererTest extends TestCase
     public function testSetTemplateNameWhenTemplateNameIsNotString()
     {
         $templateName = 1024;
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
 
         $expectedErrorMessagePattern =
             '/AbstractPageRenderer\:\:setTemplateName\(\)\: '
@@ -159,7 +160,7 @@ class AbstractPageRendererTest extends TestCase
 
     public function testRenderReturnsNothing()
     {
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
             ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
             ->SetTemplateName('page.twig.html');
@@ -173,7 +174,7 @@ class AbstractPageRendererTest extends TestCase
 
     public function testRenderWhenNoTemplateIsSet()
     {
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
 
         // Twig doc: When the template cannot be found
         $this->expectException(\Twig\Error\LoaderError::class);
@@ -184,7 +185,7 @@ class AbstractPageRendererTest extends TestCase
 
     public function testRenderWhenTemplateContentIsSyntacticallyImproper()
     {
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
             ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
             ->SetTemplateName('syntactically_improper_content.twig.html');
@@ -198,7 +199,7 @@ class AbstractPageRendererTest extends TestCase
 
     public function testRenderWithoutTemplateLocalPath()
     {
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
             ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
             ->SetTemplateName('page.twig.html');
@@ -227,7 +228,7 @@ class AbstractPageRendererTest extends TestCase
 
     public function testRenderWithTemplateLocalPath()
     {
-        $pageRenderer = new ConcretePageRenderer;
+        $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
             ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
             ->setTemplateLocalPath('subpages/')

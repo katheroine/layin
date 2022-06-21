@@ -1,8 +1,9 @@
 #!/usr/bin/env php
 <?php
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use Katheroine\Layin\Console\CommandHandler;
 
-$commandHandler = new CommandHandler;
+$commandHandler = new CommandHandler();
 $commandHandler->handleCommand($argv);

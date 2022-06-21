@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -107,20 +108,22 @@ class ConfigLoaderTest extends AbstractConfigLoaderTest
 
         $result = $loader->load();
 
-        $this->assertEquals([
-          'title' => 'Layin',
-          'site_name' => 'Layin',
-          'description' => 'Layin - general purpose web page layout',
-          'keywords' => 'layin,layout,www,web page',
-          'author' => [
-            'name' => 'katheroine',
-            'email' => 'katheroine@gmail.com',
-          ],
-          'charset' => 'utf-8',
-          'language' => 'english',
-          'copyright_range' => '2022',
-        ],
-        $result);
+        $this->assertEquals(
+            [
+                'title' => 'Layin',
+                'site_name' => 'Layin',
+                'description' => 'Layin - general purpose web page layout',
+                'keywords' => 'layin,layout,www,web page',
+                'author' => [
+                    'name' => 'katheroine',
+                    'email' => 'katheroine@gmail.com',
+                ],
+                'charset' => 'utf-8',
+                'language' => 'english',
+                'copyright_range' => '2022',
+            ],
+            $result
+        );
     }
 
     public function testLoadJsonFile()
@@ -130,20 +133,22 @@ class ConfigLoaderTest extends AbstractConfigLoaderTest
 
         $result = $loader->load();
 
-        $this->assertEquals([
-          'title' => 'Layin',
-          'site_name' => 'Layin',
-          'description' => 'Layin - general purpose web page layout',
-          'keywords' => 'layin,layout,www,web page',
-          'author' => [
-            'name' => 'katheroine',
-            'email' => 'katheroine@gmail.com',
-          ],
-          'charset' => 'utf-8',
-          'language' => 'english',
-          'copyright_range' => '2022',
-        ],
-        $result);
+        $this->assertEquals(
+            [
+                'title' => 'Layin',
+                'site_name' => 'Layin',
+                'description' => 'Layin - general purpose web page layout',
+                'keywords' => 'layin,layout,www,web page',
+                'author' => [
+                    'name' => 'katheroine',
+                    'email' => 'katheroine@gmail.com',
+                ],
+                'charset' => 'utf-8',
+                'language' => 'english',
+                'copyright_range' => '2022',
+            ],
+            $result
+        );
     }
 
     public function testSetReplacementsFunctionExists()
@@ -193,19 +198,21 @@ class ConfigLoaderTest extends AbstractConfigLoaderTest
 
         $result = $loader->load();
 
-        $this->assertEquals([
-          'title' => 'Layin',
-          'site_name' => 'Layin',
-          'description' => 'Layin - general purpose web page layout',
-          'keywords' => 'Layin,layout,www,web page',
-          'author' => [
-            'name' => 'katheroine',
-            'email' => 'katheroine@gmail.com',
-          ],
-          'charset' => 'utf-8',
-          'language' => 'english',
-          'copyright_range' => '2022',
-        ],
-        $result);
+        $this->assertEquals(
+            [
+                'title' => 'Layin',
+                'site_name' => 'Layin',
+                'description' => 'Layin - general purpose web page layout',
+                'keywords' => 'Layin,layout,www,web page',
+                'author' => [
+                    'name' => 'katheroine',
+                    'email' => 'katheroine@gmail.com',
+                ],
+                'charset' => 'utf-8',
+                'language' => 'english',
+                'copyright_range' => '2022',
+            ],
+            $result
+        );
     }
 }

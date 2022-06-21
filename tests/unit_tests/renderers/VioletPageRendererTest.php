@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 /*
@@ -51,7 +52,7 @@ class VioletPageRendererTest extends TestCase
      */
     public function testAccessorsReturnSelf(string $accessorName, string $accessorAgrumentType)
     {
-        $pageRenderer = new VioletPageRenderer;
+        $pageRenderer = new VioletPageRenderer();
 
         $result = $pageRenderer->$accessorName($this->provideValueForType($accessorAgrumentType));
 
@@ -61,11 +62,13 @@ class VioletPageRendererTest extends TestCase
     /**
      * @dataProvider accessorsProvider
      */
-    public function testAccessorsWhenItsArgumentsHaveWrongTypes(string $accessorName,
-        string $accessorAgrumentType, string $accessorArgumentName)
-    {
+    public function testAccessorsWhenItsArgumentsHaveWrongTypes(
+        string $accessorName,
+        string $accessorAgrumentType,
+        string $accessorArgumentName
+    ) {
         $argumentValue = 1024;
-        $pageRenderer = new VioletPageRenderer;
+        $pageRenderer = new VioletPageRenderer();
 
         $expectedErrorMessagePattern =
             '/VioletPageRenderer\:\:' . $accessorName . '\(\)\: '
@@ -79,7 +82,7 @@ class VioletPageRendererTest extends TestCase
 
     public function testRender()
     {
-        $pageRenderer = new VioletPageRenderer;
+        $pageRenderer = new VioletPageRenderer();
         $pageRenderer
             ->setBaseRelativeUrl('.')
             ->setSubpagesRelativeUrl('./subpages')
@@ -114,7 +117,7 @@ class VioletPageRendererTest extends TestCase
 
     private function provideValueForType(string $typeName)
     {
-        switch($typeName) {
+        switch ($typeName) {
             case 'string':
                 return 'abc';
             case 'bool':

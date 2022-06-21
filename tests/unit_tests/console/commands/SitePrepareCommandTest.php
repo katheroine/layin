@@ -41,7 +41,7 @@ class SitePrepareCommandTest extends TestCase
 
     public function testExecute()
     {
-        $command = new SitePrepareCommand;
+        $command = new SitePrepareCommand();
         $command->setExecLocation(self::EXEC_LOCATION);
 
         $command->execute();

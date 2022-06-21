@@ -94,7 +94,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
 
     public function testRenderPreconfiguredPageReturnsNothing()
     {
-        $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer;
+        $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
 
         ob_start(); // Doesn't allow to echo rendered template.
         $result = $pageRenderer->renderPreconfiguredPage('page.twig.html');
@@ -105,7 +105,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
 
     public function testRenderPreconfiguredPageWhenPreconfigurationLacksSomeEntry()
     {
-        $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithLackingEntry;
+        $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithLackingEntry();
 
         $this->expectException(\UnexpectedValueException::class);
         $this->expectExceptionMessage("Preconfiguration lacks 'config_dir_path' entry.");
@@ -115,7 +115,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
 
     public function testRenderPreconfiguredPageWhenPreconfigurationHasSurplusEntry()
     {
-        $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithSurplusEntry;
+        $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithSurplusEntry();
 
         $this->expectException(\UnexpectedValueException::class);
         $this->expectExceptionMessage("Preconfiguration has unneeded 'title' entry.");
@@ -125,7 +125,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
 
     public function testRenderPreconfiguredPage()
     {
-        $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer;
+        $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
 
         ob_start(); // Doesn't allow to echo rendered template.
         $pageRenderer->renderPreconfiguredPage('violet_template.twig.html');

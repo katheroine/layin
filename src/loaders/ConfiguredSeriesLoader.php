@@ -45,7 +45,7 @@ class ConfiguredSeriesLoader extends ConfigLoader
      */
     private function validateSeries(array $series): void
     {
-        $notArrayElements = array_filter($series, function($element) {
+        $notArrayElements = array_filter($series, function ($element) {
             return (!is_array($element));
         });
 

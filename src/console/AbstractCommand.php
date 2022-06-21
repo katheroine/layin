@@ -72,7 +72,7 @@ abstract class AbstractCommand
     {
         $command = '';
         if (!empty($this->execLocation)) {
-            $command = "cd $this->execLocation; "; 
+            $command = "cd $this->execLocation; ";
         }
         $command .= $this->provideCommand($params);
         $command .= " 2>&1";

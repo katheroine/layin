@@ -11,7 +11,7 @@
 
 namespace Katheroine\Layin\Loader;
 
-use \Symfony\Component\Yaml\Yaml;
+use Symfony\Component\Yaml\Yaml;
 
 /**
  * Config loader.
@@ -63,7 +63,7 @@ class ConfigLoader
     private function validateConfigFilePath(string $configFilePath): void
     {
         if (!file_exists($configFilePath)) {
-          throw new \ValueError('File given by path does not exist.');
+            throw new \ValueError('File given by path does not exist.');
         }
     }
 
@@ -72,9 +72,9 @@ class ConfigLoader
         list($to_replace, $replace_with) = $this->prepareReplacements();
 
         $configContentWithReplacements = str_replace(
-          $to_replace,
-          $replace_with,
-          $configContent
+            $to_replace,
+            $replace_with,
+            $configContent
         );
 
         return $configContentWithReplacements;
@@ -91,7 +91,7 @@ class ConfigLoader
     private function prepareReplacements(): array
     {
         $to_replace = array_keys($this->replacements);
-        array_walk($to_replace, function(&$value, $key) {
+        array_walk($to_replace, function (&$value, $key) {
             $value = "[[$value]]";
         });
 

@@ -29,5 +29,5 @@ class SitePrepareCommand extends AbstractCommand
             cd site; mkdir config preconfigurations public templates;
             cd public; mkdir assets pages;
             cd assets; mkdir images stylesheets scripts";
-        }
+    }
 }

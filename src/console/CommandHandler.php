@@ -38,7 +38,7 @@ class CommandHandler
 
         $commandClass = 'Katheroine\\Layin\\Console\\' . ucfirst($commandTopic) . ucfirst($commandAction) . 'Command';
 
-        $commandInstance = new $commandClass;
+        $commandInstance = new $commandClass();
         $commandInstance->execute($params);
 
         echo $commandInstance->getMessage();

@@ -51,7 +51,7 @@ class ThemeLoadCommandTest extends TestCase
 
     public function testExecute()
     {
-        $command = new ThemeLoadCommand;
+        $command = new ThemeLoadCommand();
         $command->setExecLocation(self::EXEC_LOCATION);
 
         $command->assetsPath = self::ASSETS_PATH;
