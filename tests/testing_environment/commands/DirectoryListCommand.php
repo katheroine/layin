@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Console;
+namespace Katheroine\Layin\Console;
 
 /**
  * System command for the testing purposes.

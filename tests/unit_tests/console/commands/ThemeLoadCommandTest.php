@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Console;
+namespace Katheroine\Layin\Console;
 
 use PHPUnit\Framework\TestCase;
-use Layin\Console\ThemeLoadCommand;
+use Katheroine\Layin\Console\ThemeLoadCommand;
 
 /**
  * System command linking theme files to appropriate site subdirectories tests.
@@ -45,7 +45,7 @@ class ThemeLoadCommandTest extends TestCase
     public function testThemeLoadCommandClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Console\ThemeLoadCommand')
+            class_exists('Katheroine\Layin\Console\ThemeLoadCommand')
         );
     }
 

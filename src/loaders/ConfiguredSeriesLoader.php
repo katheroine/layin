@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Loader;
+namespace Katheroine\Layin\Loader;
 
 use Symfony\Component\Yaml\Yaml;
-use Layin\Loader\ConfigLoader;
+use Katheroine\Layin\Loader\ConfigLoader;
 
 /**
  * Configured series loader.

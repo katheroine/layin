@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Preconfiguration;
+namespace Katheroine\Layin\Preconfiguration;
 
 use PHPUnit\Framework\TestCase;
 
@@ -78,7 +78,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
     public function testAbstractVioletPreconfiguredPageRendererClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer')
+            class_exists('Katheroine\Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer')
         );
     }
 
@@ -86,7 +86,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer',
+                'Katheroine\Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer',
                 'renderPreconfiguredPage'
             )
         );

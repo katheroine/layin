@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Layin\Console;
+namespace Katheroine\Layin\Console;
 
 use PHPUnit\Framework\TestCase;
 
@@ -28,7 +28,7 @@ class CommandHandlerTest extends TestCase
     public function testCommandHandlerClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Console\CommandHandler')
+            class_exists('Katheroine\Layin\Console\CommandHandler')
         );
     }
 
@@ -36,7 +36,7 @@ class CommandHandlerTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Console\CommandHandler',
+                'Katheroine\Layin\Console\CommandHandler',
                 'setCommandsPath'
             )
         );
@@ -69,7 +69,7 @@ class CommandHandlerTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Console\CommandHandler',
+                'Katheroine\Layin\Console\CommandHandler',
                 'handleCommand'
             )
         );
@@ -105,7 +105,7 @@ class CommandHandlerTest extends TestCase
      */
     public function testHandleCommand(string $commandName, string $commandParams, string $commandClass)
     {
-        $fullCommandClass = '\\Layin\\Console\\' . $commandClass;
+        $fullCommandClass = '\\Katheroine\\Layin\\Console\\' . $commandClass;
         $expectedCommand = new $fullCommandClass;
         $expectedCommand->setExecLocation('tests/testing_environment/command_exec_location/');
 

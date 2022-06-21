@@ -10,9 +10,9 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Layin\Loader;
+namespace Katheroine\Layin\Loader;
 
-use Layin\Loader\AbstractConfigLoaderTest;
+use Katheroine\Layin\Loader\AbstractConfigLoaderTest;
 
 /**
  * Config loader tests.
@@ -34,7 +34,7 @@ class ConfigLoaderTest extends AbstractConfigLoaderTest
     public function testConfigLoaderClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Loader\ConfigLoader')
+            class_exists('Katheroine\Layin\Loader\ConfigLoader')
         );
     }
 
@@ -66,14 +66,14 @@ class ConfigLoaderTest extends AbstractConfigLoaderTest
 
         $loader = new ConfigLoader($filePath);
 
-        $this->assertInstanceOf(\Layin\Loader\ConfigLoader::class, $loader);
+        $this->assertInstanceOf(\Katheroine\Layin\Loader\ConfigLoader::class, $loader);
     }
 
     public function testLoadFunctionExists()
     {
         $this->assertTrue(
             method_exists(
-                'Layin\Loader\ConfigLoader',
+                'Katheroine\Layin\Loader\ConfigLoader',
                 'load'
             )
         );
@@ -150,7 +150,7 @@ class ConfigLoaderTest extends AbstractConfigLoaderTest
     {
         $this->assertTrue(
             method_exists(
-                'Layin\Loader\ConfigLoader',
+                'Katheroine\Layin\Loader\ConfigLoader',
                 'setReplacements'
             )
         );

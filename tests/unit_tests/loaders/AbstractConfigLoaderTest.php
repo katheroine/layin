@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Loader;
+namespace Katheroine\Layin\Loader;
 
 use PHPUnit\Framework\TestCase;
 

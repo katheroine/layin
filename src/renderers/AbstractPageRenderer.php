@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Renderer;
+namespace Katheroine\Layin\Renderer;
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
@@ -17,8 +17,8 @@ use Twig\TemplateWrapper;
 use Twig\Error\LoaderError;
 use Twig\Error\SyntaxError;
 use Twig\Error\RuntimeError;
-use Layin\ConfigLoader;
-use Layin\PreconfiguredSeriesLoader;
+use Katheroine\Layin\ConfigLoader;
+use Katheroine\Layin\PreconfiguredSeriesLoader;
 
 /**
  * Page renderer.

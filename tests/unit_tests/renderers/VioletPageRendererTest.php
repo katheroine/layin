@@ -10,10 +10,10 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Layin\Loader;
+namespace Katheroine\Layin\Loader;
 
 use PHPUnit\Framework\TestCase;
-use Layin\Renderer\VioletPageRenderer;
+use Katheroine\Layin\Renderer\VioletPageRenderer;
 
 /**
  * Violet page renderer tests.
@@ -29,7 +29,7 @@ class VioletPageRendererTest extends TestCase
     public function testVioletPageRendererClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Renderer\VioletPageRenderer')
+            class_exists('Katheroine\Layin\Renderer\VioletPageRenderer')
         );
     }
 
@@ -40,7 +40,7 @@ class VioletPageRendererTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Layin\Renderer\VioletPageRenderer',
+                'Katheroine\Layin\Renderer\VioletPageRenderer',
                 $accessorName
             )
         );

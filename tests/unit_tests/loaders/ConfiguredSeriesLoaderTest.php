@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Loader;
+namespace Katheroine\Layin\Loader;
 
-use Layin\Loader\AbstractConfigLoaderTest;
+use Katheroine\Layin\Loader\AbstractConfigLoaderTest;
 
 /**
  * Configured series loader tests.
@@ -27,7 +27,7 @@ class ConfiguredSeriesLoaderTest extends AbstractConfigLoaderTest
     public function testConfiguredSeriesLoaderClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Loader\ConfiguredSeriesLoader')
+            class_exists('Katheroine\Layin\Loader\ConfiguredSeriesLoader')
         );
     }
 

@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Preconfiguration;
+namespace Katheroine\Layin\Preconfiguration;
 
-use Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer;
+use Katheroine\Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer;
 
 class IndexPreconfiguredPageRenderer extends AbstractVioletPreconfiguredPageRenderer {
   protected function providePreconfiguration(): array {

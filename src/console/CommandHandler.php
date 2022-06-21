@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Console;
+namespace Katheroine\Layin\Console;
 
 /**
  * Command handler.
@@ -36,7 +36,7 @@ class CommandHandler
 
         list($commandTopic, $commandAction) = explode(":", $command);
 
-        $commandClass = 'Layin\\Console\\' . ucfirst($commandTopic) . ucfirst($commandAction) . 'Command';
+        $commandClass = 'Katheroine\\Layin\\Console\\' . ucfirst($commandTopic) . ucfirst($commandAction) . 'Command';
 
         $commandInstance = new $commandClass;
         $commandInstance->execute($params);

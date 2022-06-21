@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Layin\Renderer;
+namespace Katheroine\Layin\Renderer;
 
 use PHPUnit\Framework\TestCase;
 
@@ -44,7 +44,7 @@ class AbstractPageRendererTest extends TestCase
     public function testAbstractPageRendererClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Renderer\AbstractPageRenderer')
+            class_exists('Katheroine\Layin\Renderer\AbstractPageRenderer')
         );
     }
 
@@ -52,7 +52,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Renderer\AbstractPageRenderer',
+                'Katheroine\Layin\Renderer\AbstractPageRenderer',
                 'setTemplatesDirAbsolutePath'
             )
         );
@@ -85,7 +85,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Renderer\AbstractPageRenderer',
+                'Katheroine\Layin\Renderer\AbstractPageRenderer',
                 'SetTemplateLocalPath'
             )
         );
@@ -118,7 +118,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Renderer\AbstractPageRenderer',
+                'Katheroine\Layin\Renderer\AbstractPageRenderer',
                 'setTemplateName'
             )
         );
@@ -151,7 +151,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Renderer\AbstractPageRenderer',
+                'Katheroine\Layin\Renderer\AbstractPageRenderer',
                 'render'
             )
         );

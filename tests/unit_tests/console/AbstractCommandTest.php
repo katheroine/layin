@@ -10,7 +10,7 @@ declare(strict_types=1);
  * file that was distributed with this source code.
  */
 
-namespace Layin\Console;
+namespace Katheroine\Layin\Console;
 
 use PHPUnit\Framework\TestCase;
 
@@ -62,7 +62,7 @@ class AbstractCommandTest extends TestCase
     public function testAbstractCommandClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Console\AbstractCommand')
+            class_exists('Katheroine\Layin\Console\AbstractCommand')
         );
     }
 
@@ -70,7 +70,7 @@ class AbstractCommandTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Console\AbstractCommand',
+                'Katheroine\Layin\Console\AbstractCommand',
                 'provideCommand'
             )
         );
@@ -83,7 +83,7 @@ class AbstractCommandTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Console\AbstractCommand',
+                'Katheroine\Layin\Console\AbstractCommand',
                 $accessorName
             )
         );
@@ -105,7 +105,7 @@ class AbstractCommandTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Console\AbstractCommand',
+                'Katheroine\Layin\Console\AbstractCommand',
                 'execute'
             )
         );
@@ -192,7 +192,7 @@ class AbstractCommandTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                '\Layin\Console\AbstractCommand',
+                'Katheroine\Layin\Console\AbstractCommand',
                 'setExecLocation'
             )
         );

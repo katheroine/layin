@@ -9,9 +9,9 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Preconfiguration;
+namespace Katheroine\Layin\Preconfiguration;
 
-use Layin\Renderer\VioletPageRenderer;
+use Katheroine\Layin\Renderer\VioletPageRenderer;
 
 /**
  * Preconfigured page renderer for the Violet theme.

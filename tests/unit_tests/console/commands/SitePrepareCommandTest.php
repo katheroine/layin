@@ -9,10 +9,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Console;
+namespace Katheroine\Layin\Console;
 
 use PHPUnit\Framework\TestCase;
-use Layin\Console\SitePrepareCommand;
+use Katheroine\Layin\Console\SitePrepareCommand;
 
 /**
  * System command preparing site directory tests.
@@ -35,7 +35,7 @@ class SitePrepareCommandTest extends TestCase
     public function testSitePrepareCommandClassExists()
     {
         $this->assertTrue(
-            class_exists('\Layin\Console\SitePrepareCommand')
+            class_exists('Katheroine\Layin\Console\SitePrepareCommand')
         );
     }
 

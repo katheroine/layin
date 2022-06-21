@@ -9,14 +9,14 @@
  * file that was distributed with this source code.
  */
 
-namespace Layin\Renderer;
+namespace Katheroine\Layin\Renderer;
 
 use Twig\Loader\FilesystemLoader;
 use Twig\Environment;
 use Symfony\Component\Yaml\Yaml;
-use Layin\Loader\ConfigLoader;
-use Layin\Loader\ConfiguredSeriesLoader;
-use Layin\Renderer\AbstractPageRenderer;
+use Katheroine\Layin\Loader\ConfigLoader;
+use Katheroine\Layin\Loader\ConfiguredSeriesLoader;
+use Katheroine\Layin\Renderer\AbstractPageRenderer;
 
 /**
  * Page renderer for the Violet theme.
