@@ -66,10 +66,15 @@
                 "tests/unit_tests/console/",
                 "tests/unit_tests/console/commands/",
                 "tests/testing_environment/commands/"
+            ],
+            "Katheroine\\Layin\\Demo\\": [
+                "demo/",
+                "demo/preconfigurations/",
+                "demo/preconfigurations/page_renderers/"
             ]
         }
     },
     "scripts": {
-        "generate-demo": "php demo/generators/index.demo.php > index.html && php demo/generators/layouts_board_one_column.demo.php > demo/layouts/board/one_column.html && php demo/generators/layouts_board_two_columns.demo.php > demo/layouts/board/two_columns.html && php demo/generators/layouts_board_three_columns.demo.php > demo/layouts/board/three_columns.html"
+        "generate-demo": "php demo/generators/index.demo.php > index.html && php demo/generators/layouts_board_one_column.demo.php > demo/layouts/board/one_column.layin.html && php demo/generators/layouts_board_two_columns.demo.php > demo/layouts/board/two_columns.layin.html && php demo/generators/layouts_board_three_columns.demo.php > demo/layouts/board/three_columns.layin.html"
 	}
 }
