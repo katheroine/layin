@@ -22,13 +22,6 @@ namespace Katheroine\Layin\Console;
  */
 class CommandHandler
 {
-    private string $commandsPath = '';
-
-    public function setCommandsPath(string $commandsPath): self
-    {
-        return $this;
-    }
-
     public function handleCommand(array $commandLine): void
     {
         $command = isset($commandLine[1]) ? $commandLine[1] : '';

@@ -33,39 +33,6 @@ class CommandHandlerTest extends TestCase
         );
     }
 
-    public function testSetCommandsPathFunctionExists()
-    {
-        $this->assertTrue(
-            method_exists(
-                'Katheroine\Layin\Console\CommandHandler',
-                'setCommandsPath'
-            )
-        );
-    }
-
-    public function testSetCommandsPathReturnsSelf()
-    {
-        $commandHandler = new CommandHandler();
-
-        $result = $commandHandler->setCommandsPath(__DIR__ . '/../../testing_environment/commands');
-
-        $this->assertInstanceOf(CommandHandler::class, $result);
-    }
-
-    public function testSetCommandsPathWhenCommandsPathIsNotString()
-    {
-        $commandsPath = 1024;
-        $commandHandler = new CommandHandler();
-
-        $expectedErrorMessagePattern =
-            '/CommandHandler\:\:setCommandsPath\(\)\: '
-            . 'Argument \#1 \(\$commandsPath\) must be of type string, int given/';
-        $this->expectError(\TypeError::class);
-        $this->expectErrorMessageMatches($expectedErrorMessagePattern);
-
-        $commandHandler->setCommandsPath($commandsPath);
-    }
-
     public function testHandleCommandFunctionExists()
     {
         $this->assertTrue(
@@ -116,7 +83,6 @@ class CommandHandlerTest extends TestCase
         ob_end_clean();
 
         $commandHandler = new CommandHandler();
-        $commandHandler->setCommandsPath(__DIR__ . '/../../testing_environment/commands');
 
         $commandLine = [
             './bin/invokation_script.php',

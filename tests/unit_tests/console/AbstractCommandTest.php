@@ -191,7 +191,7 @@ class AbstractCommandTest extends TestCase
         ];
     }
 
-    private function concreteCommandsClassesProvider()
+    private function concreteCommandsClassesProvider(): array
     {
         return [
             [ConcreteCommandCausingExecProducesString::class],
