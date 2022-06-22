@@ -1,0 +1,105 @@
+body
+{
+  /* background-color: grey !important; */
+  /* background-image: none !important; */
+}
+
+header
+{
+  /* background-color: #7b1692 !important; */
+}
+
+#banner
+{
+  /* background-color: #cf99db !important; */
+}
+
+#signboard
+{
+  /* background-color: lime !important; */
+}
+
+#logo
+{
+  /* background-color: navy !important; */
+}
+
+#site-name
+{
+  /* background-color: purple !important; */
+}
+
+#site-description
+{
+  /* background-color: magenta !important; */
+}
+
+#dashboard
+{
+  /* background-color: #261791 !important; */
+}
+
+#dashboard.detached
+{
+  /* background-color: darkorange !important; */
+}
+
+#controls
+{
+  /* background-color: #a499db !important; */
+}
+
+#guideboard
+{
+  /* background-color: #999adb !important; */
+}
+
+nav
+{
+  /* background-color: blue !important; */
+}
+
+#board
+{
+  /* background-color: #133886 !important; */
+}
+
+#liner
+{
+  /* background-color: #aabce1 !important; */
+}
+
+#main
+{
+  /* background-color: aqua !important; */
+}
+
+#main > div
+{
+  /* background-color: ivory !important; */
+}
+
+#main div.scaffold
+{
+  /* background-color: grey !important; */
+}
+
+#main article
+{
+  /* background-color: cyan !important; */
+}
+
+footer
+{
+  /* background-color: #0a6344 !important; */
+}
+
+#contact-info
+{
+  /* background-color: #95c3b6 !important; */
+}
+
+#copyright
+{
+  /* background-color: #95c3a5 !important; */
+}

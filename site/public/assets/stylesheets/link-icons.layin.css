@@ -1,0 +1,79 @@
+#dial .menu-button#increase-font-trigger:before
+{
+  background-image: url('../images/icons.violet/a_plus.svg');
+}
+
+#dial .menu-button#decrease-font-trigger:before
+{
+  background-image: url('../images/icons.violet/a_minus.svg');
+}
+
+#dial .menu-button#toggle-contrast-trigger:before
+{
+  background-image: url('../images/icons.violet/contrast.svg');
+}
+
+#dial .menu-button#reset-accessibility-trigger:before
+{
+  background-image: url('../images/icons.violet/reset.svg');
+}
+
+#dial .menu-button#go-up-link:before
+{
+  background-image: url('../images/icons.violet/arrow_up.svg');
+}
+
+#dial .menu-button#guideboard-trigger:before
+{
+  background-image: url('../images/icons.violet/hamburger.svg');
+}
+
+nav .menu-button#home-link:before
+{
+  background-image: url('../images/icons.violet/house.svg');
+}
+
+nav .menu-button#accessibility-info-link:before
+{
+  background-image: url('../images/icons.violet/wheelchair.svg');
+}
+
+nav .menu-button#layouts-submenu:before
+{
+  background-image: url('../images/icons.violet/plan.svg');
+}
+
+nav .menu-button#about-submenu:before
+{
+  background-image: url('../images/icons.violet/i.svg');
+}
+
+nav .menu-button#favourites-submenu:before
+{
+  background-image: url('../images/icons.violet/star.svg');
+}
+
+nav .menu-button#contact-link:before
+{
+  background-image: url('../images/icons.violet/envelope.svg');
+}
+
+#contact-info .menu-button#address-link:before
+{
+  background-image: url('../images/icons.violet/map.svg');
+}
+
+#contact-info .menu-button#email-action:before
+{
+  background-image: url('../images/icons.violet/monkey_envelope.svg');
+}
+
+#contact-info .menu-button#phone-action:before
+{
+  background-image: url('../images/icons.violet/phone.svg');
+}
+
+#contact-info .menu-button#fax-action:before
+{
+  background-image: url('../images/icons.violet/fax.svg');
+}

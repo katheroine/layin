@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en-GB">
+  <head>
+    <meta charset="">
+    <meta name="language" content="english">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layin - general purpose web page layout">
+    <meta name="keywords" content="layin,layout,www,web page">
+    <meta name="author" content="katheroine <katheroine@gmail.com>">
+    <link type="image/x-icon" rel="shortcut icon" href="./assets/images/favicon.ico">
+            <link type="text/css" rel="stylesheet" href="./assets/stylesheets/site.violet.css">
+    <link type="text/css" rel="stylesheet" href="./assets/stylesheets/site-accessibility.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="./assets/stylesheets/site-s.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="./assets/stylesheets/site-m.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="./assets/stylesheets/site-l.violet.css">
+        <link type="text/css" rel="stylesheet" href="./assets/stylesheets/debug.violet.css">
+                <link type="text/css" rel="stylesheet" href="./assets/stylesheets/colors.layin.css">
+    <link type="text/css" rel="stylesheet" href="./assets/stylesheets/fonts.layin.css">
+    <link type="text/css" rel="stylesheet" href="./assets/stylesheets/colors-site.layin.css">
+    <link type="text/css" rel="stylesheet" href="./assets/stylesheets/colors-site-accessibility.layin.css">
+    <link type="text/css" rel="stylesheet" href="./assets/stylesheets/link-icons.layin.css">
+    <link type="text/css" rel="stylesheet" href="./assets/stylesheets/content.layin.css">
+                        <script src="./assets/scripts/dashboard.violet.js"></script>
+    <script src="./assets/scripts/accessibility.violet.js"></script>
+        <title>Layin</title>
+  </head>
+  <body onload="restoreAccessibility(); handleDashboard();">
+    <header onclick="foldNavigation();">
+          <div id="banner">
+        <div id="signboard">
+          <a id="logo"><img src="./assets/images/logo.png" alt="Layin logo"></a>
+          <div id="site-name">
+            Layin <span id="site-description">General purpose layout</span>
+          </div>
+        </div>
+      </div>
+        </header>
+    <div id="dashboard">
+          <div id="controls">
+        <div id="dial">
+          <a id="increase-font-trigger" class="menu-button icon" onclick="increaseFontSize();"></a>
+          <a id="decrease-font-trigger" class="menu-button icon" onclick="decreaseFontSize();"></a>
+          <a id="toggle-contrast-trigger" class="menu-button icon" onclick="toggleContrast();"></a>
+          <a id="reset-accessibility-trigger" class="menu-button icon" onclick="reset();"></a>
+          <a id="go-up-link" class="menu-button icon" href="#top" onclick="undetachDashboard(); foldNavigation();"></a>
+          <a id="guideboard-trigger" class="menu-button icon" onclick="toggleNavigation();"></a>
+        </div>
+      </div>
+      <div id="guideboard">
+        <nav>
+                    <div class="navigation-item">
+            <a id="home-link" class="menu-button icon "
+                        href="./subpages/."
+            >
+              <div class="content">Home</div>
+            </a>
+                      </div>
+                    <div class="navigation-item">
+            <a id="accessibility-info-link" class="menu-button icon "
+                        href="./subpages/accessibility_info.php"
+            >
+              <div class="content">Accessibility</div>
+            </a>
+                      </div>
+                    <div class="navigation-item">
+            <a id="about-submenu" class="menu-button icon sup"
+                        onclick="toggleSubmenu(this);"
+            >
+              <div class="content">About</div>
+            </a>
+                        <div class="submenu">
+                            <a class="menu-button sub"
+                            href="https://github.com/katheroine/layin"
+              >
+                <div class="content">Layin repository</div>
+              </a>
+                            <a class="menu-button sub"
+                            href="https://about.me/katheroine"
+              >
+                <div class="content">Layin author</div>
+              </a>
+                          </div>
+                      </div>
+                    <div class="navigation-item">
+            <a id="contact-link" class="menu-button icon "
+                        href="#contact-info"
+            >
+              <div class="content">Contact</div>
+            </a>
+                      </div>
+                  </nav>
+      </div>
+        </div>
+    <div id="board" onclick="foldNavigation();">
+          <h1>Hi, there!</h1>
+        </div>
+    <footer onclick="foldNavigation();">
+          <div id="info">
+        <address id="contact-info">
+                    <a class="menu-button icon" id="address-link"
+                    href="https://goo.gl/maps/T84vfoTp8Rdbh6V28"
+          >
+            <div class="content">address: <span class="value">al. Wojciecha Korfantego 35, 40-005 Katowice</span></div>
+          </a>
+                    <a class="menu-button icon" id="email-action"
+                    href="mailto:layin@gmail.com"
+          >
+            <div class="content">e-mail: <span class="value">layin@gmail.com</span></div>
+          </a>
+                    <a class="menu-button icon" id="phone-action"
+                    href="tel:+4832000000"
+          >
+            <div class="content">tel.: <span class="value">(32) 000 00 00</span></div>
+          </a>
+                    <a class="menu-button icon" id="fax-action"
+                    href="fax:+48320000000"
+          >
+            <div class="content">fax.: <span class="value">(32) 000 00 00</span></div>
+          </a>
+                  </address>
+      </div>
+      <div id="copyright">
+        ©&nbsp;2022 Copyright Layin
+      </div>
+        </footer>
+  </body>
+</html>
