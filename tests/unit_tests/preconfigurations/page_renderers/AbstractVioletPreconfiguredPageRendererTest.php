@@ -13,57 +13,6 @@ namespace Katheroine\Layin\Preconfiguration;
 
 use PHPUnit\Framework\TestCase;
 
-class ConcreteVioletPreconfiguredPageRenderer extends AbstractVioletPreconfiguredPageRenderer
-{
-    protected function providePreconfiguration(): array
-    {
-        return [
-            'templates_dir_absolute_path' => __DIR__ . '/../../../testing_environment/templates',
-            'template_local_path' => '',
-            'config_dir_path' => __DIR__ . '/../../../testing_environment/configs',
-            'base_url' => '.',
-            'subpages_relative_url' => './subpages',
-            'assets_dir_relative_path' => './assets',
-            'code_file_extension' => 'php',
-            'is_debug_mode' => true,
-        ];
-    }
-}
-
-class ConcreteVioletPreconfiguredPageRendererWithLackingEntry extends AbstractVioletPreconfiguredPageRenderer
-{
-    protected function providePreconfiguration(): array
-    {
-        return [
-            'templates_dir_absolute_path' => __DIR__ . '/../../testing_environment/templates',
-            'template_local_path' => '',
-            'base_url' => '.',
-            'subpages_relative_url' => './subpages',
-            'assets_dir_relative_path' => './assets',
-            'code_file_extension' => 'php',
-            'is_debug_mode' => true,
-        ];
-    }
-}
-
-class ConcreteVioletPreconfiguredPageRendererWithSurplusEntry extends AbstractVioletPreconfiguredPageRenderer
-{
-    protected function providePreconfiguration(): array
-    {
-        return [
-            'templates_dir_absolute_path' => __DIR__ . '/../../testing_environment/templates',
-            'template_local_path' => '',
-            'config_dir_path' => __DIR__ . '/../../testing_environment/configs',
-            'base_url' => '.',
-            'title' => '',
-            'subpages_relative_url' => './subpages',
-            'assets_dir_relative_path' => './assets',
-            'code_file_extension' => 'php',
-            'is_debug_mode' => true,
-        ];
-    }
-}
-
 /**
  * Preconfigured page renderer for the Violet theme tests.
  *

@@ -4,7 +4,6 @@
 
  <exclude-pattern>src/assets/</exclude-pattern>
  <exclude-pattern>src/templates/</exclude-pattern>
- <exclude-pattern>tests/testing_environment/</exclude-pattern>
 
  <arg name="report" value="full"/>
  <arg value="np"/>

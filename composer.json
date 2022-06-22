@@ -56,15 +56,18 @@
                 "tests/unit_tests/loaders/"
             ],
             "Katheroine\\Layin\\Renderer\\": [
-                "tests/unit_tests/renderers/"
+                "tests/unit_tests/renderers/",
+                "tests/unit_tests/renderers/concrete_renderer_dummies/"
             ],
             "Katheroine\\Layin\\Preconfiguration\\": [
                 "tests/unit_tests/preconfigurations/",
-                "tests/unit_tests/preconfigurations/page_renderers/"
+                "tests/unit_tests/preconfigurations/page_renderers/",
+                "tests/unit_tests/preconfigurations/page_renderers/concrete_renderer_dummies/"
             ],
             "Katheroine\\Layin\\Console\\": [
                 "tests/unit_tests/console/",
                 "tests/unit_tests/console/commands/",
+                "tests/unit_tests/console/commands/concrete_command_dummies/",
                 "tests/testing_environment/commands/"
             ],
             "Katheroine\\Layin\\Demo\\": [

@@ -6,4 +6,3 @@ use Katheroine\Layin\Demo\IndexPreconfiguredPageRenderer;
 
 $pageRenderer = new IndexPreconfiguredPageRenderer();
 $pageRenderer->renderPreconfiguredPage('index.layin.twig.html');
-

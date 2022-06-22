@@ -13,17 +13,19 @@ namespace Katheroine\Layin\Demo;
 
 use Katheroine\Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer;
 
-class LayoutsBoardPreconfiguredPageRenderer extends AbstractVioletPreconfiguredPageRenderer {
-  protected function providePreconfiguration(): array {
-    return [
-      'templates_dir_absolute_path' => __DIR__ . '/../../../site/templates',
-      'template_local_path' => 'layouts/board/',
-      'config_dir_path' => __DIR__ . '/../../../site/config',
-      'base_url' => '../index.html',
-      'subpages_relative_url' => '../..',
-      'assets_dir_relative_path' => '../../../site/public/assets',
-      'code_file_extension' => 'html',
-      'is_debug_mode' => false,
-    ];
-  }
+class LayoutsBoardPreconfiguredPageRenderer extends AbstractVioletPreconfiguredPageRenderer
+{
+    protected function providePreconfiguration(): array
+    {
+        return [
+            'templates_dir_absolute_path' => __DIR__ . '/../../../site/templates',
+            'template_local_path' => 'layouts/board/',
+            'config_dir_path' => __DIR__ . '/../../../site/config',
+            'base_url' => '../index.html',
+            'subpages_relative_url' => '../..',
+            'assets_dir_relative_path' => '../../../site/public/assets',
+            'code_file_extension' => 'html',
+            'is_debug_mode' => false,
+        ];
+    }
 }

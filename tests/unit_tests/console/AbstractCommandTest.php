@@ -15,38 +15,6 @@ namespace Katheroine\Layin\Console;
 
 use PHPUnit\Framework\TestCase;
 
-class ConcreteCommandCausingExecProducesString extends AbstractCommand
-{
-    protected function provideCommand(string $params): string
-    {
-        return 'date +"%d %m %Y";';
-    }
-}
-
-class ConcreteCommandCausingExecProducesEmptyString extends AbstractCommand
-{
-    protected function provideCommand(string $params): string
-    {
-        return 'echo "" > /dev/null';
-    }
-}
-
-class ConcreteCommandCausingExecProducesErrorString extends AbstractCommand
-{
-    protected function provideCommand(string $params): string
-    {
-        return 'kdklccbleihqfigvefcbf';
-    }
-}
-
-class ConctreteCommandListingDirContent extends AbstractCommand
-{
-    protected function provideCommand(string $params): string
-    {
-        return 'ls';
-    }
-}
-
 /**
  * System command tests.
  *
