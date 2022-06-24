@@ -1,7 +1,7 @@
 {
   "name": "katheroine/layin",
     "description": "General purpose web page layout.",
-    "version": "1.0.0",
+    "version": "0.0.0",
     "type": "layout",
     "keywords": [
         "katheroine",
@@ -77,6 +77,9 @@
             ]
         }
     },
+    "bin": [
+        "bin/layin"
+    ],
     "scripts": {
         "generate-demo": "php demo/generators/index.demo.php > index.html && php demo/generators/layouts_board_one_column.demo.php > demo/layouts/board/one_column.layin.html && php demo/generators/layouts_board_two_columns.demo.php > demo/layouts/board/two_columns.layin.html && php demo/generators/layouts_board_three_columns.demo.php > demo/layouts/board/three_columns.layin.html"
 	}
