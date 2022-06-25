@@ -1,0 +1,12 @@
+{% for link in contact_info_links %}
+<a class="menu-button icon" id="{{link.css_id}}"
+{% if link.url_id %}
+href="#{{link.url_id}}"
+{% elseif link.url_part %}
+href="{{subpages_url~'/'~link.url_part}}"
+{% elseif link.url %}
+href="{{link.url}}"
+{% endif %}>
+  <div class="content">{{link.title}}: <span class="value">{{link.value}}</span></div>
+</a>
+{% endfor %}

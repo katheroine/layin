@@ -1,0 +1,191 @@
+:root
+{
+  /* layout */
+  --horizontal-hem: 46px;
+  --header-height: 336px;
+  --banner-height: 168px;
+  --logo-size: 252px;
+  --site-name-hem: 42px;
+  --site-name-font-size: 80px;
+  --site-description-font-size: 26px;
+  --body-background-size: 100%;
+
+  --controls-height: 46px;
+
+  --info-horizontal-hem: 50px;
+
+  /* font */
+  font-size: 20px;
+
+  /* details */
+  --detached-controls-opacity: 85%;
+
+  --menu-button-minor-hem: 10px;
+  --menu-button-major-hem: 0;
+  --menu-button-font-size: 100%;
+  --menu-button-icon-size: 26px;
+  --contact-info-item-major-hem: 8px;
+  --contact-info-item-font-size: 80%;
+  --copyright-font-size: 75%;
+}
+
+#guideboard
+{
+  background-color: var(--guideboard-background-color);
+}
+
+.detached #controls
+{
+  opacity: var(--detached-controls-opacity);
+}
+
+.detached #guideboard
+{
+  position: relative;
+}
+
+nav,
+/*
+This is necessary to prevent
+stucking nav styles in lower screen sizes versions
+when navigation is active (visible)
+and screen is resizing.
+*/
+nav.active
+{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.detached #dial,
+.detached nav
+{
+  background-color: transparent;
+}
+
+.detached nav
+{
+  position: absolute;
+  top: calc(var(--controls-height) * (-1));
+  left: 0;
+  width: max-content;
+  max-width: 678px;
+  overflow: visible;
+}
+
+#contact-info
+{
+  grid-column-end: contact-info-slot-end;
+}
+
+nav .submenu
+{
+  position: absolute;
+  width: 300px;
+}
+
+#dial .menu-button:hover
+{
+  background-color: var(--controls-backlight-color);
+}
+
+#dial .menu-button#guideboard-trigger
+{
+  display: none;
+}
+
+.detached nav .menu-button.icon .content,
+.detached nav .menu-button.sup:after
+{
+  display: none;
+}
+
+.detached nav .menu-button.sup
+{
+  background-size: var(--controls-height);
+  background-image: url('../images/icons.violet/backgrounds/little_triangle_down.svg');
+  background-repeat: no-repeat;
+}
+
+.detached nav .menu-button.sup.active
+{
+  background-image: url('../images/icons.violet/backgrounds/little_triangle_up.svg');
+}
+
+nav .menu-button,
+#contact-info .menu-button
+{
+  border-bottom: 0;
+}
+
+nav .navigation-item:first-child .menu-button
+{
+  border-top: 0;
+}
+
+nav .menu-button:hover
+{
+  background-color: var(--guideboard-backlight-color);
+}
+
+nav .menu-button.active
+{
+  background-color: var(--guideboard-submenu-background-color);
+}
+
+nav .submenu .menu-button:hover
+{
+  background-color: var(--guideboard-submenu-backlight-color);
+}
+
+#contact-info .menu-button:hover
+{
+  background-color: var(--info-backlight-color);
+}
+
+#liner.two-columns main,
+#liner.two-columns #promo
+{
+  grid-row-start: primary-begin;
+  grid-row-end: tertiary-end;
+}
+
+#liner.two-columns main
+{
+  grid-column-start: L2lb;
+  grid-column-end: L2le;
+}
+
+#liner.two-columns #promo
+{
+  grid-column-start: L2rb;
+  grid-column-end: L2re;
+}
+
+#liner.three-columns #demo,
+#liner.three-columns main,
+#liner.three-columns #promo
+{
+  grid-row-start: primary-begin;
+  grid-row-end: tertiary-end;
+}
+
+#liner.three-columns #demo
+{
+  grid-column-start: L3lb;
+  grid-column-end: L3le;
+}
+
+#liner.three-columns main
+{
+  grid-column-start: L3mb;
+  grid-column-end: L3me;
+}
+
+#liner.three-columns #promo
+{
+  grid-column-start: L3rb;
+  grid-column-end: L3re;
+}

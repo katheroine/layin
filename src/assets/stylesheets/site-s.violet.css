@@ -1,0 +1,157 @@
+:root
+{
+  /* layout */
+  --horizontal-hem: 40px;
+  --header-height: 36vw;
+  --banner-height: 18vw;
+  --logo-size: 26vw;
+  --site-name-hem: 5vw;
+  --site-name-font-size: 7vw;
+  --site-description-font-size: 3vw;
+  --body-background-size: 130%;
+
+  --controls-height: 40px;
+
+  --info-horizontal-hem: 0px;
+
+  /* font */
+  font-size: 16px;
+
+  /* details */
+  --menu-button-minor-hem: 8px;
+  --menu-button-major-hem: var(--vertical-hem);
+  --menu-button-font-size: 100%;
+  --menu-button-icon-size: 24px;
+  --contact-info-item-major-hem: 6px;
+  --contact-info-item-font-size: 80%;
+  --copyright-font-size: 70%;
+}
+
+#guideboard
+{
+  position: relative;
+  background-color: var(--guideboard-background-color);
+}
+
+#dial
+{
+  grid-column-start: shaft-begin;
+  grid-column-end: shaft-end;
+}
+
+nav,
+#info
+{
+  grid-column-start: scaffold-begin;
+  grid-column-end: scaffold-end;
+  flex-direction: column;
+}
+
+nav
+{
+  display: none;
+}
+
+nav.active
+{
+  display: flex;
+  position: absolute;
+  width: 100%;
+}
+
+.detached nav
+{
+  position: fixed;
+  top: var(--controls-height);
+  width: 100%;
+  max-height: calc(100vh - var(--controls-height));
+  overflow: auto;
+}
+
+#contact-info
+{
+  grid-column-start: contact-info-begin;
+  grid-column-end: contact-info-end;
+}
+
+#liner.one-column main
+{
+  grid-row-start: primary-begin;
+  grid-row-end: tertiary-end;
+  grid-column-start: S1b;
+  grid-column-end: S1e;
+}
+
+#liner.two-columns main,
+#liner.two-columns #promo
+{
+  grid-column-start: S2b;
+  grid-column-end: S2e;
+}
+
+#liner.two-columns main
+{
+  grid-row-start: primary-begin;
+  grid-row-end: primary-end;
+}
+
+#liner.two-columns #promo
+{
+  grid-row-start: secondary-begin;
+  grid-row-end: tertiary-end;
+}
+
+#liner.three-columns main,
+#liner.three-columns #demo,
+#liner.three-columns #promo
+{
+  grid-column-start: S3b;
+  grid-column-end: S3e;
+}
+
+#liner.three-columns main
+{
+  grid-row-start: primary-begin;
+  grid-row-end: primary-end;
+}
+
+#liner.three-columns #demo
+{
+  grid-row-start: secondary-begin;
+  grid-row-end: secondary-end;
+}
+
+#liner.three-columns #promo
+{
+  grid-row-start: tertiary-begin;
+  grid-row-end: tertiary-end;
+}
+
+nav .menu-button,
+#contact-info .menu-button
+{
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
+nav .navigation-item:first-child .menu-button
+{
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--guideboard-button-separator-color);
+}
+
+nav .menu-button
+{
+  border-bottom-color: var(--guideboard-button-separator-color);
+}
+
+nav .submenu .menu-button
+{
+  border-bottom-color: var(--guideboard-submenu-button-separator-color);
+}
+
+#contact-info .menu-button
+{
+  border-bottom-color: var(--info-button-separator-color);
+}

@@ -1,0 +1,38 @@
+- css_id: home-link
+  title: Home
+  url_part: [[base_url]]
+- css_id: accessibility-info-link
+  title: Accessibility
+  url_part: accessibility_info.php
+- css_id: layouts-submenu
+  title: Layouts
+  submenu:
+    - title: One column
+      url_part: layouts/board/one_column.layin.[[code_file_extension]]
+    - title: Two columns
+      url_part: layouts/board/two_columns.layin.[[code_file_extension]]
+    - title: Three columns
+      url_part: layouts/board/three_columns.layin.[[code_file_extension]]
+- css_id: about-submenu
+  title: About
+  submenu:
+    - title: Layin repository
+      url: https://github.com/katheroine/layin
+    - title: Layin author
+      url: https://about.me/katheroine
+- css_id: favourites-submenu
+  title: Favourites
+  submenu:
+    - title: Linux Mint
+      url: https://linuxmint.com
+    - title: Atom
+      url: https://atom.io
+    - title: Inkscape
+      url: https://inkscape.org
+    - title: Git
+      url: https://git-scm.com
+    - title: GitHub
+      url: https://github.com/
+- css_id: contact-link
+  title: Contact
+  url_id: contact-info

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<ruleset name="PHP">
+ <description>The coding standard for PHP projects.</description>
+
+ <exclude-pattern>src/assets/</exclude-pattern>
+ <exclude-pattern>src/templates/</exclude-pattern>
+
+ <arg name="report" value="full"/>
+ <arg value="np"/>
+
+ <rule ref="PSR1"/>
+ <rule ref="PSR12"/>
+</ruleset>
