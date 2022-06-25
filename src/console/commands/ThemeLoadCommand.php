@@ -23,17 +23,18 @@ namespace Katheroine\Layin\Console;
  */
 class ThemeLoadCommand extends AbstractCommand
 {
-    public string $assetsPath = __DIR__ . '../../assets/';
-    public string $templatesPath = __DIR__ . '../../templates/';
+    private const PROJECT_PATH = 'vendor/katheroine/layin';
+    public string $assetsPath = '../../../../' . self::PROJECT_PATH . '/src/assets/';
+    public string $templatesPath = '../../' . self::PROJECT_PATH . '/src/templates/';
 
     protected function provideCommand(string $params): string
     {
         $name = $params;
 
         return "cd site/public/assets/images;
-            ln -s " . $this->assetsPath . "images/*" . $name . "* ./;
-            cd ../stylesheets; ln -s " . $this->assetsPath . "stylesheets/*." . $name . ".* ./;
-            cd ../scripts; ln -s " . $this->assetsPath . "scripts/*." . $name . ".* ./;
-            cd ../../../templates/; ln -s " . $this->templatesPath . "*." . $name . ".* ./";
+            ln -s {$this->assetsPath}images/*.{$name}* ./;
+            cd ../stylesheets; ln -s {$this->assetsPath}stylesheets/*.{$name}.* ./;
+            cd ../scripts; ln -s {$this->assetsPath}scripts/*.{$name}.* ./;
+            cd ../../../templates/; ln -s {$this->templatesPath}*.{$name}.* ./";
     }
 }
