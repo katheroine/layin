@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Documentation - short tutorial showing how to create a custom site using the chosen theme as a base.
 
+## [0.1.1] - 2022-06-25
+### Changed
+- Fix console script wrongly includes autoloader [#25]
+
 ## [0.1.0] - 2022-06-25
 ### Added
 - "Violet" theme with images, icons, CSS stylesheets, JS scripts and Twig templates (HTML + PHP code).
