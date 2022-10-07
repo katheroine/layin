@@ -22,3 +22,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Customizability & extendability for framework users (code organization, config files).
 - Example of Apache web server configuration file for the virtual host.
 - Console script for framework users, performing the basic jobs.
+
+## [0.2.0] - 2022-10-07
+### Added
+- Possibility of configuration of the title & subtitle in the header.
+- Possibility of configuration of the language code for the HTML document.
+### Changed
+- More descriptive keys of the configurable fields in the `config/site_config.yml` file to make them more the meaningful.
