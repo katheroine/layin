@@ -1,10 +1,13 @@
-title: Layin
-site_name: Layin
-description: Layin - general purpose web page layout
-keywords: layin,layout,www,web page
-author:
+html_doc_title: Layin
+html_doc_description: Layin - general purpose web page layout
+html_doc_keywords: layin,layout,www,web page
+html_doc_author:
   name: katheroine
   email: katheroine@gmail.com
-charset: utf-8
-language: english
-copyright_range: 2022
+html_doc_charset: utf-8
+html_doc_language: english
+html_doc_language_code: en-GB
+header_title: Layin
+header_subtitle: General purpose layout
+footer_copyright_range: 2022
+footer_site_name: Layin
