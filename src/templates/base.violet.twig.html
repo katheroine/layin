@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en-GB">
+<html lang="{{ html_doc_language_code }}">
   <head>
-    <meta charset="">
-    <meta name="language" content="{{ language }}">
+    <meta charset="{{ html_doc_charset }}">
+    <meta name="language" content="{{ html_doc_language }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ description }}">
-    <meta name="keywords" content="{{ keywords }}">
-    <meta name="author" content="{{ author.name }} <{{ author.email }}>">
+    <meta name="description" content="{{ html_doc_description }}">
+    <meta name="keywords" content="{{ html_doc_keywords }}">
+    <meta name="author" content="{{ html_doc_author.name }} <{{ html_doc_author.email }}>">
     <link type="image/x-icon" rel="shortcut icon" href="{{assets_dir}}/images/favicon.ico">
     {% block stylesheets %}
     {% block stylesheets_basic %}
@@ -34,7 +34,7 @@
     <script src="{{assets_dir}}/scripts/dashboard.violet.js"></script>
     <script src="{{assets_dir}}/scripts/accessibility.violet.js"></script>
     {% endblock scripts %}
-    <title>{{ title }}</title>
+    <title>{{ html_doc_title }}</title>
   </head>
   <body onload="restoreAccessibility(); handleDashboard();">
     <header onclick="foldNavigation();">
