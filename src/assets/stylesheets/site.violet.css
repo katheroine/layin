@@ -83,7 +83,7 @@ header
 {
   display: grid;
   grid-template-rows: var(--site-name-hem) [logo-begin] var(--logo-size) [logo-end];
-  grid-template-columns: var(--logo-size) var(--site-name-hem) [site-name-begin] max-content [site-name-end];
+  grid-template-columns: var(--logo-size) var(--site-name-hem) [site-name-begin] auto [site-name-end];
   color: var(--banner-text-color);
 }
 
