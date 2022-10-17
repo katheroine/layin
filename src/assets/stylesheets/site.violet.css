@@ -25,10 +25,12 @@ body
 {
   display: grid;
   grid-template-rows:
-    [header-begin] var(--header-height) [header-end
+    [body-begin
+    header-begin] var(--header-height) [header-end
     dashboard-begin] max-content [dashboard-end
     board-begin] max-content [board-end
-    footer-begin] max-content [footer-end];
+    footer-begin] min-content [footer-end]
+    max-content [body-end];
   grid-template-areas:
     "header"
     "cover"
@@ -81,7 +83,7 @@ header
 {
   display: grid;
   grid-template-rows: var(--site-name-hem) [logo-begin] var(--logo-size) [logo-end];
-  grid-template-columns: var(--logo-size) var(--site-name-hem) [site-name-begin] max-content [site-name-end];
+  grid-template-columns: var(--logo-size) var(--site-name-hem) [site-name-begin] auto [site-name-end];
   color: var(--banner-text-color);
 }
 
