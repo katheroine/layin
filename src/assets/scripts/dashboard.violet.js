@@ -35,6 +35,8 @@ function toggleNavigation()
         foldAllSubmenus();
         navigation.classList.remove("active");
     }
+
+    adjustBodyToNavigation();
 }
 
 function foldNavigation()
@@ -65,6 +67,8 @@ function toggleSubmenu(supermenuItem)
 
         supermenuItem.classList.add("active");
         submenu.classList.add("active");
+
+        adjustBodyToNavigation();
     } else {
         supermenuItem.classList.remove("active");
         submenu.classList.remove("active");
@@ -115,30 +119,44 @@ function handleScrollingUpForGuideboardVisibility()
         || document.body.clientHeight);
     }
 
-    function getControlsHeight()
-    {
-        let controls = document.getElementById("controls");
-        let controlsStyle = window.getComputedStyle(controls);
-
-        return parseInt(controlsStyle.height);
-    }
-
-    function getHeaderAreaHeight()
-    {
-        let header = document.getElementsByTagName("header")[0];
-        let headerStyle = window.getComputedStyle(header);
-
-        let headerHeight = parseInt(headerStyle.height);
-        let headerBorderBottomSize = parseInt(headerStyle.borderBottom);
-        let headerMarginBottom = parseInt(headerStyle.marginBottom);
-
-        return (headerHeight + headerBorderBottomSize + headerMarginBottom);
-    }
-
     function getScrollingOffset()
     {
         var offset = (window.pageYOffset || document.scrollTop) - (document.clientTop || 0);
 
         return (offset ? offset : 0);
     }
+}
+
+function adjustBodyToNavigation() 
+{
+    let body = document.getElementsByTagName("body")[0];
+    let bodyHeight = body.getBoundingClientRect().height;
+    let navigation = document.getElementsByTagName("nav")[0];
+    let navigationHeight = navigation.getBoundingClientRect().height;
+    let remainingBodyHeight = bodyHeight - getHeaderAreaHeight() - getControlsHeight();
+
+    if (remainingBodyHeight < navigationHeight) {
+        let difference = navigationHeight - remainingBodyHeight;
+        body.style.height = bodyHeight + difference + "px";
+    }
+}
+
+function getControlsHeight()
+{
+    let controls = document.getElementById("controls");
+    let controlsStyle = window.getComputedStyle(controls);
+
+    return parseInt(controlsStyle.height);
+}
+
+function getHeaderAreaHeight()
+{
+    let header = document.getElementsByTagName("header")[0];
+    let headerStyle = window.getComputedStyle(header);
+
+    let headerHeight = parseInt(headerStyle.height);
+    let headerBorderBottomSize = parseInt(headerStyle.borderBottom);
+    let headerMarginBottom = parseInt(headerStyle.marginBottom);
+
+    return (headerHeight + headerBorderBottomSize + headerMarginBottom);
 }
