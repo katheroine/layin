@@ -29,3 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Possibility of configuration of the language code for the HTML document.
 ### Changed
 - More descriptive keys of the configurable fields in the `config/site_config.yml` file to make them more the meaningful.
+
+## [0.2.1] - 2022-10-17
+### Fixed
+- Fix navigation bug, when the document body was too small.
+- Fix overflowing header banner bug, when its content were too long.
