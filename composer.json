@@ -56,7 +56,8 @@
                 "tests/"
             ],
             "Katheroine\\Layin\\Page\\":[
-                "tests/unit_tests/pages/"
+                "tests/unit_tests/pages/",
+                "tests/unit_tests/pages/concrete_page_dummies/"
             ],
             "Katheroine\\Layin\\Loader\\": [
                 "tests/unit_tests/loaders/"
