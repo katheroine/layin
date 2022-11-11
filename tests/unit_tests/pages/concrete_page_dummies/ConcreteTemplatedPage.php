@@ -16,10 +16,8 @@ namespace Katheroine\Layin\Page;
 /**
  * Dummy renderer for testing purposes only.
  */
-class ConcreteTemplatedPage
+class ConcreteTemplatedPage extends TwigPage
 {
-    use TemplatedPageTrait;
-
     public function renderSelf(): string
     {
         return '';

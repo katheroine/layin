@@ -24,12 +24,12 @@ use PHPUnit\Framework\TestCase;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-class TemplatedPageTraitTest extends TestCase
+class TwigPageTest extends TestCase
 {
     public function testAbstractPageClassExists()
     {
         $this->assertTrue(
-            trait_exists('Katheroine\Layin\Page\TemplatedPageTrait')
+            class_exists('Katheroine\Layin\Page\TwigPage')
         );
     }
 
@@ -37,7 +37,7 @@ class TemplatedPageTraitTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Page\ConcreteTemplatedPage',
+                'Katheroine\Layin\Page\TwigPage',
                 'renderSelf'
             )
         );
@@ -49,7 +49,7 @@ class TemplatedPageTraitTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Page\ConcreteTemplatedPage',
+                'Katheroine\Layin\Page\TwigPage',
                 'setTemplatesDirPath'
             )
         );
@@ -57,7 +57,7 @@ class TemplatedPageTraitTest extends TestCase
 
     public function testSetTemplatesDirPathWithNotStringPath()
     {
-        $page = new ConcreteTemplatedPage();
+        $page = new TwigPage();
         $path = 1024;
 
         $this->expectException(\TypeError::class);
@@ -67,18 +67,18 @@ class TemplatedPageTraitTest extends TestCase
 
     public function testSetTemplatesDirPathReturnsSelf()
     {
-        $page = new ConcreteTemplatedPage();
+        $page = new TwigPage();
 
         $result = $page->setTemplatesDirPath('directory/');
 
-        $this->assertInstanceOf(ConcreteTemplatedPage::class, $result);
+        $this->assertInstanceOf(TwigPage::class, $result);
     }
 
     public function testTemplatesDirPathPropertyExists()
     {
         $this->assertClassHasAttribute(
             'templatesDirPath',
-            'Katheroine\Layin\Page\ConcreteTemplatedPage'
+            'Katheroine\Layin\Page\TwigPage'
         );
     }
 
@@ -100,7 +100,7 @@ class TemplatedPageTraitTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Page\ConcreteTemplatedPage',
+                'Katheroine\Layin\Page\TwigPage',
                 'setTemplateSubdirPath'
             )
         );
@@ -108,7 +108,7 @@ class TemplatedPageTraitTest extends TestCase
 
     public function testSetTemplateSubdirPathWithNotStringPath()
     {
-        $page = new ConcreteTemplatedPage();
+        $page = new TwigPage();
         $path = 1024;
 
         $this->expectException(\TypeError::class);
@@ -118,18 +118,18 @@ class TemplatedPageTraitTest extends TestCase
 
     public function testSetTemplateSubdirPathReturnsSelf()
     {
-        $page = new ConcreteTemplatedPage();
+        $page = new TwigPage();
 
         $result = $page->setTemplateSubdirPath('subdirectory/');
 
-        $this->assertInstanceOf(ConcreteTemplatedPage::class, $result);
+        $this->assertInstanceOf(TwigPage::class, $result);
     }
 
     public function testTemplateSubirPathPropertyExists()
     {
         $this->assertClassHasAttribute(
             'templateSubdirPath',
-            'Katheroine\Layin\Page\ConcreteTemplatedPage'
+            'Katheroine\Layin\Page\TwigPage'
         );
     }
 
@@ -151,7 +151,7 @@ class TemplatedPageTraitTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Page\ConcreteTemplatedPage',
+                'Katheroine\Layin\Page\TwigPage',
                 'setTemplateName'
             )
         );
@@ -159,7 +159,7 @@ class TemplatedPageTraitTest extends TestCase
 
     public function testSetTemplateNameWithNotStringName()
     {
-        $page = new ConcreteTemplatedPage();
+        $page = new TwigPage();
         $name = 1024;
 
         $this->expectException(\TypeError::class);
@@ -169,18 +169,18 @@ class TemplatedPageTraitTest extends TestCase
 
     public function testSetTemplateNameReturnsSelf()
     {
-        $page = new ConcreteTemplatedPage();
+        $page = new TwigPage();
 
         $result = $page->setTemplateName('name');
 
-        $this->assertInstanceOf(ConcreteTemplatedPage::class, $result);
+        $this->assertInstanceOf(TwigPage::class, $result);
     }
 
     public function testTemplateNamePropertyExists()
     {
         $this->assertClassHasAttribute(
             'templateName',
-            'Katheroine\Layin\Page\ConcreteTemplatedPage'
+            'Katheroine\Layin\Page\TwigPage'
         );
     }
 
@@ -202,7 +202,7 @@ class TemplatedPageTraitTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Page\ConcreteTemplatedPage',
+                'Katheroine\Layin\Page\TwigPage',
                 'setTemplateParams'
             )
         );
@@ -210,7 +210,7 @@ class TemplatedPageTraitTest extends TestCase
 
     public function testSetTemplateParamsWithNotArrayParams()
     {
-        $page = new ConcreteTemplatedPage();
+        $page = new TwigPage();
         $params = 1024;
 
         $this->expectException(\TypeError::class);
@@ -220,11 +220,11 @@ class TemplatedPageTraitTest extends TestCase
 
     public function testSetTemplateParamsReturnsSelf()
     {
-        $page = new ConcreteTemplatedPage();
+        $page = new TwigPage();
 
         $result = $page->setTemplateParams([]);
 
-        $this->assertInstanceOf(ConcreteTemplatedPage::class, $result);
+        $this->assertInstanceOf(TwigPage::class, $result);
     }
 
     public function testTemplateParamsPropertyExists()

@@ -21,14 +21,12 @@ namespace Katheroine\Layin\Page;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-trait TemplatedPageTrait
+class TwigPage extends AbstractPage
 {
     protected string $templatesDirPath;
     protected string $templateSubdirPath;
     protected string $templateName;
     protected array $templateParams;
-
-    // abstract public function renderSelf(): string;
 
     public function setTemplatesDirPath(string $templatesDirPath): self
     {
@@ -56,5 +54,9 @@ trait TemplatedPageTrait
         $this->templateParams = $templateParams;
 
         return $this;
+    }
+
+    public function renderSelf()
+    {
     }
 }
