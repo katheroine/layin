@@ -11,9 +11,16 @@
 
 namespace Katheroine\Layin\Page;
 
+use Twig\Loader\FilesystemLoader;
+use Twig\Environment;
+use Twig\TemplateWrapper;
+use Twig\Error\LoaderError;
+use Twig\Error\SyntaxError;
+use Twig\Error\RuntimeError;
+
 /**
- * Templated page.
- * Page that handles a templating system.
+ * Twig page.
+ * Page that handles a Twig templating system.
  *
  * @package Page
  * @author Katarzyna Krasińska <katheroine@gmail.com>
@@ -23,10 +30,10 @@ namespace Katheroine\Layin\Page;
  */
 class TwigPage extends AbstractPage
 {
-    protected string $templatesDirPath;
-    protected string $templateSubdirPath;
-    protected string $templateName;
-    protected array $templateParams;
+    protected string|null $templatesDirPath = null;
+    protected string|null $templateSubdirPath = null;
+    protected string|null $templateFileName = null;
+    protected array $templateParams = [];
 
     public function setTemplatesDirPath(string $templatesDirPath): self
     {
@@ -42,9 +49,9 @@ class TwigPage extends AbstractPage
         return $this;
     }
 
-    public function setTemplateName(string $templateName): self
+    public function setTemplateFileName(string $templateFileName): self
     {
-        $this->templateName = $templateName;
+        $this->templateFileName = $templateFileName;
 
         return $this;
     }
@@ -56,7 +63,28 @@ class TwigPage extends AbstractPage
         return $this;
     }
 
-    public function renderSelf()
+    public function renderSelf(): string
     {
+        $template = $this->loadTemplate();
+
+        return $template->render($this->templateParams);
+    }
+
+    private function loadTemplate(): TemplateWrapper
+    {
+        $loader = new FilesystemLoader($this->templatesDirPath);
+        $environment = new Environment($loader);
+
+        /**
+         * @throws LoaderError When the template cannot be found
+         * @throws SyntaxError When an error occurred during compilation
+         * @throws RuntimeError When an error occurred during rendering
+         */
+        $template = $environment->load(
+            $this->templateSubdirPath
+            . $this->templateFileName
+        );
+
+        return $template;
     }
 }

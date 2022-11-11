@@ -33,16 +33,6 @@ class TwigPageTest extends TestCase
         );
     }
 
-    public function testRenderSelfFunctionExists()
-    {
-        $this->assertTrue(
-            method_exists(
-                'Katheroine\Layin\Page\TwigPage',
-                'renderSelf'
-            )
-        );
-    }
-
     // Templates Directory Path
 
     public function testSetTemplatesDirPathFunctionExists()
@@ -152,7 +142,7 @@ class TwigPageTest extends TestCase
         $this->assertTrue(
             method_exists(
                 'Katheroine\Layin\Page\TwigPage',
-                'setTemplateName'
+                'setTemplateFileName'
             )
         );
     }
@@ -164,14 +154,14 @@ class TwigPageTest extends TestCase
 
         $this->expectException(\TypeError::class);
 
-        $page->setTemplateName($name);
+        $page->setTemplateFileName($name);
     }
 
     public function testSetTemplateNameReturnsSelf()
     {
         $page = new TwigPage();
 
-        $result = $page->setTemplateName('name');
+        $result = $page->setTemplateFileName('name');
 
         $this->assertInstanceOf(TwigPage::class, $result);
     }
@@ -179,19 +169,19 @@ class TwigPageTest extends TestCase
     public function testTemplateNamePropertyExists()
     {
         $this->assertClassHasAttribute(
-            'templateName',
+            'templateFileName',
             'Katheroine\Layin\Page\TwigPage'
         );
     }
 
-    public function testSetTemplateNameWorksProperly()
+    public function testSetTemplateFileNameWorksProperly()
     {
         $page = new ConcreteTemplatedPage();
 
         $expected = (string) rand();
-        $page->setTemplateName($expected);
+        $page->setTemplateFileName($expected);
 
-        $actual = $page->getProperty('templateName');
+        $actual = $page->getProperty('templateFileName');
 
         $this->assertEquals($expected, $actual);
     }
@@ -245,5 +235,186 @@ class TwigPageTest extends TestCase
         $actual = $page->getProperty('templateParams');
 
         $this->assertEquals($expected, $actual);
+    }
+
+    // Render self
+
+    public function testRenderSelfFunctionExists()
+    {
+        $this->assertTrue(
+            method_exists(
+                'Katheroine\Layin\Page\TwigPage',
+                'renderSelf'
+            )
+        );
+    }
+
+    public function testRenderSelfReturnsEmptyStringWhenTemplateIsEmpty()
+    {
+        $page = new TwigPage();
+        $page
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplateFileName('empty_page.twig.html');
+
+        $result = $page->renderSelf();
+
+        $this->assertEquals('', $result);
+    }
+
+    public function testRenderSelfWhenNoTemplateIsSet()
+    {
+        $page = new TwigPage();
+
+        // Twig doc: When the template cannot be found
+        $this->expectException(\Twig\Error\LoaderError::class);
+        $this->expectExceptionMessage('There are no registered paths for namespace "__main__".');
+
+        $page->renderSelf();
+    }
+
+    public function testRenderSelfWhenTemplateContentIsSyntacticallyImproper()
+    {
+        $page = new TwigPage();
+        $page
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplateFileName('syntactically_improper_content.twig.html');
+
+        // Twig doc: When an error occurred during compilation.
+        $this->expectException(\Twig\Error\SyntaxError::class);
+        $this->expectExceptionMessage('Unexpected "}"');
+
+        $page->renderSelf();
+    }
+
+    public function testRenderSelfWithoutTemplateParams()
+    {
+        $page = new TwigPage();
+        $page
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplateFileName('page.twig.html');
+
+        $actualRenderedContent = $page->renderSelf();
+
+        $expectedRenderedContent = "<!doctype html>\n"
+            . "<html lang=\"en-GB\">\n"
+            . "  <head>\n"
+            . "    <meta charset=\"\">\n"
+            . "    <meta name=\"language\" content=\"\">\n"
+            . "    <meta name=\"description\" content=\"\">\n"
+            . "    <meta name=\"keywords\" content=\"\">\n"
+            . "    <meta name=\"author\" content=\" <>\">\n"
+            . "  </head>\n"
+            . "  <body>\n"
+            . "    <h1>Welcome on the home page!</h1>\n"
+            . "  </body>\n"
+            . "</html>\n";
+
+        $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
+    }
+
+    public function testRenderSelfWitTemplateParams()
+    {
+        $page = new TwigPage();
+        $page
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplateFileName('page.twig.html')
+            ->setTemplateParams([
+                'language' => 'english',
+                'description' => 'All purpose web page layout',
+                'keywords' => 'layout, web page',
+                'author' => [
+                    'name' => 'usagi',
+                    'email' => 'usagi@moon.com',
+                ],
+            ]);
+
+        $actualRenderedContent = $page->renderSelf();
+
+        $expectedRenderedContent = "<!doctype html>\n"
+            . "<html lang=\"en-GB\">\n"
+            . "  <head>\n"
+            . "    <meta charset=\"\">\n"
+            . "    <meta name=\"language\" content=\"english\">\n"
+            . "    <meta name=\"description\" content=\"All purpose web page layout\">\n"
+            . "    <meta name=\"keywords\" content=\"layout, web page\">\n"
+            . "    <meta name=\"author\" content=\"usagi <usagi@moon.com>\">\n"
+            . "  </head>\n"
+            . "  <body>\n"
+            . "    <h1>Welcome on the home page!</h1>\n"
+            . "  </body>\n"
+            . "</html>\n";
+
+        $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
+    }
+
+    public function testRenderSelfWithoutTemplateSubdirectoryPath()
+    {
+        $page = new TwigPage();
+        $page
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplateFileName('page.twig.html')
+            ->setTemplateParams([
+                'language' => 'english',
+                'description' => 'All purpose web page layout',
+                'keywords' => 'layout, web page',
+                'author' => [
+                    'name' => 'usagi',
+                    'email' => 'usagi@moon.com',
+                ],
+            ]);
+
+        $actualRenderedContent = $page->renderSelf();
+
+        $expectedRenderedContent = "<!doctype html>\n"
+            . "<html lang=\"en-GB\">\n"
+            . "  <head>\n"
+            . "    <meta charset=\"\">\n"
+            . "    <meta name=\"language\" content=\"english\">\n"
+            . "    <meta name=\"description\" content=\"All purpose web page layout\">\n"
+            . "    <meta name=\"keywords\" content=\"layout, web page\">\n"
+            . "    <meta name=\"author\" content=\"usagi <usagi@moon.com>\">\n"
+            . "  </head>\n"
+            . "  <body>\n"
+            . "    <h1>Welcome on the home page!</h1>\n"
+            . "  </body>\n"
+            . "</html>\n";
+
+        $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
+    }
+
+    public function testRenderSelfWithTemplateSubdirPath()
+    {
+        $page = new TwigPage();
+        $page
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplateSubdirPath('subpages/')
+            ->setTemplateFileName('subpage.twig.html')
+            ->setTemplateParams([
+                'language' => 'english',
+                'description' => 'All purpose web page layout',
+                'keywords' => 'layout, web page',
+                'author' => [
+                    'name' => 'usagi',
+                    'email' => 'usagi@moon.com',
+                ],
+            ]);
+
+        $actualRenderedContent = $page->renderSelf();
+
+        $expectedRenderedContent = "<!doctype html>\n"
+            . "<html lang=\"en-GB\">\n"
+            . "  <head>\n"
+            . "    <meta charset=\"\">\n"
+            . "    <meta name=\"language\" content=\"english\">\n"
+            . "    <meta name=\"description\" content=\"All purpose web page layout\">\n"
+            . "    <meta name=\"keywords\" content=\"layout, web page\">\n"
+            . "    <meta name=\"author\" content=\"usagi <usagi@moon.com>\">\n"
+            . "  </head>\n"
+            . "  <body>\n"
+            . "    <h1>Welcome on the subpage!</h1>\n"
+            . "  </body>\n"
+            . "</html>\n";
+
+        $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
     }
 }
