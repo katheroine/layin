@@ -54,16 +54,16 @@ class AbstractPageRendererTest extends TestCase
 
     public function testSetTemplatesDirPathWhenTemplateDirAbsolutePathIsNotString()
     {
-        $templateDirAbsolutePath = 1024;
+        $templatesDirPath = 1024;
         $pageRenderer = new ConcretePageRenderer();
 
         $expectedErrorMessagePattern =
             '/AbstractPageRenderer\:\:setTemplatesDirPath\(\)\: '
-            . 'Argument \#1 \(\$templatesDirAbsolutePath\) must be of type string, int given/';
+            . 'Argument \#1 \(\$templatesDirPath\) must be of type string, int given/';
         $this->expectError(\TypeError::class);
         $this->expectErrorMessageMatches($expectedErrorMessagePattern);
 
-        $pageRenderer->setTemplatesDirPath($templateDirAbsolutePath);
+        $pageRenderer->setTemplatesDirPath($templatesDirPath);
     }
 
     public function testSetTemplateLocalPathFunctionExists()

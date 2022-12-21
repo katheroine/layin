@@ -31,15 +31,15 @@ use Katheroine\Layin\PreconfiguredSeriesLoader;
  */
 abstract class AbstractPageRenderer
 {
-    private string $templatesDirAbsolutePath = '';
+    private string $templatesDirPath = '';
     private string $templateLocalPath = '';
     private string $templateName = '';
 
     abstract protected function provideTemplateParams(): array;
 
-    public function setTemplatesDirPath(string $templatesDirAbsolutePath): self
+    public function setTemplatesDirPath(string $templatesDirPath): self
     {
-        $this->templatesDirAbsolutePath = $templatesDirAbsolutePath;
+        $this->templatesDirPath = $templatesDirPath;
 
         return $this;
     }
@@ -71,7 +71,7 @@ abstract class AbstractPageRenderer
 
     private function loadTemplate(): TemplateWrapper
     {
-        $loader = new FilesystemLoader($this->templatesDirAbsolutePath);
+        $loader = new FilesystemLoader($this->templatesDirPath);
         $environment = new Environment($loader);
 
         /**
