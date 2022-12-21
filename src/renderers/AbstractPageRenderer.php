@@ -33,6 +33,7 @@ abstract class AbstractPageRenderer
 {
     private string $templatesDirPath = '';
     private string $templateSubdirPath = '';
+    private string $templateFileExtension = '';
     private string $templateName = '';
 
     abstract protected function provideTemplateParams(): array;
@@ -47,6 +48,13 @@ abstract class AbstractPageRenderer
     public function setTemplateSubdirPath(string $templateSubdirPath): self
     {
         $this->templateSubdirPath = $templateSubdirPath;
+
+        return $this;
+    }
+
+    public function setTemplateFileExtension(string $templateFileExtension): self
+    {
+        $this->templateFileExtension = $templateFileExtension;
 
         return $this;
     }
@@ -82,6 +90,7 @@ abstract class AbstractPageRenderer
         $template = $environment->load(
             $this->templateSubdirPath
             . $this->templateName
+            . $this->templateFileExtension
         );
 
         return $template;

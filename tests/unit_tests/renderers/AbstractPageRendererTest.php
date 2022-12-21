@@ -71,7 +71,7 @@ class AbstractPageRendererTest extends TestCase
         $this->assertTrue(
             method_exists(
                 'Katheroine\Layin\Renderer\AbstractPageRenderer',
-                'SetTemplateSubdirPath'
+                'setTemplateSubdirPath'
             )
         );
     }
@@ -97,6 +97,39 @@ class AbstractPageRendererTest extends TestCase
         $this->expectErrorMessageMatches($expectedErrorMessagePattern);
 
         $pageRenderer->setTemplateSubdirPath($templateSubdirPath);
+    }
+
+    public function testSetTemplateFileExtensionFunctionExists()
+    {
+        $this->assertTrue(
+            method_exists(
+                'Katheroine\Layin\Renderer\AbstractPageRenderer',
+                'setTemplateFileExtension'
+            )
+        );
+    }
+
+    public function testSetTemplateFileExtensionReturnsSelf()
+    {
+        $pageRenderer = new ConcretePageRenderer();
+
+        $result = $pageRenderer->setTemplateFileExtension('.html');
+
+        $this->assertInstanceOf(ConcretePageRenderer::class, $result);
+    }
+
+    public function testSetTemplateFileExtensionWhenFileExtensionIsNotString()
+    {
+        $templateFileExtension = 1024;
+        $pageRenderer = new ConcretePageRenderer();
+
+        $expectedErrorMessagePattern =
+            '/AbstractPageRenderer\:\:setTemplateFileExtension\(\)\: '
+            . 'Argument \#1 \(\$templateFileExtension\) must be of type string, int given/';
+        $this->expectError(\TypeError::class);
+        $this->expectErrorMessageMatches($expectedErrorMessagePattern);
+
+        $pageRenderer->setTemplateFileExtension($templateFileExtension);
     }
 
     public function testSetTemplateNameFunctionExists()
@@ -147,7 +180,8 @@ class AbstractPageRendererTest extends TestCase
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
-            ->SetTemplateName('page.twig.html');
+            ->setTemplateName('page')
+            ->setTemplateFileExtension('.twig.html');
 
         ob_start(); // Doesn't allow to echo rendered template.
         $result = $pageRenderer->render();
