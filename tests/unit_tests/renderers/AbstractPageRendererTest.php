@@ -80,7 +80,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $pageRenderer = new ConcretePageRenderer();
 
-        $result = $pageRenderer->SetTemplateSubdirPath('subpages/');
+        $result = $pageRenderer->setTemplateSubdirPath('subpages/');
 
         $this->assertInstanceOf(ConcretePageRenderer::class, $result);
     }
@@ -96,7 +96,7 @@ class AbstractPageRendererTest extends TestCase
         $this->expectError(\TypeError::class);
         $this->expectErrorMessageMatches($expectedErrorMessagePattern);
 
-        $pageRenderer->SetTemplateSubdirPath($templateSubdirPath);
+        $pageRenderer->setTemplateSubdirPath($templateSubdirPath);
     }
 
     public function testSetTemplateNameFunctionExists()
