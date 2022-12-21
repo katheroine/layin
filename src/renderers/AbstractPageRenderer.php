@@ -32,7 +32,7 @@ use Katheroine\Layin\PreconfiguredSeriesLoader;
 abstract class AbstractPageRenderer
 {
     private string $templatesDirPath = '';
-    private string $templateLocalPath = '';
+    private string $templateSubdirPath = '';
     private string $templateName = '';
 
     abstract protected function provideTemplateParams(): array;
@@ -44,9 +44,9 @@ abstract class AbstractPageRenderer
         return $this;
     }
 
-    public function setTemplateSubdirPath(string $templateLocalPath): self
+    public function setTemplateSubdirPath(string $templateSubdirPath): self
     {
-        $this->templateLocalPath = $templateLocalPath;
+        $this->templateSubdirPath = $templateSubdirPath;
 
         return $this;
     }
@@ -80,7 +80,7 @@ abstract class AbstractPageRenderer
          * @throws RuntimeError When an error occurred during rendering
          */
         $template = $environment->load(
-            $this->templateLocalPath
+            $this->templateSubdirPath
             . $this->templateName
         );
 

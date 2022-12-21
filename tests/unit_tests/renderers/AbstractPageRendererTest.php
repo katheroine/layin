@@ -85,18 +85,18 @@ class AbstractPageRendererTest extends TestCase
         $this->assertInstanceOf(ConcretePageRenderer::class, $result);
     }
 
-    public function testSetTemplateSubdirPathWhenTemplateLocalPathIsNotString()
+    public function testSetTemplateSubdirPathWhenTemplateSubdirPathIsNotString()
     {
-        $templateLocalPath = 1024;
+        $templateSubdirPath = 1024;
         $pageRenderer = new ConcretePageRenderer();
 
         $expectedErrorMessagePattern =
             '/AbstractPageRenderer\:\:setTemplateSubdirPath\(\)\: '
-            . 'Argument \#1 \(\$templateLocalPath\) must be of type string, int given/';
+            . 'Argument \#1 \(\$templateSubdirPath\) must be of type string, int given/';
         $this->expectError(\TypeError::class);
         $this->expectErrorMessageMatches($expectedErrorMessagePattern);
 
-        $pageRenderer->SetTemplateSubdirPath($templateLocalPath);
+        $pageRenderer->SetTemplateSubdirPath($templateSubdirPath);
     }
 
     public function testSetTemplateNameFunctionExists()
@@ -181,7 +181,7 @@ class AbstractPageRendererTest extends TestCase
         $pageRenderer->render();
     }
 
-    public function testRenderWithoutTemplateLocalPath()
+    public function testRenderWithoutTemplateSubdirPath()
     {
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
@@ -210,7 +210,7 @@ class AbstractPageRendererTest extends TestCase
         $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
     }
 
-    public function testRenderWithTemplateLocalPath()
+    public function testRenderWithTemplateSubdirPath()
     {
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
