@@ -37,7 +37,7 @@ abstract class AbstractPageRenderer
 
     abstract protected function provideTemplateParams(): array;
 
-    public function setTemplatesDirAbsolutePath(string $templatesDirAbsolutePath): self
+    public function setTemplatesDirPath(string $templatesDirAbsolutePath): self
     {
         $this->templatesDirAbsolutePath = $templatesDirAbsolutePath;
 

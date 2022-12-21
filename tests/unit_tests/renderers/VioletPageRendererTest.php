@@ -90,7 +90,7 @@ class VioletPageRendererTest extends TestCase
             ->setAssetsDirRelativePath('./assets')
             ->setCodeFileExtension('php')
             ->setIsDebugMode(true)
-            ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
             ->setTemplateName('violet_template.twig.html');
 
         ob_start(); // Allow to capture rendered content instead of echoing it.

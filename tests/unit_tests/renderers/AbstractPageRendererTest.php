@@ -33,37 +33,37 @@ class AbstractPageRendererTest extends TestCase
         );
     }
 
-    public function testSetTemplatesDirAbsolutePathFunctionExists()
+    public function testSetTemplatesDirPathFunctionExists()
     {
         $this->assertTrue(
             method_exists(
                 'Katheroine\Layin\Renderer\AbstractPageRenderer',
-                'setTemplatesDirAbsolutePath'
+                'setTemplatesDirPath'
             )
         );
     }
 
-    public function testSetTemplatesDirAbsolutePathReturnsSelf()
+    public function testSetTemplatesDirPathReturnsSelf()
     {
         $pageRenderer = new ConcretePageRenderer();
 
-        $result = $pageRenderer->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates');
+        $result = $pageRenderer->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates');
 
         $this->assertInstanceOf(ConcretePageRenderer::class, $result);
     }
 
-    public function testSetTemplatesDirAbsolutePathWhenTemplateDirAbsolutePathIsNotString()
+    public function testSetTemplatesDirPathWhenTemplateDirAbsolutePathIsNotString()
     {
         $templateDirAbsolutePath = 1024;
         $pageRenderer = new ConcretePageRenderer();
 
         $expectedErrorMessagePattern =
-            '/AbstractPageRenderer\:\:setTemplatesDirAbsolutePath\(\)\: '
+            '/AbstractPageRenderer\:\:setTemplatesDirPath\(\)\: '
             . 'Argument \#1 \(\$templatesDirAbsolutePath\) must be of type string, int given/';
         $this->expectError(\TypeError::class);
         $this->expectErrorMessageMatches($expectedErrorMessagePattern);
 
-        $pageRenderer->setTemplatesDirAbsolutePath($templateDirAbsolutePath);
+        $pageRenderer->setTemplatesDirPath($templateDirAbsolutePath);
     }
 
     public function testSetTemplateLocalPathFunctionExists()
@@ -146,7 +146,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
-            ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
             ->SetTemplateName('page.twig.html');
 
         ob_start(); // Doesn't allow to echo rendered template.
@@ -171,7 +171,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
-            ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
             ->SetTemplateName('syntactically_improper_content.twig.html');
 
         // Twig doc: When an error occurred during compilation.
@@ -185,7 +185,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
-            ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
             ->SetTemplateName('page.twig.html');
 
         ob_start(); // Allow to capture rendered content instead of echoing it.
@@ -214,7 +214,7 @@ class AbstractPageRendererTest extends TestCase
     {
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
-            ->setTemplatesDirAbsolutePath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
             ->setTemplateLocalPath('subpages/')
             ->SetTemplateName('subpage.twig.html');
 
