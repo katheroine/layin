@@ -44,7 +44,7 @@ abstract class AbstractPageRenderer
         return $this;
     }
 
-    public function setTemplateLocalPath(string $templateLocalPath): self
+    public function setTemplateSubdirPath(string $templateLocalPath): self
     {
         $this->templateLocalPath = $templateLocalPath;
 

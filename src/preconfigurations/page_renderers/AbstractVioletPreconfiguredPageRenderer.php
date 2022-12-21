@@ -64,7 +64,7 @@ abstract class AbstractVioletPreconfiguredPageRenderer
         $pageRenderer = new VioletPageRenderer();
         $pageRenderer
             ->setTemplatesDirPath($preconfiguration[self::TEMPLATES_DIR_PATH_KEY])
-            ->setTemplateLocalPath($preconfiguration[self::TEMPLATE_LOCAL_PATH_KEY])
+            ->setTemplateSubdirPath($preconfiguration[self::TEMPLATE_LOCAL_PATH_KEY])
             ->setConfigDirPath($preconfiguration[self::CONFIG_DIR_PATH_KEY])
             ->setBaseRelativeUrl($preconfiguration[self::BASE_URL_KEY])
             ->setSubpagesRelativeUrl($preconfiguration[self::SUBPAGES_URL_KEY])

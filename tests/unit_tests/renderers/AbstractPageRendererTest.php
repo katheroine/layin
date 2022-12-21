@@ -66,37 +66,37 @@ class AbstractPageRendererTest extends TestCase
         $pageRenderer->setTemplatesDirPath($templatesDirPath);
     }
 
-    public function testSetTemplateLocalPathFunctionExists()
+    public function testSetTemplateSubdirPathFunctionExists()
     {
         $this->assertTrue(
             method_exists(
                 'Katheroine\Layin\Renderer\AbstractPageRenderer',
-                'SetTemplateLocalPath'
+                'SetTemplateSubdirPath'
             )
         );
     }
 
-    public function testSetTemplateLocalPathReturnsSelf()
+    public function testSetTemplateSubdirPathReturnsSelf()
     {
         $pageRenderer = new ConcretePageRenderer();
 
-        $result = $pageRenderer->SetTemplateLocalPath('subpages/');
+        $result = $pageRenderer->SetTemplateSubdirPath('subpages/');
 
         $this->assertInstanceOf(ConcretePageRenderer::class, $result);
     }
 
-    public function testSetTemplateLocalPathWhenTemplateLocalPathIsNotString()
+    public function testSetTemplateSubdirPathWhenTemplateLocalPathIsNotString()
     {
         $templateLocalPath = 1024;
         $pageRenderer = new ConcretePageRenderer();
 
         $expectedErrorMessagePattern =
-            '/AbstractPageRenderer\:\:setTemplateLocalPath\(\)\: '
+            '/AbstractPageRenderer\:\:setTemplateSubdirPath\(\)\: '
             . 'Argument \#1 \(\$templateLocalPath\) must be of type string, int given/';
         $this->expectError(\TypeError::class);
         $this->expectErrorMessageMatches($expectedErrorMessagePattern);
 
-        $pageRenderer->SetTemplateLocalPath($templateLocalPath);
+        $pageRenderer->SetTemplateSubdirPath($templateLocalPath);
     }
 
     public function testSetTemplateNameFunctionExists()
@@ -215,7 +215,7 @@ class AbstractPageRendererTest extends TestCase
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
-            ->setTemplateLocalPath('subpages/')
+            ->setTemplateSubdirPath('subpages/')
             ->SetTemplateName('subpage.twig.html');
 
         ob_start(); // Allow to capture rendered content instead of echoing it.
