@@ -11,15 +11,6 @@
 
 namespace Katheroine\Layin\Renderer;
 
-use Twig\Loader\FilesystemLoader;
-use Twig\Environment;
-use Twig\TemplateWrapper;
-use Twig\Error\LoaderError;
-use Twig\Error\SyntaxError;
-use Twig\Error\RuntimeError;
-use Katheroine\Layin\ConfigLoader;
-use Katheroine\Layin\PreconfiguredSeriesLoader;
-
 /**
  * Page renderer.
  *
@@ -31,11 +22,13 @@ use Katheroine\Layin\PreconfiguredSeriesLoader;
  */
 abstract class AbstractPageRenderer
 {
-    private string $templatesDirPath = '';
-    private string $templateSubdirPath = '';
-    private string $templateFileExtension = '';
-    private string $templateName = '';
+    protected string $templatesDirPath = '';
+    protected string $templateSubdirPath = '';
+    protected string $templateFileExtension = '';
+    protected string $templateName = '';
     protected array $templateParams = [];
+
+    abstract public function render();
 
     public function setTemplatesDirPath(string $templatesDirPath): self
     {
@@ -70,36 +63,5 @@ abstract class AbstractPageRenderer
         $this->templateParams = $templateParams;
 
         return $this;
-    }
-
-    /**
-     * @throws LoaderError When the template cannot be found
-     * @throws SyntaxError When an error occurred during compilation
-     * @throws RuntimeError When an error occurred during rendering
-     */
-    public function render()
-    {
-        $template = $this->loadTemplate();
-
-        return $template->render($this->templateParams);
-    }
-
-    protected function loadTemplate(): TemplateWrapper
-    {
-        $loader = new FilesystemLoader($this->templatesDirPath);
-        $environment = new Environment($loader);
-
-        /**
-         * @throws LoaderError When the template cannot be found
-         * @throws SyntaxError When an error occurred during compilation
-         * @throws RuntimeError When an error occurred during rendering
-         */
-        $template = $environment->load(
-            $this->templateSubdirPath
-            . $this->templateName
-            . $this->templateFileExtension
-        );
-
-        return $template;
     }
 }

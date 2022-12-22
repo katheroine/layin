@@ -16,7 +16,7 @@ namespace Katheroine\Layin\Page;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Templated page tests.
+ * Twig page tests.
  *
  * @package Page
  * @author Katarzyna Krasińska <katheroine@gmail.com>

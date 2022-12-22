@@ -18,4 +18,8 @@ namespace Katheroine\Layin\Renderer;
  */
 class ConcretePageRenderer extends AbstractPageRenderer
 {
+    public function render(): string
+    {
+        return '';
+    }
 }

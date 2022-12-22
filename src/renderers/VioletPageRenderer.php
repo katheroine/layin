@@ -24,7 +24,7 @@ use Katheroine\Layin\Renderer\AbstractPageRenderer;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-class VioletPageRenderer extends AbstractPageRenderer
+class VioletPageRenderer extends TwigPageRenderer
 {
     private string $baseRelativeUrl;
     private string $subpagesRelativeUrl;
