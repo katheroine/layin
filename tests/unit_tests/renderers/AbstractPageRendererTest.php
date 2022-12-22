@@ -208,7 +208,7 @@ class AbstractPageRendererTest extends TestCase
         );
     }
 
-    public function testRenderReturnsNothing()
+    public function testRenderReturnsString()
     {
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
@@ -217,11 +217,9 @@ class AbstractPageRendererTest extends TestCase
             ->setTemplateFileExtension('.twig.html')
             ->setTemplateParams($this->provideTemplateParams());
 
-        ob_start(); // Doesn't allow to echo rendered template.
         $result = $pageRenderer->render();
-        ob_end_clean();
 
-        $this->assertNull($result);
+        $this->assertIsString($result);
     }
 
     public function testRenderWhenNoTemplateIsSet()
@@ -257,10 +255,7 @@ class AbstractPageRendererTest extends TestCase
             ->SetTemplateName('page.twig.html')
             ->setTemplateParams($this->provideTemplateParams());
 
-        ob_start(); // Allow to capture rendered content instead of echoing it.
-        $pageRenderer->render();
-        $actualRenderedContent = ob_get_contents();
-        ob_end_clean();
+        $actualRenderedContent = $pageRenderer->render();
 
         $expectedRenderedContent = "<!doctype html>\n"
             . "<html lang=\"en-GB\">\n"
@@ -288,10 +283,7 @@ class AbstractPageRendererTest extends TestCase
             ->SetTemplateName('subpage.twig.html')
             ->setTemplateParams($this->provideTemplateParams());
 
-        ob_start(); // Allow to capture rendered content instead of echoing it.
-        $pageRenderer->render();
-        $actualRenderedContent = ob_get_contents();
-        ob_end_clean();
+        $actualRenderedContent = $pageRenderer->render();
 
         $expectedRenderedContent = "<!doctype html>\n"
             . "<html lang=\"en-GB\">\n"

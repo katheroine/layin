@@ -80,7 +80,8 @@ abstract class AbstractPageRenderer
     public function render()
     {
         $template = $this->loadTemplate();
-        echo $template->render($this->templateParams);
+
+        return $template->render($this->templateParams);
     }
 
     protected function loadTemplate(): TemplateWrapper
