@@ -165,6 +165,39 @@ class AbstractPageRendererTest extends TestCase
         $pageRenderer->SetTemplateName($templateName);
     }
 
+    public function testSetTemplateParamsFunctionExists()
+    {
+        $this->assertTrue(
+            method_exists(
+                'Katheroine\Layin\Renderer\AbstractPageRenderer',
+                'setTemplateParams'
+            )
+        );
+    }
+
+    public function testSetTemplateParamsReturnsSelf()
+    {
+        $pageRenderer = new ConcretePageRenderer();
+
+        $result = $pageRenderer->SetTemplateParams([]);
+
+        $this->assertSame($pageRenderer, $result);
+    }
+
+    public function testSetTemplateParamsWhenTemplateNameIsNotString()
+    {
+        $templateParams = 1024;
+        $pageRenderer = new ConcretePageRenderer();
+
+        $expectedErrorMessagePattern =
+            '/AbstractPageRenderer\:\:setTemplateParams\(\)\: '
+            . 'Argument \#1 \(\$templateParams\) must be of type array, int given/';
+        $this->expectError(\TypeError::class);
+        $this->expectErrorMessageMatches($expectedErrorMessagePattern);
+
+        $pageRenderer->setTemplateParams($templateParams);
+    }
+
     public function testRenderFunctionExists()
     {
         $this->assertTrue(
@@ -181,7 +214,8 @@ class AbstractPageRendererTest extends TestCase
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
             ->setTemplateName('page')
-            ->setTemplateFileExtension('.twig.html');
+            ->setTemplateFileExtension('.twig.html')
+            ->setTemplateParams($this->provideTemplateParams());
 
         ob_start(); // Doesn't allow to echo rendered template.
         $result = $pageRenderer->render();
@@ -220,7 +254,8 @@ class AbstractPageRendererTest extends TestCase
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
-            ->SetTemplateName('page.twig.html');
+            ->SetTemplateName('page.twig.html')
+            ->setTemplateParams($this->provideTemplateParams());
 
         ob_start(); // Allow to capture rendered content instead of echoing it.
         $pageRenderer->render();
@@ -250,7 +285,8 @@ class AbstractPageRendererTest extends TestCase
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
             ->setTemplateSubdirPath('subpages/')
-            ->SetTemplateName('subpage.twig.html');
+            ->SetTemplateName('subpage.twig.html')
+            ->setTemplateParams($this->provideTemplateParams());
 
         ob_start(); // Allow to capture rendered content instead of echoing it.
         $pageRenderer->render();
@@ -272,5 +308,18 @@ class AbstractPageRendererTest extends TestCase
             . "</html>\n";
 
         $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
+    }
+
+    private function provideTemplateParams(): array
+    {
+        return [
+            'language' => 'english',
+            'description' => 'All purpose web page layout',
+            'keywords' => 'layout, web page',
+            'author' => [
+                'name' => 'usagi',
+                'email' => 'usagi@moon.com'
+            ]
+        ];
     }
 }

@@ -33,6 +33,13 @@ class VioletPageRenderer extends AbstractPageRenderer
     private string $codeFileExtension;
     private bool $isDebugMode;
 
+    public function render()
+    {
+        $template = $this->loadTemplate();
+        $this->templateParams = $this->provideTemplateParams();
+        echo $template->render($this->templateParams);
+    }
+
     /**
      * Config directory path can be absolute or relative.
      */

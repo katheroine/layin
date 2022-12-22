@@ -35,6 +35,7 @@ abstract class AbstractPageRenderer
     private string $templateSubdirPath = '';
     private string $templateFileExtension = '';
     private string $templateName = '';
+    protected array $templateParams = [];
 
     abstract protected function provideTemplateParams(): array;
 
@@ -66,6 +67,13 @@ abstract class AbstractPageRenderer
         return $this;
     }
 
+    public function setTemplateParams(array $templateParams): self
+    {
+        $this->templateParams = $templateParams;
+
+        return $this;
+    }
+
     /**
      * @throws LoaderError When the template cannot be found
      * @throws SyntaxError When an error occurred during compilation
@@ -74,10 +82,10 @@ abstract class AbstractPageRenderer
     public function render()
     {
         $template = $this->loadTemplate();
-        echo $template->render($this->provideTemplateParams());
+        echo $template->render($this->templateParams);
     }
 
-    private function loadTemplate(): TemplateWrapper
+    protected function loadTemplate(): TemplateWrapper
     {
         $loader = new FilesystemLoader($this->templatesDirPath);
         $environment = new Environment($loader);
