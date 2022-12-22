@@ -18,16 +18,4 @@ namespace Katheroine\Layin\Renderer;
  */
 class ConcretePageRenderer extends AbstractPageRenderer
 {
-    protected function provideTemplateParams(): array
-    {
-        return [
-            'language' => 'english',
-            'description' => 'All purpose web page layout',
-            'keywords' => 'layout, web page',
-            'author' => [
-                'name' => 'usagi',
-                'email' => 'usagi@moon.com'
-            ]
-        ];
-    }
 }
