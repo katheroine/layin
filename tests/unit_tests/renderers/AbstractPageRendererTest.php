@@ -49,7 +49,7 @@ class AbstractPageRendererTest extends TestCase
 
         $result = $pageRenderer->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates');
 
-        $this->assertInstanceOf(ConcretePageRenderer::class, $result);
+        $this->assertSame($pageRenderer, $result);
     }
 
     public function testSetTemplatesDirPathWhenTemplateDirAbsolutePathIsNotString()
@@ -82,7 +82,7 @@ class AbstractPageRendererTest extends TestCase
 
         $result = $pageRenderer->setTemplateSubdirPath('subpages/');
 
-        $this->assertInstanceOf(ConcretePageRenderer::class, $result);
+        $this->assertSame($pageRenderer, $result);
     }
 
     public function testSetTemplateSubdirPathWhenTemplateSubdirPathIsNotString()
@@ -115,7 +115,7 @@ class AbstractPageRendererTest extends TestCase
 
         $result = $pageRenderer->setTemplateFileExtension('.html');
 
-        $this->assertInstanceOf(ConcretePageRenderer::class, $result);
+        $this->assertSame($pageRenderer, $result);
     }
 
     public function testSetTemplateFileExtensionWhenFileExtensionIsNotString()
@@ -148,7 +148,7 @@ class AbstractPageRendererTest extends TestCase
 
         $result = $pageRenderer->SetTemplateName('page.twig.html');
 
-        $this->assertInstanceOf(ConcretePageRenderer::class, $result);
+        $this->assertSame($pageRenderer, $result);
     }
 
     public function testSetTemplateNameWhenTemplateNameIsNotString()
