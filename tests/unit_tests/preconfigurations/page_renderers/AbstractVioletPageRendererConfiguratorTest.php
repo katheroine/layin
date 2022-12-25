@@ -14,7 +14,7 @@ namespace Katheroine\Layin\Preconfiguration;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Preconfigured page renderer for the Violet theme tests.
+ * Page renderer configurator for the Violet theme tests.
  *
  * @package Preconfiguration
  * @author Katarzyna Krasińska <katheroine@gmail.com>
@@ -22,12 +22,12 @@ use PHPUnit\Framework\TestCase;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-class AbstractVioletPreconfiguredPageRendererTest extends TestCase
+class AbstractVioletPageRendererConfiguratorTest extends TestCase
 {
-    public function testAbstractVioletPreconfiguredPageRendererClassExists()
+    public function testAbstractVioletPageRendererConfiguratorClassExists()
     {
         $this->assertTrue(
-            class_exists('Katheroine\Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer')
+            class_exists('Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator')
         );
     }
 
@@ -35,7 +35,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfiguration\AbstractVioletPreconfiguredPageRenderer',
+                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator',
                 'renderPreconfiguredPage'
             )
         );

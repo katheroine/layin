@@ -14,7 +14,7 @@ namespace Katheroine\Layin\Preconfiguration;
 /**
  * Dummy preconfigured page renderer for testing purposes only.
  */
-class ConcreteVioletPreconfiguredPageRendererWithSurplusEntry extends AbstractVioletPreconfiguredPageRenderer
+class ConcreteVioletPreconfiguredPageRendererWithSurplusEntry extends AbstractVioletPageRendererConfigurator
 {
     protected function providePreconfiguration(): array
     {

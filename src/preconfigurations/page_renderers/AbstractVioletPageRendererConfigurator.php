@@ -14,7 +14,7 @@ namespace Katheroine\Layin\Preconfiguration;
 use Katheroine\Layin\Renderer\VioletPageRenderer;
 
 /**
- * Preconfigured page renderer for the Violet theme.
+ * Page renderer configurator for the Violet theme.
  *
  * @package Preconfiguration
  * @author Katarzyna Krasińska <katheroine@gmail.com>
@@ -22,7 +22,7 @@ use Katheroine\Layin\Renderer\VioletPageRenderer;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-abstract class AbstractVioletPreconfiguredPageRenderer
+abstract class AbstractVioletPageRendererConfigurator
 {
     /**
      * Preconfiguration obligatory keys.
