@@ -29,9 +29,6 @@
             "Katheroine\\Layin\\": [
                 "src/"
             ],
-            "Katheroine\\Layin\\Page\\":[
-                "src/pages/"
-            ],
             "Katheroine\\Layin\\Loader\\": [
                 "src/loaders/"
             ],
@@ -54,10 +51,6 @@
         "psr-4": {
             "Katheroine\\Layin\\": [
                 "tests/"
-            ],
-            "Katheroine\\Layin\\Page\\":[
-                "tests/unit_tests/pages/",
-                "tests/unit_tests/pages/concrete_page_dummies/"
             ],
             "Katheroine\\Layin\\Loader\\": [
                 "tests/unit_tests/loaders/"
