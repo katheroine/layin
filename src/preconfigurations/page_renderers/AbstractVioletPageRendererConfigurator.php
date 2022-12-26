@@ -11,6 +11,9 @@
 
 namespace Katheroine\Layin\Preconfiguration;
 
+use Katheroine\Layin\Renderer\AbstractPageRenderer;
+use Katheroine\Layin\Loader\ConfigLoader;
+use Katheroine\Layin\Loader\ConfiguredSeriesLoader;
 use Katheroine\Layin\Renderer\VioletPageRenderer;
 
 /**
@@ -36,12 +39,127 @@ abstract class AbstractVioletPageRendererConfigurator
     protected const CODE_FILE_EXTENSION_KEY = 'code_file_extension';
     protected const IS_DEBUG_MODE_KEY = 'is_debug_mode';
 
+    protected AbstractPageRenderer $pageRenderer;
+    protected string $assetsDirPath = '';
+    protected string $templateFileExtension = '';
+
     /**
      * Provides associative table with appropriate obligatory keys
      * corresponding with configuration options
      * and values used for the preconfiguration preparing.
      */
     abstract protected function providePreconfiguration(): array;
+
+    public function setPageRenderer(AbstractPageRenderer $pageRenderer): self
+    {
+        $this->pageRenderer = $pageRenderer;
+
+        return $this;
+    }
+
+    public function setAssetsDirPath(string $assetsDirPath): self
+    {
+        return $this;
+    }
+
+    public function setSiteConfigPath(string $siteConfigPath): self
+    {
+        return $this;
+    }
+
+    public function setNavigationLinksConfigPath(string $navigationLinksConfigPath): self
+    {
+        return $this;
+    }
+
+    public function setContactInfoConfigPath(string $contactInfoConfigPath): self
+    {
+        return $this;
+    }
+
+    public function setBaseUrl(string $baseUrl): self
+    {
+        return $this;
+    }
+
+    public function setSubpagesUrl(string $subpagesUrl): self
+    {
+        return $this;
+    }
+
+    public function setTemplateFileExtension(string $templateFileExtension): self
+    {
+        $this->templateFileExtension = $templateFileExtension;
+
+        return $this;
+    }
+
+    public function setPageFileExtension(string $pageFileExtension): self
+    {
+        return $this;
+    }
+
+    public function setIsDebugMode(bool $isDebugMode): self
+    {
+        return $this;
+    }
+
+    public function configurePageRenderer(): void
+    {
+        $this->pageRenderer
+            ->setTemplateFileExtension($this->templateFileExtension)
+            ->setTemplateParams($this->provideTemplateParams());
+    }
+
+    private function provideSiteConfig(): array
+    {
+        $siteConfigRelativePath = $this->configDirPath . '/site_config.yaml';
+
+        $configLoader = new ConfigLoader($siteConfigRelativePath);
+        $siteConfig = $configLoader->load();
+
+        return $siteConfig;
+    }
+
+    private function provideNavigationLinks(): array
+    {
+        $navigationLinksRelativePath = $this->configDirPath . '/navigation_links.yaml';
+
+        $navigationLinksLoader = new ConfiguredSeriesLoader($navigationLinksRelativePath);
+        $navigationLinksLoader->setReplacements([
+            'base_url' => $this->baseRelativeUrl,
+            'code_file_extension' => $this->codeFileExtension,
+        ]);
+        $navigationLinks = $navigationLinksLoader->load();
+
+        return $navigationLinks;
+    }
+
+    private function provideContactInfoLinks(): array
+    {
+        $contactInfoLinksRelativePath = $this->configDirPath . '/contact_info_links.yaml';
+
+        $contactInfoLinksLoader = new ConfiguredSeriesLoader($contactInfoLinksRelativePath);
+        $contactInfoLinks = $contactInfoLinksLoader->load();
+
+        return $contactInfoLinks;
+    }
+
+    protected function provideTemplateParams(): array
+    {
+        $templateParams = array_merge(
+            $this->provideSiteConfig(),
+            [
+                'subpages_url' => $this->subpagesRelativeUrl,
+                'assets_dir' => $this->assetsDirRelativePath,
+                'navigation_links' => $this->provideNavigationLinks(),
+                'contact_info_links' => $this->provideContactInfoLinks(),
+                'debug' => $this->isDebugMode,
+            ]
+        );
+
+        return $templateParams;
+    }
 
     public function renderPreconfiguredPage(string $template_name): void
     {

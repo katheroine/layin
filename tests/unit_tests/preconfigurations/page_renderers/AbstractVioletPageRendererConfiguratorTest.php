@@ -11,6 +11,8 @@
 
 namespace Katheroine\Layin\Preconfiguration;
 
+use Exception;
+use Katheroine\Layin\Renderer\ConcretePageRenderer;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -28,6 +30,62 @@ class AbstractVioletPageRendererConfiguratorTest extends TestCase
     {
         $this->assertTrue(
             class_exists('Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator')
+        );
+    }
+
+    /**
+     * @dataProvider accessorsProvider
+     */
+    public function testAccessorFunctionsExist(string $accessorName)
+    {
+        $this->assertTrue(
+            method_exists(
+                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator',
+                $accessorName
+            )
+        );
+    }
+
+    /**
+     * @dataProvider accessorsProvider
+     */
+    public function testAccessorsReturnSelf(string $accessorName, string $accessorAgrumentType)
+    {
+        $pageRendererConfigurator = new ConcreteVioletPageRendererConfigurator();
+
+        $result = $pageRendererConfigurator->$accessorName($this->provideValueForType($accessorAgrumentType));
+
+        $this->assertSame($pageRendererConfigurator, $result);
+    }
+
+    /**
+     * @dataProvider accessorsProvider
+     */
+    public function testAccessorsWhenItsArgumentsHaveWrongTypes(
+        string $accessorName,
+        string $accessorAgrumentType,
+        string $accessorArgumentName
+    ) {
+        $argumentValue = null;
+        $pageRendererConfigurator = new ConcreteVioletPageRendererConfigurator();
+
+        $expectedErrorMessagePattern =
+            '/AbstractVioletPageRendererConfigurator\:\:' . $accessorName . '\(\)\: '
+            . 'Argument \#1 \(\$' . $accessorArgumentName
+            . '\) must be of type ' . $accessorAgrumentType . ', null given/';
+        $this->expectError(\TypeError::class);
+        $this->expectErrorMessageMatches($expectedErrorMessagePattern);
+
+        $pageRendererConfigurator->$accessorName($argumentValue);
+    }
+
+    public function testConfigurePageRendererFunctionExists()
+    {
+        $this->assertTrue(
+            method_exists(
+                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator',
+                'configurePageRenderer'
+            )
         );
     }
 
@@ -86,5 +144,33 @@ class AbstractVioletPageRendererConfiguratorTest extends TestCase
         );
 
         $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
+    }
+
+    protected function accessorsProvider(): array
+    {
+        return [
+            ['setPageRenderer', 'Katheroine\\\Layin\\\Renderer\\\AbstractPageRenderer', 'pageRenderer'],
+            ['setAssetsDirPath', 'string', 'assetsDirPath'],
+            ['setSiteConfigPath', 'string', 'siteConfigPath'],
+            ['setNavigationLinksConfigPath', 'string', 'navigationLinksConfigPath'],
+            ['setContactInfoConfigPath', 'string', 'contactInfoConfigPath'],
+            ['setBaseUrl', 'string', 'baseUrl'],
+            ['setSubpagesUrl', 'string', 'subpagesUrl'],
+            ['setTemplateFileExtension', 'string', 'templateFileExtension'],
+            ['setPageFileExtension', 'string', 'pageFileExtension'],
+            ['setIsDebugMode', 'bool', 'isDebugMode'],
+        ];
+    }
+
+    private function provideValueForType(string $typeName)
+    {
+        switch ($typeName) {
+            case 'string':
+                return 'abc';
+            case 'bool':
+                return false;
+            case 'Katheroine\\\Layin\\\Renderer\\\AbstractPageRenderer':
+                return new ConcretePageRenderer();
+        }
     }
 }

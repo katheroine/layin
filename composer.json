@@ -62,7 +62,8 @@
             "Katheroine\\Layin\\Preconfiguration\\": [
                 "tests/unit_tests/preconfigurations/",
                 "tests/unit_tests/preconfigurations/page_renderers/",
-                "tests/unit_tests/preconfigurations/page_renderers/concrete_renderer_dummies/"
+                "tests/unit_tests/preconfigurations/page_renderers/concrete_renderer_dummies/",
+                "tests/unit_tests/preconfigurations/page_renderers/concrete_renderer_configurator_dummies/"
             ],
             "Katheroine\\Layin\\Console\\": [
                 "tests/unit_tests/console/",
