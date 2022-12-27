@@ -110,7 +110,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
             ->setAssetsDirPath($assetsDirPath)
             ->setSiteConfigPath($siteConfigPath)
             ->setNavigationLinksConfigPath($navigationLinksConfigPath)
-            ->setContactInfoConfigPath($contactInfoLinksConfigPath)
+            ->setContactInfoLinksConfigPath($contactInfoLinksConfigPath)
             ->setBaseUrl($baseUrl)
             ->setSubpagesUrl($subpagesUrl)
             ->setTemplateFileExtension($templateFileExtension)
@@ -186,7 +186,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
             ['setAssetsDirPath', 'string', 'assetsDirPath'],
             ['setSiteConfigPath', 'string', 'siteConfigPath'],
             ['setNavigationLinksConfigPath', 'string', 'navigationLinksConfigPath'],
-            ['setContactInfoConfigPath', 'string', 'contactInfoConfigPath'],
+            ['setContactInfoLinksConfigPath', 'string', 'contactInfoLinksConfigPath'],
             ['setBaseUrl', 'string', 'baseUrl'],
             ['setSubpagesUrl', 'string', 'subpagesUrl'],
             ['setTemplateFileExtension', 'string', 'templateFileExtension'],

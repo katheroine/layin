@@ -90,9 +90,9 @@ abstract class AbstractVioletPageRendererPreconfigurator
         return $this;
     }
 
-    public function setContactInfoConfigPath(string $contactInfoConfigPath): self
+    public function setContactInfoLinksConfigPath(string $contactInfoLinksConfigPath): self
     {
-        $this->contactInfoLinksConfigPath = $contactInfoConfigPath;
+        $this->contactInfoLinksConfigPath = $contactInfoLinksConfigPath;
 
         return $this;
     }
