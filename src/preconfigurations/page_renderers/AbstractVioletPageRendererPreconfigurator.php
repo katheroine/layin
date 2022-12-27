@@ -104,7 +104,7 @@ abstract class AbstractVioletPageRendererPreconfigurator
         return $this;
     }
 
-    public function configurePageRenderer(): void
+    public function preconfigurePageRenderer(): void
     {
         $this->pageRenderer
             ->setTemplateFileExtension($this->templateFileExtension)
@@ -163,7 +163,7 @@ abstract class AbstractVioletPageRendererPreconfigurator
 
     public function renderPreconfiguredPage(string $template_name): void
     {
-        $pageRenderer = $this->preconfigurePageRenderer();
+        $pageRenderer = $this->prepreconfigurePageRenderer();
 
         $pageRenderer->setTemplateName($template_name);
 
@@ -173,7 +173,7 @@ abstract class AbstractVioletPageRendererPreconfigurator
     /**
      * @throws \UnexpectedValueException When preconfiguration contains improper keys.
      */
-    protected function preconfigurePageRenderer(): VioletPageRenderer
+    protected function prepreconfigurePageRenderer(): VioletPageRenderer
     {
         $preconfiguration = $this->providePreconfiguration();
 

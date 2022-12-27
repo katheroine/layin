@@ -84,7 +84,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
         $this->assertTrue(
             method_exists(
                 'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator',
-                'configurePageRenderer'
+                'preconfigurePageRenderer'
             )
         );
     }
