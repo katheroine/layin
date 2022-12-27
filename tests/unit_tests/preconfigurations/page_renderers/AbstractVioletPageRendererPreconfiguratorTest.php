@@ -24,12 +24,12 @@ use PHPUnit\Framework\TestCase;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-class AbstractVioletPageRendererConfiguratorTest extends TestCase
+class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
 {
-    public function testAbstractVioletPageRendererConfiguratorClassExists()
+    public function testAbstractVioletPageRendererPreconfiguratorClassExists()
     {
         $this->assertTrue(
-            class_exists('Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator')
+            class_exists('Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator')
         );
     }
 
@@ -40,7 +40,7 @@ class AbstractVioletPageRendererConfiguratorTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator',
+                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator',
                 $accessorName
             )
         );
@@ -51,11 +51,11 @@ class AbstractVioletPageRendererConfiguratorTest extends TestCase
      */
     public function testAccessorsReturnSelf(string $accessorName, string $accessorAgrumentType)
     {
-        $pageRendererConfigurator = new ConcreteVioletPageRendererConfigurator();
+        $pageRendererPreconfigurator = new ConcreteVioletPageRendererPreconfigurator();
 
-        $result = $pageRendererConfigurator->$accessorName($this->provideValueForType($accessorAgrumentType));
+        $result = $pageRendererPreconfigurator->$accessorName($this->provideValueForType($accessorAgrumentType));
 
-        $this->assertSame($pageRendererConfigurator, $result);
+        $this->assertSame($pageRendererPreconfigurator, $result);
     }
 
     /**
@@ -67,23 +67,23 @@ class AbstractVioletPageRendererConfiguratorTest extends TestCase
         string $accessorArgumentName
     ) {
         $argumentValue = null;
-        $pageRendererConfigurator = new ConcreteVioletPageRendererConfigurator();
+        $pageRendererPreconfigurator = new ConcreteVioletPageRendererPreconfigurator();
 
         $expectedErrorMessagePattern =
-            '/AbstractVioletPageRendererConfigurator\:\:' . $accessorName . '\(\)\: '
+            '/AbstractVioletPageRendererPreconfigurator\:\:' . $accessorName . '\(\)\: '
             . 'Argument \#1 \(\$' . $accessorArgumentName
             . '\) must be of type ' . $accessorAgrumentType . ', null given/';
         $this->expectError(\TypeError::class);
         $this->expectErrorMessageMatches($expectedErrorMessagePattern);
 
-        $pageRendererConfigurator->$accessorName($argumentValue);
+        $pageRendererPreconfigurator->$accessorName($argumentValue);
     }
 
     public function testConfigurePageRendererFunctionExists()
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator',
+                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator',
                 'configurePageRenderer'
             )
         );
@@ -93,7 +93,7 @@ class AbstractVioletPageRendererConfiguratorTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator',
+                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator',
                 'renderPreconfiguredPage'
             )
         );

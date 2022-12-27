@@ -11,9 +11,9 @@
 
 namespace Katheroine\Layin\Demo;
 
-use Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererConfigurator;
+use Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator;
 
-class IndexPreconfiguredPageRenderer extends AbstractVioletPageRendererConfigurator
+class IndexPreconfiguredPageRenderer extends AbstractVioletPageRendererPreconfigurator
 {
     protected function providePreconfiguration(): array
     {

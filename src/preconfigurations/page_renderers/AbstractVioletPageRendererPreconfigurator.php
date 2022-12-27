@@ -25,7 +25,7 @@ use Katheroine\Layin\Renderer\VioletPageRenderer;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-abstract class AbstractVioletPageRendererConfigurator
+abstract class AbstractVioletPageRendererPreconfigurator
 {
     /**
      * Preconfiguration obligatory keys.
