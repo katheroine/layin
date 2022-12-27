@@ -42,6 +42,18 @@ abstract class AbstractVioletPageRendererPreconfigurator
     protected AbstractPageRenderer $pageRenderer;
     protected string $assetsDirPath = '';
     protected string $templateFileExtension = '';
+    protected string $siteConfigPath = '';
+    protected string $navigationLinksConfigPath = '';
+    protected string $contactInfoLinksConfigPath = '';
+    protected string $baseUrl = '';
+    protected string $subpagesUrl = '';
+    protected string $pageFileExtension = '';
+    protected bool $isDebudMode = false;
+
+    protected string $configDirPath = '';
+    protected string $baseRelativeUrl = '';
+    protected string $subpagesRelativeUrl = '';
+    protected string $codeFileExtension = '';
 
     /**
      * Provides associative table with appropriate obligatory keys
@@ -59,31 +71,43 @@ abstract class AbstractVioletPageRendererPreconfigurator
 
     public function setAssetsDirPath(string $assetsDirPath): self
     {
+        $this->assetsDirPath = $assetsDirPath;
+
         return $this;
     }
 
     public function setSiteConfigPath(string $siteConfigPath): self
     {
+        $this->siteConfigPath = $siteConfigPath;
+
         return $this;
     }
 
     public function setNavigationLinksConfigPath(string $navigationLinksConfigPath): self
     {
+        $this->navigationLinksConfigPath = $navigationLinksConfigPath;
+
         return $this;
     }
 
     public function setContactInfoConfigPath(string $contactInfoConfigPath): self
     {
+        $this->contactInfoLinksConfigPath = $contactInfoConfigPath;
+
         return $this;
     }
 
     public function setBaseUrl(string $baseUrl): self
     {
+        $this->baseUrl = $baseUrl;
+
         return $this;
     }
 
     public function setSubpagesUrl(string $subpagesUrl): self
     {
+        $this->subpagesUrl = $subpagesUrl;
+
         return $this;
     }
 
@@ -101,6 +125,8 @@ abstract class AbstractVioletPageRendererPreconfigurator
 
     public function setIsDebugMode(bool $isDebugMode): self
     {
+        $this->isDebugMode = $isDebugMode;
+
         return $this;
     }
 
@@ -113,7 +139,11 @@ abstract class AbstractVioletPageRendererPreconfigurator
 
     private function provideSiteConfig(): array
     {
-        $siteConfigRelativePath = $this->configDirPath . '/site_config.yaml';
+        if ($this->siteConfigPath !== '') {
+            $siteConfigRelativePath = $this->siteConfigPath;
+        } else {
+            $siteConfigRelativePath = $this->configDirPath . '/site_config.yaml';
+        }
 
         $configLoader = new ConfigLoader($siteConfigRelativePath);
         $siteConfig = $configLoader->load();
@@ -123,12 +153,16 @@ abstract class AbstractVioletPageRendererPreconfigurator
 
     private function provideNavigationLinks(): array
     {
-        $navigationLinksRelativePath = $this->configDirPath . '/navigation_links.yaml';
+        if ($this->navigationLinksConfigPath !== '') {
+            $navigationLinksRelativePath = $this->navigationLinksConfigPath;
+        } else {
+            $navigationLinksRelativePath = $this->configDirPath . '/navigation_links.yaml';
+        }
 
         $navigationLinksLoader = new ConfiguredSeriesLoader($navigationLinksRelativePath);
         $navigationLinksLoader->setReplacements([
-            'base_url' => $this->baseRelativeUrl,
-            'code_file_extension' => $this->codeFileExtension,
+            'base_url' => $this->baseRelativeUrl ? $this->baseRelativeUrl : $this->baseUrl,
+            'code_file_extension' => $this->codeFileExtension ? $this->codeFileExtension : $this->pageFileExtension,
         ]);
         $navigationLinks = $navigationLinksLoader->load();
 
@@ -137,7 +171,11 @@ abstract class AbstractVioletPageRendererPreconfigurator
 
     private function provideContactInfoLinks(): array
     {
-        $contactInfoLinksRelativePath = $this->configDirPath . '/contact_info_links.yaml';
+        if ($this->contactInfoLinksConfigPath !== '') {
+            $contactInfoLinksRelativePath = $this->contactInfoLinksConfigPath;
+        } else {
+            $contactInfoLinksRelativePath = $this->configDirPath . '/contact_info_links.yaml';
+        }
 
         $contactInfoLinksLoader = new ConfiguredSeriesLoader($contactInfoLinksRelativePath);
         $contactInfoLinks = $contactInfoLinksLoader->load();
@@ -150,8 +188,8 @@ abstract class AbstractVioletPageRendererPreconfigurator
         $templateParams = array_merge(
             $this->provideSiteConfig(),
             [
-                'subpages_url' => $this->subpagesRelativeUrl,
-                'assets_dir' => $this->assetsDirRelativePath,
+                'subpages_url' => ($this->subpagesRelativeUrl ? $this->subpagesRelativeUrl : $this->subpagesUrl),
+                'assets_dir' => $this->assetsDirPath,
                 'navigation_links' => $this->provideNavigationLinks(),
                 'contact_info_links' => $this->provideContactInfoLinks(),
                 'debug' => $this->isDebugMode,

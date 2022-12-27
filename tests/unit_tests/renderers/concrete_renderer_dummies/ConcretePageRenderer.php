@@ -22,4 +22,9 @@ class ConcretePageRenderer extends AbstractPageRenderer
     {
         return '';
     }
+
+    public function getProperty(string $propertyName)
+    {
+        return $this->$propertyName;
+    }
 }

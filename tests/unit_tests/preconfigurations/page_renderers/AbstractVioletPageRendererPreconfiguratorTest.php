@@ -79,7 +79,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
         $pageRendererPreconfigurator->$accessorName($argumentValue);
     }
 
-    public function testConfigurePageRendererFunctionExists()
+    public function testPreconfigurePageRendererFunctionExists()
     {
         $this->assertTrue(
             method_exists(
@@ -87,6 +87,39 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
                 'preconfigurePageRenderer'
             )
         );
+    }
+
+    public function testPreconfigurePageRendererFunction()
+    {
+        $pageRenderer = new ConcretePageRenderer();
+        $pageRendererPreconfigurator = new ConcreteVioletPageRendererPreconfigurator();
+
+        $pageRendererPreconfigurator->setPageRenderer($pageRenderer);
+
+        $assetsDirPath = './assets';
+        $siteConfigPath = __DIR__ . '/../../../testing_environment/configs/site_config.yaml';
+        $navigationLinksConfigPath = __DIR__ . '/../../../testing_environment/configs/navigation_links.yaml';
+        $contactInfoLinksConfigPath = __DIR__ . '/../../../testing_environment/configs/contact_info_links.yaml';
+        $baseUrl = '.';
+        $subpagesUrl = './subpages';
+        $templateFileExtension = 'html';
+        $pageFileExtension = 'php';
+        $isDebugMode = true;
+
+        $pageRendererPreconfigurator
+            ->setAssetsDirPath($assetsDirPath)
+            ->setSiteConfigPath($siteConfigPath)
+            ->setNavigationLinksConfigPath($navigationLinksConfigPath)
+            ->setContactInfoConfigPath($contactInfoLinksConfigPath)
+            ->setBaseUrl($baseUrl)
+            ->setSubpagesUrl($subpagesUrl)
+            ->setTemplateFileExtension($templateFileExtension)
+            ->setPageFileExtension($pageFileExtension)
+            ->setIsDebugMode($isDebugMode);
+
+        $pageRendererPreconfigurator->preconfigurePageRenderer();
+
+        $this->assertEquals($templateFileExtension, $pageRenderer->getProperty('templateFileExtension'));
     }
 
     public function testRenderPreconfiguredPageFunctionExists()
