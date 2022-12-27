@@ -96,6 +96,8 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
 
         $pageRendererPreconfigurator->setPageRenderer($pageRenderer);
 
+        $templatesDirPath = __DIR__ . '/../../testing_environment/templates';
+        $templateSubdirPath = 'subpages';
         $assetsDirPath = './assets';
         $siteConfigPath = __DIR__ . '/../../../testing_environment/configs/site_config.yaml';
         $navigationLinksConfigPath = __DIR__ . '/../../../testing_environment/configs/navigation_links.yaml';
@@ -107,6 +109,8 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
         $isDebugMode = true;
 
         $pageRendererPreconfigurator
+            ->setTemplatesDirPath($templatesDirPath)
+            ->setTemplateSubdirPath($templateSubdirPath)
             ->setAssetsDirPath($assetsDirPath)
             ->setSiteConfigPath($siteConfigPath)
             ->setNavigationLinksConfigPath($navigationLinksConfigPath)
@@ -119,6 +123,8 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
 
         $pageRendererPreconfigurator->preconfigurePageRenderer();
 
+        $this->assertEquals($templatesDirPath, $pageRenderer->getProperty('templatesDirPath'));
+        $this->assertEquals($templateSubdirPath, $pageRenderer->getProperty('templateSubdirPath'));
         $this->assertEquals($templateFileExtension, $pageRenderer->getProperty('templateFileExtension'));
     }
 
@@ -183,6 +189,8 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
     {
         return [
             ['setPageRenderer', 'Katheroine\\\Layin\\\Renderer\\\AbstractPageRenderer', 'pageRenderer'],
+            ['setTemplatesDirPath', 'string', 'templatesDirPath'],
+            ['setTemplateSubdirPath', 'string', 'templateSubdirPath'],
             ['setAssetsDirPath', 'string', 'assetsDirPath'],
             ['setSiteConfigPath', 'string', 'siteConfigPath'],
             ['setNavigationLinksConfigPath', 'string', 'navigationLinksConfigPath'],

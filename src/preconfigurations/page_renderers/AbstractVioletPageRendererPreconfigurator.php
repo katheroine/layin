@@ -40,6 +40,8 @@ abstract class AbstractVioletPageRendererPreconfigurator
     protected const IS_DEBUG_MODE_KEY = 'is_debug_mode';
 
     protected AbstractPageRenderer $pageRenderer;
+    protected string $templatesDirPath = '';
+    protected string $templateSubdirPath = '';
     protected string $assetsDirPath = '';
     protected string $templateFileExtension = '';
     protected string $siteConfigPath = '';
@@ -65,6 +67,20 @@ abstract class AbstractVioletPageRendererPreconfigurator
     public function setPageRenderer(AbstractPageRenderer $pageRenderer): self
     {
         $this->pageRenderer = $pageRenderer;
+
+        return $this;
+    }
+
+    public function setTemplatesDirPath(string $templatesDirPath): self
+    {
+        $this->templatesDirPath = $templatesDirPath;
+
+        return $this;
+    }
+
+    public function setTemplateSubdirPath(string $templateSubdirPath): self
+    {
+        $this->templateSubdirPath = $templateSubdirPath;
 
         return $this;
     }
@@ -133,6 +149,8 @@ abstract class AbstractVioletPageRendererPreconfigurator
     public function preconfigurePageRenderer(): void
     {
         $this->pageRenderer
+            ->setTemplatesDirPath($this->templatesDirPath)
+            ->setTemplateSubdirPath($this->templateSubdirPath)
             ->setTemplateFileExtension($this->templateFileExtension)
             ->setTemplateParams($this->provideTemplateParams());
     }
