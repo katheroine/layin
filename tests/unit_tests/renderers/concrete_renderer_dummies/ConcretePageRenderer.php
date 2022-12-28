@@ -20,7 +20,13 @@ class ConcretePageRenderer extends AbstractPageRenderer
 {
     public function render(): string
     {
-        return '';
+        $content = 'template name: ' . $this->templateName . "\n"
+            . 'templates dir path: ' . $this->templatesDirPath . "\n"
+            . 'template subdir path: ' . $this->templateSubdirPath . "\n"
+            . 'template file extension: ' . $this->templateFileExtension . "\n"
+            . "template params: \n" . implode("\n", explode(',', json_encode($this->templateParams)));
+
+        return $content;
     }
 
     public function getProperty(string $propertyName)

@@ -50,7 +50,7 @@ class VioletPageRendererPreconfigurator
     protected string $baseUrl = '';
     protected string $subpagesUrl = '';
     protected string $pageFileExtension = '';
-    protected bool $isDebudMode = false;
+    protected bool $isDebugMode = false;
 
     protected string $configDirPath = '';
     protected string $baseRelativeUrl = '';
