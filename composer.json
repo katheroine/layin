@@ -33,7 +33,8 @@
                 "src/loaders/"
             ],
             "Katheroine\\Layin\\Renderer\\": [
-                "src/renderers/"
+                "src/renderers/",
+                "src/renderers/preconfigured/"
             ],
             "Katheroine\\Layin\\Preconfigurator\\": [
                 "src/preconfigurators/"
@@ -41,6 +42,9 @@
             "Katheroine\\Layin\\Console\\": [
                 "src/console/",
                 "src/console/commands/"
+            ],
+            "Katheroine\\Layin\\Preconfiguration\\": [
+                "site/preconfigurations/page_renderers/"
             ]
         }
     },
@@ -54,6 +58,7 @@
             ],
             "Katheroine\\Layin\\Renderer\\": [
                 "tests/unit_tests/renderers/",
+                "tests/unit_tests/renderers/preconfigured/",
                 "tests/unit_tests/renderers/concrete_renderer_dummies/"
             ],
             "Katheroine\\Layin\\Preconfigurator\\": [

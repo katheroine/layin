@@ -25,7 +25,7 @@ use Katheroine\Layin\Renderer\VioletPageRenderer;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-abstract class AbstractVioletPageRendererPreconfigurator
+class VioletPageRendererPreconfigurator
 {
     /**
      * Preconfiguration obligatory keys.
@@ -62,7 +62,10 @@ abstract class AbstractVioletPageRendererPreconfigurator
      * corresponding with configuration options
      * and values used for the preconfiguration preparing.
      */
-    abstract protected function providePreconfiguration(): array;
+    protected function providePreconfiguration(): array
+    {
+        return [];
+    }
 
     public function setPageRenderer(AbstractPageRenderer $pageRenderer): self
     {

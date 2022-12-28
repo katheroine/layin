@@ -23,12 +23,12 @@ use PHPUnit\Framework\TestCase;
  * @license http://opensource.org/licenses/MIT MIT License
  * @link https://github.com/katheroine/layin
  */
-class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
+class VioletPageRendererPreconfiguratorTest extends TestCase
 {
-    public function testAbstractVioletPageRendererPreconfiguratorClassExists()
+    public function testVioletPageRendererPreconfiguratorClassExists()
     {
         $this->assertTrue(
-            class_exists('Katheroine\Layin\Preconfigurator\AbstractVioletPageRendererPreconfigurator')
+            class_exists('Katheroine\Layin\Preconfigurator\VioletPageRendererPreconfigurator')
         );
     }
 
@@ -39,7 +39,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfigurator\AbstractVioletPageRendererPreconfigurator',
+                'Katheroine\Layin\Preconfigurator\VioletPageRendererPreconfigurator',
                 $accessorName
             )
         );
@@ -69,7 +69,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
         $pageRendererPreconfigurator = new ConcreteVioletPageRendererPreconfigurator();
 
         $expectedErrorMessagePattern =
-            '/AbstractVioletPageRendererPreconfigurator\:\:' . $accessorName . '\(\)\: '
+            '/VioletPageRendererPreconfigurator\:\:' . $accessorName . '\(\)\: '
             . 'Argument \#1 \(\$' . $accessorArgumentName
             . '\) must be of type ' . $accessorAgrumentType . ', null given/';
         $this->expectError(\TypeError::class);
@@ -82,7 +82,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfigurator\AbstractVioletPageRendererPreconfigurator',
+                'Katheroine\Layin\Preconfigurator\VioletPageRendererPreconfigurator',
                 'preconfigurePageRenderer'
             )
         );
@@ -131,7 +131,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfigurator\AbstractVioletPageRendererPreconfigurator',
+                'Katheroine\Layin\Preconfigurator\VioletPageRendererPreconfigurator',
                 'renderPreconfiguredPage'
             )
         );
