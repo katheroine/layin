@@ -9,19 +9,21 @@
  * file that was distributed with this source code.
  */
 
-namespace Katheroine\Layin\Preconfiguration;
+namespace Katheroine\Layin\Preconfigurator;
 
 /**
  * Dummy preconfigured page renderer for testing purposes only.
  */
-class ConcreteVioletPreconfiguredPageRendererWithLackingEntry extends AbstractVioletPageRendererPreconfigurator
+class ConcreteVioletPreconfiguredPageRendererWithSurplusEntry extends AbstractVioletPageRendererPreconfigurator
 {
     protected function providePreconfiguration(): array
     {
         return [
             'templates_dir_absolute_path' => __DIR__ . '/../../../testing_environment/templates',
             'template_local_path' => '',
+            'config_dir_path' => __DIR__ . '/../../../testing_environment/configs',
             'base_url' => '.',
+            'title' => '',
             'subpages_relative_url' => './subpages',
             'assets_dir_relative_path' => './assets',
             'code_file_extension' => 'php',

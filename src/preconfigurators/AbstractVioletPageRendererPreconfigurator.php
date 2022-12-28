@@ -9,7 +9,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Katheroine\Layin\Preconfiguration;
+namespace Katheroine\Layin\Preconfigurator;
 
 use Katheroine\Layin\Renderer\AbstractPageRenderer;
 use Katheroine\Layin\Loader\ConfigLoader;

@@ -9,9 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Katheroine\Layin\Preconfiguration;
+namespace Katheroine\Layin\Preconfigurator;
 
-use Exception;
 use Katheroine\Layin\Renderer\ConcretePageRenderer;
 use PHPUnit\Framework\TestCase;
 
@@ -29,7 +28,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
     public function testAbstractVioletPageRendererPreconfiguratorClassExists()
     {
         $this->assertTrue(
-            class_exists('Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator')
+            class_exists('Katheroine\Layin\Preconfigurator\AbstractVioletPageRendererPreconfigurator')
         );
     }
 
@@ -40,7 +39,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator',
+                'Katheroine\Layin\Preconfigurator\AbstractVioletPageRendererPreconfigurator',
                 $accessorName
             )
         );
@@ -83,7 +82,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator',
+                'Katheroine\Layin\Preconfigurator\AbstractVioletPageRendererPreconfigurator',
                 'preconfigurePageRenderer'
             )
         );
@@ -96,12 +95,12 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
 
         $pageRendererPreconfigurator->setPageRenderer($pageRenderer);
 
-        $templatesDirPath = __DIR__ . '/../../testing_environment/templates';
+        $templatesDirPath = __DIR__ . '/../testing_environment/templates';
         $templateSubdirPath = 'subpages';
         $assetsDirPath = './assets';
-        $siteConfigPath = __DIR__ . '/../../../testing_environment/configs/site_config.yaml';
-        $navigationLinksConfigPath = __DIR__ . '/../../../testing_environment/configs/navigation_links.yaml';
-        $contactInfoLinksConfigPath = __DIR__ . '/../../../testing_environment/configs/contact_info_links.yaml';
+        $siteConfigPath = __DIR__ . '/../../testing_environment/configs/site_config.yaml';
+        $navigationLinksConfigPath = __DIR__ . '/../../testing_environment/configs/navigation_links.yaml';
+        $contactInfoLinksConfigPath = __DIR__ . '/../../testing_environment/configs/contact_info_links.yaml';
         $baseUrl = '.';
         $subpagesUrl = './subpages';
         $templateFileExtension = 'html';
@@ -132,7 +131,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
     {
         $this->assertTrue(
             method_exists(
-                'Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator',
+                'Katheroine\Layin\Preconfigurator\AbstractVioletPageRendererPreconfigurator',
                 'renderPreconfiguredPage'
             )
         );
@@ -179,7 +178,7 @@ class AbstractVioletPageRendererPreconfiguratorTest extends TestCase
         ob_end_clean();
 
         $expectedRenderedContent = file_get_contents(
-            __DIR__ . '/../../../testing_environment/results/violet_rendered_page.html'
+            __DIR__ . '/../../testing_environment/results/violet_rendered_page.html'
         );
 
         $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
