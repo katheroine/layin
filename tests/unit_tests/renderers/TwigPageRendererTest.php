@@ -48,8 +48,8 @@ class TwigPageRendererTest extends TestCase
         $pageRenderer = new ConcretePageRenderer();
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
-            ->setTemplateName('page')
-            ->setTemplateFileExtension('.twig.html');
+            ->setTemplateFileExtension('twig.html')
+            ->setTemplateName('page');
 
         $result = $pageRenderer->render();
 
@@ -72,7 +72,8 @@ class TwigPageRendererTest extends TestCase
         $pageRenderer = new TwigPageRenderer();
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
-            ->SetTemplateName('syntactically_improper_content.twig.html');
+            ->setTemplateFileExtension('twig.html')
+            ->setTemplateName('syntactically_improper_content');
 
         // Twig doc: When an error occurred during compilation.
         $this->expectException(\Twig\Error\SyntaxError::class);
@@ -86,7 +87,8 @@ class TwigPageRendererTest extends TestCase
         $pageRenderer = new TwigPageRenderer();
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
-            ->SetTemplateName('page.twig.html')
+            ->setTemplateFileExtension('twig.html')
+            ->SetTemplateName('page')
             ->setTemplateParams($this->provideTemplateParams());
 
         $actualRenderedContent = $pageRenderer->render();
@@ -114,7 +116,8 @@ class TwigPageRendererTest extends TestCase
         $pageRenderer
             ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
             ->setTemplateSubdirPath('subpages/')
-            ->SetTemplateName('subpage.twig.html')
+            ->setTemplateFileExtension('twig.html')
+            ->SetTemplateName('subpage')
             ->setTemplateParams($this->provideTemplateParams());
 
         $actualRenderedContent = $pageRenderer->render();

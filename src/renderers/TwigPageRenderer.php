@@ -54,6 +54,7 @@ class TwigPageRenderer extends AbstractPageRenderer
         $template = $environment->load(
             $this->templateSubdirPath
             . $this->templateName
+            . '.'
             . $this->templateFileExtension
         );
 
