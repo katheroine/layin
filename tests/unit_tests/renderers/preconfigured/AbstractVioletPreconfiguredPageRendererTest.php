@@ -109,8 +109,9 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
     public function testRenderFunction()
     {
         $preconfiguredPageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
+        $preconfiguredPageRenderer->setTemplateName('site');
 
-        $expectedResult = "template name: \n"
+        $expectedResult = "template name: site\n"
             . "templates dir path: "
             . __DIR__
             . "/concrete_preconfigured_renderer_dummies/../../../../testing_environment/templates\n"
@@ -129,11 +130,11 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
             . "\"charset\":\"utf-8\"\n"
             . "\"language\":\"english\"\n"
             . "\"copyright_range\":2022\n"
-            . "\"subpages_url\":\"\"\n"
-            . "\"assets_dir\":\"\"\n"
+            . "\"subpages_url\":\".\/subpages\"\n"
+            . "\"assets_dir\":\".\/assets\"\n"
             . "\"navigation_links\":[{\"css_id\":\"home-link\"\n"
             . "\"title\":\"Home\"\n"
-            . "\"url_part\":null}\n"
+            . "\"url_part\":\".\"}\n"
             . "{\"css_id\":\"accessibility-info-link\"\n"
             . "\"title\":\"Accessibility\"\n"
             . "\"url_part\":\"accessibility_info.php\"}\n"
@@ -163,7 +164,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
             . "\"title\":\"fax.\"\n"
             . "\"value\":\"(32) 000 00 00\"\n"
             . "\"url\":\"fax:+48320000000\"}]\n"
-            . "\"debug\":false}";
+            . "\"debug\":true}";
 
         $result = $preconfiguredPageRenderer->render();
 

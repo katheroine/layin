@@ -34,9 +34,9 @@ abstract class AbstractVioletPreconfiguredPageRenderer
     protected const SITE_CONFIG_PATH_KEY = 'site_config_path';
     protected const NAVIGATION_LINKS_CONFIG_PATH_KEY = 'navigation_links_config_path';
     protected const CONTACT_INFO_LINKS_CONFIG_PATH_KEY = 'contact_info_links_config_path';
+    protected const ASSETS_DIR_PATH_KEY = 'assets_dir_path';
     protected const BASE_URL_KEY = 'base_url';
     protected const SUBPAGES_URL_KEY = 'subpages_url';
-    protected const ASSETS_DIR_PATH_KEY = 'assets_dir_path';
     protected const IS_DEBUG_MODE_KEY = 'is_debug_mode';
 
     protected AbstractPageRenderer $pageRenderer;
@@ -71,11 +71,15 @@ abstract class AbstractVioletPreconfiguredPageRenderer
         $this->pageRendererPreconfigurator
             ->setTemplatesDirPath($preconfiguration[self::TEMPLATES_DIR_PATH_KEY])
             ->setTemplateSubdirPath($preconfiguration[self::TEMPLATE_SUBDIR_PATH_KEY])
+            ->setTemplateFileExtension($preconfiguration[self::TEMPLATE_FILE_EXTENSION_KEY])
+            ->setPageFileExtension($preconfiguration[self::PAGE_FILE_EXTENSION_KEY])
             ->setSiteConfigPath($preconfiguration[self::SITE_CONFIG_PATH_KEY])
             ->setNavigationLinksConfigPath($preconfiguration[self::NAVIGATION_LINKS_CONFIG_PATH_KEY])
             ->setContactInfoLinksConfigPath($preconfiguration[self::CONTACT_INFO_LINKS_CONFIG_PATH_KEY])
-            ->setTemplateFileExtension($preconfiguration[self::TEMPLATE_FILE_EXTENSION_KEY])
-            ->setPageFileExtension(self::PAGE_FILE_EXTENSION_KEY);
+            ->setAssetsDirPath($preconfiguration[self::ASSETS_DIR_PATH_KEY])
+            ->setBaseUrl($preconfiguration[self::BASE_URL_KEY])
+            ->setSubpagesUrl($preconfiguration[self::SUBPAGES_URL_KEY])
+            ->setIsDebugMode($preconfiguration[self::IS_DEBUG_MODE_KEY]);
 
         $this->pageRendererPreconfigurator->preconfigurePageRenderer();
 
@@ -129,9 +133,9 @@ abstract class AbstractVioletPreconfiguredPageRenderer
             self::SITE_CONFIG_PATH_KEY,
             self::NAVIGATION_LINKS_CONFIG_PATH_KEY,
             self::CONTACT_INFO_LINKS_CONFIG_PATH_KEY,
+            self::ASSETS_DIR_PATH_KEY,
             self::BASE_URL_KEY,
             self::SUBPAGES_URL_KEY,
-            self::ASSETS_DIR_PATH_KEY,
             self::IS_DEBUG_MODE_KEY,
         ];
     }
