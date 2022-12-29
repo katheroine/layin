@@ -203,63 +203,6 @@ class VioletPageRendererPreconfiguratorTest extends TestCase
         ], $pageRenderer->getProperty('templateParams'));
     }
 
-    // public function testRenderPreconfiguredPageFunctionExists()
-    // {
-    //     $this->assertTrue(
-    //         method_exists(
-    //             'Katheroine\Layin\Preconfigurator\VioletPageRendererPreconfigurator',
-    //             'renderPreconfiguredPage'
-    //         )
-    //     );
-    // }
-
-    // public function testRenderPreconfiguredPageReturnsNothing()
-    // {
-    //     $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
-
-    //     ob_start(); // Doesn't allow to echo rendered template.
-    //     $result = $pageRenderer->renderPreconfiguredPage('page.twig.html');
-    //     ob_end_clean();
-
-    //     $this->assertNull($result);
-    // }
-
-    // public function testRenderPreconfiguredPageWhenPreconfigurationLacksSomeEntry()
-    // {
-    //     $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithLackingEntry();
-
-    //     $this->expectException(\UnexpectedValueException::class);
-    //     $this->expectExceptionMessage("Preconfiguration lacks 'config_dir_path' entry.");
-
-    //     $pageRenderer->renderPreconfiguredPage('page.twig.html');
-    // }
-
-    // public function testRenderPreconfiguredPageWhenPreconfigurationHasSurplusEntry()
-    // {
-    //     $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithSurplusEntry();
-
-    //     $this->expectException(\UnexpectedValueException::class);
-    //     $this->expectExceptionMessage("Preconfiguration has unneeded 'title' entry.");
-
-    //     $pageRenderer->renderPreconfiguredPage('page.twig.html');
-    // }
-
-    // public function testRenderPreconfiguredPage()
-    // {
-    //     $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
-
-    //     ob_start(); // Doesn't allow to echo rendered template.
-    //     $pageRenderer->renderPreconfiguredPage('violet_template.twig.html');
-    //     $actualRenderedContent = ob_get_contents();
-    //     ob_end_clean();
-
-    //     $expectedRenderedContent = file_get_contents(
-    //         __DIR__ . '/../../testing_environment/results/violet_rendered_page.html'
-    //     );
-
-    //     $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
-    // }
-
     protected function accessorsProvider(): array
     {
         return [

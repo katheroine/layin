@@ -27,18 +27,6 @@ use Katheroine\Layin\Renderer\VioletPageRenderer;
  */
 class VioletPageRendererPreconfigurator
 {
-    // /**
-    //  * Preconfiguration obligatory keys.
-    //  */
-    // protected const TEMPLATES_DIR_PATH_KEY = 'templates_dir_absolute_path';
-    // protected const TEMPLATE_LOCAL_PATH_KEY = 'template_local_path';
-    // protected const CONFIG_DIR_PATH_KEY = 'config_dir_path';
-    // protected const BASE_URL_KEY = 'base_url';
-    // protected const SUBPAGES_URL_KEY = 'subpages_relative_url';
-    // protected const ASSETS_DIR_PATH_KEY = 'assets_dir_relative_path';
-    // protected const CODE_FILE_EXTENSION_KEY = 'code_file_extension';
-    // protected const IS_DEBUG_MODE_KEY = 'is_debug_mode';
-
     protected AbstractPageRenderer $pageRenderer;
 
     protected string $templatesDirPath = '';
@@ -52,11 +40,6 @@ class VioletPageRendererPreconfigurator
     protected string $baseUrl = '';
     protected string $subpagesUrl = '';
     protected bool $isDebugMode = false;
-
-    // protected string $configDirPath = '';
-    // protected string $baseRelativeUrl = '';
-    // protected string $subpagesRelativeUrl = '';
-    // protected string $codeFileExtension = '';
 
     /**
      * Provides associative table with appropriate obligatory keys
@@ -163,11 +146,7 @@ class VioletPageRendererPreconfigurator
 
     private function provideSiteConfig(): array
     {
-        // if ($this->siteConfigPath !== '') {
-            $siteConfigRelativePath = $this->siteConfigPath;
-        // } else {
-            // $siteConfigRelativePath = $this->configDirPath . '/site_config.yaml';
-        // }
+        $siteConfigRelativePath = $this->siteConfigPath;
 
         $configLoader = new ConfigLoader($siteConfigRelativePath);
         $siteConfig = $configLoader->load();
@@ -177,16 +156,10 @@ class VioletPageRendererPreconfigurator
 
     private function provideNavigationLinks(): array
     {
-        // if ($this->navigationLinksConfigPath !== '') {
-            $navigationLinksRelativePath = $this->navigationLinksConfigPath;
-        // } else {
-            // $navigationLinksRelativePath = $this->configDirPath . '/navigation_links.yaml';
-        // }
+        $navigationLinksRelativePath = $this->navigationLinksConfigPath;
 
         $navigationLinksLoader = new ConfiguredSeriesLoader($navigationLinksRelativePath);
         $navigationLinksLoader->setReplacements([
-            // 'base_url' => $this->baseRelativeUrl ? $this->baseRelativeUrl : $this->baseUrl,
-            // 'code_file_extension' => $this->codeFileExtension ? $this->codeFileExtension : $this->pageFileExtension,
             'base_url' => $this->baseUrl,
             'code_file_extension' => $this->pageFileExtension,
         ]);
@@ -197,11 +170,7 @@ class VioletPageRendererPreconfigurator
 
     private function provideContactInfoLinks(): array
     {
-        // if ($this->contactInfoLinksConfigPath !== '') {
-            $contactInfoLinksRelativePath = $this->contactInfoLinksConfigPath;
-        // } else {
-            // $contactInfoLinksRelativePath = $this->configDirPath . '/contact_info_links.yaml';
-        // }
+        $contactInfoLinksRelativePath = $this->contactInfoLinksConfigPath;
 
         $contactInfoLinksLoader = new ConfiguredSeriesLoader($contactInfoLinksRelativePath);
         $contactInfoLinks = $contactInfoLinksLoader->load();
@@ -214,7 +183,6 @@ class VioletPageRendererPreconfigurator
         $templateParams = array_merge(
             $this->provideSiteConfig(),
             [
-                // 'subpages_url' => ($this->subpagesRelativeUrl ? $this->subpagesRelativeUrl : $this->subpagesUrl),
                 'subpages_url' => $this->subpagesUrl,
                 'assets_dir' => $this->assetsDirPath,
                 'navigation_links' => $this->provideNavigationLinks(),
@@ -225,88 +193,4 @@ class VioletPageRendererPreconfigurator
 
         return $templateParams;
     }
-
-    // public function renderPreconfiguredPage(string $template_name): void
-    // {
-    //     $pageRenderer = $this->prepreconfigurePageRenderer();
-
-    //     $pageRenderer->setTemplateName($template_name);
-
-    //     $pageRenderer->render();
-    // }
-
-    // /**
-    //  * @throws \UnexpectedValueException When preconfiguration contains improper keys.
-    //  */
-    // protected function prepreconfigurePageRenderer(): VioletPageRenderer
-    // {
-    //     $preconfiguration = $this->providePreconfiguration();
-
-    //     $this->validatePreconfiguration($preconfiguration);
-
-    //     // $pageRenderer = new VioletPageRenderer();
-    //     $pageRenderer = $this->pageRenderer;
-    //     $pageRenderer
-    //         ->setTemplatesDirPath($preconfiguration[self::TEMPLATES_DIR_PATH_KEY])
-    //         ->setTemplateSubdirPath($preconfiguration[self::TEMPLATE_LOCAL_PATH_KEY])
-    //         ->setConfigDirPath($preconfiguration[self::CONFIG_DIR_PATH_KEY])
-    //         ->setBaseRelativeUrl($preconfiguration[self::BASE_URL_KEY])
-    //         ->setSubpagesRelativeUrl($preconfiguration[self::SUBPAGES_URL_KEY])
-    //         ->setAssetsDirRelativePath($preconfiguration[self::ASSETS_DIR_PATH_KEY])
-    //         ->setCodeFileExtension($preconfiguration[self::CODE_FILE_EXTENSION_KEY])
-    //         ->setIsDebugMode($preconfiguration[self::IS_DEBUG_MODE_KEY]);
-
-    //     return $pageRenderer;
-    // }
-
-    // /**
-    //  * @throws \UnexpectedValueException When preconfiguration contains improper keys.
-    //  */
-    // private function validatePreconfiguration(array $preconfiguration): void
-    // {
-    //     $this->detectLackingPreconfigurationKeys($preconfiguration);
-    //     $this->detectUnneededPreconfigurationKeys($preconfiguration);
-    // }
-
-    // /**
-    //  * @throws \UnexpectedValueException When preconfiguration lacks some keys.
-    //  */
-    // private function detectLackingPreconfigurationKeys(array $preconfiguration): void
-    // {
-    //     $preconfigurationKeys = $this->providePreconfigurationKeys();
-
-    //     foreach ($preconfigurationKeys as $key) {
-    //         if (! array_key_exists($key, $preconfiguration)) {
-    //             throw new \UnexpectedValueException("Preconfiguration lacks '$key' entry.");
-    //         }
-    //     }
-    // }
-
-    // /**
-    //  * @throws \UnexpectedValueException When preconfiguration has some unneeded keys.
-    //  */
-    // private function detectUnneededPreconfigurationKeys(array $preconfiguration): void
-    // {
-    //     $preconfigurationKeys = $this->providePreconfigurationKeys();
-
-    //     foreach ($preconfiguration as $key => $value) {
-    //         if (! in_array($key, $preconfigurationKeys)) {
-    //             throw new \UnexpectedValueException("Preconfiguration has unneeded '$key' entry.");
-    //         }
-    //     }
-    // }
-
-    // private function providePreconfigurationKeys(): array
-    // {
-    //     return [
-    //         self::TEMPLATES_DIR_PATH_KEY,
-    //         self::TEMPLATE_LOCAL_PATH_KEY,
-    //         self::CONFIG_DIR_PATH_KEY,
-    //         self::BASE_URL_KEY,
-    //         self::SUBPAGES_URL_KEY,
-    //         self::ASSETS_DIR_PATH_KEY,
-    //         self::CODE_FILE_EXTENSION_KEY,
-    //         self::IS_DEBUG_MODE_KEY,
-    //     ];
-    // }
 }
