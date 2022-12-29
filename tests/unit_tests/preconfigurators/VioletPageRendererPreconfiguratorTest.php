@@ -97,27 +97,27 @@ class VioletPageRendererPreconfiguratorTest extends TestCase
 
         $templatesDirPath = __DIR__ . '/../testing_environment/templates';
         $templateSubdirPath = 'subpages';
-        $assetsDirPath = './assets';
+        $templateFileExtension = 'html';
+        $pageFileExtension = 'php';
         $siteConfigPath = __DIR__ . '/../../testing_environment/configs/site_config.yaml';
         $navigationLinksConfigPath = __DIR__ . '/../../testing_environment/configs/navigation_links.yaml';
         $contactInfoLinksConfigPath = __DIR__ . '/../../testing_environment/configs/contact_info_links.yaml';
+        $assetsDirPath = './assets';
         $baseUrl = '.';
         $subpagesUrl = './subpages';
-        $templateFileExtension = 'html';
-        $pageFileExtension = 'php';
         $isDebugMode = true;
 
         $pageRendererPreconfigurator
             ->setTemplatesDirPath($templatesDirPath)
             ->setTemplateSubdirPath($templateSubdirPath)
-            ->setAssetsDirPath($assetsDirPath)
+            ->setTemplateFileExtension($templateFileExtension)
+            ->setPageFileExtension($pageFileExtension)
             ->setSiteConfigPath($siteConfigPath)
             ->setNavigationLinksConfigPath($navigationLinksConfigPath)
             ->setContactInfoLinksConfigPath($contactInfoLinksConfigPath)
+            ->setAssetsDirPath($assetsDirPath)
             ->setBaseUrl($baseUrl)
             ->setSubpagesUrl($subpagesUrl)
-            ->setTemplateFileExtension($templateFileExtension)
-            ->setPageFileExtension($pageFileExtension)
             ->setIsDebugMode($isDebugMode);
 
         $pageRendererPreconfigurator->preconfigurePageRenderer();
@@ -125,64 +125,140 @@ class VioletPageRendererPreconfiguratorTest extends TestCase
         $this->assertEquals($templatesDirPath, $pageRenderer->getProperty('templatesDirPath'));
         $this->assertEquals($templateSubdirPath, $pageRenderer->getProperty('templateSubdirPath'));
         $this->assertEquals($templateFileExtension, $pageRenderer->getProperty('templateFileExtension'));
+        $this->assertEquals([
+            'title' => 'Layin',
+            'site_name' => 'Layin',
+            'description' => 'Layin - general purpose web page layout',
+            'keywords' => 'layin,layout,www,web page',
+            'author' => [
+                'name' => 'katheroine',
+                'email' => 'katheroine@gmail.com',
+            ],
+            'charset' => 'utf-8',
+            'language' => 'english',
+            'copyright_range' => 2022,
+            'subpages_url' => './subpages',
+            'assets_dir' => './assets',
+            'navigation_links' => [
+                [
+                    'css_id' => 'home-link',
+                    'title' => 'Home',
+                    'url_part' => '.',
+                ],
+                [
+                    'css_id' => 'accessibility-info-link',
+                    'title' => 'Accessibility',
+                    'url_part' => 'accessibility_info.php',
+                ],
+                [
+                    'css_id' => 'about-submenu',
+                    'title' => 'About',
+                    'submenu' => [
+                        [
+                            'title' => 'Layin repository',
+                            'url' => 'https://github.com/katheroine/layin',
+                        ],
+                        [
+                            'title' => 'Layin author',
+                            'url' => 'https://about.me/katheroine',
+                        ],
+                    ],
+
+                ],
+                [
+                    'css_id' => 'contact-link',
+                    'title' => 'Contact',
+                    'url_id' => 'contact-info',
+
+                ],
+            ],
+            'contact_info_links' => [
+                [
+                    'css_id' => 'address-link',
+                    'title' => 'address',
+                    'value' => 'al. Wojciecha Korfantego 35, 40-005 Katowice',
+                    'url' => 'https://goo.gl/maps/T84vfoTp8Rdbh6V28',
+                ],
+                [
+                    'css_id' => 'email-action',
+                    'title' => 'e-mail',
+                    'value' => 'layin@gmail.com',
+                    'url' => 'mailto:layin@gmail.com',
+                ],
+                [
+                    'css_id' => 'phone-action',
+                    'title' => 'tel.',
+                    'value' => '(32) 000 00 00',
+                    'url' => 'tel:+4832000000',
+                ],
+                [
+                    'css_id' => 'fax-action',
+                    'title' => 'fax.',
+                    'value' => '(32) 000 00 00',
+                    'url' => 'fax:+48320000000',
+                ],
+            ],
+            'debug' => true,
+
+        ], $pageRenderer->getProperty('templateParams'));
     }
 
-    public function testRenderPreconfiguredPageFunctionExists()
-    {
-        $this->assertTrue(
-            method_exists(
-                'Katheroine\Layin\Preconfigurator\VioletPageRendererPreconfigurator',
-                'renderPreconfiguredPage'
-            )
-        );
-    }
+    // public function testRenderPreconfiguredPageFunctionExists()
+    // {
+    //     $this->assertTrue(
+    //         method_exists(
+    //             'Katheroine\Layin\Preconfigurator\VioletPageRendererPreconfigurator',
+    //             'renderPreconfiguredPage'
+    //         )
+    //     );
+    // }
 
-    public function testRenderPreconfiguredPageReturnsNothing()
-    {
-        $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
+    // public function testRenderPreconfiguredPageReturnsNothing()
+    // {
+    //     $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
 
-        ob_start(); // Doesn't allow to echo rendered template.
-        $result = $pageRenderer->renderPreconfiguredPage('page.twig.html');
-        ob_end_clean();
+    //     ob_start(); // Doesn't allow to echo rendered template.
+    //     $result = $pageRenderer->renderPreconfiguredPage('page.twig.html');
+    //     ob_end_clean();
 
-        $this->assertNull($result);
-    }
+    //     $this->assertNull($result);
+    // }
 
-    public function testRenderPreconfiguredPageWhenPreconfigurationLacksSomeEntry()
-    {
-        $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithLackingEntry();
+    // public function testRenderPreconfiguredPageWhenPreconfigurationLacksSomeEntry()
+    // {
+    //     $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithLackingEntry();
 
-        $this->expectException(\UnexpectedValueException::class);
-        $this->expectExceptionMessage("Preconfiguration lacks 'config_dir_path' entry.");
+    //     $this->expectException(\UnexpectedValueException::class);
+    //     $this->expectExceptionMessage("Preconfiguration lacks 'config_dir_path' entry.");
 
-        $pageRenderer->renderPreconfiguredPage('page.twig.html');
-    }
+    //     $pageRenderer->renderPreconfiguredPage('page.twig.html');
+    // }
 
-    public function testRenderPreconfiguredPageWhenPreconfigurationHasSurplusEntry()
-    {
-        $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithSurplusEntry();
+    // public function testRenderPreconfiguredPageWhenPreconfigurationHasSurplusEntry()
+    // {
+    //     $pageRenderer = new ConcreteVioletPreconfiguredPageRendererWithSurplusEntry();
 
-        $this->expectException(\UnexpectedValueException::class);
-        $this->expectExceptionMessage("Preconfiguration has unneeded 'title' entry.");
+    //     $this->expectException(\UnexpectedValueException::class);
+    //     $this->expectExceptionMessage("Preconfiguration has unneeded 'title' entry.");
 
-        $pageRenderer->renderPreconfiguredPage('page.twig.html');
-    }
+    //     $pageRenderer->renderPreconfiguredPage('page.twig.html');
+    // }
 
-    public function testRenderPreconfiguredPage()
-    {
-        $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
+    // public function testRenderPreconfiguredPage()
+    // {
+    //     $pageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
 
-        ob_start(); // Doesn't allow to echo rendered template.
-        $pageRenderer->renderPreconfiguredPage('violet_template.twig.html');
-        $actualRenderedContent = ob_get_contents();
-        ob_end_clean();
+    //     ob_start(); // Doesn't allow to echo rendered template.
+    //     $pageRenderer->renderPreconfiguredPage('violet_template.twig.html');
+    //     $actualRenderedContent = ob_get_contents();
+    //     ob_end_clean();
 
-        $expectedRenderedContent = file_get_contents(
-            __DIR__ . '/../../testing_environment/results/violet_rendered_page.html'
-        );
+    //     $expectedRenderedContent = file_get_contents(
+    //         __DIR__ . '/../../testing_environment/results/violet_rendered_page.html'
+    //     );
 
-        $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
-    }
+    //     $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
+    // }
 
     protected function accessorsProvider(): array
     {
@@ -190,14 +266,14 @@ class VioletPageRendererPreconfiguratorTest extends TestCase
             ['setPageRenderer', 'Katheroine\\\Layin\\\Renderer\\\AbstractPageRenderer', 'pageRenderer'],
             ['setTemplatesDirPath', 'string', 'templatesDirPath'],
             ['setTemplateSubdirPath', 'string', 'templateSubdirPath'],
-            ['setAssetsDirPath', 'string', 'assetsDirPath'],
+            ['setTemplateFileExtension', 'string', 'templateFileExtension'],
+            ['setPageFileExtension', 'string', 'pageFileExtension'],
             ['setSiteConfigPath', 'string', 'siteConfigPath'],
             ['setNavigationLinksConfigPath', 'string', 'navigationLinksConfigPath'],
             ['setContactInfoLinksConfigPath', 'string', 'contactInfoLinksConfigPath'],
+            ['setAssetsDirPath', 'string', 'assetsDirPath'],
             ['setBaseUrl', 'string', 'baseUrl'],
             ['setSubpagesUrl', 'string', 'subpagesUrl'],
-            ['setTemplateFileExtension', 'string', 'templateFileExtension'],
-            ['setPageFileExtension', 'string', 'pageFileExtension'],
             ['setIsDebugMode', 'bool', 'isDebugMode'],
         ];
     }
