@@ -60,7 +60,9 @@
                 "tests/unit_tests/renderers/",
                 "tests/unit_tests/renderers/concrete_renderer_dummies/",
                 "tests/unit_tests/renderers/preconfigured/",
-                "tests/unit_tests/renderers/preconfigured/concrete_preconfigured_renderer_dummies/"
+                "tests/unit_tests/renderers/preconfigured/concrete_preconfigured_renderer_dummies/",
+                "tests/integration_tests/renderers/preconfigured/",
+                "tests/integration_tests/renderers/preconfigured/concrete_preconfigured_renderer_dummies/"
             ],
             "Katheroine\\Layin\\Preconfigurator\\": [
                 "tests/unit_tests/preconfigurators/",
