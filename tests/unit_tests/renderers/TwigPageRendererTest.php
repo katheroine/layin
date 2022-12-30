@@ -82,6 +82,21 @@ class TwigPageRendererTest extends TestCase
         $pageRenderer->render();
     }
 
+    public function testRenderWhenTemplateContentIsEmpty()
+    {
+        $pageRenderer = new TwigPageRenderer();
+        $pageRenderer
+            ->setTemplatesDirPath(__DIR__ . '/../../testing_environment/templates')
+            ->setTemplateFileExtension('twig.html')
+            ->setTemplateName('empty_page');
+
+            $actualRenderedContent = $pageRenderer->render();
+
+            $expectedRenderedContent = "";
+
+            $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
+    }
+
     public function testRenderWithoutTemplateSubdirPath()
     {
         $pageRenderer = new TwigPageRenderer();
