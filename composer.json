@@ -66,8 +66,7 @@
             ],
             "Katheroine\\Layin\\Preconfigurator\\": [
                 "tests/unit_tests/preconfigurators/",
-                "tests/unit_tests/preconfigurators/concrete_preconfigurator_dummies/",
-                "tests/unit_tests/preconfigurators/concrete_renderer_dummies/"
+                "tests/unit_tests/preconfigurators/concrete_preconfigurator_dummies/"
             ],
             "Katheroine\\Layin\\Console\\": [
                 "tests/unit_tests/console/",

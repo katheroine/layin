@@ -45,6 +45,11 @@ abstract class AbstractVioletPreconfiguredPageRenderer
 
     abstract protected function providePageRenderer(): AbstractPageRenderer;
 
+    /**
+     * Provides associative table with appropriate obligatory keys
+     * corresponding with configuration options
+     * and values used for the preconfiguration preparing.
+     */
     abstract protected function providePreconfiguration(): array;
 
     public function __construct()
@@ -65,7 +70,6 @@ abstract class AbstractVioletPreconfiguredPageRenderer
     public function render()
     {
         $preconfiguration = $this->providePreconfiguration();
-
         $this->validatePreconfiguration($preconfiguration);
 
         $this->pageRendererPreconfigurator
@@ -83,7 +87,9 @@ abstract class AbstractVioletPreconfiguredPageRenderer
 
         $this->pageRendererPreconfigurator->preconfigurePageRenderer();
 
-        return $this->pageRenderer->render();
+        $content = $this->pageRenderer->render();
+
+        return $content;
     }
 
     /**

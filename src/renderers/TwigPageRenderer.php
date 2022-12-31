@@ -37,8 +37,9 @@ class TwigPageRenderer extends AbstractPageRenderer
     public function render()
     {
         $template = $this->loadTemplate();
+        $content = $template->render($this->templateParams);
 
-        return $template->render($this->templateParams);
+        return $content;
     }
 
     protected function loadTemplate(): TemplateWrapper
@@ -51,13 +52,16 @@ class TwigPageRenderer extends AbstractPageRenderer
          * @throws SyntaxError When an error occurred during compilation
          * @throws RuntimeError When an error occurred during rendering
          */
-        $template = $environment->load(
-            $this->templateSubdirPath
-            . $this->templateName
-            . '.'
-            . $this->templateFileExtension
-        );
+        $template = $environment->load($this->buildTemplatePath());
 
         return $template;
+    }
+
+    private function buildTemplatePath(): string
+    {
+        return $this->templateSubdirPath
+            . $this->templateName
+            . '.'
+            . $this->templateFileExtension;
     }
 }

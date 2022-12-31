@@ -90,11 +90,11 @@ class TwigPageRendererTest extends TestCase
             ->setTemplateFileExtension('twig.html')
             ->setTemplateName('empty_page');
 
-            $actualRenderedContent = $pageRenderer->render();
+        $actualRenderedContent = $pageRenderer->render();
 
-            $expectedRenderedContent = "";
+        $expectedRenderedContent = "";
 
-            $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
+        $this->assertEquals($expectedRenderedContent, $actualRenderedContent);
     }
 
     public function testRenderWithoutTemplateSubdirPath()

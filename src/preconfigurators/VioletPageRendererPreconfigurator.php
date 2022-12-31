@@ -14,12 +14,11 @@ namespace Katheroine\Layin\Preconfigurator;
 use Katheroine\Layin\Renderer\AbstractPageRenderer;
 use Katheroine\Layin\Loader\ConfigLoader;
 use Katheroine\Layin\Loader\ConfiguredSeriesLoader;
-use Katheroine\Layin\Renderer\VioletPageRenderer;
 
 /**
- * Page renderer configurator for the Violet theme.
+ * Page renderer preconfigurator for the Violet theme.
  *
- * @package Preconfiguration
+ * @package Preconfigurator
  * @author Katarzyna Krasińska <katheroine@gmail.com>
  * @copyright Copyright (c) 2022 Katarzyna Krasińska
  * @license http://opensource.org/licenses/MIT MIT License
@@ -40,16 +39,6 @@ class VioletPageRendererPreconfigurator
     protected string $baseUrl = '';
     protected string $subpagesUrl = '';
     protected bool $isDebugMode = false;
-
-    /**
-     * Provides associative table with appropriate obligatory keys
-     * corresponding with configuration options
-     * and values used for the preconfiguration preparing.
-     */
-    protected function providePreconfiguration(): array
-    {
-        return [];
-    }
 
     public function setPageRenderer(AbstractPageRenderer $pageRenderer): self
     {
@@ -146,9 +135,7 @@ class VioletPageRendererPreconfigurator
 
     private function provideSiteConfig(): array
     {
-        $siteConfigRelativePath = $this->siteConfigPath;
-
-        $configLoader = new ConfigLoader($siteConfigRelativePath);
+        $configLoader = new ConfigLoader($this->siteConfigPath);
         $siteConfig = $configLoader->load();
 
         return $siteConfig;
@@ -156,9 +143,7 @@ class VioletPageRendererPreconfigurator
 
     private function provideNavigationLinks(): array
     {
-        $navigationLinksRelativePath = $this->navigationLinksConfigPath;
-
-        $navigationLinksLoader = new ConfiguredSeriesLoader($navigationLinksRelativePath);
+        $navigationLinksLoader = new ConfiguredSeriesLoader($this->navigationLinksConfigPath);
         $navigationLinksLoader->setReplacements([
             'base_url' => $this->baseUrl,
             'code_file_extension' => $this->pageFileExtension,
@@ -170,9 +155,7 @@ class VioletPageRendererPreconfigurator
 
     private function provideContactInfoLinks(): array
     {
-        $contactInfoLinksRelativePath = $this->contactInfoLinksConfigPath;
-
-        $contactInfoLinksLoader = new ConfiguredSeriesLoader($contactInfoLinksRelativePath);
+        $contactInfoLinksLoader = new ConfiguredSeriesLoader($this->contactInfoLinksConfigPath);
         $contactInfoLinks = $contactInfoLinksLoader->load();
 
         return $contactInfoLinks;

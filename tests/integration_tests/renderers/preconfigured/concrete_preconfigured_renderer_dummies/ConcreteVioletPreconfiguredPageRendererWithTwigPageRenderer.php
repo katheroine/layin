@@ -25,16 +25,16 @@ class ConcreteVioletPreconfiguredPageRendererWithTwigPageRenderer extends Abstra
 
     protected function providePreconfiguration(): array
     {
-        $relative_path = '/../../../../';
+        $relativePath = '/../../../../';
 
         return [
-            'templates_dir_path' => __DIR__ . $relative_path . 'testing_environment/templates',
+            'templates_dir_path' => __DIR__ . $relativePath . 'testing_environment/templates',
             'template_subdir_path' => '',
             'template_file_extension' => 'twig.html',
             'page_file_extension' => 'php',
-            'site_config_path' => __DIR__ . $relative_path . 'testing_environment/configs/site_config.yaml',
-            'navigation_links_config_path' => __DIR__ . $relative_path . 'testing_environment/configs/navigation_links.yaml',
-            'contact_info_links_config_path' => __DIR__ . $relative_path . 'testing_environment/configs/contact_info_links.yaml',
+            'site_config_path' => __DIR__ . $relativePath . 'testing_environment/configs/site_config.yaml',
+            'navigation_links_config_path' => __DIR__ . $relativePath . 'testing_environment/configs/navigation_links.yaml',
+            'contact_info_links_config_path' => __DIR__ . $relativePath . 'testing_environment/configs/contact_info_links.yaml',
             'base_url' => '.',
             'subpages_url' => './subpages',
             'assets_dir_path' => './assets',

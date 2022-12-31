@@ -15,7 +15,7 @@ use Katheroine\Layin\Renderer\ConcreteVioletPreconfiguredPageRendererWithTwigPag
 use PHPUnit\Framework\TestCase;
 
 /**
- * Preconfigured page renderer for the Violet theme tests.
+ * Preconfigured page renderer for the Violet theme configured with Twing page renderer tests.
  *
  * @package Renderer
  * @author Katarzyna Krasińska <katheroine@gmail.com>

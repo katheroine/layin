@@ -9,11 +9,8 @@
  * file that was distributed with this source code.
  */
 
-namespace Katheroine\Layin\Preconfigurator;
+namespace Katheroine\Layin\Renderer;
 
-use Katheroine\Layin\Renderer\ConcreteVioletPreconfiguredPageRenderer;
-use Katheroine\Layin\Renderer\ConcreteVioletPreconfiguredPageRendererWithLackingEntry;
-use Katheroine\Layin\Renderer\ConcreteVioletPreconfiguredPageRendererWithSurplusEntry;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -109,6 +106,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
     public function testRenderFunction()
     {
         $preconfiguredPageRenderer = new ConcreteVioletPreconfiguredPageRenderer();
+
         $preconfiguredPageRenderer->setTemplateName('site');
 
         $expectedResult = "template name: site\n"

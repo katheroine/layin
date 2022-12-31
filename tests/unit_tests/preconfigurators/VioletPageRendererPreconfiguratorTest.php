@@ -15,9 +15,9 @@ use Katheroine\Layin\Renderer\ConcretePageRenderer;
 use PHPUnit\Framework\TestCase;
 
 /**
- * Page renderer configurator for the Violet theme tests.
+ * Page renderer preconfigurator for the Violet theme tests.
  *
- * @package Preconfiguration
+ * @package Preconfigurator
  * @author Katarzyna Krasińska <katheroine@gmail.com>
  * @copyright Copyright (c) 2022 Katarzyna Krasińska
  * @license http://opensource.org/licenses/MIT MIT License
@@ -52,7 +52,8 @@ class VioletPageRendererPreconfiguratorTest extends TestCase
     {
         $pageRendererPreconfigurator = new ConcreteVioletPageRendererPreconfigurator();
 
-        $result = $pageRendererPreconfigurator->$accessorName($this->provideValueForType($accessorAgrumentType));
+        $accessorArgumentExample = $this->provideValueForType($accessorAgrumentType);
+        $result = $pageRendererPreconfigurator->$accessorName($accessorArgumentExample);
 
         $this->assertSame($pageRendererPreconfigurator, $result);
     }
