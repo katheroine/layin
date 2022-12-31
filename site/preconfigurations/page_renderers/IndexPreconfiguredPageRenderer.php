@@ -23,7 +23,7 @@ class IndexPreconfiguredPageRenderer extends AbstractBasePreconfiguredPageRender
             'site_config_path' => '../../config/site_config.yaml',
             'navigation_links_config_path' => '../../config/navigation_links.yaml',
             'contact_info_links_config_path' => '../../config/contact_info_links.yaml',
-            'base_url' => '.',
+            'base_url' => '../',
             'subpages_url' => 'pages',
             'assets_dir_path' => '../assets',
             'is_debug_mode' => false,

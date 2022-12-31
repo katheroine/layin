@@ -11,20 +11,23 @@
 
 namespace Katheroine\Layin\Demo;
 
-use Katheroine\Layin\Preconfiguration\AbstractVioletPageRendererPreconfigurator;
+use Katheroine\Layin\Preconfiguration\AbstractBasePreconfiguredPageRenderer;
 
-class IndexPreconfiguredPageRenderer extends AbstractVioletPageRendererPreconfigurator
+class IndexPreconfiguredPageRenderer extends AbstractBasePreconfiguredPageRenderer
 {
     protected function providePreconfiguration(): array
     {
         return [
-            'templates_dir_absolute_path' => __DIR__ . '/../../../site/templates',
-            'template_local_path' => '',
-            'config_dir_path' => __DIR__ . '/../../../site/config',
+            'templates_dir_path' => __DIR__ . '/../../../site/templates',
+            'template_subdir_path' => '',
+            'template_file_extension' => 'twig.html',
+            'page_file_extension' => 'html',
+            'site_config_path' => __DIR__ . '/../../../site/config/site_config.yaml',
+            'navigation_links_config_path' => __DIR__ . '/../../../site/config/navigation_links.yaml',
+            'contact_info_links_config_path' => __DIR__ . '/../../../site/config/contact_info_links.yaml',
             'base_url' => '../index.html',
-            'subpages_relative_url' => 'demo',
-            'assets_dir_relative_path' => 'site/public/assets',
-            'code_file_extension' => 'html',
+            'subpages_url' => 'demo',
+            'assets_dir_path' => 'site/public/assets',
             'is_debug_mode' => false,
         ];
     }
