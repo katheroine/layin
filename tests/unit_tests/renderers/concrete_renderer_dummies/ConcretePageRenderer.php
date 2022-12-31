@@ -18,16 +18,19 @@ namespace Katheroine\Layin\Renderer;
  */
 class ConcretePageRenderer extends AbstractPageRenderer
 {
-    protected function provideTemplateParams(): array
+    public function render(): string
     {
-        return [
-            'language' => 'english',
-            'description' => 'All purpose web page layout',
-            'keywords' => 'layout, web page',
-            'author' => [
-                'name' => 'usagi',
-                'email' => 'usagi@moon.com'
-            ]
-        ];
+        $content = 'template name: ' . $this->templateName . "\n"
+            . 'templates dir path: ' . $this->templatesDirPath . "\n"
+            . 'template subdir path: ' . $this->templateSubdirPath . "\n"
+            . 'template file extension: ' . $this->templateFileExtension . "\n"
+            . "template params: \n" . implode("\n", explode(',', json_encode($this->templateParams)));
+
+        return $content;
+    }
+
+    public function getProperty(string $propertyName)
+    {
+        return $this->$propertyName;
     }
 }

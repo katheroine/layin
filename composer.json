@@ -33,17 +33,18 @@
                 "src/loaders/"
             ],
             "Katheroine\\Layin\\Renderer\\": [
-                "src/renderers/"
+                "src/renderers/",
+                "src/renderers/preconfigured/"
             ],
-            "Katheroine\\Layin\\Preconfiguration\\": [
-                "src/preconfigurations/",
-                "src/preconfigurations/page_renderers/",
-                "site/preconfigurations/",
-                "site/preconfigurations/page_renderers/"
+            "Katheroine\\Layin\\Preconfigurator\\": [
+                "src/preconfigurators/"
             ],
             "Katheroine\\Layin\\Console\\": [
                 "src/console/",
                 "src/console/commands/"
+            ],
+            "Katheroine\\Layin\\Preconfiguration\\": [
+                "site/preconfigurations/page_renderers/"
             ]
         }
     },
@@ -57,12 +58,15 @@
             ],
             "Katheroine\\Layin\\Renderer\\": [
                 "tests/unit_tests/renderers/",
-                "tests/unit_tests/renderers/concrete_renderer_dummies/"
+                "tests/unit_tests/renderers/concrete_renderer_dummies/",
+                "tests/unit_tests/renderers/preconfigured/",
+                "tests/unit_tests/renderers/preconfigured/concrete_preconfigured_renderer_dummies/",
+                "tests/integration_tests/renderers/preconfigured/",
+                "tests/integration_tests/renderers/preconfigured/concrete_preconfigured_renderer_dummies/"
             ],
-            "Katheroine\\Layin\\Preconfiguration\\": [
-                "tests/unit_tests/preconfigurations/",
-                "tests/unit_tests/preconfigurations/page_renderers/",
-                "tests/unit_tests/preconfigurations/page_renderers/concrete_renderer_dummies/"
+            "Katheroine\\Layin\\Preconfigurator\\": [
+                "tests/unit_tests/preconfigurators/",
+                "tests/unit_tests/preconfigurators/concrete_preconfigurator_dummies/"
             ],
             "Katheroine\\Layin\\Console\\": [
                 "tests/unit_tests/console/",

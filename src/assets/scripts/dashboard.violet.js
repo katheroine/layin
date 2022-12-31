@@ -127,7 +127,7 @@ function handleScrollingUpForGuideboardVisibility()
     }
 }
 
-function adjustBodyToNavigation() 
+function adjustBodyToNavigation()
 {
     let body = document.getElementsByTagName("body")[0];
     let bodyHeight = body.getBoundingClientRect().height;
