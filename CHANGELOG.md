@@ -34,3 +34,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fix navigation bug, when the document body was too small.
 - Fix overflowing header banner bug, when its content were too long.
+
+## [0.3.0] - 2023-01-01
+### Added
+- Possibility of configuration the concrete page renderer by the concrete preconfigured page renderers.
+### Changed
+- All paths of the config files must be configured separately in the preconfiguration.

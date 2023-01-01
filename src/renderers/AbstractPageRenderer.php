@@ -11,15 +11,6 @@
 
 namespace Katheroine\Layin\Renderer;
 
-use Twig\Loader\FilesystemLoader;
-use Twig\Environment;
-use Twig\TemplateWrapper;
-use Twig\Error\LoaderError;
-use Twig\Error\SyntaxError;
-use Twig\Error\RuntimeError;
-use Katheroine\Layin\ConfigLoader;
-use Katheroine\Layin\PreconfiguredSeriesLoader;
-
 /**
  * Page renderer.
  *
@@ -31,22 +22,31 @@ use Katheroine\Layin\PreconfiguredSeriesLoader;
  */
 abstract class AbstractPageRenderer
 {
-    private string $templatesDirAbsolutePath = '';
-    private string $templateLocalPath = '';
-    private string $templateName = '';
+    protected string $templatesDirPath = '';
+    protected string $templateSubdirPath = '';
+    protected string $templateFileExtension = '';
+    protected string $templateName = '';
+    protected array $templateParams = [];
 
-    abstract protected function provideTemplateParams(): array;
+    abstract public function render();
 
-    public function setTemplatesDirAbsolutePath(string $templatesDirAbsolutePath): self
+    public function setTemplatesDirPath(string $templatesDirPath): self
     {
-        $this->templatesDirAbsolutePath = $templatesDirAbsolutePath;
+        $this->templatesDirPath = $templatesDirPath;
 
         return $this;
     }
 
-    public function setTemplateLocalPath(string $templateLocalPath): self
+    public function setTemplateSubdirPath(string $templateSubdirPath): self
     {
-        $this->templateLocalPath = $templateLocalPath;
+        $this->templateSubdirPath = $templateSubdirPath;
+
+        return $this;
+    }
+
+    public function setTemplateFileExtension(string $templateFileExtension): self
+    {
+        $this->templateFileExtension = $templateFileExtension;
 
         return $this;
     }
@@ -58,32 +58,10 @@ abstract class AbstractPageRenderer
         return $this;
     }
 
-    /**
-     * @throws LoaderError When the template cannot be found
-     * @throws SyntaxError When an error occurred during compilation
-     * @throws RuntimeError When an error occurred during rendering
-     */
-    public function render()
+    public function setTemplateParams(array $templateParams): self
     {
-        $template = $this->loadTemplate();
-        echo $template->render($this->provideTemplateParams());
-    }
+        $this->templateParams = $templateParams;
 
-    private function loadTemplate(): TemplateWrapper
-    {
-        $loader = new FilesystemLoader($this->templatesDirAbsolutePath);
-        $environment = new Environment($loader);
-
-        /**
-         * @throws LoaderError When the template cannot be found
-         * @throws SyntaxError When an error occurred during compilation
-         * @throws RuntimeError When an error occurred during rendering
-         */
-        $template = $environment->load(
-            $this->templateLocalPath
-            . $this->templateName
-        );
-
-        return $template;
+        return $this;
     }
 }
