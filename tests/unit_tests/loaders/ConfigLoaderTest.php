@@ -26,12 +26,6 @@ use Katheroine\Layin\Loader\AbstractConfigLoaderTest;
  */
 class ConfigLoaderTest extends AbstractConfigLoaderTest
 {
-    /**
-     * Relative path of directory with file fixtures
-     * used in tests.
-     */
-    private const FILE_FIXTURES_RELATIVE_PATH = '../../testing_environment/config_sources';
-
     public function testConfigLoaderClassExists()
     {
         $this->assertTrue(
@@ -56,7 +50,7 @@ class ConfigLoaderTest extends AbstractConfigLoaderTest
         $filePath = $this->buildFileFixturePath('nonexistent');
 
         $this->expectException('\ValueError');
-        $this->expectExceptionMessage('File given by path does not exist.');
+        $this->expectExceptionMessage("File given by path {$filePath} does not exist.");
 
         $loader = new ConfigLoader($filePath);
     }
