@@ -128,6 +128,7 @@ class AbstractVioletPreconfiguredPageRendererTest extends TestCase
             . "\"charset\":\"utf-8\"\n"
             . "\"language\":\"english\"\n"
             . "\"copyright_range\":2022\n"
+            . "\"base_url\":\".\"\n"
             . "\"subpages_url\":\".\/subpages\"\n"
             . "\"assets_dir\":\".\/assets\"\n"
             . "\"navigation_links\":[{\"css_id\":\"home-link\"\n"
