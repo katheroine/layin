@@ -13,6 +13,8 @@
       url_part: layouts/board/two_columns.layin.[[code_file_extension]]
     - title: Three columns
       url_part: layouts/board/three_columns.layin.[[code_file_extension]]
+    - title: Content
+      url_part: layouts/content/content.layin.[[code_file_extension]]
 - css_id: about-submenu
   title: About
   submenu:
