@@ -1,103 +1,50 @@
-.demo-layouts img
+/* :root
 {
-  max-width: 100%;
+  --content-width: var(--general-width);
+  --content-margin-vertical: var(--general-vertical-hem);
+  --content-margin-horizontal: var(--general-horizontal-hem);
+  --content-border-radius: 5px;
+  --content-indent: 0;
+  --list-indent: 30px;
+  --list-indent-reset: -30px;
+} */
+
+.special
+{
+  background-color: var(--special-background-color);
+  color: var(--special-font-color);
 }
 
-@media only screen and (min-width: 0px) {
-  .demo-layouts p,
-  .demo-layouts h1,
-  .demo-layouts h2,
-  .demo-layouts h3,
-  .demo-layouts h4,
-  .demo-layouts h5,
-  .demo-layouts h6,
-  .demo-layouts img
-  {
-    margin-bottom: 10px;
-  }
-
-  .demo-layouts p
-  {
-    font-size: 100%
-  }
-
-  .demo-layouts h1
-  {
-    font-size: 190%;
-  }
-
-  .demo-layouts h2
-  {
-    font-size: 160%;
-  }
-
-  .demo-layouts h3
-  {
-    font-size: 140%
-  }
-
-  .demo-layouts h4
-  {
-    font-size: 120%;
-  }
-
-  .demo-layouts h5
-  {
-    font-size: 110%
-  }
-
-  .demo-layouts h6
-  {
-    font-size: 100%;
-  }
-
-  .demo-layouts img
-  {
-    display: block;
-    width: 300px;
-    max-height: 400px;
-    margin-left: auto;
-    margin-right: auto;
-  }
+.normal
+{
+  background-color: var(--normal-background-color);
+  color: var(--normal-font-color);
 }
 
-@media only screen and (min-width: 640px) {
-  .demo-layouts main
-  {
-    font-size: 100%;
-  }
-
-  .demo-layouts #promo,
-  .demo-layouts #demo
-  {
-    font-size: 90%;
-  }
-
-  .demo-layouts.two-columns #promo img,
-  .demo-layouts.three-columns #promo img
-  {
-    width: 200px;
-    max-height: 400px;
-    margin-left: 0;
-    margin-right: 0;
-  }
+.show
+{
+  border-radius: var(--content-border-radius);
+  background-color: #181c32;
+  align-items: center;
 }
 
-@media only screen and (min-width: 1024px) {
-  .demo-layouts main
-  {
-    font-size: 95%;
-  }
+.panel
+{
+  margin: 0;
+  padding: 0;
+}
 
-  .demo-layouts #promo,
-  .demo-layouts #demo
-  {
-    font-size: 90%;
-  }
+.reset
+{
+  overflow: auto;
+}
 
-  .demo-layouts.two-columns #promo img,
-  .demo-layouts.three-columns #promo img
-  {
-    width: 100%;
-  }
+article
+{
+  display: block;
+  overflow: auto;
+  margin: 10px 0 20px 0;
+  padding: 0;
+  color: var(--article-font-color);
+  font-size: 100%;
 }

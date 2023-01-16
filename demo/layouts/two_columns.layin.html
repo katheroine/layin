@@ -7,27 +7,27 @@
     <meta name="description" content="Layin - general purpose web page layout">
     <meta name="keywords" content="layin,layout,www,web page">
     <meta name="author" content="katheroine <katheroine@gmail.com>">
-    <link type="image/x-icon" rel="shortcut icon" href="../../../site/public/assets/images/favicon.ico">
-            <link type="text/css" rel="stylesheet" href="../../../site/public/assets/stylesheets/site.violet.css">
-    <link type="text/css" rel="stylesheet" href="../../../site/public/assets/stylesheets/site-accessibility.violet.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="../../../site/public/assets/stylesheets/site-s.violet.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="../../../site/public/assets/stylesheets/site-m.violet.css">
-    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="../../../site/public/assets/stylesheets/site-l.violet.css">
-                <link type="text/css" rel="stylesheet" href="../../../site/public/assets/stylesheets/colors.layin.css">
-    <link type="text/css" rel="stylesheet" href="../../../site/public/assets/stylesheets/fonts.layin.css">
-    <link type="text/css" rel="stylesheet" href="../../../site/public/assets/stylesheets/colors-site.layin.css">
-    <link type="text/css" rel="stylesheet" href="../../../site/public/assets/stylesheets/colors-site-accessibility.layin.css">
-    <link type="text/css" rel="stylesheet" href="../../../site/public/assets/stylesheets/link-icons.layin.css">
-    <link type="text/css" rel="stylesheet" href="../../../site/public/assets/stylesheets/content.layin.css">
-                        <script src="../../../site/public/assets/scripts/dashboard.violet.js"></script>
-    <script src="../../../site/public/assets/scripts/accessibility.violet.js"></script>
+    <link type="image/x-icon" rel="shortcut icon" href="../../site/public/assets/images/favicon.ico">
+            <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/site.violet.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/site-accessibility.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="../../site/public/assets/stylesheets/site-s.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="../../site/public/assets/stylesheets/site-m.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="../../site/public/assets/stylesheets/site-l.violet.css">
+                <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/colors.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/fonts.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/colors-site.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/colors-site-accessibility.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/link-icons.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/content.layin.css">
+                        <script src="../../site/public/assets/scripts/dashboard.violet.js"></script>
+    <script src="../../site/public/assets/scripts/accessibility.violet.js"></script>
         <title>Layin</title>
   </head>
   <body onload="restoreAccessibility(); handleDashboard();">
     <header onclick="foldNavigation();">
         <div id="banner">
   <div id="signboard">
-    <a id="logo"><img src="../../../site/public/assets/images/logo.png" alt="Layin logo"></a>
+    <a id="logo" href="../../index.html"><img src="../../site/public/assets/images/logo.png" alt="Layin logo"></a>
     <div id="site-name">
       Layin <span id="site-description">General purpose layout</span>
     </div>
@@ -49,14 +49,14 @@
 <nav>
     <div class="navigation-item">
     <a id="home-link" class="menu-button icon "
-        href="../../../index.html"
+        href="../../index.html"
     >
       <div class="content">Home</div>
     </a>
       </div>
     <div class="navigation-item">
     <a id="accessibility-info-link" class="menu-button icon "
-        href="../../accessibility_info.php"
+        href="../accessibility_info.php"
     >
       <div class="content">Accessibility</div>
     </a>
@@ -69,19 +69,24 @@
     </a>
         <div class="submenu">
             <a class="menu-button sub"
-            href="../../layouts/board/one_column.layin.html"
+            href="../layouts/one_column.layin.html"
       >
         <div class="content">One column</div>
       </a>
             <a class="menu-button sub"
-            href="../../layouts/board/two_columns.layin.html"
+            href="../layouts/two_columns.layin.html"
       >
         <div class="content">Two columns</div>
       </a>
             <a class="menu-button sub"
-            href="../../layouts/board/three_columns.layin.html"
+            href="../layouts/three_columns.layin.html"
       >
         <div class="content">Three columns</div>
+      </a>
+            <a class="menu-button sub"
+            href="../layouts/content/content.layin.html"
+      >
+        <div class="content">Content</div>
       </a>
           </div>
       </div>
@@ -149,7 +154,7 @@
 </div>
         </div>
     <div id="board" onclick="foldNavigation();">
-    <div id="liner" class="demo-layouts three-columns">
+    <div id="liner" class="demo-layouts two-columns">
   <main>
     <article>
       <h1>Lorem ipsum</h1>
@@ -203,43 +208,22 @@
       </p>
     </article>
   </main>
-  <aside id="demo">
-    <h4>Convallis erat</h4>
-    <img src="../../../site/public/assets/images/panels/bubbles.svg">
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis eros gravida, tincidunt arcu eget, convallis erat.
-        Suspendisse at rutrum tellus. Donec at lorem dignissim, euismod tellus vel, pellentesque leo.
-    </p>
-    <h5>Donec quis eros gravida</h5>
-    <img src="../../../site/public/assets/images/panels/stars.svg">
-    <p>
-      Integer sit amet commodo nibh, vehicula congue eros.
-      Mauris dapibus arcu eget efficitur malesuada. Suspendisse feugiat sem a tempus bibendum. Nulla tincidunt orci molestie interdum semper.
-      Etiam volutpat est augue, eget laoreet tellus faucibus sollicitudin.
-    </p>
-    <h6>Tincidunt arcu eget</h6>
-    <img src="../../../site/public/assets/images/panels/flowers.svg">
-    <p>
-      Donec cursus ac arcu sit amet congue.
-      Morbi mi metus, eleifend ut scelerisque vitae, pellentesque id ex.
-    </p>
-  </aside>
   <aside id="promo">
     <h4>Donec quis eros gravida</h4>
-    <img src="../../../site/public/assets/images/panels/stars.svg">
+    <img src="../../site/public/assets/images/panels/stars.svg">
     <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec quis eros gravida, tincidunt arcu eget, convallis erat.
         Suspendisse at rutrum tellus. Donec at lorem dignissim, euismod tellus vel, pellentesque leo.
     </p>
     <h5>Tincidunt arcu eget</h5>
-    <img src="../../../site/public/assets/images/panels/flowers.svg">
+    <img src="../../site/public/assets/images/panels/flowers.svg">
     <p>
       Integer sit amet commodo nibh, vehicula congue eros.
       Mauris dapibus arcu eget efficitur malesuada. Suspendisse feugiat sem a tempus bibendum. Nulla tincidunt orci molestie interdum semper.
       Etiam volutpat est augue, eget laoreet tellus faucibus sollicitudin.
     </p>
     <h6>Convallis erat</h6>
-    <img src="../../../site/public/assets/images/panels/bubbles.svg">
+    <img src="../../site/public/assets/images/panels/bubbles.svg">
     <p>
       Donec cursus ac arcu sit amet congue.
       Morbi mi metus, eleifend ut scelerisque vitae, pellentesque id ex.

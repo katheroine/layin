@@ -11,18 +11,18 @@
 
 namespace Katheroine\Layin\Preconfiguration;
 
-class LayoutsBoardPreconfiguredPageRenderer extends AbstractBasePreconfiguredPageRenderer
+class LayoutsPreconfiguredPageRenderer extends AbstractBasePreconfiguredPageRenderer
 {
     protected function providePreconfiguration(): array
     {
         return [
             'templates_dir_path' => __DIR__ . '/../../templates',
-            'template_subdir_path' => 'layouts/board/',
+            'template_subdir_path' => 'layouts/',
             'template_file_extension' => 'twig.html',
             'page_file_extension' => 'php',
-            'site_config_path' => '../../../../config/site_config.yaml',
-            'navigation_links_config_path' => '../../../../config/navigation_links.yaml',
-            'contact_info_links_config_path' => '../../../../config/contact_info_links.yaml',
+            'site_config_path' => '../../../config/site_config.yaml',
+            'navigation_links_config_path' => '../../../config/navigation_links.yaml',
+            'contact_info_links_config_path' => '../../../config/contact_info_links.yaml',
             'base_url' => '../../..',
             'subpages_url' => '../../../pages',
             'assets_dir_path' => '../../../assets',
