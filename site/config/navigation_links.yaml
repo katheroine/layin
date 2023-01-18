@@ -29,15 +29,19 @@
   title: Favourites
   submenu:
     - title: Linux Mint
-      url: https://linuxmint.com
+      url: https://linuxmint.com/
     - title: Atom
-      url: https://atom.io
+      url: https://atom.io/
+    - title: Visual Studio Code
+      url: https://code.visualstudio.com/
     - title: Inkscape
       url: https://inkscape.org
     - title: Git
       url: https://git-scm.com
     - title: GitHub
       url: https://github.com/
+    - title: Pexels
+      url: https://www.pexels.com/
 - css_id: contact-link
   title: Contact
   url_id: contact-info
