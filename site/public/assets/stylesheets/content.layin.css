@@ -1,50 +1,144 @@
-/* :root
+:root
 {
-  --content-width: var(--general-width);
-  --content-margin-vertical: var(--general-vertical-hem);
-  --content-margin-horizontal: var(--general-horizontal-hem);
-  --content-border-radius: 5px;
-  --content-indent: 0;
-  --list-indent: 30px;
-  --list-indent-reset: -30px;
-} */
-
-.special
-{
-  background-color: var(--special-background-color);
-  color: var(--special-font-color);
+  --content-width: var(--width);
 }
 
-.normal
+main article .normal
 {
-  background-color: var(--normal-background-color);
-  color: var(--normal-font-color);
+  background-color: var(--content-normal-background-color);
+  color: var(--content-normal-font-color);
 }
 
-.show
+main article .special,
+main article .show
 {
   border-radius: var(--content-border-radius);
-  background-color: #181c32;
+  background-color: var(--content-special-background-color);
+  color: var(--content-special-font-color);
+  overflow: auto;
+}
+
+main article .special
+{
+  padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
+}
+
+main article .show
+{
   align-items: center;
 }
 
-.panel
-{
-  margin: 0;
-  padding: 0;
-}
+/* headers & content blocks */
 
-.reset
+main article h1,
+main article h2,
+main article h3,
+main article h4,
+main article h5,
+main article h6,
+main article p,
+main article blockquote,
+main article address,
+main article details,
+main article table,
+main article ul,
+main article ol,
+main article dl,
+main article div.cite,
+main article div.info,
+main article div.alert,
+main article div.definition,
+main article div.code,
+main article div.terminal,
+main article pre,
+main article img,
+main article audio,
+main article video,
+main article figure,
+main article div.showpiece,
+main article div.video,
+main article div.show,
+main article div.read_more,
+main article a.document
 {
-  overflow: auto;
-}
-
-article
-{
-  display: block;
-  overflow: auto;
-  margin: 10px 0 20px 0;
-  padding: 0;
-  color: var(--article-font-color);
+  margin: var(--content-margin-horizontal) var(--content-margin-vertical);
   font-size: 100%;
+}
+
+/* headers */
+
+main article h1
+{
+  font-size: 180%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main article h2
+{
+  font-size: 160%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main article h3
+{
+  font-size: 140%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main article h4
+{
+  font-size: 120%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main article h5
+{
+  font-size: 100%;
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article h6
+{
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+/* content blocks */
+
+main article p,
+main article blockquote
+{
+  text-indent: var(--content-indent);
+}
+
+main article p.special,
+main article blockquote.special,
+main article div.cite.spacial
+{
+  border-radius: var(--content-border-radius);
+}
+
+main article blockquote,
+main article div.cite
+{
+  font-style: italic;
+}
+
+main article address
+{
+  text-align: right;
+  font-size: 100%;
+  font-style: normal;
+}
+
+main article details
+{
+  text-indent: var(--content-indent);
 }

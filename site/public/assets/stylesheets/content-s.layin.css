@@ -1,0 +1,16 @@
+:root
+{
+  --content-border-radius: 5px;
+  --content-margin-vertical: 0;
+  --content-margin-horizontal: 18px;
+  --content-blocks-padding-vertical: 14px;
+  --content-blocks-padding-horizontal: 12px;
+  --content-indent: 0;
+  --list-indent: 30px;
+  --list-indent-reset: -30px;
+}
+
+main
+{
+  font-size: 14px;
+}

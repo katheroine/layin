@@ -1,0 +1,7 @@
+:root
+{
+    --content-special-background-color: var(--middle-blue);
+    --content-special-font-color: var(--white);
+    --content-normal-background-color: var(--white);
+    --content-normal-font-color: var(--dark-blue);
+}
