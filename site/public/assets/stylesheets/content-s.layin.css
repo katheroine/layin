@@ -5,6 +5,8 @@
   --content-margin-horizontal: 18px;
   --content-blocks-padding-vertical: 14px;
   --content-blocks-padding-horizontal: 12px;
+  --content-cells-padding-vertical: 10px;
+  --content-cells-padding-horizontal: 6px;
   --content-indent: 0;
   --list-indent: 30px;
   --list-indent-reset: -30px;

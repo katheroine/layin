@@ -142,3 +142,117 @@ main article details
 {
   text-indent: var(--content-indent);
 }
+
+/* tables */
+
+main article table
+{
+  width: 100%;
+  table-layout: fixed;
+  caption-side: bottom;
+  empty-cells: show;
+  border-collapse: separate;
+  border-spacing: 1px;
+  background-color: var(--content-table-normal-border-color);
+  border-radius: var(--content-border-radius);
+}
+
+main article table.special
+{
+  border-collapse: collapse;
+}
+
+main article table caption
+{
+  padding: var(--content-cells-padding-horizontal) var(--content-cells-padding-vertical);
+  text-align: right;
+  font-size: 90%;
+}
+
+main article table caption > em
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article table.special caption
+{
+  color: var(--content-normal-font-color);
+}
+
+main article table th,
+main article table td
+{
+  padding: var(--content-cells-padding-horizontal) var(--content-cells-padding-vertical);
+  vertical-align: baseline;
+  background-color: var(--content-normal-background-color);
+  border-radius: 0;
+}
+
+main article table th
+{
+  text-align: left;
+}
+
+main article table tbody tr:first-of-type th:first-child,
+main article table thead tr:first-of-type th:first-child,
+main article table tbody tr:first-of-type td:first-child
+{
+  border-top-left-radius: var(--content-border-radius);
+}
+
+main article table:has(thead) tbody tr:first-of-type td:first-child
+{
+  border-top-left-radius: 0;
+}
+
+main article table tbody tr:first-of-type th:last-child,
+main article table thead tr:first-of-type th:last-child,
+main article table tbody tr:first-of-type td:last-child
+{
+  border-top-right-radius: var(--content-border-radius);
+}
+
+main article table:has(thead) tbody tr:first-of-type td:last-child
+{
+  border-top-right-radius: 0;
+}
+
+main article table tbody tr:last-of-type th:first-child,
+main article table tfoot tr:last-of-type th:first-child,
+main article table tr:last-of-type td:first-child
+{
+  border-bottom-left-radius: var(--content-border-radius);
+}
+
+main article table:has(tfoot) tr:last-of-type td:first-child
+{
+  border-bottom-left-radius: 0;
+}
+
+main article table tbody tr:last-of-type th:last-child,
+main article table tfoot tr:last-of-type th:last-child,
+main article table tbody tr:last-of-type td:last-child
+{
+  border-bottom-right-radius: var(--content-border-radius);
+}
+
+main article table:has(tfoot) tbody tr:last-of-type td:last-child
+{
+  border-bottom-right-radius: 0;
+}
+
+main article table.special th
+{
+  background-color: var(--content-table-special-background-header-color);
+}
+
+main article table.special tr:nth-child(odd) td
+{
+  background-color: var(--content-table-special-background-odd-row-color);
+}
+
+main article table.special tr:nth-child(even) td
+{
+  background-color: var(--content-table-special-background-even-row-color);
+}

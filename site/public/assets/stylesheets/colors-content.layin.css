@@ -4,4 +4,9 @@
     --content-special-font-color: var(--white);
     --content-normal-background-color: var(--white);
     --content-normal-font-color: var(--dark-blue);
+
+    --content-table-normal-border-color: var(--dark-blue);
+    --content-table-special-background-header-color: var(--dark-blue);
+    --content-table-special-background-odd-row-color: var(--middle-blue);
+    --content-table-special-background-even-row-color: var(--light-blue);
 }
