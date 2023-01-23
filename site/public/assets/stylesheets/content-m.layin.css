@@ -8,8 +8,8 @@
   --content-cells-padding-vertical: 12px;
   --content-cells-padding-horizontal: 8px;
   --content-indent: 0;
-  --list-indent: 32px;
-  --list-indent-reset: -32px;
+  --content-list-indent: 20px;
+  --content-list-indent-reset: -20px;
 }
 
 main

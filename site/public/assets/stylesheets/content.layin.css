@@ -256,3 +256,58 @@ main article table.special tr:nth-child(even) td
 {
   background-color: var(--content-table-special-background-even-row-color);
 }
+
+/* lists */
+
+main article ul,
+main article ol
+{
+  padding-left: var(--content-list-indent);
+  list-style-position: outside;
+}
+
+main article ul.special,
+main article ol.special
+{
+  padding-left: calc(var(--content-blocks-padding-vertical) + var(--content-list-indent));
+}
+
+main article ul
+{
+  list-style-type: disc;
+}
+
+main article ol
+{
+  list-style-type: decimal;
+}
+
+main article ul li
+{
+  padding-left: 0;
+}
+
+main article ol li
+{
+  padding-left: 0.2rem;
+}
+
+main article ol.blank li,
+main article ul.blank li,
+main article li.skipped
+{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: var(--content-list-indent-reset);
+}
+
+main article ul ul,
+main article ol ul,
+main article ul ol,
+main article ol ol
+{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
