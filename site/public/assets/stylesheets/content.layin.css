@@ -23,6 +23,16 @@ main article .special
   padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
 }
 
+main article .special :first-child
+{
+  margin-top: 0;
+}
+
+main article .special :last-child
+{
+  margin-bottom: 0;
+}
+
 main article .show
 {
   align-items: center;
@@ -310,4 +320,23 @@ main article ol ol
   margin-bottom: 0;
   padding-top: 0;
   padding-bottom: 0;
+}
+
+/* definition lists */
+
+main article dl
+{
+  padding: 0 var(--content-margin-vertical);
+}
+
+main article dl dt
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article dl dd
+{
+  margin-left: var(--content-list-indent);
+  margin-bottom: var(--content-margin-horizontal);
 }
