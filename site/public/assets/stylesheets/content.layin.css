@@ -340,3 +340,134 @@ main article dl dd
   margin-left: var(--content-list-indent);
   margin-bottom: var(--content-margin-horizontal);
 }
+
+/* definitions, code & messages */
+
+main article div.definition,
+main article div.code,
+main article div.terminal,
+main article pre,
+main article div.alert,
+main article div.warning,
+main article div.info
+{
+  padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
+  border-radius: var(--content-border-radius);
+  overflow: auto;
+}
+
+/* definitions */
+
+main article div.definition
+{
+  background-color: var(--content-definition-background-color);
+  color: var(--content-definition-font-color);
+  border: 1px dashed var(--content-definition-border-color);
+  font-style: normal;
+}
+
+main article div.definition.special
+{
+  background-color: var(--content-special-background-color);
+  color: var(--content-special-font-color);
+  border-color: var(--content-special-background-color);
+}
+
+main article div.definition > em
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* code */
+
+main article div.terminal,
+main article div.code,
+main article pre
+{
+  font-family: monospace;
+  font-size: 80%;
+}
+
+main article div.terminal
+{
+  background-color: var(--content-terminal-background-color);
+  color: var(--content-terminal-font-color);
+}
+
+main article div.terminal > em
+{
+  color: var(--content-terminal-prompt-font-color);
+  font-style: normal;
+  font-weight: bold;
+}
+
+main article div.code,
+main article pre
+{
+  background-color: var(--content-code-background-color);
+  color: var(--content-code-font-color);
+  border: 1px dashed var(--content-code-border-color);
+}
+
+/* messages */
+
+main article div.alert::before,
+main article div.warning::before,
+main article div.info::before
+{
+  content: '';
+  display: inline-block;
+  float: left;
+  align-self: center;
+  margin: 0 var(--content-cells-padding-vertical) var(--content-cells-padding-horizontal) 0;
+  width: var(--menu-button-icon-size);
+  height: var(--menu-button-icon-size);
+  background-size: var(--menu-button-icon-size);
+  background-position: top left;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+main article div.alert
+{
+  background-color: var(--content-alert-background-color);
+  color: var(--content-alert-font-color);
+}
+
+main article div.alert::before
+{
+  background-image: url('../images/icons.violet/exclamation_mark_circle.svg');
+}
+
+main article div.warning
+{
+  background-color: var(--content-warning-background-color);
+  color: var(--content-warning-font-color);
+}
+
+main article div.warning::before
+{
+  background-image: url('../images/icons.violet/exclamation_mark_square.svg');
+}
+
+main article div.info
+{
+  background-color: var(--content-info-background-color);
+  color: var(--content-info-font-color);
+}
+
+main article div.info::before
+{
+  background-image: url('../images/icons.violet/i.svg');
+}
+
+/* dates */
+
+article div.date
+{
+  padding: 5px;
+  border-top: 1px solid var(--dark-blue);
+  font-size: 90%;
+  text-align: right;
+}

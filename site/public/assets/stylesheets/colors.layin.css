@@ -1,6 +1,7 @@
 :root
 {
   --white: #ffffff;
+  --black: #000000;
   --dark-blue: #0b1527;
   --middle-blue: #1c2c4a;
   --light-blue: #253757;
@@ -8,4 +9,8 @@
   --middle-violet: #562f71;
   --light-violet: #624079;
   --amaranthine: #6e005f;
+  --cybergreen: #17ffa9;
+  --skyblue: #0081c7;
+  --orangeyellow: #f17e00;
+  --orangered: #e24600;
 }

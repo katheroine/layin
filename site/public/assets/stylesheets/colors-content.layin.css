@@ -1,12 +1,33 @@
 :root
 {
-    --content-special-background-color: var(--middle-blue);
-    --content-special-font-color: var(--white);
     --content-normal-background-color: var(--white);
     --content-normal-font-color: var(--dark-blue);
+    --content-normal-border-color: var(--middle-blue);
+    --content-special-background-color: var(--middle-blue);
+    --content-special-font-color: var(--white);
+    --content-special-border-color: var(--white);
 
     --content-table-normal-border-color: var(--dark-blue);
     --content-table-special-background-header-color: var(--dark-blue);
     --content-table-special-background-odd-row-color: var(--middle-blue);
     --content-table-special-background-even-row-color: var(--light-blue);
+
+    --content-definition-background-color: var(--white);
+    --content-definition-font-color: var(--dark-blue);
+    --content-definition-border-color: var(--light-blue);
+
+    --content-terminal-background-color: var(--black);
+    --content-terminal-font-color: var(--white);
+    --content-terminal-prompt-font-color: var(--cybergreen);
+
+    --content-code-background-color: var(--dark-blue);
+    --content-code-font-color: var(--white);
+    --content-code-border-color: var(--white);
+
+    --content-alert-background-color: var(--orangered);
+    --content-alert-font-color: var(--white);
+    --content-warning-background-color: var(--orangeyellow);
+    --content-warning-font-color: var(--white);
+    --content-info-background-color: var(--skyblue);
+    --content-info-font-color: var(--white);
 }
