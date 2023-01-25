@@ -130,7 +130,7 @@ main article blockquote
 
 main article p.special,
 main article blockquote.special,
-main article div.cite.spacial
+main article div.cite.special
 {
   border-radius: var(--content-border-radius);
 }
@@ -170,24 +170,6 @@ main article table
 main article table.special
 {
   border-collapse: collapse;
-}
-
-main article table caption
-{
-  padding: var(--content-cells-padding-horizontal) var(--content-cells-padding-vertical);
-  text-align: right;
-  font-size: 90%;
-}
-
-main article table caption > em
-{
-  font-weight: bold;
-  font-style: normal;
-}
-
-main article table.special caption
-{
-  color: var(--content-normal-font-color);
 }
 
 main article table th,
@@ -462,12 +444,105 @@ main article div.info::before
   background-image: url('../images/icons.violet/i.svg');
 }
 
-/* dates */
+/* media */
 
-article div.date
+main article img,
+main article video,
+main article audio
 {
-  padding: 5px;
-  border-top: 1px solid var(--dark-blue);
-  font-size: 90%;
+  display: block;
+  max-width: 100%;
+  border-radius: var(--content-border-radius);
+}
+
+main article img.side_left,
+main article img.side_right,
+main article video.side_left,
+main article video.side_right
+{
+  margin-top: calc(var(--content-margin-horizontal) / 2);
+  margin-bottom: calc(var(--content-margin-horizontal) / 2);
+}
+
+main article img.side_left,
+main article img.side_right,
+main article video.side_left,
+main article video.side_right,
+main article audio.side_left,
+main article audio.side_right
+{
+  max-width: 40%;
+}
+
+main article img.side_left,
+main article video.side_left,
+main article audio.side_left
+{
+  float: left;
+  margin-left: var(--content-margin-vertical);
+  margin-right: 1rem;
+}
+
+main article img.side_right,
+main article video.side_right,
+main article audio.side_right
+{
+  float: right;
+  margin-left: 1rem;
+  margin-right: var(--content-margin-vertical);
+}
+
+main article video,
+main article audio
+{
+  outline: none;
+}
+
+/* captions */
+
+main article table caption,
+main article figure figcaption,
+main article .caption
+{
   text-align: right;
+  font-size: 90%;
+}
+
+main article table caption
+{
+  padding: var(--content-cells-padding-horizontal) var(--content-cells-padding-vertical);
+}
+
+main article table caption > em
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article figure figcaption,
+main article .caption
+{
+  margin-top: var(--caption-margin-horizontal-reset);
+  padding-left: var(--content-cells-padding-vertical);
+  padding-right: var(--content-cells-padding-vertical);
+}
+
+main article table caption a,
+main article figure figcaption a,
+main article .caption a
+{
+  color: var(--content-normal-font-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+main article table.special caption
+{
+  color: var(--content-normal-font-color);
+}
+
+main article figure.special figcaption a,
+main article .special .caption a
+{
+  color: var(--content-special-font-color);
 }
