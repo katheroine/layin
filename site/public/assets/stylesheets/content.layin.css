@@ -400,12 +400,10 @@ main article div.info::before
 {
   content: '';
   display: inline-block;
-  float: left;
-  align-self: center;
-  margin: 0 var(--content-cells-padding-vertical) var(--content-cells-padding-horizontal) 0;
-  width: var(--menu-button-icon-size);
-  height: var(--menu-button-icon-size);
-  background-size: var(--menu-button-icon-size);
+  margin-bottom: var(--textbox-icon-margin-reset);
+  width: 1em;
+  height: 1em;
+  background-size: 1em;
   background-position: top left;
   background-attachment: scroll;
   background-repeat: no-repeat;
