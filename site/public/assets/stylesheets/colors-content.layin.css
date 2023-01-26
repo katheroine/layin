@@ -1,10 +1,10 @@
 :root
 {
     --content-normal-background-color: var(--white);
-    --content-normal-font-color: var(--dark-blue);
+    --content-normal-text-color: var(--dark-blue);
     --content-normal-border-color: var(--middle-blue);
     --content-special-background-color: var(--middle-blue);
-    --content-special-font-color: var(--white);
+    --content-special-text-color: var(--white);
     --content-special-border-color: var(--white);
 
     --content-table-normal-border-color: var(--dark-blue);
@@ -13,26 +13,26 @@
     --content-table-special-background-even-row-color: var(--light-blue);
 
     --content-definition-background-color: var(--white);
-    --content-definition-font-color: var(--dark-blue);
+    --content-definition-text-color: var(--dark-blue);
     --content-definition-border-color: var(--light-blue);
 
     --content-terminal-background-color: var(--black);
-    --content-terminal-font-color: var(--white);
-    --content-terminal-prompt-font-color: var(--cybergreen);
+    --content-terminal-text-color: var(--white);
+    --content-terminal-prompt-text-color: var(--cybergreen);
 
     --content-code-background-color: var(--dark-blue);
-    --content-code-font-color: var(--white);
+    --content-code-text-color: var(--white);
     --content-code-border-color: var(--white);
 
     --content-alert-background-color: var(--orangered);
-    --content-alert-font-color: var(--white);
+    --content-alert-text-color: var(--white);
     --content-warning-background-color: var(--orangeyellow);
-    --content-warning-font-color: var(--white);
+    --content-warning-text-color: var(--white);
     --content-info-background-color: var(--skyblue);
-    --content-info-font-color: var(--white);
+    --content-info-text-color: var(--white);
 
     --content-keyboard-background-color: var(--skyblue);
-    --content-kayboard-font-color: var(--white);
+    --content-kayboard-text-color: var(--white);
 
     --content-mark-color: var(--cyberblue);
     --content-strikethrough-color: var(--cyberred);

@@ -6,7 +6,7 @@
 main article .normal
 {
   background-color: var(--content-normal-background-color);
-  color: var(--content-normal-font-color);
+  color: var(--content-normal-text-color);
 }
 
 main article .special
@@ -14,7 +14,7 @@ main article .special
   padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
   border-radius: var(--content-border-radius);
   background-color: var(--content-special-background-color);
-  color: var(--content-special-font-color);
+  color: var(--content-special-text-color);
   overflow: auto;
 }
 
@@ -66,7 +66,7 @@ article abbr
 
 article a
 {
-  color: var(--normal-font-color);
+  color: var(--normal-text-color);
   font-weight: bold;
   text-decoration: underline;
   text-decoration-color: var(--content-pointed-color);
@@ -109,19 +109,19 @@ article var
 article kbd
 {
   background-color: var(--content-keyboard-background-color);
-  color: var(--content-kayboard-font-color);
+  color: var(--content-kayboard-text-color);
 }
 
 article code
 {
   background-color: var(--content-code-background-color);
-  color: var(--content-code-font-color);
+  color: var(--content-code-text-color);
 }
 
 article samp
 {
   background-color: var(--content-terminal-background-color);
-  color: var(--content-terminal-font-color);
+  color: var(--content-terminal-text-color);
 }
 
 /* headers & content blocks */
@@ -429,7 +429,7 @@ main article div.info
 main article div.definition
 {
   background-color: var(--content-definition-background-color);
-  color: var(--content-definition-font-color);
+  color: var(--content-definition-text-color);
   border: 1px dashed var(--content-definition-border-color);
   font-style: normal;
 }
@@ -437,7 +437,7 @@ main article div.definition
 main article div.definition.special
 {
   background-color: var(--content-special-background-color);
-  color: var(--content-special-font-color);
+  color: var(--content-special-text-color);
   border-color: var(--content-special-background-color);
 }
 
@@ -460,12 +460,12 @@ main article pre
 main article div.terminal
 {
   background-color: var(--content-terminal-background-color);
-  color: var(--content-terminal-font-color);
+  color: var(--content-terminal-text-color);
 }
 
 main article div.terminal > em
 {
-  color: var(--content-terminal-prompt-font-color);
+  color: var(--content-terminal-prompt-text-color);
   font-style: normal;
   font-weight: bold;
 }
@@ -474,7 +474,7 @@ main article div.code,
 main article pre
 {
   background-color: var(--content-code-background-color);
-  color: var(--content-code-font-color);
+  color: var(--content-code-text-color);
   border: 1px dashed var(--content-code-border-color);
 }
 
@@ -498,7 +498,7 @@ main article div.info::before
 main article div.alert
 {
   background-color: var(--content-alert-background-color);
-  color: var(--content-alert-font-color);
+  color: var(--content-alert-text-color);
 }
 
 main article div.alert::before
@@ -509,7 +509,7 @@ main article div.alert::before
 main article div.warning
 {
   background-color: var(--content-warning-background-color);
-  color: var(--content-warning-font-color);
+  color: var(--content-warning-text-color);
 }
 
 main article div.warning::before
@@ -520,7 +520,7 @@ main article div.warning::before
 main article div.info
 {
   background-color: var(--content-info-background-color);
-  color: var(--content-info-font-color);
+  color: var(--content-info-text-color);
 }
 
 main article div.info::before
@@ -615,18 +615,18 @@ main article table caption a,
 main article figure figcaption a,
 main article .caption a
 {
-  color: var(--content-normal-font-color);
+  color: var(--content-normal-text-color);
   font-weight: bold;
   text-decoration: none;
 }
 
 main article table.special caption
 {
-  color: var(--content-normal-font-color);
+  color: var(--content-normal-text-color);
 }
 
 main article figure.special figcaption a,
 main article .special .caption a
 {
-  color: var(--content-special-font-color);
+  color: var(--content-special-text-color);
 }
