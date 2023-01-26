@@ -9,18 +9,13 @@ main article .normal
   color: var(--content-normal-font-color);
 }
 
-main article .special,
-main article .show
+main article .special
 {
+  padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
   border-radius: var(--content-border-radius);
   background-color: var(--content-special-background-color);
   color: var(--content-special-font-color);
   overflow: auto;
-}
-
-main article .special
-{
-  padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
 }
 
 main article .special :first-child
@@ -33,9 +28,100 @@ main article .special :last-child
   margin-bottom: 0;
 }
 
-main article .show
+/* text details */
+
+article strong
 {
-  align-items: center;
+  font-weight: bold;
+}
+
+article em
+{
+  font-style: italic;
+}
+
+article mark
+{
+  background-color: var(--content-mark-color);
+}
+
+article del
+{
+  text-decoration: line-through;
+  text-decoration-color: var(--content-strikethrough-color);
+}
+
+article ins
+{
+  text-decoration: underline;
+  text-decoration-color: var(--content-underline-color);
+}
+
+article abbr
+{
+  text-decoration: underline;
+  text-decoration-color: var(--content-pointed-color);
+  text-decoration-style: dotted;
+}
+
+article a
+{
+  color: var(--normal-font-color);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--content-pointed-color);
+}
+
+article cite
+{
+  font-style: italic;
+}
+
+article dfn
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+article var,
+article kbd,
+article code,
+article samp
+{
+  font-family: droid-sans-mono, monospace;
+  font-size: 90%;
+}
+
+article kbd,
+article code,
+article samp
+{
+  padding: var(--content-words-padding-horizontal) var(--content-words-padding-vertical);
+  border-radius: var(--content-words-border-radius);
+}
+
+article var
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+article kbd
+{
+  background-color: var(--content-keyboard-background-color);
+  color: var(--content-kayboard-font-color);
+}
+
+article code
+{
+  background-color: var(--content-code-background-color);
+  color: var(--content-code-font-color);
+}
+
+article samp
+{
+  background-color: var(--content-terminal-background-color);
+  color: var(--content-terminal-font-color);
 }
 
 /* headers & content blocks */

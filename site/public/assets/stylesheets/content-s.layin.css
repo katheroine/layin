@@ -7,6 +7,9 @@
   --content-blocks-padding-horizontal: 12px;
   --content-cells-padding-vertical: 10px;
   --content-cells-padding-horizontal: 6px;
+  --content-words-padding-vertical: 2px;
+  --content-words-padding-horizontal: 3px;
+  --content-words-border-radius: 2px;
   --content-indent: 0;
   --content-list-indent: 18px;
   --content-list-indent-reset: -18px;
