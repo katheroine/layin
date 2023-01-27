@@ -21,5 +21,5 @@
   --info-backlight-color: var(--middle-blue);
   --info-button-separator-color: var(--light-blue);
   --copyright-background-color: var(--dark-violet);
-  --copyright-font-color: var(--white);
+  --copyright-text-color: var(--white);
 }
