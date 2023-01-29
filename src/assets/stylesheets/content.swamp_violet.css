@@ -124,7 +124,7 @@ article samp
   color: var(--content-terminal-text-color);
 }
 
-/* headers & content blocks */
+/* headers & text blocks */
 
 main article h1,
 main article h2,
@@ -134,31 +134,40 @@ main article h5,
 main article h6,
 main article p,
 main article blockquote,
-main article address,
-main article details,
-main article table,
-main article ul,
-main article ol,
-main article dl,
-main article div.cite,
-main article div.info,
-main article div.alert,
 main article div.definition,
 main article div.code,
 main article div.terminal,
 main article pre,
+main article div.alert,
+main article div.warning,
+main article div.info,
+main article ul,
+main article ol,
+main article dl,
+main article table,
+main article address,
+main article details,
 main article img,
 main article audio,
 main article video,
 main article figure,
-main article div.showpiece,
-main article div.video,
-main article div.show,
-main article div.read_more,
-main article a.document
+main article div.video
 {
   margin: var(--content-margin-horizontal) var(--content-margin-vertical);
   font-size: 100%;
+}
+
+main article div.definition,
+main article div.code,
+main article div.terminal,
+main article pre,
+main article div.alert,
+main article div.warning,
+main article div.info
+{
+  padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
+  border-radius: var(--content-border-radius);
+  overflow: auto;
 }
 
 /* headers */
@@ -215,28 +224,199 @@ main article blockquote
 }
 
 main article p.special,
-main article blockquote.special,
-main article div.cite.special
+main article blockquote.special
 {
   border-radius: var(--content-border-radius);
 }
 
-main article blockquote,
-main article div.cite
+main article blockquote
 {
   font-style: italic;
 }
 
-main article address
+/* definitions */
+
+main article div.definition
 {
-  text-align: right;
-  font-size: 100%;
+  background-color: var(--content-definition-background-color);
+  color: var(--content-definition-text-color);
+  border: 1px dashed var(--content-definition-border-color);
   font-style: normal;
 }
 
-main article details
+main article div.definition.special
 {
-  text-indent: var(--content-indent);
+  background-color: var(--content-special-background-color);
+  color: var(--content-special-text-color);
+  border-color: var(--special-background-color);
+}
+
+main article div.definition > em
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* code */
+
+main article div.terminal,
+main article div.code,
+main article pre
+{
+  font-family: monospace;
+  font-size: 80%;
+}
+
+main article div.terminal
+{
+  background-color: var(--content-terminal-background-color);
+  color: var(--content-terminal-text-color);
+}
+
+main article div.terminal > em
+{
+  color: var(--content-terminal-prompt-text-color);
+  font-style: normal;
+  font-weight: bold;
+}
+
+main article div.code,
+main article pre
+{
+  background-color: var(--content-code-background-color);
+  color: var(--content-code-text-color);
+  border: 1px dashed var(--content-code-border-color);
+}
+
+main article div.code
+{
+  display: block;
+  unicode-bidi: embed;
+  white-space: pre;
+}
+
+/* messages */
+
+main article div.alert::before,
+main article div.warning::before,
+main article div.info::before
+{
+  content: '';
+  display: inline-block;
+  margin-bottom: var(--textbox-icon-margin-reset);
+  width: 1em;
+  height: 1em;
+  background-size: 1em;
+  background-position: top left;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+main article div.alert
+{
+  background-color: var(--content-alert-background-color);
+  color: var(--content-alert-text-color);
+}
+
+main article div.alert::before
+{
+  background-image: url('../images/icons.violet/exclamation_mark_circle.svg');
+}
+
+main article div.warning
+{
+  background-color: var(--content-warning-background-color);
+  color: var(--content-warning-text-color);
+}
+
+main article div.warning::before
+{
+  background-image: url('../images/icons.violet/exclamation_mark_square.svg');
+}
+
+main article div.info
+{
+  background-color: var(--content-info-background-color);
+  color: var(--content-info-text-color);
+}
+
+main article div.info::before
+{
+  background-image: url('../images/icons.violet/i.svg');
+}
+
+/* lists */
+
+main article ul,
+main article ol
+{
+  padding-left: var(--content-list-indent);
+  list-style-position: outside;
+}
+
+main article ul.special,
+main article ol.special
+{
+  padding-left: calc(var(--content-blocks-padding-vertical) + var(--content-list-indent));
+}
+
+main article ul
+{
+  list-style-type: disc;
+}
+
+main article ol
+{
+  list-style-type: decimal;
+}
+
+main article ul li
+{
+  padding-left: 0;
+}
+
+main article ol li
+{
+  padding-left: 0.2rem;
+}
+
+main article ol.blank li,
+main article ul.blank li,
+main article li.skipped
+{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: var(--content-list-indent-reset);
+}
+
+main article ul ul,
+main article ol ul,
+main article ul ol,
+main article ol ol
+{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* definition lists */
+
+main article dl
+{
+  padding: 0 var(--content-margin-vertical);
+}
+
+main article dl dt
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article dl dd
+{
+  margin-left: var(--content-list-indent);
+  margin-bottom: var(--content-margin-horizontal);
 }
 
 /* tables */
@@ -335,197 +515,18 @@ main article table.special tr:nth-child(even) td
   background-color: var(--content-table-special-background-even-row-color);
 }
 
-/* lists */
+/* descriptions */
 
-main article ul,
-main article ol
+main article address
 {
-  padding-left: var(--content-list-indent);
-  list-style-position: outside;
-}
-
-main article ul.special,
-main article ol.special
-{
-  padding-left: calc(var(--content-blocks-padding-vertical) + var(--content-list-indent));
-}
-
-main article ul
-{
-  list-style-type: disc;
-}
-
-main article ol
-{
-  list-style-type: decimal;
-}
-
-main article ul li
-{
-  padding-left: 0;
-}
-
-main article ol li
-{
-  padding-left: 0.2rem;
-}
-
-main article ol.blank li,
-main article ul.blank li,
-main article li.skipped
-{
-  list-style-type: none;
-  padding-left: 0;
-  margin-left: var(--content-list-indent-reset);
-}
-
-main article ul ul,
-main article ol ul,
-main article ul ol,
-main article ol ol
-{
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
-  padding-bottom: 0;
-}
-
-/* definition lists */
-
-main article dl
-{
-  padding: 0 var(--content-margin-vertical);
-}
-
-main article dl dt
-{
-  font-weight: bold;
+  text-align: right;
+  font-size: 100%;
   font-style: normal;
 }
 
-main article dl dd
+main article details
 {
-  margin-left: var(--content-list-indent);
-  margin-bottom: var(--content-margin-horizontal);
-}
-
-/* definitions, code & messages */
-
-main article div.definition,
-main article div.code,
-main article div.terminal,
-main article pre,
-main article div.alert,
-main article div.warning,
-main article div.info
-{
-  padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
-  border-radius: var(--content-border-radius);
-  overflow: auto;
-}
-
-/* definitions */
-
-main article div.definition
-{
-  background-color: var(--content-definition-background-color);
-  color: var(--content-definition-text-color);
-  border: 1px dashed var(--content-definition-border-color);
-  font-style: normal;
-}
-
-main article div.definition.special
-{
-  background-color: var(--content-special-background-color);
-  color: var(--content-special-text-color);
-  border-color: var(--content-special-background-color);
-}
-
-main article div.definition > em
-{
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* code */
-
-main article div.terminal,
-main article div.code,
-main article pre
-{
-  font-family: monospace;
-  font-size: 80%;
-}
-
-main article div.terminal
-{
-  background-color: var(--content-terminal-background-color);
-  color: var(--content-terminal-text-color);
-}
-
-main article div.terminal > em
-{
-  color: var(--content-terminal-prompt-text-color);
-  font-style: normal;
-  font-weight: bold;
-}
-
-main article div.code,
-main article pre
-{
-  background-color: var(--content-code-background-color);
-  color: var(--content-code-text-color);
-  border: 1px dashed var(--content-code-border-color);
-}
-
-/* messages */
-
-main article div.alert::before,
-main article div.warning::before,
-main article div.info::before
-{
-  content: '';
-  display: inline-block;
-  margin-bottom: var(--textbox-icon-margin-reset);
-  width: 1em;
-  height: 1em;
-  background-size: 1em;
-  background-position: top left;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-}
-
-main article div.alert
-{
-  background-color: var(--content-alert-background-color);
-  color: var(--content-alert-text-color);
-}
-
-main article div.alert::before
-{
-  background-image: url('../images/icons.violet/exclamation_mark_circle.svg');
-}
-
-main article div.warning
-{
-  background-color: var(--content-warning-background-color);
-  color: var(--content-warning-text-color);
-}
-
-main article div.warning::before
-{
-  background-image: url('../images/icons.violet/exclamation_mark_square.svg');
-}
-
-main article div.info
-{
-  background-color: var(--content-info-background-color);
-  color: var(--content-info-text-color);
-}
-
-main article div.info::before
-{
-  background-image: url('../images/icons.violet/i.svg');
+  text-indent: var(--content-indent);
 }
 
 /* media */
