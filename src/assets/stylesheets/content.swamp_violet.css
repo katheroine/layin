@@ -30,41 +30,41 @@ main article .special :last-child
 
 /* text details */
 
-article strong
+main article strong
 {
   font-weight: bold;
 }
 
-article em
+main article em
 {
   font-style: italic;
 }
 
-article mark
+main article mark
 {
   background-color: var(--content-mark-color);
 }
 
-article del
+main article del
 {
   text-decoration: line-through;
   text-decoration-color: var(--content-strikethrough-color);
 }
 
-article ins
+main article ins
 {
   text-decoration: underline;
   text-decoration-color: var(--content-underline-color);
 }
 
-article abbr
+main article abbr
 {
   text-decoration: underline;
   text-decoration-color: var(--content-pointed-color);
   text-decoration-style: dotted;
 }
 
-article a
+main article a
 {
   color: var(--normal-text-color);
   font-weight: bold;
@@ -72,53 +72,53 @@ article a
   text-decoration-color: var(--content-pointed-color);
 }
 
-article cite
+main article cite
 {
   font-style: italic;
 }
 
-article dfn
+main article dfn
 {
   font-weight: bold;
   font-style: normal;
 }
 
-article var,
-article kbd,
-article code,
-article samp
+main article var,
+main article kbd,
+main article code,
+main article samp
 {
   font-family: droid-sans-mono, monospace;
   font-size: 90%;
 }
 
-article kbd,
-article code,
-article samp
+main article kbd,
+main article code,
+main article samp
 {
   padding: var(--content-words-padding-horizontal) var(--content-words-padding-vertical);
   border-radius: var(--content-words-border-radius);
 }
 
-article var
+main article var
 {
   font-weight: bold;
   font-style: normal;
 }
 
-article kbd
+main article kbd
 {
   background-color: var(--content-keyboard-background-color);
   color: var(--content-kayboard-text-color);
 }
 
-article code
+main article code
 {
   background-color: var(--content-code-background-color);
   color: var(--content-code-text-color);
 }
 
-article samp
+main article samp
 {
   background-color: var(--content-terminal-background-color);
   color: var(--content-terminal-text-color);
@@ -257,14 +257,17 @@ main article div.definition > em
   font-style: normal;
 }
 
-/* code */
+/* code & i/o */
 
 main article div.terminal,
 main article div.code,
 main article pre
 {
+  display: block;
   font-family: monospace;
   font-size: 80%;
+  unicode-bidi: embed;
+  white-space: pre;
 }
 
 main article div.terminal
@@ -280,19 +283,18 @@ main article div.terminal > em
   font-weight: bold;
 }
 
-main article div.code,
-main article pre
+main article div.code
 {
   background-color: var(--content-code-background-color);
   color: var(--content-code-text-color);
   border: 1px dashed var(--content-code-border-color);
 }
 
-main article div.code
+main article pre
 {
-  display: block;
-  unicode-bidi: embed;
-  white-space: pre;
+  background-color: var(--content-preformatted-background-color);
+  color: var(--content-preformatted-text-color);
+  border: 1px dashed var(--content-preformatted-border-color);
 }
 
 /* messages */

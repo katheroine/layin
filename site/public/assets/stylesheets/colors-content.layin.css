@@ -24,6 +24,10 @@
     --content-code-text-color: var(--white);
     --content-code-border-color: var(--white);
 
+    --content-preformatted-background-color: var(--ultralight-blue);
+    --content-preformatted-text-color: var(--middle-blue);
+    --content-preformatted-border-color: var(--white);
+
     --content-alert-background-color: var(--orangered);
     --content-alert-text-color: var(--white);
     --content-warning-background-color: var(--orangeyellow);
