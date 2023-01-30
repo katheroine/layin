@@ -347,7 +347,7 @@ main article div.info::before
   background-image: url('../images/icons.violet/i.svg');
 }
 
-/* lists */
+/* unordered & ordered lists */
 
 main article ul,
 main article ol
@@ -402,7 +402,7 @@ main article ol ol
   padding-bottom: 0;
 }
 
-/* definition lists */
+/* description lists */
 
 main article dl
 {

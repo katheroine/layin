@@ -10,6 +10,9 @@
       <section id="content-text-blocks">
         {% include 'content/article/text_blocks.layin.partial.twig.html' %}
       </section>
+      <section id="content-lists">
+        {% include 'content/article/lists.layin.partial.twig.html' %}
+      </section>
       <!-- <section class="intro special">
         <h1>Header level one</h1>
         <p>
@@ -375,120 +378,6 @@
             Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.
             Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus.
           </p>
-          <ul>
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the list</li>
-          </ul>
-          <ul>
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the list</li>
-            <ul>
-              <li>first point of the list</li>
-              <li>second point of the list</li>
-              <li>third point of the list</li>
-            </ul>
-          </ul>
-          <ul>
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li class="skipped">third skipped point of the list</li>
-          </ul>
-          <ol>
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the list</li>
-          </ol>
-          <ol>
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the list</li>
-            <ol>
-              <li>first point of the list</li>
-              <li>second point of the list</li>
-              <li>third point of the list</li>
-            </ol>
-          </ol>
-          <ol>
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li class="skipped">third skipped point of the list</li>
-          </ol>
-          <ul class="blank">
-            <li>first point of the blank list</li>
-            <li>second point of the blank list</li>
-            <li>third point of the blank list</li>
-          </ul>
-          <ol class="blank">
-            <li>first point of the blank list</li>
-            <li>second point of the blank list</li>
-            <li>third point of the blank list</li>
-          </ol>
-          <p class="special">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.
-            Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus.
-          </p>
-          <ul class="special">
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the list</li>
-          </ul>
-          <ul class="special">
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the list</li>
-            <ul>
-              <li>first point of the list</li>
-              <li>second point of the list</li>
-              <li>third point of the list</li>
-            </ul>
-          </ul>
-          <ul class="special">
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li class="skipped">third skipped point of the list</li>
-          </ul>
-          <ol class="special">
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the list</li>
-          </ol>
-          <ol class="special">
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the list</li>
-            <ol>
-              <li>first point of the list</li>
-              <li>second point of the list</li>
-              <li>third point of the list</li>
-            </ol>
-          </ol>
-          <ol class="special">
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li class="skipped">third skipped point of the list</li>
-          </ol>
-          <ul class="special blank">
-            <li>first point of the blank list</li>
-            <li>second point of the blank list</li>
-            <li>third point of the blank list</li>
-          </ul>
-          <ol class="special blank">
-            <li>first point of the list</li>
-            <li>second point of the list</li>
-            <li>third point of the blank list</li>
-          </ol>
-          <p>
-            Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id orci.
-            Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est.
-            Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
-            Phasellus ornare, ante vitae consectetuer consequat, purus sapien ultricies dolor, et mollis pede metus eget
-            nisi.
-            Praesent sodales velit quis augue.
-            Cras suscipit, urna at aliquam rhoncus, urna quam viverra nisi, in interdum massa nibh nec erat.
-          </p>
           <dl>
             <dt>Definition one</dt>
             <dd>a statement of the meaning of a term (a word, phrase, or other set of symbols).
@@ -532,13 +421,6 @@
           <section>
             <h4>Header level four</h4>
             <p>
-              Donec venenatis, turpis vel hendrerit interdum, dui ligula ultricies purus, sed posuere libero dui id
-              orci.
-              Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est.
-              Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
-            </p>
-            <div class="terminal"><em>webmaster@layin$</em> some terminal entry</div>
-            <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.
               Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus.
@@ -550,40 +432,6 @@
               Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
             </p>
             <section>
-              <h5>Header level five</h5>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.
-                Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus.
-              </p>
-              <div class="alert">
-                <strong>Alert!</strong> This is an alert. Donec venenatis, turpis vel hendrerit interdum, dui ligula
-                ultricies purus, sed posuere libero dui id orci.
-                Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est.
-                Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.
-                Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus.
-              </p>
-              <div class="warning">
-                <strong>Warning!</strong> This is a warning. Donec venenatis, turpis vel hendrerit interdum, dui ligula
-                ultricies purus, sed posuere libero dui id orci.
-                Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est.
-                Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
-              </div>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Proin nibh augue, suscipit a, scelerisque sed, lacinia in, mi. Cras vel lorem.
-                Etiam pellentesque aliquet tellus. Phasellus pharetra nulla ac diam. Quisque semper justo at risus.
-              </p>
-              <div class="info">
-                <strong>Info.</strong> This is an info. Donec venenatis, turpis vel hendrerit interdum, dui ligula
-                ultricies purus, sed posuere libero dui id orci.
-                Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo non est.
-                Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
-              </div>
               <section style="overflow: auto;">
                 <h6>Header level six</h6>
                 <p>
