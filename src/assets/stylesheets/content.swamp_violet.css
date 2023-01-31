@@ -11,6 +11,7 @@ main article .normal
 
 main article .special
 {
+  max-width: 100%;
   padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
   border-radius: var(--content-border-radius);
   background-color: var(--content-special-background-color);
@@ -542,15 +543,10 @@ main article audio
   border-radius: var(--content-border-radius);
 }
 
-main article img.side_left,
-main article img.side_right,
-main article video.side_left,
-main article video.side_right
-{
-  margin-top: calc(var(--content-margin-horizontal) / 2);
-  margin-bottom: calc(var(--content-margin-horizontal) / 2);
-}
-
+main article div.mode.side_right,
+main article div.mode.side_left,
+main article figure.side_left,
+main article figure.side_right,
 main article img.side_left,
 main article img.side_right,
 main article video.side_left,
@@ -561,6 +557,21 @@ main article audio.side_right
   max-width: 40%;
 }
 
+main article div.mode.side_right,
+main article div.mode.side_left,
+main article figure.side_left,
+main article figure.side_right,
+main article img.side_left,
+main article img.side_right,
+main article video.side_left,
+main article video.side_right
+{
+  margin-top: calc(var(--content-margin-horizontal) / 2);
+  margin-bottom: calc(var(--content-margin-horizontal) / 2);
+}
+
+main article div.mode.side_left,
+main article figure.side_left,
 main article img.side_left,
 main article video.side_left,
 main article audio.side_left
@@ -570,6 +581,8 @@ main article audio.side_left
   margin-right: 1rem;
 }
 
+main article div.mode.side_right,
+main article figure.side_right,
 main article img.side_right,
 main article video.side_right,
 main article audio.side_right
