@@ -3,6 +3,11 @@
   --content-width: var(--width);
 }
 
+main
+{
+  font-size: 90%;
+}
+
 main article .normal
 {
   background-color: var(--content-normal-background-color);
