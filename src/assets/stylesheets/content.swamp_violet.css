@@ -8,13 +8,31 @@ main
   font-size: 90%;
 }
 
-main article .normal
+main article div.contentgroup.normal,
+main article p.normal,
+main article blockquote.normal,
+main article div.definition.normal,
+main article ul.normal,
+main article ol.normal,
+main article dl.normal,
+main article table.normal,
+main article details.normal,
+main article figure.normal
 {
   background-color: var(--content-normal-background-color);
   color: var(--content-normal-text-color);
 }
 
-main article .special
+main article div.contentgroup.special,
+main article p.special,
+main article blockquote.special,
+main article div.definition.special,
+main article ul.special,
+main article ol.special,
+main article dl.special,
+main article table.special,
+main article details.special,
+main article figure.special
 {
   max-width: 100%;
   padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
@@ -24,12 +42,30 @@ main article .special
   overflow: auto;
 }
 
-main article .special :first-child
+main article div.contentgroup.special :first-child,
+main article p.special :first-child,
+main article blockquote.special :first-child,
+main article div.definition.special :first-child,
+main article ul.special :first-child,
+main article ol.special :first-child,
+main article dl.special :first-child,
+main article table.special :first-child,
+main article details.special :first-child,
+main article figure.special :first-child
 {
   margin-top: 0;
 }
 
-main article .special :last-child
+main article div.contentgroup.special :last-child,
+main article p.special :last-child,
+main article blockquote.special :last-child,
+main article div.definition.special :last-child,
+main article ul.special :last-child,
+main article ol.special :last-child,
+main article dl.special :last-child,
+main article table.special :last-child,
+main article details.special :last-child,
+main article figure.specia :last-child
 {
   margin-bottom: 0;
 }
@@ -131,7 +167,6 @@ main article samp
 }
 
 /* headers & text blocks */
-
 main article h1,
 main article h2,
 main article h3,
@@ -153,10 +188,10 @@ main article dl,
 main article table,
 main article address,
 main article details,
+main article figure,
 main article img,
 main article audio,
 main article video,
-main article figure,
 main article div.video
 {
   margin: var(--content-margin-horizontal) var(--content-margin-vertical);
@@ -548,8 +583,8 @@ main article audio
   border-radius: var(--content-border-radius);
 }
 
-main article div.mode.side_right,
-main article div.mode.side_left,
+main article div.contentgroup.side_right,
+main article div.contentgroup.side_left,
 main article figure.side_left,
 main article figure.side_right,
 main article img.side_left,
@@ -562,8 +597,8 @@ main article audio.side_right
   max-width: 40%;
 }
 
-main article div.mode.side_right,
-main article div.mode.side_left,
+main article div.contentgroup.side_right,
+main article div.contentgroup.side_left,
 main article figure.side_left,
 main article figure.side_right,
 main article img.side_left,
@@ -575,7 +610,7 @@ main article video.side_right
   margin-bottom: calc(var(--content-margin-horizontal) / 2);
 }
 
-main article div.mode.side_left,
+main article div.contentgroup.side_left,
 main article figure.side_left,
 main article img.side_left,
 main article video.side_left,
@@ -586,7 +621,7 @@ main article audio.side_left
   margin-right: 1rem;
 }
 
-main article div.mode.side_right,
+main article div.contentgroup.side_right,
 main article figure.side_right,
 main article img.side_right,
 main article video.side_right,
