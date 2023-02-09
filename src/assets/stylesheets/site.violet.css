@@ -196,6 +196,7 @@ footer
 
 main
 {
+  margin-top: var(--main-top-hem-reset);
   grid-row-start: b;
   grid-row-end: e;
   grid-column-start: b;
