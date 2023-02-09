@@ -172,7 +172,12 @@ main article h2,
 main article h3,
 main article h4,
 main article h5,
-main article h6,
+main article h6
+{
+  margin-left: var(--content-margin-vertical);
+  margin-right: var(--content-margin-vertical);
+}
+
 main article p,
 main article blockquote,
 main article div.definition,
@@ -215,42 +220,56 @@ main article div.info
 
 main article h1
 {
-  font-size: 180%;
+  margin-top: 2rem;
+  margin-bottom: 1.4rem;
+  font-size: 220%;
   font-weight: normal;
   font-style: normal;
 }
 
 main article h2
 {
-  font-size: 160%;
+  margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 170%;
   font-weight: normal;
   font-style: normal;
 }
 
 main article h3
 {
-  font-size: 140%;
+  margin-top: 1.6rem;
+  margin-bottom: 1rem;
+  font-size: 145%;
   font-weight: normal;
   font-style: normal;
 }
 
 main article h4
 {
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
   font-size: 120%;
   font-weight: normal;
   font-style: normal;
 }
 
+main article h5,
+main article h6
+{
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 100%;
+}
+
 main article h5
 {
-  font-size: 100%;
   font-weight: bold;
   font-style: normal;
 }
 
 main article h6
 {
-  font-size: 100%;
   font-weight: normal;
   font-style: normal;
   text-decoration: underline;
