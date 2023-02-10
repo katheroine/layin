@@ -167,6 +167,7 @@ main article samp
 }
 
 /* headers & text blocks */
+
 main article h1,
 main article h2,
 main article h3,
@@ -382,7 +383,7 @@ main article div.alert
 
 main article div.alert::before
 {
-  background-image: url('../images/icons.violet/exclamation_mark_circle.svg');
+  background-image: url('../images/icons.swamp_violet/exclamation_mark_circle.svg');
 }
 
 main article div.warning
@@ -393,7 +394,7 @@ main article div.warning
 
 main article div.warning::before
 {
-  background-image: url('../images/icons.violet/exclamation_mark_square.svg');
+  background-image: url('../images/icons.swamp_violet/exclamation_mark_square.svg');
 }
 
 main article div.info
@@ -404,7 +405,7 @@ main article div.info
 
 main article div.info::before
 {
-  background-image: url('../images/icons.violet/i.svg');
+  background-image: url('../images/icons.swamp_violet/i.svg');
 }
 
 /* unordered & ordered lists */
