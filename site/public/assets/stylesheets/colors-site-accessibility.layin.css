@@ -1,20 +1,20 @@
 :root
 {
   /* contrast */
-  --contrast-header-background-color: #182652;
-  --contrast-header-text-color: white;
-  --contrast-controls-background-color: #6e005f;
-  --contrast-controls-text-color: white;
-  --contrast-controls-backlight-color: #2668bf;
-  --contrast-guideboard-background-color: #6e005f;
-  --contrast-guideboard-text-color: white;
-  --contrast-guideboard-backlight-color: #2668bf;
-  --contrast-guideboard-submenu-background-color: #9764c8;
-  --contrast-guideboard-button-separator-color: white;
-  --contrast-board-background-color: black;
-  --contrast-board-text-color: white;
-  --contrast-footer-background-color: #2668bf;
-  --contrast-footer-backlight-color: #6e005f;
-  --contrast-footer-button-separator-color: white;
-  --contrast-copyright-background-color: navy;
+  --contrast-header-background-color: var(--contrast-dark-blue);
+  --contrast-header-text-color: var(--contrast-white);
+  --contrast-controls-background-color: var(--contrast-middle-violet);
+  --contrast-controls-text-color: var(--contrast-white);
+  --contrast-controls-backlight-color: var(--contrast-middle-blue);
+  --contrast-guideboard-background-color: var(--contrast-middle-violet);
+  --contrast-guideboard-text-color: var(--contrast-white);
+  --contrast-guideboard-backlight-color: var(--contrast-middle-blue);
+  --contrast-guideboard-submenu-background-color: var(--contrast-light-violet);
+  --contrast-guideboard-button-separator-color: var(--contrast-white);
+  --contrast-board-background-color: var(--contrast-black);
+  --contrast-board-text-color: var(--contrast-white);
+  --contrast-footer-background-color: var(--contrast-middle-blue);
+  --contrast-footer-backlight-color: var(--contrast-middle-violet);
+  --contrast-footer-button-separator-color: var(--contrast-white);
+  --contrast-copyright-background-color: var(--contrast-dark-blue);
 }

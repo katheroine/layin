@@ -17,4 +17,16 @@
   --orangered: #e24600;
   --ultralight-gray: #aaaaaa;
   --ultralight-blue: #e4e7f0;
+
+  --contrast-white: #ffffff;
+  --contrast-black: #000000;
+  --contrast-dark-blue: #09286b;
+  --contrast-middle-blue: #1050a3;
+  --contrast-light-blue: #1e64be;
+  --contrast-middle-violet: #6e005f;
+  --contrast-light-violet: #9764c8;
+  --contrast-dark-green: #023d2e;
+  --contrast-dark-grey: #292a2e;
+  --contrast-light-yellow: #e28800;
+  --contrast-light-orange: #d15400;
 }

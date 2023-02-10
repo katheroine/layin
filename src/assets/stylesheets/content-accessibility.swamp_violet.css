@@ -1,0 +1,188 @@
+.contrast main article div.contentgroup.normal,
+.contrast main article p.normal,
+.contrast main article blockquote.normal,
+.contrast main article div.definition.normal,
+.contrast main article ul.normal,
+.contrast main article ol.normal,
+.contrast main article dl.normal,
+.contrast main article table.normal,
+.contrast main article details.normal,
+.contrast main article figure.normal
+{
+  background-color: var(--contrast-content-normal-background-color);
+  color: var(--contrast-content-normal-text-color);
+}
+
+.contrast main article div.contentgroup.special,
+.contrast main article p.special,
+.contrast main article blockquote.special,
+.contrast main article div.definition.special,
+.contrast main article ul.special,
+.contrast main article ol.special,
+.contrast main article dl.special,
+.contrast main article table.special,
+.contrast main article details.special,
+.contrast main article figure.special
+{
+  background-color: var(--contrast-content-special-background-color);
+  color: var(--contrast-content-special-text-color);
+}
+
+/* text details */
+
+.contrast main article mark
+{
+  background-color: var(--contrast-content-mark-color);
+}
+
+.contrast main article del
+{
+  text-decoration-color: var(--contrast-content-strikethrough-color);
+}
+
+.contrast main article ins
+{
+  text-decoration-color: var(--contrast-content-underline-color);
+}
+
+.contrast main article abbr
+{
+  text-decoration-color: var(--contrast-content-pointed-color);
+}
+
+.contrast main article a
+{
+  color: var(--normal-text-color);
+  text-decoration-color: var(--contrast-content-pointed-color);
+}
+
+.contrast main article kbd
+{
+  background-color: var(--contrast-content-keyboard-background-color);
+  color: var(--contrast-content-kayboard-text-color);
+}
+
+.contrast main article code
+{
+  background-color: var(--content-code-background-color);
+  color: var(--content-code-text-color);
+}
+
+.contrast main article samp
+{
+  background-color: var(--contrast-content-terminal-background-color);
+  color: var(--contrast-content-terminal-text-color);
+}
+
+/* headers & text blocks */
+
+/* definitions */
+
+.contrast main article div.definition
+{
+  background-color: var(--contrast-content-definition-background-color);
+  color: var(--contrast-content-definition-text-color);
+  border-color: var(--contrast-content-definition-border-color);
+}
+
+.contrast main article div.definition.special
+{
+  background-color: var(--contrast-content-special-background-color);
+  color: var(--contrast-content-special-text-color);
+  border-color: var(--contrast-special-background-color);
+}
+
+/* code & i/o */
+
+.contrast main article div.terminal
+{
+  background-color: var(--contrast-content-terminal-background-color);
+  color: var(--contrast-content-terminal-text-color);
+}
+
+.contrast main article div.terminal > em
+{
+  color: var(--contrast-content-terminal-prompt-text-color);
+}
+
+.contrast main article div.code
+{
+  background-color: var(--contrast-content-code-background-color);
+  color: var(--contrast-content-code-text-color);
+  border-color: var(--contrast-content-code-border-color);
+}
+
+.contrast main article pre
+{
+  background-color: var(--contrast-content-preformatted-background-color);
+  color: var(--contrast-content-preformatted-text-color);
+  border-color: var(--contrast-content-preformatted-border-color);
+}
+
+/* messages */
+
+.contrast main article div.alert
+{
+  background-color: var(--contrast-content-alert-background-color);
+  color: var(--contrast-content-alert-text-color);
+}
+
+.contrast main article div.warning
+{
+  background-color: var(--contrast-content-warning-background-color);
+  color: var(--contrast-content-warning-text-color);
+}
+
+.contrast main article div.info
+{
+  background-color: var(--contrast-content-info-background-color);
+  color: var(--contrast-content-info-text-color);
+}
+
+/* tables */
+
+.contrast main article table
+{
+  background-color: var(--contrast-content-table-normal-border-color);
+}
+
+.contrast main article table th,
+.contrast main article table td
+{
+  background-color: var(--contrast-content-normal-background-color);
+}
+
+.contrast main article table.special th
+{
+  background-color: var(--contrast-content-table-special-background-header-color);
+}
+
+.contrast main article table.special tr:nth-child(odd) td
+{
+  background-color: var(--contrast-content-table-special-background-odd-row-color);
+}
+
+.contrast main article table.special tr:nth-child(even) td
+{
+  background-color: var(--contrast-content-table-special-background-even-row-color);
+}
+
+/* captions */
+
+.contrast main article table caption a,
+.contrast main article figure figcaption a,
+.contrast main article .caption a
+{
+  color: var(--contrast-content-normal-text-color);
+}
+
+.contrast main article table.special caption
+{
+  color: var(--contrast-content-normal-text-color);
+}
+
+.contrast main article figure.special figcaption a,
+.contrast main article .special .caption a
+{
+  color: var(--contrast-content-special-text-color);
+}
