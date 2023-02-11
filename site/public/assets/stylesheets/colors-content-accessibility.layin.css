@@ -1,6 +1,7 @@
 :root
 {
   /* contrast */
+
   --contrast-content-normal-background-color: var(--contrast-black);
   --contrast-content-normal-text-color: var(--contrast-white);
   --contrast-content-normal-border-color: var(--contrast-middle-violet);

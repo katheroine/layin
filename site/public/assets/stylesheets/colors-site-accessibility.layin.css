@@ -1,6 +1,7 @@
 :root
 {
   /* contrast */
+
   --contrast-header-background-color: var(--contrast-dark-blue);
   --contrast-header-text-color: var(--contrast-white);
   --contrast-controls-background-color: var(--contrast-middle-violet);
