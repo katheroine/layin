@@ -39,6 +39,8 @@
   --contrast-content-keyboard-background-color: var(--skyblue);
   --contrast-content-kayboard-text-color: var(--contrast-white);
 
+  --contrast-content-image-normal-border-color: var(--contrast-white);
+
   --contrast-content-mark-color: var(--cyberblue);
   --contrast-content-strikethrough-color: var(--cyberred);
   --contrast-content-underline-color: var(--cybergreen);
