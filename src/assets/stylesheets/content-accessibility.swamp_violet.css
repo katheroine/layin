@@ -178,13 +178,15 @@
 
 /* media */
 
-.contrast main article img
+.contrast main article img,
+.contrast main article video
 {
   border: 1px solid var(--contrast-content-image-normal-border-color);
 }
 
 .contrast main article img.special,
-.contrast main article .special img
+.contrast main article .special img,
+.contrast main article .special video
 {
   border: 0;
 }
