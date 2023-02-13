@@ -116,6 +116,7 @@ header
   grid-area: dashboard;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 #controls
@@ -163,7 +164,7 @@ footer
   grid-column-end: scaffold-end;
   padding: 7px 0;
   background-color: var(--copyright-background-color);
-  color: var(--copyright-font-color);
+  color: var(--copyright-text-color);
   font-size: var(--copyright-font-size);
   text-align: center;
 }
@@ -195,6 +196,7 @@ footer
 
 main
 {
+  margin-top: var(--main-top-hem-reset);
   grid-row-start: b;
   grid-row-end: e;
   grid-column-start: b;

@@ -317,9 +317,9 @@ You should see the properly displayed page with the header title and subtitle pr
 ```HTML
 {% extends 'base.violet.twig.html' %}
 {% block stylesheets_custom %}
-<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.sp22kce.css">
-<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.sp22kce.css">
-<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.sp22kce.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.awesomesite.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.awesomesite.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.awesomesite.css">
 {% endblock stylesheets_custom %}
 
 ```
@@ -393,3 +393,100 @@ nav .menu-button#home-link:before
 ```
 
 After refreshing the site in the web browser you should see the icons on the page.
+
+20. You can use the content theme, e.g. *Swamp Violet* - currently the only available, and generate links to its files, which will be placed in the `site` directory. That will provide you the CSS styles for the headers, paragraps, lists, tables, images, etc. in the articles placed in the main tag.
+You can use the predefined Layin command:
+
+```BASH
+$ vendor/bin/layin theme:load swamp_violet
+```
+
+21. You also need to provide the CSS files defining the used colors for the content, eg. `colors-content.awesomesite.css`:
+
+```CSS
+:root
+{
+    --content-normal-background-color: var(--white);
+    --content-normal-text-color: var(--dark-blue);
+    --content-normal-border-color: var(--middle-blue);
+    --content-special-background-color: var(--middle-blue);
+    --content-special-text-color: var(--white);
+    --content-special-border-color: var(--white);
+
+    --content-table-normal-border-color: var(--dark-blue);
+    --content-table-special-background-header-color: var(--dark-blue);
+    --content-table-special-background-odd-row-color: var(--middle-blue);
+    --content-table-special-background-even-row-color: var(--light-blue);
+
+    --content-definition-background-color: var(--white);
+    --content-definition-text-color: var(--dark-blue);
+    --content-definition-border-color: var(--light-blue);
+
+    --content-terminal-background-color: var(--black);
+    --content-terminal-text-color: var(--white);
+    --content-terminal-prompt-text-color: var(--cybergreen);
+
+    --content-code-background-color: var(--dark-blue);
+    --content-code-text-color: var(--white);
+    --content-code-border-color: var(--white);
+
+    --content-alert-background-color: var(--orangered);
+    --content-alert-text-color: var(--white);
+    --content-warning-background-color: var(--orangeyellow);
+    --content-warning-text-color: var(--white);
+    --content-info-background-color: var(--skyblue);
+    --content-info-text-color: var(--white);
+
+    --content-keyboard-background-color: var(--skyblue);
+    --content-kayboard-text-color: var(--white);
+
+    --content-mark-color: var(--cyberblue);
+    --content-strikethrough-color: var(--cyberred);
+    --content-underline-color: var(--cybergreen);
+    --content-pointed-color: var(--ultralight-gray);
+}
+
+```
+
+22. For the above example you need to extend the existing `colors.awesomesite.css` file with the new colors:
+
+```CSS
+:root
+{
+  --white: #ffffff;
+  --black: #000000;
+  --dark-blue: #0b1527;
+  --middle-blue: #1c2c4a;
+  --light-blue: #253757;
+  --dark-violet: #2d004c;
+  --middle-violet: #562f71;
+  --light-violet: #624079;
+  --amaranthine: #6e005f;
+  --cybergreen: #17ffa9;
+  --cyberblue: #38f9ff;
+  --cyberred: #fd3f1e;
+  --skyblue: #0081c7;
+  --orangeyellow: #f17e00;
+  --orangered: #e24600;
+  --ultralight-gray: #aaaaaa;
+}
+
+```
+
+23. Finally, you need to place the new CSS files into the template file `base.awesomesite.twig.html`:
+
+
+```HTML
+{% extends 'base.violet.twig.html' %}
+{% block stylesheets_custom %}
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.awesomesite.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.awesomesite.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.awesomesite.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-content.awesomesite.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/content.swamp_violet.css">
+<link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{assets_dir}}/stylesheets/content-s.swamp_violet.css">
+<link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{assets_dir}}/stylesheets/content-m.swamp_violet.css">
+<link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{assets_dir}}/stylesheets/content-l.swamp_violet.css">
+{% endblock stylesheets_custom %}
+
+```

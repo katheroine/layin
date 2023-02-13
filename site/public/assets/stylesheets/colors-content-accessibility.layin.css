@@ -1,0 +1,49 @@
+:root
+{
+  /* contrast */
+
+  --contrast-content-normal-background-color: var(--contrast-black);
+  --contrast-content-normal-text-color: var(--contrast-white);
+  --contrast-content-normal-border-color: var(--contrast-middle-violet);
+  --contrast-content-special-background-color: var(--contrast-middle-blue);
+  --contrast-content-special-text-color: var(--contrast-white);
+  --contrast-content-special-border-color: var(--contrast-white);
+
+  --contrast-content-table-normal-border-color: var(--contrast-white);
+  --contrast-content-table-special-background-header-color: var(--contrast-dark-blue);
+  --contrast-content-table-special-background-odd-row-color: var(--contrast-middle-blue);
+  --contrast-content-table-special-background-even-row-color: var(--contrast-middle-blue);
+
+  --contrast-content-definition-background-color: var(--contrast-black);
+  --contrast-content-definition-text-color: var(--contrast-white);
+  --contrast-content-definition-border-color: var(--contrast-white);
+
+  --contrast-content-terminal-background-color: var(--contrast-dark-green);
+  --contrast-content-terminal-text-color: var(--contrast-white);
+  --contrast-content-terminal-prompt-text-color: var(--cybergreen);
+
+  --contrast-content-code-background-color: var(--contrast-dark-blue);
+  --contrast-content-code-text-color: var(--contrast-white);
+  --contrast-content-code-border-color: var(--contrast-white);
+
+  --contrast-content-preformatted-background-color: var(--contrast-dark-grey);
+  --contrast-content-preformatted-text-color: var(--contrast-white);
+  --contrast-content-preformatted-border-color: var(--contrast-white);
+
+  --contrast-content-alert-background-color: var(--contrast-light-orange);
+  --contrast-content-alert-text-color: var(--contrast-white);
+  --contrast-content-warning-background-color: var(--contrast-light-yellow);
+  --contrast-content-warning-text-color: var(--contrast-white);
+  --contrast-content-info-background-color: var(--contrast-light-blue);
+  --contrast-content-info-text-color: var(--contrast-white);
+
+  --contrast-content-keyboard-background-color: var(--skyblue);
+  --contrast-content-kayboard-text-color: var(--contrast-white);
+
+  --contrast-content-image-normal-border-color: var(--contrast-white);
+
+  --contrast-content-mark-color: var(--cyberblue);
+  --contrast-content-strikethrough-color: var(--cyberred);
+  --contrast-content-underline-color: var(--cybergreen);
+  --contrast-content-pointed-color: var(--ultralight-gray);
+}

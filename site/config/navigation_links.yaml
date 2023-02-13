@@ -1,6 +1,6 @@
 - css_id: home-link
   title: Home
-  url_part: [[base_url]]
+  url: [[base_url]]
 - css_id: accessibility-info-link
   title: Accessibility
   url_part: accessibility_info.php
@@ -8,11 +8,16 @@
   title: Layouts
   submenu:
     - title: One column
-      url_part: layouts/board/one_column.layin.[[code_file_extension]]
+      url_part: layouts/one_column.layin.[[code_file_extension]]
     - title: Two columns
-      url_part: layouts/board/two_columns.layin.[[code_file_extension]]
+      url_part: layouts/two_columns.layin.[[code_file_extension]]
     - title: Three columns
-      url_part: layouts/board/three_columns.layin.[[code_file_extension]]
+      url_part: layouts/three_columns.layin.[[code_file_extension]]
+- css_id: content-submenu
+  title: Content
+  submenu:
+    - title: Article
+      url_part: content/article.layin.[[code_file_extension]]
 - css_id: about-submenu
   title: About
   submenu:
@@ -24,15 +29,19 @@
   title: Favourites
   submenu:
     - title: Linux Mint
-      url: https://linuxmint.com
+      url: https://linuxmint.com/
     - title: Atom
-      url: https://atom.io
+      url: https://atom.io/
+    - title: Visual Studio Code
+      url: https://code.visualstudio.com/
     - title: Inkscape
       url: https://inkscape.org
     - title: Git
       url: https://git-scm.com
     - title: GitHub
       url: https://github.com/
+    - title: Pexels
+      url: https://www.pexels.com/
 - css_id: contact-link
   title: Contact
   url_id: contact-info

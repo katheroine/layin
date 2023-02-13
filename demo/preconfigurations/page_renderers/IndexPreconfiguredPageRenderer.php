@@ -25,7 +25,7 @@ class IndexPreconfiguredPageRenderer extends AbstractBasePreconfiguredPageRender
             'site_config_path' => __DIR__ . '/../../../site/config/site_config.yaml',
             'navigation_links_config_path' => __DIR__ . '/../../../site/config/navigation_links.yaml',
             'contact_info_links_config_path' => __DIR__ . '/../../../site/config/contact_info_links.yaml',
-            'base_url' => '../index.html',
+            'base_url' => __DIR__ . '/../../../index.html',
             'subpages_url' => 'demo',
             'assets_dir_path' => 'site/public/assets',
             'is_debug_mode' => false,
