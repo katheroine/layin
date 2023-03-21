@@ -234,7 +234,19 @@ $ composer dump-autoload
 14. Run [http://awesomesite.local/](http://awesomesite.local/) on the web browser.
 You should see the properly displayed page with the header title and subtitle previously configured by you, but with no graphics nor styles.
 
-15. Create the colors defining stylesheets in the `site/public/assets/stylesheets` directory and name them with the `awesomesite` phrase, and fill with the choosen colors (use the examples below):
+15. If you need to use external fonts, create the fonts defining stylesheet in the `site/public/assets/stylesheets` directory and name them with the `awesomesite` phrase eg. `fonts.awesomesite.css`:
+
+```CSS
+@font-face
+{
+  font-family: liberation-sans-regular;
+  src: url('../font/liberation-sans/LiberationSans-Regular.ttf');
+}
+```
+
+Choose and download the appropriate font files (like above `LiberationSans-Regular.ttf`). Place them in the appropriate public directory, eg. `site/public/assets/font/liberation-sans/`.
+
+16. Create the colors defining stylesheets in the `site/public/assets/stylesheets` directory and fill with the choosen colors (use the examples below):
 
 - `colors.awesomesite.css`
 
@@ -312,11 +324,12 @@ You should see the properly displayed page with the header title and subtitle pr
 
 ```
 
-16. Complete the `site/templates/base.awesomesite.twig.html` template file with previously creates CSS stylesheets:
+17. Complete the `site/templates/base.awesomesite.twig.html` template file with previously creates CSS stylesheets:
 
 ```HTML
 {% extends 'base.violet.twig.html' %}
 {% block stylesheets_custom %}
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/fonts.awesomesite.css">
 <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.awesomesite.css">
 <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.awesomesite.css">
 <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.awesomesite.css">
@@ -326,13 +339,13 @@ You should see the properly displayed page with the header title and subtitle pr
 
 After refreshing the site in the web browser you should see the change in the colors.
 
-17. Prepare logo in the `PNG` format and save it as `site/public/assets/images/logo.png`.
+18. Prepare logo in the `PNG` format and save it as `site/public/assets/images/logo.png`.
 After refreshing the site in the web browser you should see the logo on the page.
 
-18. Prepare the background cover in the `PNG` format and save it as `site/public/assets/images/cover.jpeg`.
+19. Prepare the background cover in the `PNG` format and save it as `site/public/assets/images/cover.jpeg`.
 After refreshing the site in the web browser you should see the cover on the page.
 
-19. Create the icons setting `site/public/assets/stylesheets/link-icons.layin.css` stylesheet:
+20. Create the icons setting `site/public/assets/stylesheets/link-icons.awesomesite.css` stylesheet:
 
 ```CSS
 #dial .menu-button#increase-font-trigger:before
@@ -394,14 +407,14 @@ nav .menu-button#home-link:before
 
 After refreshing the site in the web browser you should see the icons on the page.
 
-20. You can use the content theme, e.g. *Swamp Violet* - currently the only available, and generate links to its files, which will be placed in the `site` directory. That will provide you the CSS styles for the headers, paragraps, lists, tables, images, etc. in the articles placed in the main tag.
+21. You can use the content theme, e.g. *Swamp Violet* - currently the only available, and generate links to its files, which will be placed in the `site` directory. That will provide you the CSS styles for the headers, paragraps, lists, tables, images, etc. in the articles placed in the main tag.
 You can use the predefined Layin command:
 
 ```BASH
 $ vendor/bin/layin theme:load swamp_violet
 ```
 
-21. You also need to provide the CSS files defining the used colors for the content, eg. `colors-content.awesomesite.css`:
+22. You also need to provide the CSS files defining the used colors for the content, eg. `colors-content.awesomesite.css`:
 
 ```CSS
 :root
@@ -448,7 +461,61 @@ $ vendor/bin/layin theme:load swamp_violet
 
 ```
 
-22. For the above example you need to extend the existing `colors.awesomesite.css` file with the new colors:
+23. To handle accessibility feature you also need to provide `colors-content-accessibility.awesomesite.css` file:
+
+```CSS
+:root
+{
+  /* contrast */
+
+  --contrast-content-normal-background-color: var(--contrast-black);
+  --contrast-content-normal-text-color: var(--contrast-white);
+  --contrast-content-normal-border-color: var(--contrast-middle-violet);
+  --contrast-content-special-background-color: var(--contrast-middle-blue);
+  --contrast-content-special-text-color: var(--contrast-white);
+  --contrast-content-special-border-color: var(--contrast-white);
+
+  --contrast-content-table-normal-border-color: var(--contrast-white);
+  --contrast-content-table-special-background-header-color: var(--contrast-dark-blue);
+  --contrast-content-table-special-background-odd-row-color: var(--contrast-middle-blue);
+  --contrast-content-table-special-background-even-row-color: var(--contrast-middle-blue);
+
+  --contrast-content-definition-background-color: var(--contrast-black);
+  --contrast-content-definition-text-color: var(--contrast-white);
+  --contrast-content-definition-border-color: var(--contrast-white);
+
+  --contrast-content-terminal-background-color: var(--contrast-dark-green);
+  --contrast-content-terminal-text-color: var(--contrast-white);
+  --contrast-content-terminal-prompt-text-color: var(--cybergreen);
+
+  --contrast-content-code-background-color: var(--contrast-dark-blue);
+  --contrast-content-code-text-color: var(--contrast-white);
+  --contrast-content-code-border-color: var(--contrast-white);
+
+  --contrast-content-preformatted-background-color: var(--contrast-dark-grey);
+  --contrast-content-preformatted-text-color: var(--contrast-white);
+  --contrast-content-preformatted-border-color: var(--contrast-white);
+
+  --contrast-content-alert-background-color: var(--contrast-light-orange);
+  --contrast-content-alert-text-color: var(--contrast-white);
+  --contrast-content-warning-background-color: var(--contrast-light-yellow);
+  --contrast-content-warning-text-color: var(--contrast-white);
+  --contrast-content-info-background-color: var(--contrast-light-blue);
+  --contrast-content-info-text-color: var(--contrast-white);
+
+  --contrast-content-keyboard-background-color: var(--skyblue);
+  --contrast-content-kayboard-text-color: var(--contrast-white);
+
+  --contrast-content-image-normal-border-color: var(--contrast-white);
+
+  --contrast-content-mark-color: var(--cyberblue);
+  --contrast-content-strikethrough-color: var(--cyberred);
+  --contrast-content-underline-color: var(--cybergreen);
+  --contrast-content-pointed-color: var(--ultralight-gray);
+}
+```
+
+24. For the above example you need to extend the existing `colors.awesomesite.css` file with the new colors:
 
 ```CSS
 :root
@@ -469,21 +536,37 @@ $ vendor/bin/layin theme:load swamp_violet
   --orangeyellow: #f17e00;
   --orangered: #e24600;
   --ultralight-gray: #aaaaaa;
+  --ultralight-blue: #e4e7f0;
+
+  --contrast-white: #ffffff;
+  --contrast-black: #000000;
+  --contrast-dark-blue: #09286b;
+  --contrast-middle-blue: #1050a3;
+  --contrast-light-blue: #1e64be;
+  --contrast-middle-violet: #6e005f;
+  --contrast-light-violet: #9764c8;
+  --contrast-dark-green: #023d2e;
+  --contrast-dark-grey: #292a2e;
+  --contrast-light-yellow: #e28800;
+  --contrast-light-orange: #d15400;
 }
 
 ```
 
-23. Finally, you need to place the new CSS files into the template file `base.awesomesite.twig.html`:
-
+25. Finally, you need to place the new CSS files into the template file `base.awesomesite.twig.html`:
 
 ```HTML
 {% extends 'base.violet.twig.html' %}
 {% block stylesheets_custom %}
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/fonts.awesomesite.css">
 <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors.awesomesite.css">
 <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site.awesomesite.css">
 <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-site-accessibility.awesomesite.css">
 <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-content.awesomesite.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/link-icons.awesomesite.css">
 <link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/content.swamp_violet.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/content-accessibility.swamp_violet.css">
+<link type="text/css" rel="stylesheet" href="{{assets_dir}}/stylesheets/colors-content-accessibility.awesomesite.css">
 <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)" href="{{assets_dir}}/stylesheets/content-s.swamp_violet.css">
 <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)" href="{{assets_dir}}/stylesheets/content-m.swamp_violet.css">
 <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)" href="{{assets_dir}}/stylesheets/content-l.swamp_violet.css">
