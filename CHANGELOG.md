@@ -40,3 +40,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Possibility of configuration the concrete page renderer by the concrete preconfigured page renderers.
 ### Changed
 - All paths of the config files must be configured separately in the preconfiguration.
+
+## [0.4.0] - 2023-03-21
+### Added
+- README file with prerequisites, installation and basic set-up documentation.
+- "Swamp Violet" theme with icons and CSS styles for content styling.
+- Content layout samples page in the demo.
+- VSC and Pexels links in the Favourites submenu of the demo.
+### Changed
+- Exceptions messages in loaders completed with the names of not found or improper files.
+- PHP version added to requirements in `composer.json`.
+- Logo made clickable.
+- Layout pages in the demo moved from `layouts/board/` to `layouts/` path & content pages moved from `layouts/content/` to `content/` path.
+### Removed
+- File `composer.lock`.
