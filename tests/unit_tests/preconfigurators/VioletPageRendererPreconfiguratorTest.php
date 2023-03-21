@@ -138,6 +138,7 @@ class VioletPageRendererPreconfiguratorTest extends TestCase
             'charset' => 'utf-8',
             'language' => 'english',
             'copyright_range' => 2022,
+            'base_url' => '.',
             'subpages_url' => './subpages',
             'assets_dir' => './assets',
             'navigation_links' => [

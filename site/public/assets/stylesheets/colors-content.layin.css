@@ -1,0 +1,45 @@
+:root
+{
+  --content-normal-background-color: var(--white);
+  --content-normal-text-color: var(--dark-blue);
+  --content-normal-border-color: var(--middle-blue);
+  --content-special-background-color: var(--middle-blue);
+  --content-special-text-color: var(--white);
+  --content-special-border-color: var(--white);
+
+  --content-table-normal-border-color: var(--dark-blue);
+  --content-table-special-background-header-color: var(--dark-blue);
+  --content-table-special-background-odd-row-color: var(--middle-blue);
+  --content-table-special-background-even-row-color: var(--light-blue);
+
+  --content-definition-background-color: var(--white);
+  --content-definition-text-color: var(--dark-blue);
+  --content-definition-border-color: var(--light-blue);
+
+  --content-terminal-background-color: var(--black);
+  --content-terminal-text-color: var(--white);
+  --content-terminal-prompt-text-color: var(--cybergreen);
+
+  --content-code-background-color: var(--dark-blue);
+  --content-code-text-color: var(--white);
+  --content-code-border-color: var(--white);
+
+  --content-preformatted-background-color: var(--ultralight-blue);
+  --content-preformatted-text-color: var(--middle-blue);
+  --content-preformatted-border-color: var(--white);
+
+  --content-alert-background-color: var(--orangered);
+  --content-alert-text-color: var(--white);
+  --content-warning-background-color: var(--orangeyellow);
+  --content-warning-text-color: var(--white);
+  --content-info-background-color: var(--skyblue);
+  --content-info-text-color: var(--white);
+
+  --content-keyboard-background-color: var(--skyblue);
+  --content-kayboard-text-color: var(--white);
+
+  --content-mark-color: var(--cyberblue);
+  --content-strikethrough-color: var(--cyberred);
+  --content-underline-color: var(--cybergreen);
+  --content-pointed-color: var(--ultralight-gray);
+}

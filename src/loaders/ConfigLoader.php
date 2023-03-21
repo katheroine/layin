@@ -26,7 +26,7 @@ use Symfony\Component\Yaml\Yaml;
  */
 class ConfigLoader
 {
-    private string $configFilePath;
+    protected string $configFilePath;
     private array $replacements = [];
 
     /**
@@ -63,7 +63,7 @@ class ConfigLoader
     private function validateConfigFilePath(string $configFilePath): void
     {
         if (!file_exists($configFilePath)) {
-            throw new \ValueError('File given by path does not exist.');
+            throw new \ValueError("File given by path {$configFilePath} does not exist.");
         }
     }
 

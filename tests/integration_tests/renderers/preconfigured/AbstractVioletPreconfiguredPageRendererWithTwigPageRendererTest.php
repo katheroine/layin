@@ -28,7 +28,7 @@ class AbstractVioletPreconfiguredPageRendererWithTwigPageRendererTest extends Te
     public function testRenderFunction()
     {
         $preconfiguredPageRenderer = new ConcreteVioletPreconfiguredPageRendererWithTwigPageRenderer();
-        
+
         $preconfiguredPageRenderer->setTemplateName('violet_template');
 
         $expectedResult = file_get_contents(__DIR__ . '/../../../testing_environment/results/violet_rendered_page.html');

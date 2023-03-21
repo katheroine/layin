@@ -1,0 +1,708 @@
+:root
+{
+  --content-width: var(--width);
+}
+
+main
+{
+  font-size: 90%;
+}
+
+main article div.contentgroup.normal,
+main article p.normal,
+main article blockquote.normal,
+main article div.definition.normal,
+main article ul.normal,
+main article ol.normal,
+main article dl.normal,
+main article table.normal,
+main article details.normal,
+main article figure.normal
+{
+  background-color: var(--content-normal-background-color);
+  color: var(--content-normal-text-color);
+}
+
+main article div.contentgroup.special,
+main article p.special,
+main article blockquote.special,
+main article div.definition.special,
+main article ul.special,
+main article ol.special,
+main article dl.special,
+main article table.special,
+main article details.special,
+main article figure.special
+{
+  max-width: 100%;
+  padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
+  border-radius: var(--content-border-radius);
+  background-color: var(--content-special-background-color);
+  color: var(--content-special-text-color);
+  overflow: auto;
+}
+
+main article div.contentgroup.special :first-child,
+main article p.special :first-child,
+main article blockquote.special :first-child,
+main article div.definition.special :first-child,
+main article ul.special :first-child,
+main article ol.special :first-child,
+main article dl.special :first-child,
+main article table.special :first-child,
+main article details.special :first-child,
+main article figure.special :first-child
+{
+  margin-top: 0;
+}
+
+main article div.contentgroup.special :last-child,
+main article p.special :last-child,
+main article blockquote.special :last-child,
+main article div.definition.special :last-child,
+main article ul.special :last-child,
+main article ol.special :last-child,
+main article dl.special :last-child,
+main article table.special :last-child,
+main article details.special :last-child,
+main article figure.specia :last-child
+{
+  margin-bottom: 0;
+}
+
+/* text details */
+
+main article strong
+{
+  font-weight: bold;
+}
+
+main article em
+{
+  font-style: italic;
+}
+
+main article mark
+{
+  background-color: var(--content-mark-color);
+}
+
+main article del
+{
+  text-decoration: line-through;
+  text-decoration-color: var(--content-strikethrough-color);
+}
+
+main article ins
+{
+  text-decoration: underline;
+  text-decoration-color: var(--content-underline-color);
+}
+
+main article abbr
+{
+  text-decoration: underline;
+  text-decoration-color: var(--content-pointed-color);
+  text-decoration-style: dotted;
+}
+
+main article a
+{
+  color: var(--normal-text-color);
+  font-weight: bold;
+  text-decoration: underline;
+  text-decoration-color: var(--content-pointed-color);
+}
+
+main article cite
+{
+  font-style: italic;
+}
+
+main article dfn
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article var,
+main article kbd,
+main article code,
+main article samp
+{
+  font-family: droid-sans-mono, monospace;
+  font-size: 90%;
+}
+
+main article kbd,
+main article code,
+main article samp
+{
+  padding: var(--content-words-padding-horizontal) var(--content-words-padding-vertical);
+  border-radius: var(--content-words-border-radius);
+}
+
+main article var
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article kbd
+{
+  background-color: var(--content-keyboard-background-color);
+  color: var(--content-kayboard-text-color);
+}
+
+main article code
+{
+  background-color: var(--content-code-background-color);
+  color: var(--content-code-text-color);
+}
+
+main article samp
+{
+  background-color: var(--content-terminal-background-color);
+  color: var(--content-terminal-text-color);
+}
+
+/* headers & text blocks */
+
+main article h1,
+main article h2,
+main article h3,
+main article h4,
+main article h5,
+main article h6
+{
+  margin-left: var(--content-margin-vertical);
+  margin-right: var(--content-margin-vertical);
+}
+
+main article p,
+main article blockquote,
+main article div.definition,
+main article div.code,
+main article div.terminal,
+main article pre,
+main article div.alert,
+main article div.warning,
+main article div.info,
+main article ul,
+main article ol,
+main article dl,
+main article table,
+main article address,
+main article details,
+main article figure,
+main article img,
+main article audio,
+main article video,
+main article div.video
+{
+  margin: var(--content-margin-horizontal) var(--content-margin-vertical);
+  font-size: 100%;
+}
+
+main article div.definition,
+main article div.code,
+main article div.terminal,
+main article pre,
+main article div.alert,
+main article div.warning,
+main article div.info
+{
+  padding: var(--content-blocks-padding-horizontal) var(--content-blocks-padding-vertical);
+  border-radius: var(--content-border-radius);
+  overflow: auto;
+}
+
+/* headers */
+
+main article h1
+{
+  margin-top: 2rem;
+  margin-bottom: 1.4rem;
+  font-size: 220%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main article h2
+{
+  margin-top: 1.8rem;
+  margin-bottom: 1.2rem;
+  font-size: 170%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main article h3
+{
+  margin-top: 1.6rem;
+  margin-bottom: 1rem;
+  font-size: 145%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main article h4
+{
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 120%;
+  font-weight: normal;
+  font-style: normal;
+}
+
+main article h5,
+main article h6
+{
+  margin-top: 1.4rem;
+  margin-bottom: 0.8rem;
+  font-size: 100%;
+}
+
+main article h5
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article h6
+{
+  font-weight: normal;
+  font-style: normal;
+  text-decoration: underline;
+}
+
+/* content blocks */
+
+main article p,
+main article blockquote
+{
+  text-indent: var(--content-indent);
+}
+
+main article p.special,
+main article blockquote.special
+{
+  border-radius: var(--content-border-radius);
+}
+
+main article blockquote
+{
+  font-style: italic;
+}
+
+/* definitions */
+
+main article div.definition
+{
+  background-color: var(--content-definition-background-color);
+  color: var(--content-definition-text-color);
+  border: 1px dashed var(--content-definition-border-color);
+  font-style: normal;
+}
+
+main article div.definition.special
+{
+  background-color: var(--content-special-background-color);
+  color: var(--content-special-text-color);
+  border-color: var(--special-background-color);
+}
+
+main article div.definition > em
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* code & i/o */
+
+main article div.terminal,
+main article div.code,
+main article pre
+{
+  display: block;
+  font-family: monospace;
+  font-size: 80%;
+  unicode-bidi: embed;
+  white-space: pre;
+}
+
+main article div.terminal
+{
+  background-color: var(--content-terminal-background-color);
+  color: var(--content-terminal-text-color);
+}
+
+main article div.terminal > em
+{
+  color: var(--content-terminal-prompt-text-color);
+  font-style: normal;
+  font-weight: bold;
+}
+
+main article div.code
+{
+  background-color: var(--content-code-background-color);
+  color: var(--content-code-text-color);
+  border: 1px dashed var(--content-code-border-color);
+}
+
+main article pre
+{
+  background-color: var(--content-preformatted-background-color);
+  color: var(--content-preformatted-text-color);
+  border: 1px dashed var(--content-preformatted-border-color);
+}
+
+/* messages */
+
+main article div.alert::before,
+main article div.warning::before,
+main article div.info::before
+{
+  content: '';
+  display: inline-block;
+  margin-bottom: var(--textbox-icon-margin-reset);
+  width: 1em;
+  height: 1em;
+  background-size: 1em;
+  background-position: top left;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+}
+
+main article div.alert
+{
+  background-color: var(--content-alert-background-color);
+  color: var(--content-alert-text-color);
+}
+
+main article div.alert::before
+{
+  background-image: url('../images/icons.swamp_violet/exclamation_mark_circle.svg');
+}
+
+main article div.warning
+{
+  background-color: var(--content-warning-background-color);
+  color: var(--content-warning-text-color);
+}
+
+main article div.warning::before
+{
+  background-image: url('../images/icons.swamp_violet/exclamation_mark_square.svg');
+}
+
+main article div.info
+{
+  background-color: var(--content-info-background-color);
+  color: var(--content-info-text-color);
+}
+
+main article div.info::before
+{
+  background-image: url('../images/icons.swamp_violet/i.svg');
+}
+
+/* unordered & ordered lists */
+
+main article ul,
+main article ol
+{
+  padding-left: var(--content-list-indent);
+  list-style-position: outside;
+}
+
+main article ul.special,
+main article ol.special
+{
+  padding-left: calc(var(--content-blocks-padding-vertical) + var(--content-list-indent));
+}
+
+main article ul
+{
+  list-style-type: disc;
+}
+
+main article ol
+{
+  list-style-type: decimal;
+}
+
+main article ul li
+{
+  padding-left: 0;
+}
+
+main article ol li
+{
+  padding-left: 0.2rem;
+}
+
+main article ol.blank li,
+main article ul.blank li,
+main article li.skipped
+{
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: var(--content-list-indent-reset);
+}
+
+main article ul ul,
+main article ol ul,
+main article ul ol,
+main article ol ol
+{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* description lists */
+
+main article dl
+{
+  padding: 0 var(--content-margin-vertical);
+}
+
+main article dl dt
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article dl dd
+{
+  margin-left: var(--content-list-indent);
+  margin-bottom: var(--content-margin-horizontal);
+}
+
+/* tables */
+
+main article table
+{
+  width: 100%;
+  table-layout: fixed;
+  caption-side: bottom;
+  empty-cells: show;
+  border-collapse: separate;
+  border-spacing: 1px;
+  background-color: var(--content-table-normal-border-color);
+  border-radius: var(--content-border-radius);
+}
+
+main article table.special
+{
+  border-collapse: collapse;
+}
+
+main article table th,
+main article table td
+{
+  padding: var(--content-cells-padding-horizontal) var(--content-cells-padding-vertical);
+  vertical-align: baseline;
+  background-color: var(--content-normal-background-color);
+  border-radius: 0;
+}
+
+main article table th
+{
+  text-align: left;
+}
+
+main article table tbody tr:first-of-type th:first-child,
+main article table thead tr:first-of-type th:first-child,
+main article table tbody tr:first-of-type td:first-child
+{
+  border-top-left-radius: var(--content-border-radius);
+}
+
+main article table:has(thead) tbody tr:first-of-type td:first-child
+{
+  border-top-left-radius: 0;
+}
+
+main article table tbody tr:first-of-type th:last-child,
+main article table thead tr:first-of-type th:last-child,
+main article table tbody tr:first-of-type td:last-child
+{
+  border-top-right-radius: var(--content-border-radius);
+}
+
+main article table:has(thead) tbody tr:first-of-type td:last-child
+{
+  border-top-right-radius: 0;
+}
+
+main article table tbody tr:last-of-type th:first-child,
+main article table tfoot tr:last-of-type th:first-child,
+main article table tr:last-of-type td:first-child
+{
+  border-bottom-left-radius: var(--content-border-radius);
+}
+
+main article table:has(tfoot) tr:last-of-type td:first-child
+{
+  border-bottom-left-radius: 0;
+}
+
+main article table tbody tr:last-of-type th:last-child,
+main article table tfoot tr:last-of-type th:last-child,
+main article table tbody tr:last-of-type td:last-child
+{
+  border-bottom-right-radius: var(--content-border-radius);
+}
+
+main article table:has(tfoot) tbody tr:last-of-type td:last-child
+{
+  border-bottom-right-radius: 0;
+}
+
+main article table.special th
+{
+  background-color: var(--content-table-special-background-header-color);
+}
+
+main article table.special tr:nth-child(odd) td
+{
+  background-color: var(--content-table-special-background-odd-row-color);
+}
+
+main article table.special tr:nth-child(even) td
+{
+  background-color: var(--content-table-special-background-even-row-color);
+}
+
+/* information */
+
+main article address
+{
+  text-align: right;
+  font-size: 100%;
+  font-style: normal;
+}
+
+main article details
+{
+  text-indent: var(--content-indent);
+}
+
+/* media */
+
+main article img,
+main article video,
+main article audio
+{
+  display: block;
+  max-width: 100%;
+  border-radius: var(--content-border-radius);
+}
+
+main article div.contentgroup.side_right,
+main article div.contentgroup.side_left,
+main article figure.side_left,
+main article figure.side_right,
+main article img.side_left,
+main article img.side_right,
+main article video.side_left,
+main article video.side_right,
+main article audio.side_left,
+main article audio.side_right
+{
+  max-width: 40%;
+}
+
+main article div.contentgroup.side_right,
+main article div.contentgroup.side_left,
+main article figure.side_left,
+main article figure.side_right,
+main article img.side_left,
+main article img.side_right,
+main article video.side_left,
+main article video.side_right
+{
+  margin-top: calc(var(--content-margin-horizontal) / 2);
+  margin-bottom: calc(var(--content-margin-horizontal) / 2);
+}
+
+main article div.contentgroup.side_left,
+main article figure.side_left,
+main article img.side_left,
+main article video.side_left,
+main article audio.side_left
+{
+  float: left;
+  margin-left: var(--content-margin-vertical);
+  margin-right: 1rem;
+}
+
+main article div.contentgroup.side_right,
+main article figure.side_right,
+main article img.side_right,
+main article video.side_right,
+main article audio.side_right
+{
+  float: right;
+  margin-left: 1rem;
+  margin-right: var(--content-margin-vertical);
+}
+
+main article video,
+main article audio
+{
+  outline: none;
+}
+
+/* captions */
+
+main article table caption,
+main article figure figcaption,
+main article .caption
+{
+  text-align: right;
+  font-size: 90%;
+}
+
+main article table caption
+{
+  padding: var(--content-cells-padding-horizontal) var(--content-cells-padding-vertical);
+}
+
+main article table caption > em
+{
+  font-weight: bold;
+  font-style: normal;
+}
+
+main article figure figcaption,
+main article .caption
+{
+  margin-top: var(--caption-margin-horizontal-reset);
+  padding-left: var(--content-cells-padding-vertical);
+  padding-right: var(--content-cells-padding-vertical);
+}
+
+main article table caption a,
+main article figure figcaption a,
+main article .caption a
+{
+  color: var(--content-normal-text-color);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+main article table.special caption
+{
+  color: var(--content-normal-text-color);
+}
+
+main article figure.special figcaption a,
+main article .special .caption a
+{
+  color: var(--content-special-text-color);
+}

@@ -43,6 +43,11 @@ nav .menu-button#layouts-submenu:before
   background-image: url('../images/icons.violet/plan.svg');
 }
 
+nav .menu-button#content-submenu:before
+{
+  background-image: url('../images/icons.violet/content.svg');
+}
+
 nav .menu-button#about-submenu:before
 {
   background-image: url('../images/icons.violet/i.svg');

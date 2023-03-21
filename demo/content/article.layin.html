@@ -1,0 +1,2115 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="language" content="english">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Layin - general purpose web page layout">
+    <meta name="keywords" content="layin,layout,www,web page">
+    <meta name="author" content="katheroine <katheroine@gmail.com>">
+    <link type="image/x-icon" rel="shortcut icon" href="../../site/public/assets/images/favicon.ico">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/site.violet.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/site-accessibility.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)"
+        href="../../site/public/assets/stylesheets/site-s.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)"
+        href="../../site/public/assets/stylesheets/site-m.violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)"
+        href="../../site/public/assets/stylesheets/site-l.violet.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/colors.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/fonts.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/colors-site.layin.css">
+    <link type="text/css" rel="stylesheet"
+        href="../../site/public/assets/stylesheets/colors-site-accessibility.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/colors-content.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/link-icons.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/layout.layin.css">
+    <link type="text/css" rel="stylesheet" href="../../site/public/assets/stylesheets/content.swamp_violet.css">
+    <link type="text/css" rel="stylesheet"
+        href="../../site/public/assets/stylesheets/content-accessibility.swamp_violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 0px)"
+        href="../../site/public/assets/stylesheets/content-s.swamp_violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 640px)"
+        href="../../site/public/assets/stylesheets/content-m.swamp_violet.css">
+    <link type="text/css" rel="stylesheet" media="screen and (min-width: 1024px)"
+        href="../../site/public/assets/stylesheets/content-l.swamp_violet.css">
+    <link type="text/css" rel="stylesheet"
+        href="../../site/public/assets/stylesheets/colors-content-accessibility.layin.css">
+    <script src="../../site/public/assets/scripts/dashboard.violet.js"></script>
+    <script src="../../site/public/assets/scripts/accessibility.violet.js"></script>
+    <title>Layin</title>
+</head>
+
+<body onload="restoreAccessibility(); handleDashboard();">
+    <header onclick="foldNavigation();">
+        <div id="banner">
+            <div id="signboard">
+                <a id="logo" href="../../index.html"><img src="../../site/public/assets/images/logo.png"
+                        alt="Layin logo"></a>
+                <div id="site-name">
+                    Layin <span id="site-description">General purpose layout</span>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div id="dashboard">
+        <div id="controls">
+            <div id="dial">
+                <a id="increase-font-trigger" class="menu-button icon" onclick="increaseFontSize();"></a>
+                <a id="decrease-font-trigger" class="menu-button icon" onclick="decreaseFontSize();"></a>
+                <a id="toggle-contrast-trigger" class="menu-button icon" onclick="toggleContrast();"></a>
+                <a id="reset-accessibility-trigger" class="menu-button icon" onclick="reset();"></a>
+                <a id="go-up-link" class="menu-button icon" href="#top"
+                    onclick="undetachDashboard(); foldNavigation();"></a>
+                <a id="guideboard-trigger" class="menu-button icon" onclick="toggleNavigation();"></a>
+            </div>
+        </div>
+        <div id="guideboard">
+            <nav>
+                <div class="navigation-item">
+                    <a id="home-link" class="menu-button icon " href="../../index.html">
+                        <div class="content">Home</div>
+                    </a>
+                </div>
+                <div class="navigation-item">
+                    <a id="accessibility-info-link" class="menu-button icon " href="../accessibility_info.php">
+                        <div class="content">Accessibility</div>
+                    </a>
+                </div>
+                <div class="navigation-item">
+                    <a id="layouts-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
+                        <div class="content">Layouts</div>
+                    </a>
+                    <div class="submenu">
+                        <a class="menu-button sub" href="../layouts/one_column.layin.html">
+                            <div class="content">One column</div>
+                        </a>
+                        <a class="menu-button sub" href="../layouts/two_columns.layin.html">
+                            <div class="content">Two columns</div>
+                        </a>
+                        <a class="menu-button sub" href="../layouts/three_columns.layin.html">
+                            <div class="content">Three columns</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="navigation-item">
+                    <a id="content-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
+                        <div class="content">Content</div>
+                    </a>
+                    <div class="submenu">
+                        <a class="menu-button sub" href="../content/article.layin.html">
+                            <div class="content">Article</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="navigation-item">
+                    <a id="about-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
+                        <div class="content">About</div>
+                    </a>
+                    <div class="submenu">
+                        <a class="menu-button sub" href="https://github.com/katheroine/layin">
+                            <div class="content">Layin repository</div>
+                        </a>
+                        <a class="menu-button sub" href="https://about.me/katheroine">
+                            <div class="content">Layin author</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="navigation-item">
+                    <a id="favourites-submenu" class="menu-button icon sup" onclick="toggleSubmenu(this);">
+                        <div class="content">Favourites</div>
+                    </a>
+                    <div class="submenu">
+                        <a class="menu-button sub" href="https://linuxmint.com/">
+                            <div class="content">Linux Mint</div>
+                        </a>
+                        <a class="menu-button sub" href="https://atom.io/">
+                            <div class="content">Atom</div>
+                        </a>
+                        <a class="menu-button sub" href="https://code.visualstudio.com/">
+                            <div class="content">Visual Studio Code</div>
+                        </a>
+                        <a class="menu-button sub" href="https://inkscape.org">
+                            <div class="content">Inkscape</div>
+                        </a>
+                        <a class="menu-button sub" href="https://git-scm.com">
+                            <div class="content">Git</div>
+                        </a>
+                        <a class="menu-button sub" href="https://github.com/">
+                            <div class="content">GitHub</div>
+                        </a>
+                        <a class="menu-button sub" href="https://www.pexels.com/">
+                            <div class="content">Pexels</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="navigation-item">
+                    <a id="contact-link" class="menu-button icon " href="#contact-info">
+                        <div class="content">Contact</div>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div id="board" onclick="foldNavigation();">
+        <div id="liner">
+            <main>
+                <article>
+                    <section id="content-text-details">
+                        <h1>Text details</h1>
+                        <p>It's important, <mark>to be aware of the strengths and weaknesses of the used
+                                technology</mark>.</p>
+                        <p>Good programmer doesn't <strong>stick</strong> to the one programming language, arguing it's
+                            the best choose for <em>each</em> problem domain.</p>
+                        <p>The vide horizon of the programmer's competencies can bring the great technical
+                            <del>knowledge</del> <ins>intuition</ins>.</p>
+                        <p>Some of such observations has been described in the book <cite>The name of the
+                                competence</cite> written by <strong>Coderto Consto</strong></p>
+                        <p><abbr title="Technology consciousness">Techconsc</abbr> - an abbreviation for the term
+                            <dfn>technology consciousness</dfn>,
+                            which means the deep awarnes of the given technology advantages, disadvantages, as well as
+                            the knowledge about its origins
+                            and the initial purposes.</p>
+                        <p>Define <var>t</var> variable for the time value.</p>
+                        <p>Press <kbd>[Ctrl]+[Alt]+[Del]</kbd> to restart the computer.</p>
+                        <p>The program running strart from the <code>main()</code> function.</p>
+                        <p>As the result, the program should to write <samp>Hello world!</samp> on the standard output.
+                        </p>
+                    </section>
+                    <section id="content-headers">
+                        <h1>Headers</h1>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                        Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                        Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                        Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                        Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                        Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi rutrum
+                        id.
+                        Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                        Duis non dignissim enim, eu tristique risus.
+                        Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                        Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna iaculis
+                        ac.
+                        Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                        Aenean pellentesque porttitor magna vel fermentum.
+                        <h1>Header level one</h1>
+                        Integer imperdiet finibus nisl vel tincidunt.
+                        Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                        Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare suscipit.
+                        Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                        Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                        Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                        Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                        Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor purus.
+                        Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                        Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                        quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices rutrum
+                        tortor.
+                        Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                        <h2>Header level two</h2>
+                        Nullam faucibus magna eget ante molestie rhoncus.
+                        Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                        Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                        In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus ante non,
+                        suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum augue.
+                        Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                        Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                        Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                        Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                        Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                        Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                        Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                        <h3>Header level three</h3>
+                        Nunc varius vitae massa a semper. In vel laoreet velit.
+                        Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                        Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                        Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+                        Donec ornare tellus dapibus scelerisque condimentum.
+                        Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu scelerisque.
+                        Fusce pharetra massa et pellentesque rhoncus.
+                        <h4>Header level four</h4>
+                        Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu semper.
+                        Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                        Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                        Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                        Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies dapibus.
+                        <h5>Header level five</h5>
+                        In tincidunt, eros commodo tincidunt maximus, sapien metus consectetur libero,
+                        et tempus magna magna a turpis.
+                        Proin sapien tortor, posuere nec mollis sed, vulputate eget augue.
+                        Maecenas consequat ex sit amet lorem lacinia, sit amet consectetur nulla interdum.
+                        Aenean a eros dictum, vulputate nunc ac, varius justo. Proin consequat feugiat malesuada.
+                        Vestibulum posuere feugiat dolor, suscipit imperdiet libero vestibulum in.
+                        Ut consectetur nunc velit, non lobortis ligula semper sed.
+                        Sed malesuada neque ac lacus fermentum, ut malesuada ligula aliquet.
+                        Etiam eu mi gravida, tempus lacus id, commodo nunc.
+                        Aenean consectetur, eros at accumsan volutpat, neque leo accumsan urna,
+                        vel efficitur ante orci at nulla.
+                        <h6>Header level six</h6>
+                        Etiam vitae eleifend ex, vel accumsan mi.
+                        Etiam et erat tristique, accumsan erat eu, porttitor odio. Suspendisse sit amet rutrum libero.
+                        Praesent dui ante, suscipit sit amet malesuada in, ultricies ut sem.
+                        Proin condimentum rhoncus elit, id mollis orci.
+                        Sed luctus lorem posuere elit consequat, in dictum elit fermentum.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam id porttitor ipsum.
+                        Sed ut erat et tellus interdum tempor. Duis ultricies leo nisl, ut ultricies sem placerat ut.
+                        Morbi condimentum nunc ligula, sed facilisis neque pharetra et.
+                    </section>
+                    <section id="content-text-blocks">
+                        <h1>Text blocks</h1>
+                        <section id="content-text-blocks-paragraph">
+                            <h2>Paragraph</h2>
+                            <h3>Normal paragraph</h3>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <h3>Special paragraph</h3>
+                            <p class="special">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                        </section>
+                        <section id="content-text-blocks-blockquote">
+                            <h2>Block quote</h2>
+                            <h3>Normal block quote</h3>
+                            <blockquote cite="https://en.wikipedia.org/wiki/Lorem_ipsum">
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </blockquote>
+                            <h3>Special block quote</h3>
+                            <blockquote cite="https://en.wikipedia.org/wiki/Lorem_ipsum" class="special">
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </blockquote>
+                        </section>
+                        <section id="content-text-blocks-definition">
+                            <h2>Definition</h2>
+                            <h3>Normal definition</h3>
+                            <div class="definition">
+                                <em>Definition</em> - a statement of the meaning of a term (a word, phrase, or other set
+                                of symbols).
+                                Definitions can be classified into two large categories, intensional definitions
+                                (which try to give the sense of a term) and extensional definitions
+                                (which try to list the objects that a term describes).
+                                Another important category of definitions is the class of ostensive definitions,
+                                which convey the meaning of a term by pointing out examples.
+                                A term may have many different senses and multiple meanings, and thus require multiple
+                                definitions.
+                            </div>
+                            <h3>Special definition</h3>
+                            <div class="definition special">
+                                <em>Definition</em> - a statement of the meaning of a term (a word, phrase, or other set
+                                of symbols).
+                                Definitions can be classified into two large categories, intensional definitions
+                                (which try to give the sense of a term) and extensional definitions
+                                (which try to list the objects that a term describes).
+                                Another important category of definitions is the class of ostensive definitions,
+                                which convey the meaning of a term by pointing out examples.
+                                A term may have many different senses and multiple meanings, and thus require multiple
+                                definitions.
+                            </div>
+                        </section>
+                        <section id="content-text-blocks-code">
+                            <h2>Code</h2>
+                            <div class="code">#include &lt;iostream&gt;
+
+int main()
+{
+    std::cout &lt;&lt; "Hello world!\n";
+}
+</div>
+                        </section>
+                        <section id="content-text-blocks-pre">
+                            <h2>Preformatted text</h2>
+                            <pre class="lang-cpp">#include &lt;iostream&gt;
+
+int main()
+{
+    std::cout &lt;&lt; "Hello world!\n";
+}
+</pre>
+                        </section>
+                        <section id="content-text-blocks-terminal">
+                            <h2>Terminal</h2>
+                            <div class="terminal"><em>webmaster@layin$</em> some terminal entry</div>
+                        </section>
+                        <section id="content-text-blocks-messages">
+                            <h2>The messages</h2>
+                            <h3>Alert message</h3>
+                            <div class="alert">
+                                <strong>Alert!</strong> This is an alert. Donec venenatis, turpis vel hendrerit
+                                interdum, dui ligula
+                                ultricies purus, sed posuere libero dui id orci.
+                                Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo
+                                non est.
+                                Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
+                            </div>
+                            <h3>Warning message</h3>
+                            <div class="warning">
+                                <strong>Warning!</strong> This is a warning. Donec venenatis, turpis vel hendrerit
+                                interdum, dui ligula
+                                ultricies purus, sed posuere libero dui id orci.
+                                Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo
+                                non est.
+                                Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
+                            </div>
+                            <h3>Info message</h3>
+                            <div class="info">
+                                <strong>Info.</strong> This is an info. Donec venenatis, turpis vel hendrerit interdum,
+                                dui ligula
+                                ultricies purus, sed posuere libero dui id orci.
+                                Nam congue, pede vitae dapibus aliquet, elit magna vulputate arcu, vel tempus metus leo
+                                non est.
+                                Etiam sit amet lectus quis est congue mollis. Phasellus congue lacus eget neque.
+                            </div>
+                        </section>
+                    </section>
+                    <section id="content-lists">
+                        <h1>Lists</h1>
+                        <section id="content-lists-unordered">
+                            <h2>Unordered lists</h2>
+                            <h3>Normal unordered lists</h3>
+                            <h4>Normal unordered regular list</h4>
+                            <ul>
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the list</li>
+                            </ul>
+                            <h4>Normal unordered nested list</h4>
+                            <ul>
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the list</li>
+                                <ul>
+                                    <li>first point of the list</li>
+                                    <li>second point of the list</li>
+                                    <li>third point of the list</li>
+                                </ul>
+                            </ul>
+                            <h4>Normal unordered list with skipped element</h4>
+                            <ul>
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li class="skipped">third skipped point of the list</li>
+                            </ul>
+                            <h4>Normal unordered blank list</h4>
+                            <ul class="blank">
+                                <li>first point of the blank list</li>
+                                <li>second point of the blank list</li>
+                                <li>third point of the blank list</li>
+                            </ul>
+                            <h3>Special unordered lists</h3>
+                            <h4>Special unordered regular list</h4>
+                            <ul class="special">
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the list</li>
+                            </ul>
+                            <h4>Special unordered nested list</h4>
+                            <ul class="special">
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the list</li>
+                                <ul>
+                                    <li>first point of the list</li>
+                                    <li>second point of the list</li>
+                                    <li>third point of the list</li>
+                                </ul>
+                            </ul>
+                            <h4>Special unordered list with skipped element</h4>
+                            <ul class="special">
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li class="skipped">third skipped point of the list</li>
+                            </ul>
+                            <h4>Special unordered blank list</h4>
+                            <ul class="special blank">
+                                <li>first point of the blank list</li>
+                                <li>second point of the blank list</li>
+                                <li>third point of the blank list</li>
+                            </ul>
+                        </section>
+                        <section id="content-lists-ordered">
+                            <h2>Ordered lists</h2>
+                            <h3>Normal ordered lists</h3>
+                            <h4>Normal ordered regular list</h4>
+                            <ol>
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the list</li>
+                            </ol>
+                            <h4>Normal ordered nested list</h4>
+                            <ol>
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the list</li>
+                                <ol>
+                                    <li>first point of the list</li>
+                                    <li>second point of the list</li>
+                                    <li>third point of the list</li>
+                                </ol>
+                            </ol>
+                            <h4>Normal ordered list with skipped element</h4>
+                            <ol>
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li class="skipped">third skipped point of the list</li>
+                            </ol>
+                            <h4>Normal ordered blank list</h4>
+                            <ol class="blank">
+                                <li>first point of the blank list</li>
+                                <li>second point of the blank list</li>
+                                <li>third point of the blank list</li>
+                            </ol>
+                            <h3>Special ordered lists</h3>
+                            <h4>Special ordered regular list</h4>
+                            <ol class="special">
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the list</li>
+                            </ol>
+                            <h4>Special ordered nested list</h4>
+                            <ol class="special">
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the list</li>
+                                <ol>
+                                    <li>first point of the list</li>
+                                    <li>second point of the list</li>
+                                    <li>third point of the list</li>
+                                </ol>
+                            </ol>
+                            <h4>Special ordered list with skipped element</h4>
+                            <ol class="special">
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li class="skipped">third skipped point of the list</li>
+                            </ol>
+                            <h4>Special ordered blank list</h4>
+                            <ol class="special blank">
+                                <li>first point of the list</li>
+                                <li>second point of the list</li>
+                                <li>third point of the blank list</li>
+                            </ol>
+                        </section>
+                        <section id="content-lists-descriptions">
+                            <h2>Description lists</h2>
+                            <h3>Normal description list</h3>
+                            <dl>
+                                <dt>Description one</dt>
+                                <dd>the pattern of narrative development that aims to make vivid a place, object,
+                                    character, or group.
+                                    Description is one of four rhetorical modes (also known as modes of discourse),
+                                    along with exposition, argumentation, and narration.
+                                    In practice it would be difficult to write literature that drew on just one of the
+                                    four basic modes.</dd>
+                                <dt>Description two</dt>
+                                <dd>the pattern of narrative development that aims to make vivid a place, object,
+                                    character, or group.
+                                    Description is one of four rhetorical modes (also known as modes of discourse),
+                                    along with exposition, argumentation, and narration.
+                                    In practice it would be difficult to write literature that drew on just one of the
+                                    four basic modes.</dd>
+                                <dt>Description three</dt>
+                                <dd>the pattern of narrative development that aims to make vivid a place, object,
+                                    character, or group.
+                                    Description is one of four rhetorical modes (also known as modes of discourse),
+                                    along with exposition, argumentation, and narration.
+                                    In practice it would be difficult to write literature that drew on just one of the
+                                    four basic modes.</dd>
+                            </dl>
+                            <h3>Special description list</h3>
+                            <dl class="special">
+                                <dt>Description one</dt>
+                                <dd>the pattern of narrative development that aims to make vivid a place, object,
+                                    character, or group.
+                                    Description is one of four rhetorical modes (also known as modes of discourse),
+                                    along with exposition, argumentation, and narration.
+                                    In practice it would be difficult to write literature that drew on just one of the
+                                    four basic modes.</dd>
+                                <dt>Description two</dt>
+                                <dd>the pattern of narrative development that aims to make vivid a place, object,
+                                    character, or group.
+                                    Description is one of four rhetorical modes (also known as modes of discourse),
+                                    along with exposition, argumentation, and narration.
+                                    In practice it would be difficult to write literature that drew on just one of the
+                                    four basic modes.</dd>
+                                <dt>Description three</dt>
+                                <dd>the pattern of narrative development that aims to make vivid a place, object,
+                                    character, or group.
+                                    Description is one of four rhetorical modes (also known as modes of discourse),
+                                    along with exposition, argumentation, and narration.
+                                    In practice it would be difficult to write literature that drew on just one of the
+                                    four basic modes.</dd>
+                            </dl>
+                        </section>
+                    </section>
+                    <section id="content-tables">
+                        <h1>Tables</h1>
+                        <h2>Normal tables</h2>
+                        <h3>Normal simple table</h3>
+                        <table>
+                            <caption><em>Table 1.1</em> Table's caption</caption>
+                            <tr>
+                                <td>first row first column</td>
+                                <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                <td>first row third column</td>
+                            </tr>
+                            <tr>
+                                <td>second row first column</td>
+                                <td></td>
+                                <td>second row third column</td>
+                            </tr>
+                            <tr>
+                                <td>third row first column</td>
+                                <td>third row second column</td>
+                                <td>third row third column</td>
+                            </tr>
+                        </table>
+                        <h3>Normal table with header cells</h3>
+                        <table>
+                            <caption><em>Table 1.2</em> Table's caption</caption>
+                            <tr>
+                                <th>header first column lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
+                                <th>header second column</th>
+                                <th>header third column</th>
+                            </tr>
+                            <tr>
+                                <th>first row first column</th>
+                                <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                <td>first row third column</td>
+                            </tr>
+                            <tr>
+                                <th>second row first column</th>
+                                <td></td>
+                                <td>second row third column</td>
+                            </tr>
+                            <tr>
+                                <th>third row first column</th>
+                                <td>third row second column</td>
+                                <td>third row third column</td>
+                            </tr>
+                        </table>
+                        <h3>Normal table with header and footer</h3>
+                        <table>
+                            <caption><em>Table 1.3</em> Table's caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>header first column lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
+                                    <th>header second column</th>
+                                    <th>header third column</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>first row first column</td>
+                                    <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </td>
+                                    <td>first row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>second row first column</td>
+                                    <td></td>
+                                    <td>second row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>third row first column</td>
+                                    <td>third row second column</td>
+                                    <td>third row third column</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>footer first column</th>
+                                    <th>footer second column</th>
+                                    <th>footer third column</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <h3>Normal table with header</h3>
+                        <table>
+                            <caption><em>Table 1.4</em> Table's caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>header first column lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
+                                    <th>header second column</th>
+                                    <th>header third column</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>first row first column</td>
+                                    <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </td>
+                                    <td>first row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>second row first column</td>
+                                    <td></td>
+                                    <td>second row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>third row first column</td>
+                                    <td>third row second column</td>
+                                    <td>third row third column</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Normal table with footer</h3>
+                        <table>
+                            <caption><em>Table 1.5</em> Table's caption</caption>
+                            <tbody>
+                                <tr>
+                                    <td>first row first column</td>
+                                    <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </td>
+                                    <td>first row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>second row first column</td>
+                                    <td></td>
+                                    <td>second row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>third row first column</td>
+                                    <td>third row second column</td>
+                                    <td>third row third column</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>footer first column</th>
+                                    <th>footer second column</th>
+                                    <th>footer third column</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <h2>Special tables</h2>
+                        <h3>Special simple table</h3>
+                        <table class="special">
+                            <caption><em>Table 2.1</em> Table's caption</caption>
+                            <tr>
+                                <td>first row first column</td>
+                                <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                <td>first row third column</td>
+                            </tr>
+                            <tr>
+                                <td>second row first column</td>
+                                <td></td>
+                                <td>second row third column</td>
+                            </tr>
+                            <tr>
+                                <td>third row first column</td>
+                                <td>third row second column</td>
+                                <td>third row third column</td>
+                            </tr>
+                        </table>
+                        <h3>Special table with header cells</h3>
+                        <table class="special">
+                            <caption><em>Table 2.2</em> Table's caption</caption>
+                            <tr>
+                                <th>header first column lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
+                                <th>header second column</th>
+                                <th>header third column</th>
+                            </tr>
+                            <tr>
+                                <th>first row first column</th>
+                                <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+                                <td>first row third column</td>
+                            </tr>
+                            <tr>
+                                <th>second row first column</th>
+                                <td></td>
+                                <td>second row third column</td>
+                            </tr>
+                            <tr>
+                                <th>third row first column</th>
+                                <td>third row second column</td>
+                                <td>third row third column</td>
+                            </tr>
+                        </table>
+                        <h3>Special table with header and footer</h3>
+                        <table class="special">
+                            <caption><em>Table 2.3</em> Table's caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>header first column lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
+                                    <th>header second column</th>
+                                    <th>header third column</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>first row first column</td>
+                                    <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </td>
+                                    <td>first row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>second row first column</td>
+                                    <td></td>
+                                    <td>second row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>third row first column</td>
+                                    <td>third row second column</td>
+                                    <td>third row third column</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>footer first column</th>
+                                    <th>footer second column</th>
+                                    <th>footer third column</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                        <h3>Special table with header</h3>
+                        <table class="special">
+                            <caption><em>Table 2.4</em> Table's caption</caption>
+                            <thead>
+                                <tr>
+                                    <th>header first column lorem ipsum dolor sit amet, consectetur adipiscing elit</th>
+                                    <th>header second column</th>
+                                    <th>header third column</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>first row first column</td>
+                                    <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </td>
+                                    <td>first row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>second row first column</td>
+                                    <td></td>
+                                    <td>second row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>third row first column</td>
+                                    <td>third row second column</td>
+                                    <td>third row third column</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h3>Special table with footer</h3>
+                        <table class="special">
+                            <caption><em>Table 2.5</em> Table's caption</caption>
+                            <tbody>
+                                <tr>
+                                    <td>first row first column</td>
+                                    <td>first row second column lorem ipsum dolor sit amet, consectetur adipiscing elit
+                                    </td>
+                                    <td>first row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>second row first column</td>
+                                    <td></td>
+                                    <td>second row third column</td>
+                                </tr>
+                                <tr>
+                                    <td>third row first column</td>
+                                    <td>third row second column</td>
+                                    <td>third row third column</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <th>footer first column</th>
+                                    <th>footer second column</th>
+                                    <th>footer third column</th>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </section>
+                    <section id="content-media">
+                        <h1>Media</h1>
+                        <section id="content-media-images">
+                            <h2>Images</h2>
+                            <h3>Simple image</h3>
+                            <img src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                            <h3>Figure</h3>
+                            <h4>Normal figure</h4>
+                            <figure>
+                                <img src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                                <figcaption>
+                                    Source: <a href="https://www.pexels.com/@rpnickson">Roberto Nickson</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a href="https://www.pexels.com/photo/a-clear-sky-at-night-2885320/">
+                                        <cite>A Clear Sky at Night</cite>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <h4>Special figure</h4>
+                            <figure class="special">
+                                <img src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                                <figcaption>
+                                    Source: <a href="https://www.pexels.com/@rpnickson">Roberto Nickson</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a href="https://www.pexels.com/photo/a-clear-sky-at-night-2885320/">
+                                        <cite>A Clear Sky at Night</cite>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <h3>Small images</h3>
+                            <h4>Small image on right</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <img class="side_right"
+                                src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                            <h4>Small image on left</h4>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <img class="side_left"
+                                src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                            <h3>Small figures</h3>
+                            <h4>Small figure on right</h4>
+                            <h5>Small normal figure on right</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <figure class="side_right">
+                                <img src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                                <figcaption>
+                                    Source: <a href="https://www.pexels.com/@rpnickson">Roberto Nickson</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a href="https://www.pexels.com/photo/a-clear-sky-at-night-2885320/">
+                                        <cite>A Clear Sky at Night</cite>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                            <h5>Small special figure on right</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <figure class="side_right special">
+                                <img src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                                <figcaption>
+                                    Source: <a href="https://www.pexels.com/@rpnickson">Roberto Nickson</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a href="https://www.pexels.com/photo/a-clear-sky-at-night-2885320/">
+                                        <cite>A Clear Sky at Night</cite>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                            <h4>Small figure on left</h4>
+                            <h5>Small normal figure on left</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <figure class="side_left">
+                                <img src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                                <figcaption>
+                                    Source: <a href="https://www.pexels.com/@rpnickson">Roberto Nickson</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a href="https://www.pexels.com/photo/a-clear-sky-at-night-2885320/">
+                                        <cite>A Clear Sky at Night</cite>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                            <h5>Small special figure on left</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <figure class="side_left special">
+                                <img src="../../site/public/assets/images/samples/pexels-roberto-nickson-2885320.jpeg">
+                                <figcaption>
+                                    Source: <a href="https://www.pexels.com/@rpnickson">Roberto Nickson</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a href="https://www.pexels.com/photo/a-clear-sky-at-night-2885320/">
+                                        <cite>A Clear Sky at Night</cite>
+                                    </a>
+                                </figcaption>
+                            </figure>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                        </section>
+                        <section id="content-media-videos">
+                            <h2>Videos</h2>
+                            <h3>Simple video</h3>
+                            <video controls>
+                                <source src="../../site/public/assets/videos/samples/Pexels-Videos_2330708.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <h3>Video with caption</h3>
+                            <video controls>
+                                <source src="../../site/public/assets/videos/samples/Pexels-Videos_2330708.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <div class="caption">
+                                Source: <a href="https://www.pexels.com/@kelly-1179532/">Kelly</a>
+                                on <a href="pexels.com">Pexels</a>,
+                                <a
+                                    href="https://www.pexels.com/video/a-shallow-river-streaming-through-a-bed-of-rocks-2330708/">
+                                    <cite>A Shallow River Streaming Through a Bed of Rocks</cite>
+                                </a>
+                            </div>
+                            <h3>Video with caption in special mode</h3>
+                            <div class="contentgroup special">
+                                <video controls>
+                                    <source src="../../site/public/assets/videos/samples/Pexels-Videos_2330708.mp4"
+                                        type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="caption">
+                                    Source: <a href="https://www.pexels.com/@kelly-1179532/">Kelly</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a
+                                        href="https://www.pexels.com/video/a-shallow-river-streaming-through-a-bed-of-rocks-2330708/">
+                                        <cite>A Shallow River Streaming Through a Bed of Rocks</cite>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3>Small videos</h3>
+                            <h4>Small video on left</h4>
+                            <h5>Small video in normal mode on left</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <video class="side_left" controls>
+                                <source src="../../site/public/assets/videos/samples/Pexels-Videos_2330708.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                            <h5>Small video with caption in special mode on left</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <div class="side_left contentgroup special">
+                                <video controls>
+                                    <source src="../../site/public/assets/videos/samples/Pexels-Videos_2330708.mp4"
+                                        type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="caption">
+                                    Source: <a href="https://www.pexels.com/@kelly-1179532/">Kelly</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a
+                                        href="https://www.pexels.com/video/a-shallow-river-streaming-through-a-bed-of-rocks-2330708/">
+                                        <cite>A Shallow River Streaming Through a Bed of Rocks</cite>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                            <h4>Small video on right</h4>
+                            <h5>Small video in normal mode on right</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <video class="side_right" controls>
+                                <source src="../../site/public/assets/videos/samples/Pexels-Videos_2330708.mp4"
+                                    type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                            <h5>Small video with caption in special mode on right</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <div class="side_right contentgroup special">
+                                <video controls>
+                                    <source src="../../site/public/assets/videos/samples/Pexels-Videos_2330708.mp4"
+                                        type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="caption">
+                                    Source: <a href="https://www.pexels.com/@kelly-1179532/">Kelly</a>
+                                    on <a href="pexels.com">Pexels</a>,
+                                    <a
+                                        href="https://www.pexels.com/video/a-shallow-river-streaming-through-a-bed-of-rocks-2330708/">
+                                        <cite>A Shallow River Streaming Through a Bed of Rocks</cite>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <p>
+                                Nunc varius vitae massa a semper. In vel laoreet velit.
+                                Sed turpis mauris, sodales vel volutpat eu, ullamcorper a purus.
+                                Phasellus nisl dolor, gravida nec posuere et, placerat sed tortor.
+                                Nulla rutrum urna arcu, sit amet laoreet dui iaculis ac.
+                                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis
+                                egestas.
+                                Donec ornare tellus dapibus scelerisque condimentum.
+                                Phasellus felis magna, tempus eu porta ut, fermentum at mi. In fermentum a risus eu
+                                scelerisque.
+                                Fusce pharetra massa et pellentesque rhoncus.
+                            </p>
+                            <p>
+                                Morbi turpis nisi, condimentum in justo id, porta semper leo. Quisque interdum id ex eu
+                                semper.
+                                Vestibulum eleifend quis dolor a porttitor. Proin vitae lacinia dolor.
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Quisque nunc ligula, tempor sit amet posuere vitae, hendrerit eu nisl.
+                                Sed dapibus tellus vel metus tincidunt, a porttitor mauris tempus. Sed ac dui odio.
+                                Etiam et lacinia erat, et convallis magna. Sed ac semper lacus.
+                                Maecenas dapibus sem metus, at malesuada elit feugiat at. Suspendisse egestas ultricies
+                                dapibus.
+                            </p>
+                        </section>
+                        <section id="content-media-audios">
+                            <h2>Audios</h2>
+                            <h3>Simple audio</h3>
+                            <audio controls>
+                                <source src="../../site/public/assets/sounds/samples/Turdus_merula_2.ogg"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                            </audio>
+                            <h3>Audio with caption</h3>
+                            <audio controls>
+                                <source src="../../site/public/assets/sounds/samples/Turdus_merula_2.ogg"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                            </audio>
+                            <div class="caption">
+                                Source: <a href="https://commons.wikimedia.org/wiki/User:Mysid">Mysid</a>
+                                on <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>,
+                                <a href="https://commons.wikimedia.org/wiki/File:Turdus_merula_2.ogg">
+                                    <cite>Turdus merula 2</cite>
+                                </a>
+                            </div>
+                            <h3>Audio with caption in special mode</h3>
+                            <div class="contentgroup special">
+                                <audio controls>
+                                    <source src="../../site/public/assets/sounds/samples/Turdus_merula_2.ogg"
+                                        type="audio/mpeg">
+                                    Your browser does not support the audio tag.
+                                </audio>
+                                <div class="caption">
+                                    Source: <a href="https://commons.wikimedia.org/wiki/User:Mysid">Mysid</a>
+                                    on <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>,
+                                    <a href="https://commons.wikimedia.org/wiki/File:Turdus_merula_2.ogg">
+                                        <cite>Turdus merula 2</cite>
+                                    </a>
+                                </div>
+                            </div>
+                            <h3>Small audios</h3>
+                            <h4>Small audio on left</h4>
+                            <h5>Small audio in normal mode on left</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <audio class="side_left" controls>
+                                <source src="../../site/public/assets/sounds/samples/Turdus_merula_2.ogg"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                            </audio>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <h5>Small audio with caption in special mode on left</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <div class="side_left contentgroup special">
+                                <audio controls>
+                                    <source src="../../site/public/assets/sounds/samples/Turdus_merula_2.ogg"
+                                        type="audio/mpeg">
+                                    Your browser does not support the audio tag.
+                                </audio>
+                                <div class="caption">
+                                    Source: <a href="https://commons.wikimedia.org/wiki/User:Mysid">Mysid</a>
+                                    on <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>,
+                                    <a href="https://commons.wikimedia.org/wiki/File:Turdus_merula_2.ogg">
+                                        <cite>Turdus merula 2</cite>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <h4>Small audio on right</h4>
+                            <h5>Small audio in normal mode on right</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <audio class="side_right" controls>
+                                <source src="../../site/public/assets/sounds/samples/Turdus_merula_2.ogg"
+                                    type="audio/mpeg">
+                                Your browser does not support the audio tag.
+                            </audio>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                            <h5>Small audio with caption in special mode on right</h5>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                Nunc ac libero mauris. Donec viverra nunc quis mi venenatis consectetur.
+                                Duis dictum dui in turpis fringilla, quis tincidunt ipsum iaculis.
+                                Morbi commodo vehicula purus a cursus. Nullam tincidunt lobortis erat a scelerisque.
+                                Mauris lorem mauris, placerat id eros id, laoreet euismod arcu.
+                                Mauris enim neque, lacinia tincidunt auctor nec, accumsan eget tellus.
+                                Nullam placerat efficitur efficitur. Vestibulum pharetra elit risus, non fringilla nisi
+                                rutrum id.
+                                Donec convallis luctus dolor, sed pharetra metus sollicitudin id.
+                                Duis non dignissim enim, eu tristique risus.
+                                Quisque scelerisque aliquam dui, vitae ornare lorem elementum sed.
+                                Phasellus interdum vulputate aliquet. Sed venenatis vehicula velit, eget rhoncus magna
+                                iaculis ac.
+                                Ut interdum nunc vel neque accumsan, at eleifend neque sodales.
+                                Aenean pellentesque porttitor magna vel fermentum.
+                            </p>
+                            <div class="side_right contentgroup special">
+                                <audio controls>
+                                    <source src="../../site/public/assets/sounds/samples/Turdus_merula_2.ogg"
+                                        type="audio/mpeg">
+                                    Your browser does not support the audio tag.
+                                </audio>
+                                <div class="caption">
+                                    Source: <a href="https://commons.wikimedia.org/wiki/User:Mysid">Mysid</a>
+                                    on <a href="https://commons.wikimedia.org/">Wikimedia Commons</a>,
+                                    <a href="https://commons.wikimedia.org/wiki/File:Turdus_merula_2.ogg">
+                                        <cite>Turdus merula 2</cite>
+                                    </a>
+                                </div>
+                            </div>
+                            <p>
+                                Integer imperdiet finibus nisl vel tincidunt.
+                                Praesent augue tortor, semper eu arcu ut, ultrices elementum odio.
+                                Sed finibus justo quis dui varius sollicitudin. Donec ultrices tortor blandit ornare
+                                suscipit.
+                                Phasellus felis lectus, vulputate non orci vitae, eleifend finibus neque.
+                                Morbi sollicitudin convallis neque eu fringilla. Nam rutrum dictum fermentum.
+                                Suspendisse odio leo, ullamcorper sit amet iaculis sed, dictum et orci.
+                                Pellentesque lacus neque, vestibulum at tempor vitae, consequat sodales magna.
+                                Aenean ut aliquet dui. Nullam urna ante, convallis ac nibh eleifend, fermentum auctor
+                                purus.
+                                Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                                Etiam ullamcorper, ligula quis efficitur gravida, tellus nunc faucibus odio,
+                                quis convallis justo velit sed sapien. Fusce justo tellus, dictum a augue eget, ultrices
+                                rutrum tortor.
+                                Nullam malesuada viverra nisl, id pretium leo elementum eget.
+                            </p>
+                            <p>
+                                Nullam faucibus magna eget ante molestie rhoncus.
+                                Pellentesque sapien erat, vestibulum at ipsum bibendum, molestie pharetra sem.
+                                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+                                In non ligula a velit varius gravida non at nunc. Quisque sem lacus, vehicula tempus
+                                ante non,
+                                suscipit gravida neque. Nullam tristique vitae massa ac lacinia. Donec eget condimentum
+                                augue.
+                                Cras pretium malesuada odio eu sollicitudin. Mauris eget ante sem.
+                                Sed eget neque scelerisque, pretium erat non, semper nibh. Mauris et vulputate purus.
+                                Aliquam purus magna, ultricies id consectetur a, sollicitudin in neque.
+                                Sed odio justo, interdum ac viverra sed, fermentum in augue.
+                                Nam erat lorem, gravida eget volutpat vel, cursus eu dui.
+                                Fusce diam justo, maximus ac ultrices quis, condimentum vel eros.
+                                Praesent sem nibh, ullamcorper a dui at, feugiat suscipit lacus.
+                            </p>
+                        </section>
+                    </section>
+                    <section id="content-information">
+                        <h1>Information</h1>
+                        <section id="content-information-address">
+                            <h2>Address</h2>
+                            <address>
+                                Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+                                Visit us at:<br>
+                                Example.com<br>
+                                Box 564, Disneyland<br>
+                                USA
+                            </address>
+                        </section>
+                        <section id="content-information-details">
+                            <h2>Details</h2>
+                            <h3>Normal details</h3>
+                            <details>Some details</details>
+                            <h3>Special detils</h3>
+                            <details class="special">Some details</details>
+                        </section>
+                    </section>
+                </article>
+            </main>
+        </div>
+    </div>
+    <footer onclick="foldNavigation();">
+        <div id="info">
+            <address id="contact-info">
+                <a class="menu-button icon" id="address-link" href="https://goo.gl/maps/T84vfoTp8Rdbh6V28">
+                    <div class="content">address: <span class="value">al. Wojciecha Korfantego 35, 40-005
+                            Katowice</span></div>
+                </a>
+                <a class="menu-button icon" id="email-action" href="mailto:layin@gmail.com">
+                    <div class="content">e-mail: <span class="value">layin@gmail.com</span></div>
+                </a>
+                <a class="menu-button icon" id="phone-action" href="tel:+4832000000">
+                    <div class="content">tel.: <span class="value">(32) 000 00 00</span></div>
+                </a>
+                <a class="menu-button icon" id="fax-action" href="fax:+48320000000">
+                    <div class="content">fax.: <span class="value">(32) 000 00 00</span></div>
+                </a>
+            </address>
+        </div>
+        <div id="copyright">
+            ©&nbsp;2022 Copyright Layin
+        </div>
+    </footer>
+</body>
+
+</html>

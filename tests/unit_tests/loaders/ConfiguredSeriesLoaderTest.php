@@ -83,7 +83,7 @@ class ConfiguredSeriesLoaderTest extends AbstractConfigLoaderTest
         $loader = new ConfiguredSeriesLoader($filePath);
 
         $this->expectException('\UnexpectedValueException');
-        $this->expectExceptionMessage('File does not contain series.');
+        $this->expectExceptionMessage("File {$filePath} does not contain series.");
 
         $result = $loader->load();
     }

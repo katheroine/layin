@@ -11,7 +11,6 @@
 
 namespace Katheroine\Layin\Loader;
 
-use Symfony\Component\Yaml\Yaml;
 use Katheroine\Layin\Loader\ConfigLoader;
 
 /**
@@ -50,7 +49,7 @@ class ConfiguredSeriesLoader extends ConfigLoader
         });
 
         if (!empty($notArrayElements)) {
-            throw new \UnexpectedValueException('File does not contain series.');
+            throw new \UnexpectedValueException("File {$this->configFilePath} does not contain series.");
         }
     }
 }

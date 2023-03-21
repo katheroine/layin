@@ -166,6 +166,7 @@ class VioletPageRendererPreconfigurator
         $templateParams = array_merge(
             $this->provideSiteConfig(),
             [
+                'base_url' => $this->baseUrl,
                 'subpages_url' => $this->subpagesUrl,
                 'assets_dir' => $this->assetsDirPath,
                 'navigation_links' => $this->provideNavigationLinks(),
